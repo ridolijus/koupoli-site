@@ -2,7 +2,10 @@ export const site = {
   name: "Koupoli",
   founder: "Karlo",
   email: "hello@koupoli.com",
-  heroImage: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032513099/sasnldDAHhQgBTYk.jpg",
+  profileImage: "https://cdn.prod.website-files.com/656060f33885bcdd76d46bed/6560bf5964c0b2220d969211_Untitled_design__59_-removebg-preview.png",
+  aboutImage: "https://cdn.prod.website-files.com/656060f33885bcdd76d46bed/6565b4cc51b60aef24376d6e_tvrdava.jpg",
+  articleThumbnail: "https://cdn.prod.website-files.com/656060f33885bcdd76d46c6a/6855b96bf5a59778b76374ed_the_ilusion_of_AI_productivity_thumbnail.png",
+  articleImage: "https://cdn.prod.website-files.com/656060f33885bcdd76d46c6a/6855b9055b50b3994e4b82a5_ChatGPT%20Image%20Jun%2020%2C%202025%2C%2009_39_31%20PM.png",
   socials: [
     { label: "Instagram", href: "https://www.instagram.com/ridolijus/" },
     { label: "X / Twitter", href: "https://twitter.com/ridolijus" },
@@ -94,9 +97,31 @@ export const projects = [
 
 export const experiences = [
   {
-    role: "Social Media Strategy / Search Engine Optimization",
-    company: "Koupoli Marketing Agency",
-    period: "2020 — Present",
+    role: "Search Engine Optimization Consultant",
+    company: "jt digital",
+    period: "March 2026 — Present",
+    intro: "Contract · Slavonski Brod",
+    bullets: [
+      "Collaborating and advising on on-page and off-page SEO aspects for multiple clients.",
+    ],
+  },
+  {
+    role: "Search Engine Optimization Specialist",
+    company: "Ludicrum",
+    period: "February 2024 — Present",
+    bullets: [
+      "Coordinated a full migration from a one-stop domain to geo-specialised sub-domains.",
+      "Implemented technical SEO, mobile optimisation, and WordPress optimisation best practices.",
+      "Developed effective link-building strategies and collaborated on off-site signals that affect SEO.",
+      "Optimized existing content, contributed keyword research for new content, and created copywriter guidelines.",
+      "Used Google Analytics, Similarweb, Ahrefs, and related tools to monitor, analyse, and report performance.",
+      "Collaborated with social media to optimise profiles and increase visibility.",
+    ],
+  },
+  {
+    role: "Founder / SEO and Webflow Specialist",
+    company: "Koupoli — SEO and Webflow Design Agency",
+    period: "November 2020 — Present",
     intro: "SEO Specialist · Tools used: Semrush, Ahrefs, SEOlyze, Google Search Console, Google Analytics, Screaming Frog. Creating snippets using Schema.org and Google TagManager.",
     bullets: [
       "Analyzing and creating in-depth SEO audits with the creation of briefing tickets and rounds of reviews.",
@@ -111,34 +136,20 @@ export const experiences = [
     secondary: "Webflow Developer · Proficient in custom responsive layouts and interactions, creating visually appealing, user-friendly websites optimised for search engines and engagement.",
   },
   {
-    role: "SEO and Digital Brand Manager",
+    role: "Search Engine Optimization Specialist",
     company: "Soldered Electronics",
-    period: "July 2025 — Present",
+    period: "July 2025 — February 2026",
     bullets: [
-      "Developing and implementing a comprehensive SEO strategy for soldered.com.",
-      "Revamping site architecture, internal linking, meta tags, and product descriptions using keyword research and market insights to improve domain authority and SERP positioning.",
-      "Leading on-page and off-page SEO initiatives, including backlink acquisition and community engagement across Reddit, X, and industry forums.",
-      "Monitoring digital channels and creating strategies for community discussions, product launches, social campaigns, email flows, and customer engagement.",
-    ],
-  },
-  {
-    role: "Search Engine Optimization",
-    company: "Ludicrum",
-    period: "February 2024 — Present",
-    bullets: [
-      "Implementing best practices for technical SEO, mobile optimization, and WordPress optimization.",
-      "Developing and executing effective link-building strategies to boost website authority.",
-      "Collaborating with the team to enhance off-site elements impacting SEO.",
-      "Optimizing existing content and contributing to keyword research for new content creation; creating guidelines for copywriters.",
-      "Analyzing SEO metrics, assessing trends, and contributing insights to problem-solving efforts.",
-      "Using Google Analytics, Similarweb, Ahrefs, and related tools to monitor and report performance.",
-      "Collaborating with the social media department to optimize profiles and increase visibility.",
+      "Participated as SEO in the new web-shop design and development implementation.",
+      "Developed and implemented a comprehensive SEO strategy for soldered.com.",
+      "Revamped site architecture, internal linking, meta tags, and product descriptions using keyword research and market insights to improve domain authority and SERP positioning.",
+      "Led on-page and off-page SEO initiatives, including backlink acquisition and general engagement to elevate Soldered’s brand presence among electronics professionals.",
     ],
   },
   {
     role: "Webflow Developer and SEO Specialist",
     company: "Ultralytics",
-    period: "May 2024 — August 2024",
+    period: "May 2024 — July 2024",
     bullets: [
       "Integrated Figma designs from the UI/UX designer into Webflow.",
       "Managed website localization.",
@@ -148,8 +159,8 @@ export const experiences = [
   },
   {
     role: "Project Leader",
-    company: "CADENAS Services d.o.o.",
-    period: "2018 — 2021",
+    company: "CADENAS PARTsolutions",
+    period: "May 2019 — October 2021",
     bullets: [
       "Managed a team of seven people responsible for configuring and publishing complex crane assemblies.",
       "Created HTML algorithms that allow project parameters to change.",
@@ -161,8 +172,8 @@ export const experiences = [
   },
   {
     role: "Project Assistant",
-    company: "CADENAS Services d.o.o.",
-    period: "2017 — 2018",
+    company: "CADENAS PARTsolutions",
+    period: "October 2017 — May 2019",
     bullets: [
       "Created and fixed 3D models and prepared tables for complex algorithms.",
       "Helped the programming team create and run the 3DCAD configurator.",
