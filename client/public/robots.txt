@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ridolijus.github.io/koupoli-site/sitemap.xml
