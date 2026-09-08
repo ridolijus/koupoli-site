@@ -33,6 +33,10 @@ jobs:
         run: pnpm vite build --base /koupoli-site/
       - name: Enable SPA fallback
         run: |
+          for route in about projects blog post/the-illusion-of-ai-productivity; do
+            mkdir -p "dist/public/$route"
+            cp dist/public/index.html "dist/public/$route/index.html"
+          done
           cat > dist/public/404.html <<'EOF'
           <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Redirecting…</title><script>const base='/koupoli-site';const route=window.location.pathname.startsWith(base)?window.location.pathname.slice(base.length):window.location.pathname;window.location.replace(base+'/?p='+encodeURIComponent(route+window.location.search+window.location.hash));</script></head><body></body></html>
           EOF
