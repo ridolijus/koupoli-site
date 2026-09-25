@@ -3,18 +3,18 @@ import SiteLayout from "@/components/SiteLayout";
 import { projects } from "@/lib/siteData";
 
 const logos: Record<string, string> = {
-  "GemBet": "https://cdn.prod.website-files.com/656060f33885bcdd76d46c6a/68b828c29187e5ee9f0a6a3c_gembet_logo_wide.png",
-  "GemPartner": "https://cdn.prod.website-files.com/656060f33885bcdd76d46c6a/66164f6be41cdc64e7ead39d_Logo.png",
-  "Maxtreme Sports": "https://cdn.prod.website-files.com/656060f33885bcdd76d46c6a/65ca4aa7d96b32bcf81d38d5_Untitled%20design%20(62).png",
-  "Soldered Electronics": "https://cdn.prod.website-files.com/656060f33885bcdd76d46c6a/68b82944992ee2db68f14ba2_soldered-logo-new.svg",
-  "Top Betting Sites Singapore": "https://cdn.prod.website-files.com/656060f33885bcdd76d46c6a/6852d40357981a3a0d6cd518_topbettingsites_logo.webp",
-  "Ultralytics": "https://cdn.prod.website-files.com/656060f33885bcdd76d46c6a/68593bfc25b57b3a3c489fe7_680a070c3b99253410dd3e62_Ultralytics_full_blue.svg",
-  "Alfa Gradnja": "https://cdn.prod.website-files.com/656060f33885bcdd76d46c6a/6564cdcc72e05235107a7762_alfa_logo.png",
-  "Parilica": "https://cdn.prod.website-files.com/656060f33885bcdd76d46c6a/6564cd7acfd642997c19acd7_logo.png",
-  "ProgeCAD": "https://cdn.prod.website-files.com/656060f33885bcdd76d46c6a/6564ccb7a79ca25e8de1ef12_progecad_logo-removebg-preview.png",
-  "CAD Global": "https://cdn.prod.website-files.com/656060f33885bcdd76d46c6a/6564ccf7c663f8c47bcfd9ce_CADglobal_transp_web-removebg-preview.png",
-  "CAD4Africa": "https://cdn.prod.website-files.com/656060f33885bcdd76d46c6a/6564d05011574ce71d79c204_logo_cad4africa-1.png",
-  "Thorns Underwear": "https://cdn.prod.website-files.com/656060f33885bcdd76d46c6a/6564d0d464777b81ed4eb999_Thorns-logo-2023.png",
+  "GemBet": "/assets/gembet-project-logo.png",
+  "GemPartner": "/assets/gempartner-logo.png",
+  "Maxtreme Sports": "/assets/maxtreme-sports-logo.png",
+  "Soldered Electronics": "/assets/soldered-project-logo.svg",
+  "Top Betting Sites Singapore": "/assets/top-betting-sites-project-logo.webp",
+  "Ultralytics": "/assets/ultralytics-project-logo.svg",
+  "Alfa Gradnja": "/assets/alfa-gradnja-project-logo.png",
+  "Parilica": "/assets/parilica-project-logo.png",
+  "ProgeCAD": "/assets/progecad-logo.png",
+  "CAD Global": "/assets/cad-global-project-logo.png",
+  "CAD4Africa": "/assets/cad4africa-logo.png",
+  "Thorns Underwear": "/assets/thorns-project-logo.png",
 };
 
 function displayUrl(url: string) { return url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""); }

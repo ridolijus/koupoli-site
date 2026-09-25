@@ -3,14 +3,14 @@ import SiteLayout from "@/components/SiteLayout";
 import { blogPost, site } from "@/lib/siteData";
 
 const clientLogos = [
-  ["Soldered", "https://cdn.prod.website-files.com/656060f33885bcdd76d46bed/68b813f652c6c7a82afa4738_soldered-logo-new.svg"],
-  ["GemBet", "https://cdn.prod.website-files.com/656060f33885bcdd76d46bed/68b814fcca7b6d5e2d22da33_gembet_logo_wide.png"],
-  ["Top Betting Sites", "https://cdn.prod.website-files.com/656060f33885bcdd76d46bed/68b8156a2c1b7928944188f8_Logo-White-Lockup.webp"],
-  ["Ultralytics", "https://cdn.prod.website-files.com/656060f33885bcdd76d46bed/68b8161e66943b9892765d90_ultralytics_logo.svg"],
-  ["Alfa Gradnja", "https://cdn.prod.website-files.com/656060f33885bcdd76d46bed/68b81a53960c34a8b1ab3996_alfa_gradnja_logo.png"],
-  ["Parilica", "https://cdn.prod.website-files.com/656060f33885bcdd76d46bed/68b81a880fc0f9f66d8f2d62_parilica_logo.png"],
-  ["CAD Global", "https://cdn.prod.website-files.com/656060f33885bcdd76d46bed/68b81ae1adcbf0cc7431fc1f_cad_global_logo.png"],
-  ["Thorns", "https://cdn.prod.website-files.com/656060f33885bcdd76d46bed/68b81aeec2304902beb76c0c_thorns_logo.png"],
+  ["Soldered", "/assets/soldered-logo.svg"],
+  ["GemBet", "/assets/gembet-logo.png"],
+  ["Top Betting Sites", "/assets/top-betting-sites-logo.webp"],
+  ["Ultralytics", "/assets/ultralytics-logo.svg"],
+  ["Alfa Gradnja", "/assets/alfa-gradnja-logo.png"],
+  ["Parilica", "/assets/parilica-logo.png"],
+  ["CAD Global", "/assets/cad-global-logo.png"],
+  ["Thorns", "/assets/thorns-logo.png"],
 ] as const;
 
 const offerItems = [

@@ -30,7 +30,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Build static site
-        run: pnpm vite build --base /koupoli-site/
+        run: pnpm vite build --base /
+      - name: Add first-party media and custom domain
+        run: |
+          cp -R site-assets/assets/. dist/public/assets/
+          cp site-assets/CNAME dist/public/CNAME
       - name: Enable SPA fallback
         run: |
           for route in about projects blog post/the-illusion-of-ai-productivity; do
@@ -38,7 +42,7 @@ jobs:
             cp dist/public/index.html "dist/public/$route/index.html"
           done
           cat > dist/public/404.html <<'EOF'
-          <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Redirecting…</title><script>const base='/koupoli-site';const route=window.location.pathname.startsWith(base)?window.location.pathname.slice(base.length):window.location.pathname;window.location.replace(base+'/?p='+encodeURIComponent(route+window.location.search+window.location.hash));</script></head><body></body></html>
+          <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Redirecting…</title><script>const route=window.location.pathname;window.location.replace('/?p='+encodeURIComponent(route+window.location.search+window.location.hash));</script></head><body></body></html>
           EOF
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
