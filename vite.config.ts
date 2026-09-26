@@ -13,6 +13,7 @@ import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
 const PROJECT_ROOT = import.meta.dirname;
 const LOG_DIR = path.join(PROJECT_ROOT, ".manus-logs");
+const SITE_ASSET_DIR = path.join(PROJECT_ROOT, "site-assets", "assets");
 const MAX_LOG_SIZE_BYTES = 1 * 1024 * 1024; // 1MB per log file
 const TRIM_TARGET_BYTES = Math.floor(MAX_LOG_SIZE_BYTES * 0.6); // Trim to 60% to avoid constant re-trimming
 
@@ -203,7 +204,37 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+function vitePluginRepositoryAssets(): Plugin {
+  return {
+    name: "repository-assets",
+    configureServer(server: ViteDevServer) {
+      server.middlewares.use("/assets", (req, res, next) => {
+        const requestedPath = decodeURIComponent(req.url?.split("?")[0] || "").replace(/^\/+/, "");
+        const assetPath = path.resolve(SITE_ASSET_DIR, requestedPath);
+
+        if (!assetPath.startsWith(`${SITE_ASSET_DIR}${path.sep}`) || !fs.existsSync(assetPath) || fs.statSync(assetPath).isDirectory()) {
+          return next();
+        }
+
+        const extension = path.extname(assetPath).toLowerCase();
+        const contentTypes: Record<string, string> = {
+          ".avif": "image/avif",
+          ".gif": "image/gif",
+          ".jpeg": "image/jpeg",
+          ".jpg": "image/jpeg",
+          ".png": "image/png",
+          ".svg": "image/svg+xml",
+          ".webp": "image/webp",
+        };
+
+        res.setHeader("Content-Type", contentTypes[extension] || "application/octet-stream");
+        fs.createReadStream(assetPath).pipe(res);
+      });
+    },
+  };
+}
+
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy(), vitePluginRepositoryAssets()];
 
 export default defineConfig({
   plugins,
