@@ -6,6 +6,7 @@ import CroatianHome from "./pages/CroatianHome";
 import GrowthAbout from "./pages/GrowthAbout";
 import GrowthBlog from "./pages/GrowthBlog";
 import GrowthBlogPost from "./pages/GrowthBlogPost";
+import GrowthContact from "./pages/GrowthContact";
 import GrowthHome from "./pages/GrowthHome";
 import GrowthProjects from "./pages/GrowthProjects";
 
@@ -20,6 +21,8 @@ function Router() {
     <Route path="/projects" component={GrowthProjects} />
     <Route path="/blog" component={GrowthBlog} />
     <Route path="/post/the-illusion-of-ai-productivity" component={GrowthBlogPost} />
+    <Route path="/contact" component={GrowthContact} />
+    <Route path="/contact/" component={GrowthContact} />
     <Route><GrowthHome /></Route>
   </Switch></WouterRouter>;
 }

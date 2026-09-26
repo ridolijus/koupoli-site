@@ -2,7 +2,6 @@ import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { useEffect } from "react";
 import { Link } from "wouter";
 import GrowthLayout from "@/components/GrowthLayout";
-import { site } from "@/lib/siteData";
 
 type Locale = "en" | "hr";
 
@@ -211,11 +210,11 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
           <h1>{copy.heroTitle}</h1>
           <p className="growth-lead">{copy.heroLead}</p>
           <div className="growth-actions">
-            <a className="growth-button growth-button-primary" href={`mailto:${site.email}?subject=Organic%20launch%20enquiry`}>{copy.primaryCta}<Arrow /></a>
+            <Link className="growth-button growth-button-primary" href="/contact">{copy.primaryCta}<Arrow /></Link>
             <a className="growth-text-link" href="#offers">{copy.secondaryCta}<ArrowDownRight size={17} /></a>
           </div>
         </div>
-        <figure className="growth-hero-graphic"><img src="/assets/koupoli-search-systems-infographic.webp" alt="Abstract map of technical foundation, useful content, and search visibility" /></figure>
+        <figure className="growth-hero-graphic"><img src="/assets/koupoli-search-systems-infographic.webp?v=transparent" alt="Abstract map of technical foundation, useful content, and search visibility" /></figure>
       </div>
     </section>
 
@@ -260,7 +259,7 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
             <p className="growth-offer-description">{offer.description}</p>
             <ul>{offer.deliverables.map((item) => <li key={item}>{item}</li>)}</ul>
             <p className="growth-offer-fit">{offer.fit}</p>
-            <a href={`mailto:${site.email}?subject=Koupoli%20enquiry`} className="growth-offer-link">{copy.primaryCta}<Arrow /></a>
+            <Link href="/contact" className="growth-offer-link">{copy.primaryCta}<Arrow /></Link>
           </article>)}
         </div>
       </div>
@@ -303,7 +302,7 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
     </section>
 
     <section className="growth-final-section" id="contact">
-      <div className="growth-container growth-final-inner"><p className="growth-kicker">Koupoli</p><h2>{copy.finalTitle}</h2><p>{copy.finalBody}</p><a className="growth-button growth-button-inverse" href={`mailto:${site.email}?subject=Koupoli%20enquiry`}>{copy.finalCta}<Arrow /></a></div>
+      <div className="growth-container growth-final-inner"><p className="growth-kicker">Koupoli</p><h2>{copy.finalTitle}</h2><p>{copy.finalBody}</p><Link className="growth-button growth-button-inverse" href="/contact">{copy.finalCta}<Arrow /></Link></div>
     </section>
   </GrowthLayout>;
 }

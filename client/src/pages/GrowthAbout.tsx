@@ -12,9 +12,9 @@ export default function GrowthAbout() {
           <p className="growth-kicker">About Koupoli</p>
           <h1>Strategy is only useful when it reaches the live site.</h1>
           <p>Koupoli is led by Karlo Ridan, an SEO specialist who works across strategy, technical implementation, content systems, and the teams responsible for making them real.</p>
-          <div className="growth-actions"><Link className="growth-button growth-button-primary" href="/projects">View selected work</Link><a className="growth-text-link" href="/#contact">Start a conversation</a></div>
+          <div className="growth-actions"><Link className="growth-button growth-button-primary" href="/projects">View selected work</Link><Link className="growth-text-link" href="/contact">Start a conversation</Link></div>
         </div>
-        <figure className="growth-feature-visual"><img src="/assets/koupoli-about-method-infographic.webp" alt="Abstract editorial map connecting strategy and implementation" /></figure>
+        <figure className="growth-feature-visual"><img src="/assets/koupoli-about-method-infographic.webp?v=transparent" alt="Abstract editorial map connecting strategy and implementation" /></figure>
       </div>
     </section>
 

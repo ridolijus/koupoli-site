@@ -10,6 +10,7 @@ const routes = [
   ["/projects/", "SEO and Organic Growth Projects | Koupoli", "Selected Koupoli projects across technical SEO, content strategy, Webflow development, migration support, and organic growth.", "en"],
   ["/blog/", "Organic Growth Notes | Koupoli", "Koupoli field notes on SEO, AI search, technical implementation, content systems, and organic growth.", "en"],
   ["/post/the-illusion-of-ai-productivity/", "The Illusion of AI Productivity | Koupoli", "A Koupoli field note on AI productivity, shortcuts, and the human work required to make complex projects real.", "en"],
+  ["/contact/", "Start a Conversation | Koupoli", "Tell Koupoli about your business, organic growth goal, and current constraint to begin a focused SEO and AI search conversation.", "en"],
 ];
 
 function createPage(route, title, description, lang) {
