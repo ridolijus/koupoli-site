@@ -37,13 +37,7 @@ jobs:
           cp site-assets/CNAME dist/public/CNAME
       - name: Enable SPA fallback
         run: |
-          for route in hr about projects blog post/the-illusion-of-ai-productivity; do
-            mkdir -p "dist/public/$route"
-            cp dist/public/index.html "dist/public/$route/index.html"
-          done
-          cat > dist/public/404.html <<'EOF'
-          <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Redirecting…</title><script>const route=window.location.pathname;window.location.replace('/?p='+encodeURIComponent(route+window.location.search+window.location.hash));</script></head><body></body></html>
-          EOF
+          node scripts/generate-static-routes.mjs
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

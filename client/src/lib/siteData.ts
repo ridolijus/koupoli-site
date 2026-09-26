@@ -1,7 +1,7 @@
 export const site = {
   name: "Koupoli",
   founder: "Karlo",
-  email: "hello@koupoli.com",
+  email: "karlo.rida@gmail.com",
   profileImage: "/assets/karlo-profile.png",
   aboutImage: "/assets/slavonski-brod-tvrdava.jpg",
   articleThumbnail: "/assets/ai-productivity-thumbnail.webp",
@@ -99,7 +99,7 @@ export const experiences = [
   {
     role: "Search Engine Optimization Consultant",
     company: "jt digital",
-    period: "March 2026 — Present",
+    period: "March 2026 - Present",
     intro: "Contract · Slavonski Brod",
     bullets: [
       "Collaborating and advising on on-page and off-page SEO aspects for multiple clients.",
@@ -108,7 +108,7 @@ export const experiences = [
   {
     role: "Search Engine Optimization Specialist",
     company: "Ludicrum",
-    period: "February 2024 — Present",
+    period: "February 2024 - Present",
     bullets: [
       "Coordinated a full migration from a one-stop domain to geo-specialised sub-domains.",
       "Implemented technical SEO, mobile optimisation, and WordPress optimisation best practices.",
@@ -120,8 +120,8 @@ export const experiences = [
   },
   {
     role: "Founder / SEO and Webflow Specialist",
-    company: "Koupoli — SEO and Webflow Design Agency",
-    period: "November 2020 — Present",
+    company: "Koupoli - SEO and Webflow Design Agency",
+    period: "November 2020 - Present",
     intro: "SEO Specialist · Tools used: Semrush, Ahrefs, SEOlyze, Google Search Console, Google Analytics, Screaming Frog. Creating snippets using Schema.org and Google TagManager.",
     bullets: [
       "Analyzing and creating in-depth SEO audits with the creation of briefing tickets and rounds of reviews.",
@@ -138,7 +138,7 @@ export const experiences = [
   {
     role: "Search Engine Optimization Specialist",
     company: "Soldered Electronics",
-    period: "July 2025 — February 2026",
+    period: "July 2025 - February 2026",
     bullets: [
       "Participated as SEO in the new web-shop design and development implementation.",
       "Developed and implemented a comprehensive SEO strategy for soldered.com.",
@@ -149,7 +149,7 @@ export const experiences = [
   {
     role: "Webflow Developer and SEO Specialist",
     company: "Ultralytics",
-    period: "May 2024 — July 2024",
+    period: "May 2024 - July 2024",
     bullets: [
       "Integrated Figma designs from the UI/UX designer into Webflow.",
       "Managed website localization.",
@@ -160,7 +160,7 @@ export const experiences = [
   {
     role: "Project Leader",
     company: "CADENAS PARTsolutions",
-    period: "May 2019 — October 2021",
+    period: "May 2019 - October 2021",
     bullets: [
       "Managed a team of seven people responsible for configuring and publishing complex crane assemblies.",
       "Created HTML algorithms that allow project parameters to change.",
@@ -173,7 +173,7 @@ export const experiences = [
   {
     role: "Project Assistant",
     company: "CADENAS PARTsolutions",
-    period: "October 2017 — May 2019",
+    period: "October 2017 - May 2019",
     bullets: [
       "Created and fixed 3D models and prepared tables for complex algorithms.",
       "Helped the programming team create and run the 3DCAD configurator.",

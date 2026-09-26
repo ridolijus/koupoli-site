@@ -2,6 +2,7 @@ import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { useEffect } from "react";
 import { Link } from "wouter";
 import GrowthLayout from "@/components/GrowthLayout";
+import { site } from "@/lib/siteData";
 
 type Locale = "en" | "hr";
 
@@ -96,14 +97,14 @@ const copies: Record<Locale, Copy> = {
       { title: "Measurement", description: "Track technical health, qualified demand, visibility, and the questions the market is actually asking." },
     ],
     insightEyebrow: "Built for the market you are entering",
-    insightTitle: "Croatia and the Balkans first. Europe and the US through English authority.",
-    insightBody: "Local buyers still search with familiar SEO language. International buyers increasingly research AI SEO, AI search visibility, technical SEO, and generative engine optimization. The site and operating model should speak to both without pretending they are the same market.",
+    insightTitle: "Organic growth needs a system that can travel across markets.",
+    insightBody: "Search language changes by category and audience. The underlying work does not: clear technical foundations, useful information architecture, proof, and a way to measure whether the right people can find you.",
     insightTags: ["SEO optimizacija", "SEO consulting", "Technical SEO", "AI SEO", "AI search visibility", "Generative engine optimization"],
     proofEyebrow: "Grounded in real delivery",
     proofTitle: "A specialist who can connect the strategy to the implementation.",
     proofBody: "Karlo’s work spans technical SEO, migrations, content systems, Webflow development, and cross-functional delivery. That range matters at launch, where an insight only counts when it reaches the live site.",
     proofPoints: [
-      { label: "Search performance", value: "60k", detail: "clicks supported at a sustained 30–40% CTR" },
+      { label: "Search performance", value: "60k", detail: "clicks supported at a sustained 30-40% CTR" },
       { label: "Organic foundation", value: "300k", detail: "click project built on durable SEO fundamentals" },
       { label: "Experience", value: "8+", detail: "years across technical, product, and organic growth work" },
     ],
@@ -164,14 +165,14 @@ const copies: Record<Locale, Copy> = {
       { title: "Mjerenje", description: "Pratimo tehničko zdravlje, kvalificiranu potražnju, vidljivost i pitanja koja tržište zaista postavlja." },
     ],
     insightEyebrow: "Izgrađeno za tržište na koje ulazite",
-    insightTitle: "Hrvatska i Balkan prvo. Europa i SAD kroz autoritet na engleskom.",
-    insightBody: "Lokalni kupci i dalje traže poznatim SEO jezikom. Međunarodni kupci sve češće istražuju AI SEO, AI vidljivost, tehnički SEO i generative engine optimization. Web i operativni model trebaju govoriti objema publikama bez pretvaranja da su isto tržište.",
+    insightTitle: "Organski rast treba sustav koji može pratiti širenje na nova tržišta.",
+    insightBody: "Jezik pretrage mijenja se prema kategoriji i publici. Temeljni rad ne: jasna tehnička osnova, korisna informacijska arhitektura, dokazi i način mjerenja mogu li vas pravi ljudi pronaći.",
     insightTags: ["SEO optimizacija", "SEO savjetovanje", "Tehnički SEO", "AI SEO", "AI vidljivost", "Generative engine optimization"],
     proofEyebrow: "Temeljeno na stvarnoj izvedbi",
     proofTitle: "Specijalist koji može spojiti strategiju s implementacijom.",
     proofBody: "Karlov rad obuhvaća tehnički SEO, migracije, sadržajne sustave, Webflow razvoj i međufunkcionalnu izvedbu. To je važno pri lansiranju, gdje uvid vrijedi tek kada dođe do žive stranice.",
     proofPoints: [
-      { label: "Rezultati u pretrazi", value: "60k", detail: "klikova uz održani CTR od 30–40%" },
+      { label: "Rezultati u pretrazi", value: "60k", detail: "klikova uz održani CTR od 30-40%" },
       { label: "Organski temelj", value: "300k", detail: "klikova na projektu izgrađenom na dugotrajnim SEO osnovama" },
       { label: "Iskustvo", value: "8+", detail: "godina kroz tehnički, produktni i organski rast" },
     ],
@@ -198,7 +199,7 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
   useEffect(() => {
     const description = document.querySelector('meta[name="description"]');
     document.documentElement.lang = locale;
-    document.title = locale === "hr" ? "Koupoli — SEO, organski rast i AI pretraga" : "Koupoli — Organic growth, SEO and AI search";
+    document.title = locale === "hr" ? "Koupoli | SEO, organski rast i AI pretraga" : "Koupoli | Organic growth, SEO and AI search";
     description?.setAttribute("content", locale === "hr" ? "Koupoli pomaže ambicioznim timovima rasti organski uz SEO strategiju, tehničku izvedbu i spremnost za AI pretragu." : "Koupoli helps ambitious teams launch and grow organically through SEO strategy, technical execution, and AI-search readiness.");
   }, [locale]);
 
@@ -210,11 +211,11 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
           <h1>{copy.heroTitle}</h1>
           <p className="growth-lead">{copy.heroLead}</p>
           <div className="growth-actions">
-            <a className="growth-button growth-button-primary" href="mailto:hello@koupoli.com?subject=Organic%20launch%20enquiry">{copy.primaryCta}<Arrow /></a>
+            <a className="growth-button growth-button-primary" href={`mailto:${site.email}?subject=Organic%20launch%20enquiry`}>{copy.primaryCta}<Arrow /></a>
             <a className="growth-text-link" href="#offers">{copy.secondaryCta}<ArrowDownRight size={17} /></a>
           </div>
         </div>
-        <div className="growth-hero-mark" aria-hidden="true"><img src="/assets/koupoli-mark.png" alt="" /></div>
+        <figure className="growth-hero-graphic"><img src="/assets/koupoli-search-systems-infographic.webp" alt="Abstract map of technical foundation, useful content, and search visibility" /></figure>
       </div>
     </section>
 
@@ -259,7 +260,7 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
             <p className="growth-offer-description">{offer.description}</p>
             <ul>{offer.deliverables.map((item) => <li key={item}>{item}</li>)}</ul>
             <p className="growth-offer-fit">{offer.fit}</p>
-            <a href="mailto:hello@koupoli.com?subject=Koupoli%20enquiry" className="growth-offer-link">{copy.primaryCta}<Arrow /></a>
+            <a href={`mailto:${site.email}?subject=Koupoli%20enquiry`} className="growth-offer-link">{copy.primaryCta}<Arrow /></a>
           </article>)}
         </div>
       </div>
@@ -302,7 +303,7 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
     </section>
 
     <section className="growth-final-section" id="contact">
-      <div className="growth-container growth-final-inner"><p className="growth-kicker">Koupoli</p><h2>{copy.finalTitle}</h2><p>{copy.finalBody}</p><a className="growth-button growth-button-inverse" href="mailto:hello@koupoli.com?subject=Koupoli%20enquiry">{copy.finalCta}<Arrow /></a></div>
+      <div className="growth-container growth-final-inner"><p className="growth-kicker">Koupoli</p><h2>{copy.finalTitle}</h2><p>{copy.finalBody}</p><a className="growth-button growth-button-inverse" href={`mailto:${site.email}?subject=Koupoli%20enquiry`}>{copy.finalCta}<Arrow /></a></div>
     </section>
   </GrowthLayout>;
 }
