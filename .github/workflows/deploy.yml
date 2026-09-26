@@ -37,7 +37,7 @@ jobs:
           cp site-assets/CNAME dist/public/CNAME
       - name: Enable SPA fallback
         run: |
-          for route in about projects blog post/the-illusion-of-ai-productivity; do
+          for route in hr about projects blog post/the-illusion-of-ai-productivity; do
             mkdir -p "dist/public/$route"
             cp dist/public/index.html "dist/public/$route/index.html"
           done

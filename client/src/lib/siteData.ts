@@ -4,8 +4,8 @@ export const site = {
   email: "hello@koupoli.com",
   profileImage: "/assets/karlo-profile.png",
   aboutImage: "/assets/slavonski-brod-tvrdava.jpg",
-  articleThumbnail: "/assets/ai-productivity-thumbnail.png",
-  articleImage: "/assets/ai-productivity-article.png",
+  articleThumbnail: "/assets/ai-productivity-thumbnail.webp",
+  articleImage: "/assets/ai-productivity-article.webp",
   socials: [
     { label: "Instagram", href: "https://www.instagram.com/ridolijus/" },
     { label: "X / Twitter", href: "https://twitter.com/ridolijus" },
