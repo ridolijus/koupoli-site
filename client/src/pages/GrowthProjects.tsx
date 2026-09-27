@@ -27,7 +27,7 @@ export default function GrowthProjects() {
     <section className="growth-page-hero growth-projects-page-hero">
       <div className="growth-container growth-page-hero-grid">
         <div><p className="growth-kicker">Selected projects</p><h1>Evidence from work that had to perform beyond a presentation.</h1><p>A cross-section of projects involving technical SEO, content optimisation, Webflow development, migration support, research, and practical delivery alongside client teams.</p></div>
-        <figure className="growth-feature-visual"><img src="/assets/koupoli-project-evidence-infographic.webp?v=transparent" alt="Abstract editorial evidence map for organic growth projects" /></figure>
+        <figure className="growth-feature-visual"><img src="/assets/koupoli-project-evidence-infographic.webp?v=full-panel" alt="Editorial evidence map for organic growth projects" /></figure>
       </div>
     </section>
 

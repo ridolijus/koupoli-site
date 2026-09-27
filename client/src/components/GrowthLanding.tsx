@@ -214,7 +214,7 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
             <a className="growth-text-link" href="#offers">{copy.secondaryCta}<ArrowDownRight size={17} /></a>
           </div>
         </div>
-        <figure className="growth-hero-graphic"><img src="/assets/koupoli-search-systems-infographic.webp?v=transparent" alt="Abstract map of technical foundation, useful content, and search visibility" /></figure>
+        <figure className="growth-hero-graphic"><img src="/assets/koupoli-search-systems-infographic.webp?v=full-panel" alt="Editorial map of technical foundation, useful content, and search visibility" /></figure>
       </div>
     </section>
 

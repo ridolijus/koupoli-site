@@ -14,7 +14,7 @@ export default function GrowthAbout() {
           <p>Koupoli is led by Karlo Ridan, an SEO specialist who works across strategy, technical implementation, content systems, and the teams responsible for making them real.</p>
           <div className="growth-actions"><Link className="growth-button growth-button-primary" href="/projects">View selected work</Link><Link className="growth-text-link" href="/contact">Start a conversation</Link></div>
         </div>
-        <figure className="growth-feature-visual"><img src="/assets/koupoli-about-method-infographic.webp?v=transparent" alt="Abstract editorial map connecting strategy and implementation" /></figure>
+        <figure className="growth-feature-visual"><img src="/assets/koupoli-about-method-infographic.webp?v=full-panel" alt="Editorial blueprint connecting strategy and implementation" /></figure>
       </div>
     </section>
 
