@@ -1,0 +1,6 @@
+# Structured data implementation sources
+
+- Google recommends JSON-LD because it is easiest to implement and maintain at scale. Structured data must describe visible page content, and markup should be complete and accurate rather than overly broad. Source: <https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data> (retrieved 28 September 2026).
+- Google Article guidance recommends using `BlogPosting` or `Article` with applicable properties including `headline`, a representative crawlable `image`, `datePublished`, `dateModified`, and an author represented as a `Person` or `Organization` with a URL or `sameAs`. Source: <https://developers.google.com/search/docs/appearance/structured-data/article> (retrieved 28 September 2026).
+- Google removed FAQ rich result documentation in June 2026 because FAQ rich results are no longer shown in Google Search. FAQPage can remain useful as semantic markup where the visible page is genuinely a FAQ, but it must not be represented as a rich-result tactic. Source: <https://developers.google.com/search/docs/appearance/structured-data/faqpage> (retrieved 28 September 2026).
+- Schema.org defines `FAQPage` as a `WebPage` presenting a set of frequently asked questions with `mainEntity` questions and accepted answers. Source: <https://schema.org/FAQPage> (retrieved 28 September 2026).

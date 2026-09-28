@@ -38,6 +38,8 @@ jobs:
       - name: Enable SPA fallback
         run: |
           node scripts/generate-static-routes.mjs
+      - name: Validate structured data
+        run: node scripts/validate-structured-data.mjs
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
