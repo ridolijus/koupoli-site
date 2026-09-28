@@ -35,6 +35,8 @@ jobs:
         run: |
           cp -R site-assets/assets/. dist/public/assets/
           cp site-assets/CNAME dist/public/CNAME
+      - name: Pre-render public pages
+        run: pnpm exec tsx --tsconfig tsconfig.prerender.json scripts/prerender-static-routes.tsx
       - name: Enable SPA fallback
         run: |
           node scripts/generate-static-routes.mjs

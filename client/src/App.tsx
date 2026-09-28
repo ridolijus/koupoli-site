@@ -10,10 +10,11 @@ import GrowthContact from "./pages/GrowthContact";
 import GrowthHome from "./pages/GrowthHome";
 import GrowthProjects from "./pages/GrowthProjects";
 
-function Router() {
-  const base = import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL.replace(/\/$/, "");
+function Router({ ssrPath }: { ssrPath?: string }) {
+  const baseUrl = import.meta.env?.BASE_URL ?? "/";
+  const base = baseUrl === "/" ? "" : baseUrl.replace(/\/$/, "");
 
-  return <WouterRouter base={base}><Switch>
+  return <WouterRouter base={base} ssrPath={ssrPath}><Switch>
     <Route path="/" component={GrowthHome} />
     <Route path="/hr" component={CroatianHome} />
     <Route path="/hr/" component={CroatianHome} />
@@ -27,6 +28,6 @@ function Router() {
   </Switch></WouterRouter>;
 }
 
-export default function App() {
-  return <ErrorBoundary><TooltipProvider><Toaster /><Router /></TooltipProvider></ErrorBoundary>;
+export default function App({ ssrPath }: { ssrPath?: string }) {
+  return <ErrorBoundary><TooltipProvider><Toaster /><Router ssrPath={ssrPath} /></TooltipProvider></ErrorBoundary>;
 }

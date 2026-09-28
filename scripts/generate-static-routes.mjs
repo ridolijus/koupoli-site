@@ -3,7 +3,6 @@ import path from "node:path";
 
 const siteUrl = "https://koupoli.com";
 const output = path.resolve("dist/public");
-const source = fs.readFileSync(path.join(output, "index.html"), "utf8");
 const organizationId = `${siteUrl}/#organization`;
 const personId = `${siteUrl}/about/#karlo-ridan`;
 const websiteId = `${siteUrl}/#website`;
@@ -53,6 +52,10 @@ const projects = [
 
 function absolute(url) {
   return url.startsWith("http") ? url : `${siteUrl}${url}`;
+}
+
+function escapeAttribute(value) {
+  return value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
 function breadcrumb(route, name) {
@@ -210,23 +213,35 @@ function schemaFor(routeData) {
   return { "@context": "https://schema.org", "@graph": graph };
 }
 
-function jsonLd(schema) {
-  return JSON.stringify(schema).replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026");
+function socialImage(type) {
+  if (type === "about") return absolute("/assets/koupoli-about-method-infographic.webp");
+  if (type === "projects") return absolute("/assets/koupoli-project-evidence-infographic.webp");
+  if (type === "article") return absolute("/assets/ai-productivity-article.webp");
+  return absolute("/assets/koupoli-search-systems-infographic.webp");
 }
 
-function createPage(routeData) {
+function pageHead(routeData, canonical) {
+  const image = socialImage(routeData.type);
+  const locale = routeData.lang === "hr" ? "hr_HR" : "en_US";
+  const alternate = routeData.type === "home" || routeData.type === "homeHr"
+    ? `\n    <link rel="alternate" hreflang="en" href="${siteUrl}/" />\n    <link rel="alternate" hreflang="hr" href="${siteUrl}/hr/" />\n    <link rel="alternate" hreflang="x-default" href="${siteUrl}/" />`
+    : "";
+  const articleMeta = routeData.type === "article" ? '\n    <meta property="article:published_time" content="2025-06-20T00:00:00+02:00" />' : "";
+  return `<link rel="canonical" href="${canonical}" />${alternate}\n    <meta property="og:type" content="${routeData.type === "article" ? "article" : "website"}" />\n    <meta property="og:site_name" content="Koupoli" />\n    <meta property="og:locale" content="${locale}" />\n    <meta property="og:url" content="${canonical}" />\n    <meta property="og:title" content="${escapeAttribute(routeData.title)}" />\n    <meta property="og:description" content="${escapeAttribute(routeData.description)}" />\n    <meta property="og:image" content="${image}" />\n    <meta name="twitter:card" content="summary_large_image" />\n    <meta name="twitter:title" content="${escapeAttribute(routeData.title)}" />\n    <meta name="twitter:description" content="${escapeAttribute(routeData.description)}" />\n    <meta name="twitter:image" content="${image}" />${articleMeta}\n    <script type="application/ld+json">${JSON.stringify(schemaFor(routeData)).replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026")}</script>`;
+}
+
+function createPage(routeData, destination) {
+  const source = fs.readFileSync(destination, "utf8");
   const canonical = absolute(routeData.route);
-  const schema = jsonLd(schemaFor(routeData));
   return source
     .replace('<html lang="en">', `<html lang="${routeData.lang}">`)
     .replace(/<title>[^<]*<\/title>/, `<title>${routeData.title}</title>`)
-    .replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${routeData.description}" />\n    <link rel="canonical" href="${canonical}" />\n    <script type="application/ld+json">${schema}</script>`);
+    .replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${escapeAttribute(routeData.description)}" />\n    ${pageHead(routeData, canonical)}`);
 }
 
 for (const routeData of routes) {
   const destination = routeData.route === "/" ? path.join(output, "index.html") : path.join(output, routeData.route, "index.html");
-  fs.mkdirSync(path.dirname(destination), { recursive: true });
-  fs.writeFileSync(destination, createPage(routeData));
+  fs.writeFileSync(destination, createPage(routeData, destination));
 }
 
-fs.writeFileSync(path.join(output, "404.html"), '<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Redirecting</title><script>const route=window.location.pathname;window.location.replace("/?p="+encodeURIComponent(route+window.location.search+window.location.hash));</script></head><body></body></html>');
+fs.writeFileSync(path.join(output, "404.html"), '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Not found</title></head><body><h1>Page not found</h1></body></html>');
