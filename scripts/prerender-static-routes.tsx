@@ -5,7 +5,20 @@ import App from "../client/src/App";
 
 const output = path.resolve("dist/public");
 const template = fs.readFileSync(path.join(output, "index.html"), "utf8");
-const routes = ["/", "/hr/", "/about/", "/projects/", "/blog/", "/post/the-illusion-of-ai-productivity/", "/contact/"];
+const routes = [
+  "/",
+  "/hr/",
+  "/about/",
+  "/hr/about/",
+  "/projects/",
+  "/hr/projects/",
+  "/blog/",
+  "/hr/blog/",
+  "/post/the-illusion-of-ai-productivity/",
+  "/hr/post/the-illusion-of-ai-productivity/",
+  "/contact/",
+  "/hr/contact/",
+];
 
 for (const route of routes) {
   const destination = route === "/" ? path.join(output, "index.html") : path.join(output, route, "index.html");

@@ -15,15 +15,29 @@ function Router({ ssrPath }: { ssrPath?: string }) {
   const base = baseUrl === "/" ? "" : baseUrl.replace(/\/$/, "");
 
   return <WouterRouter base={base} ssrPath={ssrPath}><Switch>
-    <Route path="/" component={GrowthHome} />
-    <Route path="/hr" component={CroatianHome} />
-    <Route path="/hr/" component={CroatianHome} />
-    <Route path="/about" component={GrowthAbout} />
-    <Route path="/projects" component={GrowthProjects} />
-    <Route path="/blog" component={GrowthBlog} />
-    <Route path="/post/the-illusion-of-ai-productivity" component={GrowthBlogPost} />
-    <Route path="/contact" component={GrowthContact} />
-    <Route path="/contact/" component={GrowthContact} />
+    <Route path="/"><GrowthHome /></Route>
+    <Route path="/hr"><CroatianHome /></Route>
+    <Route path="/hr/"><CroatianHome /></Route>
+    <Route path="/about"><GrowthAbout /></Route>
+    <Route path="/about/"><GrowthAbout /></Route>
+    <Route path="/hr/about"><GrowthAbout locale="hr" /></Route>
+    <Route path="/hr/about/"><GrowthAbout locale="hr" /></Route>
+    <Route path="/projects"><GrowthProjects /></Route>
+    <Route path="/projects/"><GrowthProjects /></Route>
+    <Route path="/hr/projects"><GrowthProjects locale="hr" /></Route>
+    <Route path="/hr/projects/"><GrowthProjects locale="hr" /></Route>
+    <Route path="/blog"><GrowthBlog /></Route>
+    <Route path="/blog/"><GrowthBlog /></Route>
+    <Route path="/hr/blog"><GrowthBlog locale="hr" /></Route>
+    <Route path="/hr/blog/"><GrowthBlog locale="hr" /></Route>
+    <Route path="/post/the-illusion-of-ai-productivity"><GrowthBlogPost /></Route>
+    <Route path="/post/the-illusion-of-ai-productivity/"><GrowthBlogPost /></Route>
+    <Route path="/hr/post/the-illusion-of-ai-productivity"><GrowthBlogPost locale="hr" /></Route>
+    <Route path="/hr/post/the-illusion-of-ai-productivity/"><GrowthBlogPost locale="hr" /></Route>
+    <Route path="/contact"><GrowthContact /></Route>
+    <Route path="/contact/"><GrowthContact /></Route>
+    <Route path="/hr/contact"><GrowthContact locale="hr" /></Route>
+    <Route path="/hr/contact/"><GrowthContact locale="hr" /></Route>
     <Route><GrowthHome /></Route>
   </Switch></WouterRouter>;
 }

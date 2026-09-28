@@ -8,13 +8,18 @@ const personId = `${siteUrl}/about/#karlo-ridan`;
 const websiteId = `${siteUrl}/#website`;
 
 const routes = [
-  { route: "/", title: "Koupoli | Organic Growth, SEO and AI Search", description: "Koupoli helps ambitious teams launch and grow organically through SEO strategy, technical execution, and AI search readiness.", lang: "en", type: "home" },
-  { route: "/hr/", title: "Koupoli | SEO, organski rast i AI pretraga", description: "Koupoli pomaže ambicioznim timovima rasti organski uz SEO strategiju, tehničku izvedbu i spremnost za AI pretragu.", lang: "hr", type: "homeHr" },
-  { route: "/about/", title: "About Karlo Ridan | Koupoli", description: "Meet Karlo Ridan, the SEO and organic growth specialist behind Koupoli. Strategy, technical SEO, content systems, and implementation.", lang: "en", type: "about" },
-  { route: "/projects/", title: "SEO and Organic Growth Projects | Koupoli", description: "Selected Koupoli projects across technical SEO, content strategy, Webflow development, migration support, and organic growth.", lang: "en", type: "projects" },
-  { route: "/blog/", title: "Organic Growth Notes | Koupoli", description: "Koupoli field notes on SEO, AI search, technical implementation, content systems, and organic growth.", lang: "en", type: "blog" },
-  { route: "/post/the-illusion-of-ai-productivity/", title: "The Illusion of AI Productivity | Koupoli", description: "A Koupoli field note on AI productivity, shortcuts, and the human work required to make complex projects real.", lang: "en", type: "article" },
-  { route: "/contact/", title: "Start a Conversation | Koupoli", description: "Tell Koupoli about your business, organic growth goal, and current constraint to begin a focused SEO and AI search conversation.", lang: "en", type: "contact" },
+  { route: "/", alternate: "/hr/", title: "Koupoli | Organic Growth, SEO and AI Search", description: "Koupoli helps ambitious teams launch and grow organically through SEO strategy, technical execution, and AI search readiness.", lang: "en", type: "home" },
+  { route: "/hr/", alternate: "/", title: "Koupoli | SEO, organski rast i AI pretraga", description: "Koupoli pomaže ambicioznim timovima rasti organski uz SEO strategiju, tehničku izvedbu i spremnost za AI pretragu.", lang: "hr", type: "homeHr" },
+  { route: "/about/", alternate: "/hr/about/", title: "About Karlo Ridan | Koupoli", description: "Meet Karlo Ridan, the SEO and organic growth specialist behind Koupoli. Strategy, technical SEO, content systems, and implementation.", lang: "en", type: "about" },
+  { route: "/hr/about/", alternate: "/about/", title: "O Karlu Ridanu | Koupoli", description: "Upoznajte Karla Ridana, stručnjaka za SEO i organski rast koji stoji iza Koupolija. Strategija, tehnički SEO, sustavi sadržaja i implementacija.", lang: "hr", type: "about" },
+  { route: "/projects/", alternate: "/hr/projects/", title: "SEO and Organic Growth Projects | Koupoli", description: "Selected Koupoli projects across technical SEO, content strategy, Webflow development, migration support, and organic growth.", lang: "en", type: "projects" },
+  { route: "/hr/projects/", alternate: "/projects/", title: "Projekti SEO-a i organskog rasta | Koupoli", description: "Odabrani Koupoli projekti iz područja tehničkog SEO-a, strategije sadržaja, razvoja u Webflowu, podrške pri migracijama i organskog rasta.", lang: "hr", type: "projects" },
+  { route: "/blog/", alternate: "/hr/blog/", title: "Organic Growth Notes | Koupoli", description: "Koupoli field notes on SEO, AI search, technical implementation, content systems, and organic growth.", lang: "en", type: "blog", articleTitle: "The Illusion of AI Productivity: Fast Fixes, But Real Projects Leave Most People Stuck", articleRoute: "/post/the-illusion-of-ai-productivity/" },
+  { route: "/hr/blog/", alternate: "/blog/", title: "Bilješke o organskom rastu | Koupoli", description: "Koupolijeve terenske bilješke o SEO-u, pretraživanju pomoću umjetne inteligencije, tehničkoj implementaciji, sustavima sadržaja i organskom rastu.", lang: "hr", type: "blog", articleTitle: "Iluzija produktivnosti uz AI: Brza rješenja, ali stvarni projekti većinu ljudi ostavljaju zaglavljenima", articleRoute: "/hr/post/the-illusion-of-ai-productivity/" },
+  { route: "/post/the-illusion-of-ai-productivity/", alternate: "/hr/post/the-illusion-of-ai-productivity/", title: "The Illusion of AI Productivity | Koupoli", description: "A Koupoli field note on AI productivity, shortcuts, and the human work required to make complex projects real.", lang: "en", type: "article", articleTitle: "The Illusion of AI Productivity: Fast Fixes, But Real Projects Leave Most People Stuck" },
+  { route: "/hr/post/the-illusion-of-ai-productivity/", alternate: "/post/the-illusion-of-ai-productivity/", title: "Iluzija produktivnosti uz AI | Koupoli", description: "Koupolijeva terenska bilješka o produktivnosti uz AI, prečacima i ljudskom radu potrebnom da se složeni projekti doista ostvare.", lang: "hr", type: "article", articleTitle: "Iluzija produktivnosti uz AI: Brza rješenja, ali stvarni projekti većinu ljudi ostavljaju zaglavljenima" },
+  { route: "/contact/", alternate: "/hr/contact/", title: "Start a Conversation | Koupoli", description: "Tell Koupoli about your business, organic growth goal, and current constraint to begin a focused SEO and AI search conversation.", lang: "en", type: "contact" },
+  { route: "/hr/contact/", alternate: "/contact/", title: "Započnite razgovor | Koupoli", description: "Recite Koupoliju nešto o svojem poslovanju, cilju organskog rasta i trenutačnoj prepreci kako biste započeli usmjeren razgovor o SEO-u i pretraživanju uz pomoć umjetne inteligencije.", lang: "hr", type: "contact" },
 ];
 
 const englishFaq = [
@@ -188,7 +193,7 @@ function schemaFor(routeData) {
         itemListElement: [{
           "@type": "ListItem",
           position: 1,
-          item: { "@type": "BlogPosting", headline: "The Illusion of AI Productivity: Fast Fixes, But Real Projects Leave Most People Stuck", url: absolute("/post/the-illusion-of-ai-productivity/"), datePublished: "2025-06-20T00:00:00+02:00", author: { "@id": personId } },
+          item: { "@type": "BlogPosting", headline: routeData.articleTitle, url: absolute(routeData.articleRoute), datePublished: "2025-06-20T00:00:00+02:00", author: { "@id": personId }, inLanguage: lang },
         }],
       },
     });
@@ -198,7 +203,7 @@ function schemaFor(routeData) {
       "@id": `${absolute(route)}#article`,
       mainEntityOfPage: { "@id": `${absolute(route)}#webpage` },
       url: absolute(route),
-      headline: "The Illusion of AI Productivity: Fast Fixes, But Real Projects Leave Most People Stuck",
+      headline: routeData.articleTitle,
       description,
       image: absolute("/assets/ai-productivity-article.webp"),
       datePublished: "2025-06-20T00:00:00+02:00",
@@ -223,9 +228,9 @@ function socialImage(type) {
 function pageHead(routeData, canonical) {
   const image = socialImage(routeData.type);
   const locale = routeData.lang === "hr" ? "hr_HR" : "en_US";
-  const alternate = routeData.type === "home" || routeData.type === "homeHr"
-    ? `\n    <link rel="alternate" hreflang="en" href="${siteUrl}/" />\n    <link rel="alternate" hreflang="hr" href="${siteUrl}/hr/" />\n    <link rel="alternate" hreflang="x-default" href="${siteUrl}/" />`
-    : "";
+  const englishUrl = routeData.lang === "en" ? canonical : absolute(routeData.alternate);
+  const croatianUrl = routeData.lang === "hr" ? canonical : absolute(routeData.alternate);
+  const alternate = `\n    <link rel="alternate" hreflang="en" href="${englishUrl}" />\n    <link rel="alternate" hreflang="hr" href="${croatianUrl}" />\n    <link rel="alternate" hreflang="x-default" href="${englishUrl}" />`;
   const articleMeta = routeData.type === "article" ? '\n    <meta property="article:published_time" content="2025-06-20T00:00:00+02:00" />' : "";
   return `<link rel="canonical" href="${canonical}" />${alternate}\n    <meta property="og:type" content="${routeData.type === "article" ? "article" : "website"}" />\n    <meta property="og:site_name" content="Koupoli" />\n    <meta property="og:locale" content="${locale}" />\n    <meta property="og:url" content="${canonical}" />\n    <meta property="og:title" content="${escapeAttribute(routeData.title)}" />\n    <meta property="og:description" content="${escapeAttribute(routeData.description)}" />\n    <meta property="og:image" content="${image}" />\n    <meta name="twitter:card" content="summary_large_image" />\n    <meta name="twitter:title" content="${escapeAttribute(routeData.title)}" />\n    <meta name="twitter:description" content="${escapeAttribute(routeData.description)}" />\n    <meta name="twitter:image" content="${image}" />${articleMeta}\n    <script type="application/ld+json">${JSON.stringify(schemaFor(routeData)).replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026")}</script>`;
 }

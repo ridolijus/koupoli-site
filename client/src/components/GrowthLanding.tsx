@@ -220,6 +220,7 @@ function Arrow() {
 
 export default function GrowthLanding({ locale }: { locale: Locale }) {
   const copy = copies[locale];
+  const localized = (path: string) => locale === "hr" ? `/hr${path}` : path;
 
   useEffect(() => {
     const description = document.querySelector('meta[name="description"]');
@@ -236,11 +237,11 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
           <h1>{copy.heroTitle}</h1>
           <p className="growth-lead">{copy.heroLead}</p>
           <div className="growth-actions">
-            <Link className="growth-button growth-button-primary" href="/contact">{copy.primaryCta}<Arrow /></Link>
+            <Link className="growth-button growth-button-primary" href={localized("/contact/")}>{copy.primaryCta}<Arrow /></Link>
             <a className="growth-text-link" href="#offers">{copy.secondaryCta}<ArrowDownRight size={17} /></a>
           </div>
         </div>
-        <figure className="growth-hero-graphic"><img src="/assets/koupoli-search-systems-infographic.webp?v=full-panel" alt="Editorial map of technical foundation, useful content, and search visibility" /></figure>
+        <figure className="growth-hero-graphic"><img src="/assets/koupoli-search-systems-infographic.webp?v=full-panel" alt={locale === "hr" ? "Urednička mapa tehničkih temelja, korisnog sadržaja i vidljivosti u pretrazi" : "Editorial map of technical foundation, useful content, and search visibility"} /></figure>
       </div>
     </section>
 
@@ -285,7 +286,7 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
             <p className="growth-offer-description">{offer.description}</p>
             <ul>{offer.deliverables.map((item) => <li key={item}>{item}</li>)}</ul>
             <p className="growth-offer-fit">{offer.fit}</p>
-            <Link href="/contact" className="growth-offer-link">{copy.primaryCta}<Arrow /></Link>
+            <Link href={localized("/contact/")} className="growth-offer-link">{copy.primaryCta}<Arrow /></Link>
           </article>)}
         </div>
       </div>
@@ -315,7 +316,7 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
 
     <section className="growth-proof-section">
       <div className="growth-container growth-proof-grid">
-        <div className="growth-proof-copy"><p className="growth-kicker">{copy.proofEyebrow}</p><h2>{copy.proofTitle}</h2><p>{copy.proofBody}</p><Link href="/about" className="growth-text-link">{locale === "hr" ? "Upoznajte Karla" : "Meet Karlo"}<Arrow /></Link></div>
+        <div className="growth-proof-copy"><p className="growth-kicker">{copy.proofEyebrow}</p><h2>{copy.proofTitle}</h2><p>{copy.proofBody}</p><Link href={localized("/about/")} className="growth-text-link">{locale === "hr" ? "Upoznajte Karla" : "Meet Karlo"}<Arrow /></Link></div>
         <div className="growth-proof-points">{copy.proofPoints.map((point) => <article key={point.label}><span>{point.label}</span><strong>{point.value}</strong><p>{point.detail}</p></article>)}</div>
       </div>
     </section>
@@ -335,7 +336,7 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
     </section>
 
     <section className="growth-final-section" id="contact">
-      <div className="growth-container growth-final-inner"><p className="growth-kicker">Koupoli</p><h2>{copy.finalTitle}</h2><p>{copy.finalBody}</p><Link className="growth-button growth-button-inverse" href="/contact">{copy.finalCta}<Arrow /></Link></div>
+      <div className="growth-container growth-final-inner"><p className="growth-kicker">Koupoli</p><h2>{copy.finalTitle}</h2><p>{copy.finalBody}</p><Link className="growth-button growth-button-inverse" href={localized("/contact/")}>{copy.finalCta}<Arrow /></Link></div>
     </section>
   </GrowthLayout>;
 }
