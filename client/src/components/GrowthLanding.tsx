@@ -1,4 +1,4 @@
-import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, ChevronDown } from "lucide-react";
 import { useEffect } from "react";
 import { Link } from "wouter";
 import GrowthLayout from "@/components/GrowthLayout";
@@ -44,6 +44,10 @@ type Copy = {
   articlesEyebrow: string;
   articlesTitle: string;
   articles: { number: string; title: string; description: string }[];
+  faqEyebrow: string;
+  faqTitle: string;
+  faqLead: string;
+  faqs: { question: string; answer: string }[];
   finalTitle: string;
   finalBody: string;
   finalCta: string;
@@ -114,6 +118,17 @@ const copies: Record<Locale, Copy> = {
       { number: "02", title: "The organic launch checklist for teams shipping a new category", description: "What needs to be decided before a site, campaign, or product story goes live." },
       { number: "03", title: "Technical SEO for AI search: what has changed, and what has not", description: "A grounded guide to the foundations that still earn discovery." },
     ],
+    faqEyebrow: "Frequently asked questions",
+    faqTitle: "A few useful answers before the first conversation.",
+    faqLead: "The work begins with the same practical questions that come up when a team is choosing an SEO consultant, planning a launch, or deciding what AI search changes for them.",
+    faqs: [
+      { question: "Is AI SEO different from SEO?", answer: "AI SEO, generative engine optimization, and AI search visibility describe how a brand appears in AI-generated answers. They do not replace SEO fundamentals. Crawlability, indexation, information architecture, accurate entities, and genuinely useful pages still create the foundation." },
+      { question: "What is included in an organic launch consultation?", answer: "The consultation turns commercial context into a usable organic plan: market and search opportunity, positioning input, technical and content risks, priorities, ownership, and a practical 90-day sequence for the work ahead." },
+      { question: "When should technical SEO be involved?", answer: "Before a new site, redesign, migration, or content push goes live. Early technical input helps avoid the familiar problems: pages that cannot be crawled or indexed properly, weak site structure, lost redirects, slow templates, and missing structured data." },
+      { question: "Can Koupoli support a Webflow site or migration?", answer: "Yes. The operational work can cover site architecture, technical SEO audits, implementation tickets, Webflow delivery, redirects, indexation, performance, and the content structure that needs to survive a migration or relaunch." },
+      { question: "Do you work with teams outside Croatia?", answer: "Yes. Koupoli works remotely with English-speaking teams across Europe and the United States, particularly where a launch, repositioning, or growth stage needs a clear connection between strategy and technical delivery." },
+      { question: "How is AI search visibility measured?", answer: "The starting point is not a vanity mention count. Measurement combines qualified search demand, technical health, brand and entity coverage, visibility for priority questions, citations where they matter, and the business signals the work is expected to influence." },
+    ],
     finalTitle: "Bring the launch, the question, or the search problem.",
     finalBody: "The first conversation is for understanding the context and deciding whether Koupoli is the right fit.",
     finalCta: "Start a conversation",
@@ -181,6 +196,17 @@ const copies: Record<Locale, Copy> = {
       { number: "01", title: "Što zaista treba mjeriti kod vidljivosti u AI pretrazi", description: "Praktičan okvir za razdvajanje prividne vidljivosti od signala koji stvarno vrijede." },
       { number: "02", title: "Checklista za organsko lansiranje nove kategorije", description: "Što treba odlučiti prije lansiranja weba, kampanje ili produktne priče." },
       { number: "03", title: "Tehnički SEO za AI pretragu: što se promijenilo, a što nije", description: "Utemeljen vodič kroz osnove koje i dalje donose otkrivanje." },
+    ],
+    faqEyebrow: "Česta pitanja",
+    faqTitle: "Nekoliko korisnih odgovora prije prvog razgovora.",
+    faqLead: "Rad počinje praktičnim pitanjima koja se pojavljuju kada tim bira SEO savjetnika, planira lansiranje ili odlučuje što AI pretraga znači za njihovo poslovanje.",
+    faqs: [
+      { question: "Je li AI SEO drugačiji od SEO-a?", answer: "AI SEO, generative engine optimization i vidljivost u AI pretrazi opisuju kako se brend pojavljuje u odgovorima generiranim umjetnom inteligencijom. Ne zamjenjuju SEO temelje. Crawlabilnost, indeksiranje, informacijska arhitektura, točni entiteti i stvarno koristan sadržaj i dalje stvaraju osnovu." },
+      { question: "Što uključuju konzultacije za organsko lansiranje?", answer: "Konzultacije pretvaraju poslovni kontekst u upotrebljiv organski plan: tržišne prilike i potražnju u pretrazi, ulaz za pozicioniranje, tehničke i sadržajne rizike, prioritete, vlasništvo i praktičan raspored rada za sljedećih 90 dana." },
+      { question: "Kada treba uključiti tehnički SEO?", answer: "Prije lansiranja nove stranice, redizajna, migracije ili većeg sadržajnog projekta. Rani tehnički rad sprječava česte probleme: stranice koje se ne mogu ispravno crawlat ili indeksirati, slabu strukturu, izgubljene redirekcije, spore predloške i nedostatak strukturiranih podataka." },
+      { question: "Može li Koupoli podržati Webflow stranicu ili migraciju?", answer: "Da. Operativni rad može pokriti arhitekturu stranice, tehničke SEO audite, zadatke za implementaciju, Webflow izvedbu, redirekcije, indeksiranje, brzinu i strukturu sadržaja koja treba preživjeti migraciju ili ponovno lansiranje." },
+      { question: "Radite li s timovima izvan Hrvatske?", answer: "Da. Koupoli radi na daljinu s timovima koji govore engleski diljem Europe i Sjedinjenih Država, posebno kada lansiranje, repozicioniranje ili faza rasta traži jasnu vezu između strategije i tehničke izvedbe." },
+      { question: "Kako se mjeri vidljivost u AI pretrazi?", answer: "Polazište nije samo broj spominjanja. Mjerenje povezuje kvalificiranu potražnju u pretrazi, tehničko zdravlje, pokrivenost brenda i entiteta, vidljivost za prioritetna pitanja, citate gdje su važni i poslovne signale na koje rad treba utjecati." },
     ],
     finalTitle: "Donesite lansiranje, pitanje ili problem u pretrazi.",
     finalBody: "Prvi razgovor služi razumijevanju konteksta i odluci je li Koupoli pravi izbor.",
@@ -298,6 +324,13 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
       <div className="growth-container">
         <div className="growth-articles-header"><div><p className="growth-kicker growth-kicker-blue">{copy.articlesEyebrow}</p><h2>{copy.articlesTitle}</h2></div><span>{locale === "hr" ? "Uskoro" : "Coming soon"}</span></div>
         <div className="growth-article-grid">{copy.articles.map((article) => <article key={article.number}><span>{article.number}</span><h3>{article.title}</h3><p>{article.description}</p></article>)}</div>
+      </div>
+    </section>
+
+    <section className="growth-faq-section" id="faq">
+      <div className="growth-container growth-faq-grid">
+        <div className="growth-faq-intro"><p className="growth-kicker growth-kicker-blue">{copy.faqEyebrow}</p><h2>{copy.faqTitle}</h2><p>{copy.faqLead}</p></div>
+        <div className="growth-faq-list">{copy.faqs.map((faq) => <details key={faq.question}><summary><span>{faq.question}</span><ChevronDown aria-hidden="true" size={20} strokeWidth={1.75} /></summary><p>{faq.answer}</p></details>)}</div>
       </div>
     </section>
 

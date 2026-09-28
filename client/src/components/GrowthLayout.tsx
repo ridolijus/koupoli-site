@@ -12,14 +12,14 @@ const navigation = {
     { label: "Method", target: "#method" },
     { label: "Projects", href: "/projects" },
     { label: "About", href: "/about" },
-    { label: "Notes", href: "/blog" },
+    { label: "FAQ", target: "#faq" },
   ],
   hr: [
     { label: "Usluge", target: "#offers" },
     { label: "Pristup", target: "#method" },
     { label: "Projekti", href: "/projects" },
     { label: "O meni", href: "/about" },
-    { label: "Bilješke", href: "/blog" },
+    { label: "FAQ", target: "#faq" },
   ],
 };
 
