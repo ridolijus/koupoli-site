@@ -28,8 +28,13 @@ function Brand({ locale }: { locale: Locale }) {
   return <Link href={home} className="growth-brand" aria-label="Koupoli home"><img src="/favicon-512.png" alt="" /><span>Koupoli</span></Link>;
 }
 
-function LanguageLabel({ locale }: { locale: Locale }) {
-  return locale === "hr" ? <>English version</> : <><span className="growth-language-flag" aria-hidden="true">🇭🇷</span><span>Hrvatska verzija</span></>;
+function LanguageLabel({ locale, compact = false }: { locale: Locale; compact?: boolean }) {
+  const isCroatianTarget = locale === "en";
+  const label = isCroatianTarget ? "Hrvatska verzija" : "English version";
+  const code = isCroatianTarget ? "HR" : "EN";
+  const flag = isCroatianTarget ? "/assets/flag-hr.png" : "/assets/flag-en.png";
+
+  return <><img className="growth-language-flag" src={flag} alt="" /><span>{compact ? code : label}</span></>;
 }
 
 export default function GrowthLayout({ locale, children }: LayoutProps) {
@@ -50,7 +55,7 @@ export default function GrowthLayout({ locale, children }: LayoutProps) {
         <nav className="growth-desktop-nav" aria-label="Primary navigation">
           {navigation[locale].map((item) => item.href ? <Link href={item.href} key={item.label}>{item.label}</Link> : <a href={`${home}${item.target}`} key={item.label}>{item.label}</a>)}
         </nav>
-        <div className="growth-nav-actions"><Link href={alternate} className="growth-language-link"><LanguageLabel locale={locale} /></Link><Link className="growth-nav-cta" href={contact}>{locale === "hr" ? "Javite se" : "Let’s talk"}</Link><button type="button" className="growth-menu-toggle" aria-label={open ? "Close navigation" : "Open navigation"} onClick={() => setOpen(!open)}>{open ? <X size={23} /> : <Menu size={23} />}</button></div>
+        <div className="growth-nav-actions"><Link href={alternate} className="growth-language-link" aria-label={locale === "hr" ? "Switch to the English version" : "Prebaci na hrvatsku verziju"}><LanguageLabel locale={locale} compact /></Link><Link className="growth-nav-cta" href={contact}>{locale === "hr" ? "Javite se" : "Let’s talk"}</Link><button type="button" className="growth-menu-toggle" aria-label={open ? "Close navigation" : "Open navigation"} onClick={() => setOpen(!open)}>{open ? <X size={23} /> : <Menu size={23} />}</button></div>
       </div>
       {open && <div className="growth-mobile-panel"><div className="growth-container"><nav aria-label="Mobile navigation">{navigation[locale].map((item) => item.href ? <Link href={item.href} key={item.label} onClick={closeMenu}>{item.label}</Link> : <a href={`${home}${item.target}`} key={item.label} onClick={closeMenu}>{item.label}</a>)}<Link href={contact} onClick={closeMenu}>{locale === "hr" ? "Javite se" : "Let’s talk"}</Link><Link href={alternate} onClick={closeMenu}><LanguageLabel locale={locale} /></Link></nav></div></div>}
     </header>
