@@ -1,7 +1,8 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { useLayoutEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
-import { Route, Router as WouterRouter, Switch } from "wouter";
+import { Route, Router as WouterRouter, Switch, useLocation } from "wouter";
 import CroatianHome from "./pages/CroatianHome";
 import GrowthAbout from "./pages/GrowthAbout";
 import GrowthBlog from "./pages/GrowthBlog";
@@ -10,11 +11,40 @@ import GrowthContact from "./pages/GrowthContact";
 import GrowthHome from "./pages/GrowthHome";
 import GrowthProjects from "./pages/GrowthProjects";
 
+function ScrollToPageStart() {
+  const [location] = useLocation();
+
+  useLayoutEffect(() => {
+    const previous = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+
+    return () => {
+      window.history.scrollRestoration = previous;
+    };
+  }, []);
+
+  useLayoutEffect(() => {
+    const anchor = window.location.hash ? document.getElementById(decodeURIComponent(window.location.hash.slice(1))) : null;
+
+    if (anchor) {
+      const frame = window.requestAnimationFrame(() => anchor.scrollIntoView());
+      return () => window.cancelAnimationFrame(frame);
+    }
+
+    window.scrollTo(0, 0);
+    const frame = window.requestAnimationFrame(() => window.scrollTo(0, 0));
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [location]);
+
+  return null;
+}
+
 function Router({ ssrPath }: { ssrPath?: string }) {
   const baseUrl = import.meta.env?.BASE_URL ?? "/";
   const base = baseUrl === "/" ? "" : baseUrl.replace(/\/$/, "");
 
-  return <WouterRouter base={base} ssrPath={ssrPath}><Switch>
+  return <WouterRouter base={base} ssrPath={ssrPath}><ScrollToPageStart /><Switch>
     <Route path="/"><GrowthHome /></Route>
     <Route path="/hr"><CroatianHome /></Route>
     <Route path="/hr/"><CroatianHome /></Route>
