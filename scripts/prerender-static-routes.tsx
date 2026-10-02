@@ -16,6 +16,12 @@ const routes = [
   "/hr/blog/",
   "/post/the-illusion-of-ai-productivity/",
   "/hr/post/the-illusion-of-ai-productivity/",
+  "/post/ai-search-visibility/",
+  "/hr/post/ai-search-visibility/",
+  "/post/website-migration-seo/",
+  "/hr/post/website-migration-seo/",
+  "/post/generative-engine-optimization/",
+  "/hr/post/generative-engine-optimization/",
   "/contact/",
   "/hr/contact/",
 ];

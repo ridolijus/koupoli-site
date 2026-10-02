@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import GrowthLayout from "@/components/GrowthLayout";
 import PageMeta from "@/components/PageMeta";
+import { getEditorialNote } from "@/lib/editorialNotes";
 import { hrArticleCopy, hrBlogPost } from "@/lib/hrContent";
 import { blogPost, site } from "@/lib/siteData";
 
@@ -17,12 +18,31 @@ const englishCopy = {
   guideIntro: "So, what's the secret to thriving in an AI-powered world? Here's a survival guide:",
   conclusionHeading: "Conclusion: The Infinite AI",
   returnLabel: "Back to field notes",
+  sourceLabel: "Sources",
+  contactLabel: "Plan an organic launch",
 };
 
-export default function GrowthBlogPost({ locale = "en" }: { locale?: Locale }) {
+const croatianCopy = {
+  returnLabel: "Natrag na terenske bilješke",
+  sourceLabel: "Izvori",
+  contactLabel: "Isplanirajte organsko lansiranje",
+};
+
+export default function GrowthBlogPost({ locale = "en", slug }: { locale?: Locale; slug?: string }) {
+  const blogPath = locale === "hr" ? "/hr/blog/" : "/blog/";
+  const contactPath = locale === "hr" ? "/hr/contact/" : "/contact/";
+  const note = slug ? getEditorialNote(locale, slug) : undefined;
+
+  if (note) {
+    const copy = locale === "hr" ? croatianCopy : englishCopy;
+    return <GrowthLayout locale={locale}>
+      <PageMeta title={note.metaTitle} description={note.metaDescription} lang={locale} />
+      <article className="growth-article-page"><header className="growth-article-header"><div className="growth-narrow"><p className="growth-kicker">{note.date}</p><h1>{note.title}</h1><p>{note.excerpt}</p></div></header><section className="growth-article-body"><div className="growth-narrow"><img className="growth-article-image" src={note.image} alt={note.imageAlt} /><div className="growth-rich-text">{note.sections.map((section) => <section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{section.list && <ul>{section.list.map((item) => <li key={item}>{item}</li>)}</ul>}</section>)}<section className="growth-article-sources"><h2>{copy.sourceLabel}</h2><ul>{note.sources.map((source) => <li key={source.href}><a href={source.href} target="_blank" rel="noreferrer">{source.label}</a></li>)}</ul></section></div><div className="growth-article-return"><Link className="growth-text-link" href={blogPath}>{copy.returnLabel}</Link><Link className="growth-text-link" href={contactPath}>{copy.contactLabel}</Link></div></div></section></article>
+    </GrowthLayout>;
+  }
+
   const post = locale === "hr" ? hrBlogPost : blogPost;
   const copy = locale === "hr" ? hrArticleCopy : englishCopy;
-  const blogPath = locale === "hr" ? "/hr/blog/" : "/blog/";
 
   return <GrowthLayout locale={locale}>
     <PageMeta title={copy.metaTitle} description={copy.metaDescription} lang={locale} />

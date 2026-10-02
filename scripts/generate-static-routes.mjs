@@ -18,9 +18,30 @@ const routes = [
   { route: "/hr/blog/", alternate: "/blog/", title: "Bilješke o organskom rastu | Koupoli", description: "Koupolijeve terenske bilješke o SEO-u, pretraživanju pomoću umjetne inteligencije, tehničkoj implementaciji, sustavima sadržaja i organskom rastu.", lang: "hr", type: "blog", articleTitle: "Iluzija produktivnosti uz AI: Brza rješenja, ali stvarni projekti većinu ljudi ostavljaju zaglavljenima", articleRoute: "/hr/post/the-illusion-of-ai-productivity/" },
   { route: "/post/the-illusion-of-ai-productivity/", alternate: "/hr/post/the-illusion-of-ai-productivity/", title: "The Illusion of AI Productivity | Koupoli", description: "A Koupoli field note on AI productivity, shortcuts, and the human work required to make complex projects real.", lang: "en", type: "article", articleTitle: "The Illusion of AI Productivity: Fast Fixes, But Real Projects Leave Most People Stuck" },
   { route: "/hr/post/the-illusion-of-ai-productivity/", alternate: "/post/the-illusion-of-ai-productivity/", title: "Iluzija produktivnosti uz AI | Koupoli", description: "Koupolijeva terenska bilješka o produktivnosti uz AI, prečacima i ljudskom radu potrebnom da se složeni projekti doista ostvare.", lang: "hr", type: "article", articleTitle: "Iluzija produktivnosti uz AI: Brza rješenja, ali stvarni projekti većinu ljudi ostavljaju zaglavljenima" },
+  { route: "/post/ai-search-visibility/", alternate: "/hr/post/ai-search-visibility/", title: "AI Search Visibility: What to Measure | Koupoli", description: "A practical framework for measuring AI search visibility without confusing impressions, mentions, rankings, and commercial outcomes.", lang: "en", type: "article", articleTitle: "AI Search Visibility: What to Measure Before You Optimise", articleImage: "/assets/koupoli-search-systems-infographic.webp", published: "2026-10-02T00:00:00+02:00" },
+  { route: "/hr/post/ai-search-visibility/", alternate: "/post/ai-search-visibility/", title: "Vidljivost u AI pretrazi: Što mjeriti | Koupoli", description: "Praktičan okvir za mjerenje vidljivosti u AI pretrazi bez miješanja impresija, spominjanja, pozicija i poslovnih rezultata.", lang: "hr", type: "article", articleTitle: "Vidljivost u AI pretrazi: Što mjeriti prije optimizacije", articleImage: "/assets/koupoli-search-systems-infographic.webp", published: "2026-10-02T00:00:00+02:00" },
+  { route: "/post/website-migration-seo/", alternate: "/hr/post/website-migration-seo/", title: "Website Migration SEO: A Practical Checklist | Koupoli", description: "A practical SEO launch checklist for safeguarding URLs, redirects, indexation, content, and measurement during a website migration.", lang: "en", type: "article", articleTitle: "Website Migration SEO: A Practical Launch Checklist", articleImage: "/assets/koupoli-project-evidence-infographic.webp", published: "2026-10-02T00:00:00+02:00" },
+  { route: "/hr/post/website-migration-seo/", alternate: "/post/website-migration-seo/", title: "SEO migracija web-stranice: Kontrolni popis | Koupoli", description: "Praktičan SEO kontrolni popis za zaštitu URL-ova, redirekcija, indeksiranja, sadržaja i mjerenja tijekom migracije web-stranice.", lang: "hr", type: "article", articleTitle: "SEO migracija web-stranice: Praktičan kontrolni popis", articleImage: "/assets/koupoli-project-evidence-infographic.webp", published: "2026-10-02T00:00:00+02:00" },
+  { route: "/post/generative-engine-optimization/", alternate: "/hr/post/generative-engine-optimization/", title: "Generative Engine Optimization: What Matters | Koupoli", description: "Generative engine optimization explained in practical terms: durable SEO foundations, original information, technical clarity, and useful measurement.", lang: "en", type: "article", articleTitle: "Generative Engine Optimization: What Matters in Practice", articleImage: "/assets/koupoli-about-method-infographic.webp", published: "2026-10-02T00:00:00+02:00" },
+  { route: "/hr/post/generative-engine-optimization/", alternate: "/post/generative-engine-optimization/", title: "Generativna optimizacija: Što je važno | Koupoli", description: "Generativna optimizacija objašnjena praktično: čvrsti SEO temelji, originalne informacije, tehnička jasnoća i korisno mjerenje.", lang: "hr", type: "article", articleTitle: "Generativna optimizacija: Što je važno u praksi", articleImage: "/assets/koupoli-about-method-infographic.webp", published: "2026-10-02T00:00:00+02:00" },
   { route: "/contact/", alternate: "/hr/contact/", title: "Start a Conversation | Koupoli", description: "Tell Koupoli about your business, organic growth goal, and current constraint to begin a focused SEO and AI search conversation.", lang: "en", type: "contact" },
   { route: "/hr/contact/", alternate: "/contact/", title: "Započnite razgovor | Koupoli", description: "Recite Koupoliju nešto o svojem poslovanju, cilju organskog rasta i trenutačnoj prepreci kako biste započeli usmjeren razgovor o SEO-u i pretraživanju uz pomoć umjetne inteligencije.", lang: "hr", type: "contact" },
 ];
+
+const blogArticles = {
+  en: [
+    ["AI Search Visibility: What to Measure Before You Optimise", "/post/ai-search-visibility/", "2026-10-02T00:00:00+02:00"],
+    ["Website Migration SEO: A Practical Launch Checklist", "/post/website-migration-seo/", "2026-10-02T00:00:00+02:00"],
+    ["Generative Engine Optimization: What Matters in Practice", "/post/generative-engine-optimization/", "2026-10-02T00:00:00+02:00"],
+    ["The Illusion of AI Productivity: Fast Fixes, But Real Projects Leave Most People Stuck", "/post/the-illusion-of-ai-productivity/", "2025-06-20T00:00:00+02:00"],
+  ],
+  hr: [
+    ["Vidljivost u AI pretrazi: Što mjeriti prije optimizacije", "/hr/post/ai-search-visibility/", "2026-10-02T00:00:00+02:00"],
+    ["SEO migracija web-stranice: Praktičan kontrolni popis", "/hr/post/website-migration-seo/", "2026-10-02T00:00:00+02:00"],
+    ["Generativna optimizacija: Što je važno u praksi", "/hr/post/generative-engine-optimization/", "2026-10-02T00:00:00+02:00"],
+    ["Iluzija produktivnosti uz AI: Brza rješenja, ali stvarni projekti većinu ljudi ostavljaju zaglavljenima", "/hr/post/the-illusion-of-ai-productivity/", "2025-06-20T00:00:00+02:00"],
+  ],
+};
 
 const englishFaq = [
   ["Is AI SEO different from SEO?", "AI SEO, generative engine optimization, and AI search visibility describe how a brand appears in AI-generated answers. They do not replace SEO fundamentals. Crawlability, indexation, information architecture, accurate entities, and genuinely useful pages still create the foundation."],
@@ -189,12 +210,12 @@ function schemaFor(routeData) {
       ...page(route, title, description, lang, "CollectionPage"),
       mainEntity: {
         "@type": "ItemList",
-        numberOfItems: 1,
-        itemListElement: [{
+        numberOfItems: blogArticles[lang].length,
+        itemListElement: blogArticles[lang].map(([headline, articleRoute, datePublished], index) => ({
           "@type": "ListItem",
-          position: 1,
-          item: { "@type": "BlogPosting", headline: routeData.articleTitle, url: absolute(routeData.articleRoute), datePublished: "2025-06-20T00:00:00+02:00", author: { "@id": personId }, inLanguage: lang },
-        }],
+          position: index + 1,
+          item: { "@type": "BlogPosting", headline, url: absolute(articleRoute), datePublished, author: { "@id": personId }, inLanguage: lang },
+        })),
       },
     });
   } else if (type === "article") {
@@ -205,8 +226,8 @@ function schemaFor(routeData) {
       url: absolute(route),
       headline: routeData.articleTitle,
       description,
-      image: absolute("/assets/ai-productivity-article.webp"),
-      datePublished: "2025-06-20T00:00:00+02:00",
+      image: absolute(routeData.articleImage || "/assets/ai-productivity-article.webp"),
+      datePublished: routeData.published || "2025-06-20T00:00:00+02:00",
       author: { "@id": personId },
       publisher: { "@id": organizationId },
       inLanguage: lang,
@@ -218,7 +239,8 @@ function schemaFor(routeData) {
   return { "@context": "https://schema.org", "@graph": graph };
 }
 
-function socialImage(type) {
+function socialImage(type, articleImage) {
+  if (type === "article" && articleImage) return absolute(articleImage);
   if (type === "about") return absolute("/assets/koupoli-about-method-infographic.webp");
   if (type === "projects") return absolute("/assets/koupoli-project-evidence-infographic.webp");
   if (type === "article") return absolute("/assets/ai-productivity-article.webp");
@@ -226,12 +248,12 @@ function socialImage(type) {
 }
 
 function pageHead(routeData, canonical) {
-  const image = socialImage(routeData.type);
+  const image = socialImage(routeData.type, routeData.articleImage);
   const locale = routeData.lang === "hr" ? "hr_HR" : "en_US";
   const englishUrl = routeData.lang === "en" ? canonical : absolute(routeData.alternate);
   const croatianUrl = routeData.lang === "hr" ? canonical : absolute(routeData.alternate);
   const alternate = `\n    <link rel="alternate" hreflang="en" href="${englishUrl}" />\n    <link rel="alternate" hreflang="hr" href="${croatianUrl}" />\n    <link rel="alternate" hreflang="x-default" href="${englishUrl}" />`;
-  const articleMeta = routeData.type === "article" ? '\n    <meta property="article:published_time" content="2025-06-20T00:00:00+02:00" />' : "";
+  const articleMeta = routeData.type === "article" ? `\n    <meta property="article:published_time" content="${routeData.published || "2025-06-20T00:00:00+02:00"}" />` : "";
   return `<link rel="canonical" href="${canonical}" />${alternate}\n    <meta property="og:type" content="${routeData.type === "article" ? "article" : "website"}" />\n    <meta property="og:site_name" content="Koupoli" />\n    <meta property="og:locale" content="${locale}" />\n    <meta property="og:url" content="${canonical}" />\n    <meta property="og:title" content="${escapeAttribute(routeData.title)}" />\n    <meta property="og:description" content="${escapeAttribute(routeData.description)}" />\n    <meta property="og:image" content="${image}" />\n    <meta name="twitter:card" content="summary_large_image" />\n    <meta name="twitter:title" content="${escapeAttribute(routeData.title)}" />\n    <meta name="twitter:description" content="${escapeAttribute(routeData.description)}" />\n    <meta name="twitter:image" content="${image}" />${articleMeta}\n    <script type="application/ld+json">${JSON.stringify(schemaFor(routeData)).replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026")}</script>`;
 }
 

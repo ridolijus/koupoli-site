@@ -13,6 +13,12 @@ const pages = [
   ["/hr/blog/", "CollectionPage", "/blog/"],
   ["/post/the-illusion-of-ai-productivity/", "BlogPosting", "/hr/post/the-illusion-of-ai-productivity/"],
   ["/hr/post/the-illusion-of-ai-productivity/", "BlogPosting", "/post/the-illusion-of-ai-productivity/"],
+  ["/post/ai-search-visibility/", "BlogPosting", "/hr/post/ai-search-visibility/"],
+  ["/hr/post/ai-search-visibility/", "BlogPosting", "/post/ai-search-visibility/"],
+  ["/post/website-migration-seo/", "BlogPosting", "/hr/post/website-migration-seo/"],
+  ["/hr/post/website-migration-seo/", "BlogPosting", "/post/website-migration-seo/"],
+  ["/post/generative-engine-optimization/", "BlogPosting", "/hr/post/generative-engine-optimization/"],
+  ["/hr/post/generative-engine-optimization/", "BlogPosting", "/post/generative-engine-optimization/"],
   ["/contact/", "ContactPage", "/hr/contact/"],
   ["/hr/contact/", "ContactPage", "/contact/"],
 ];

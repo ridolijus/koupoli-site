@@ -34,6 +34,18 @@ function Router({ ssrPath }: { ssrPath?: string }) {
     <Route path="/post/the-illusion-of-ai-productivity/"><GrowthBlogPost /></Route>
     <Route path="/hr/post/the-illusion-of-ai-productivity"><GrowthBlogPost locale="hr" /></Route>
     <Route path="/hr/post/the-illusion-of-ai-productivity/"><GrowthBlogPost locale="hr" /></Route>
+    <Route path="/post/ai-search-visibility"><GrowthBlogPost slug="ai-search-visibility" /></Route>
+    <Route path="/post/ai-search-visibility/"><GrowthBlogPost slug="ai-search-visibility" /></Route>
+    <Route path="/hr/post/ai-search-visibility"><GrowthBlogPost locale="hr" slug="ai-search-visibility" /></Route>
+    <Route path="/hr/post/ai-search-visibility/"><GrowthBlogPost locale="hr" slug="ai-search-visibility" /></Route>
+    <Route path="/post/website-migration-seo"><GrowthBlogPost slug="website-migration-seo" /></Route>
+    <Route path="/post/website-migration-seo/"><GrowthBlogPost slug="website-migration-seo" /></Route>
+    <Route path="/hr/post/website-migration-seo"><GrowthBlogPost locale="hr" slug="website-migration-seo" /></Route>
+    <Route path="/hr/post/website-migration-seo/"><GrowthBlogPost locale="hr" slug="website-migration-seo" /></Route>
+    <Route path="/post/generative-engine-optimization"><GrowthBlogPost slug="generative-engine-optimization" /></Route>
+    <Route path="/post/generative-engine-optimization/"><GrowthBlogPost slug="generative-engine-optimization" /></Route>
+    <Route path="/hr/post/generative-engine-optimization"><GrowthBlogPost locale="hr" slug="generative-engine-optimization" /></Route>
+    <Route path="/hr/post/generative-engine-optimization/"><GrowthBlogPost locale="hr" slug="generative-engine-optimization" /></Route>
     <Route path="/contact"><GrowthContact /></Route>
     <Route path="/contact/"><GrowthContact /></Route>
     <Route path="/hr/contact"><GrowthContact locale="hr" /></Route>
