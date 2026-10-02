@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import ContextLinks from "@/components/ContextLinks";
 import GrowthLayout from "@/components/GrowthLayout";
 import PageMeta from "@/components/PageMeta";
 import { site } from "@/lib/siteData";
@@ -55,6 +56,15 @@ const copies = {
 export default function GrowthContact({ locale = "en" }: { locale?: Locale }) {
   const [sent, setSent] = useState(false);
   const copy = copies[locale];
+  const related = locale === "hr" ? [
+    { href: "/#offers", title: "Dva načina suradnje", description: "Odaberite savjetodavni plan za lansiranje ili kontinuirani SEO i AI Search rad." },
+    { href: "/post/ai-search-visibility/", title: "Vidljivost u AI pretrazi", description: "Razjasnite što je korisno mjeriti prije prvog razgovora o AI pretrazi." },
+    { href: "/projects/", title: "Projekti", description: "Pogledajte odabrani rad iz tehničkog SEO-a, sadržaja i razvoja web-stranica." },
+  ] : [
+    { href: "/#offers", title: "Two ways to work together", description: "Choose a launch advisory plan or ongoing SEO and AI search execution." },
+    { href: "/post/ai-search-visibility/", title: "AI Search Visibility", description: "Clarify what is useful to measure before a first conversation about AI search." },
+    { href: "/projects/", title: "Projects", description: "See selected work across technical SEO, content, and website development." },
+  ];
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -83,6 +93,7 @@ export default function GrowthContact({ locale = "en" }: { locale?: Locale }) {
           {sent && <p className="growth-contact-success" role="status">{copy.success}</p>}
         </form>
       </div>
+      <div className="growth-container"><ContextLinks locale={locale} items={related} /></div>
     </section>
   </GrowthLayout>;
 }

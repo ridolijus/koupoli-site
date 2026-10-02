@@ -13,6 +13,7 @@ const navigation: Record<Locale, NavigationItem[]> = {
     { label: "Projects", href: "/projects/" },
     { label: "About", href: "/about/" },
     { label: "FAQ", target: "#faq" },
+    { label: "Notes", href: "/blog/" },
   ],
   hr: [
     { label: "Usluge", target: "#offers" },
@@ -20,6 +21,7 @@ const navigation: Record<Locale, NavigationItem[]> = {
     { label: "Projekti", href: "/hr/projects/" },
     { label: "O meni", href: "/hr/about/" },
     { label: "FAQ", target: "#faq" },
+    { label: "Bilješke", href: "/hr/blog/" },
   ],
 };
 
@@ -60,6 +62,6 @@ export default function GrowthLayout({ locale, children }: LayoutProps) {
       {open && <div className="growth-mobile-panel"><div className="growth-container"><nav aria-label="Mobile navigation">{navigation[locale].map((item) => item.href ? <Link href={item.href} key={item.label} onClick={closeMenu}>{item.label}</Link> : <a href={`${home}${item.target}`} key={item.label} onClick={closeMenu}>{item.label}</a>)}<Link href={contact} onClick={closeMenu}>{locale === "hr" ? "Javite se" : "Let’s talk"}</Link><Link href={alternate} onClick={closeMenu}><LanguageLabel locale={locale} /></Link></nav></div></div>}
     </header>
     <main>{children}</main>
-    <footer className="growth-footer"><div className="growth-container growth-footer-grid"><div><Brand locale={locale} /><p>{locale === "hr" ? "SEO, organski rast i AI pretraga za timove koji žele izgraditi dugoročnu vidljivost." : "SEO, organic growth, and AI search for teams building durable visibility."}</p></div><div><span>{locale === "hr" ? "Istraži" : "Explore"}</span><Link href={locale === "hr" ? "/hr/projects/" : "/projects/"}>{locale === "hr" ? "Projekti" : "Projects"}</Link><Link href={locale === "hr" ? "/hr/about/" : "/about/"}>{locale === "hr" ? "O meni" : "About"}</Link><Link href={alternate}>{locale === "hr" ? "English" : "Hrvatski"}</Link></div><div><span>{locale === "hr" ? "Kontakt" : "Contact"}</span><Link href={contact}>{locale === "hr" ? "Pošaljite upit" : "Send an enquiry"}</Link><a href="https://www.linkedin.com/in/karlo-ri%C4%91an-2aa4a7217/" target="_blank" rel="noreferrer">LinkedIn</a></div></div><div className="growth-container growth-footer-bottom"><span>© {new Date().getFullYear()} Koupoli</span><span>{locale === "hr" ? "Slavonski Brod, Hrvatska" : "Slavonski Brod, Croatia"}</span></div></footer>
+    <footer className="growth-footer"><div className="growth-container growth-footer-grid"><div><Brand locale={locale} /><p>{locale === "hr" ? "SEO, organski rast i AI pretraga za timove koji žele izgraditi dugoročnu vidljivost." : "SEO, organic growth, and AI search for teams building durable visibility."}</p></div><div><span>{locale === "hr" ? "Istraži" : "Explore"}</span><Link href={locale === "hr" ? "/hr/projects/" : "/projects/"}>{locale === "hr" ? "Projekti" : "Projects"}</Link><Link href={locale === "hr" ? "/hr/about/" : "/about/"}>{locale === "hr" ? "O meni" : "About"}</Link><Link href={locale === "hr" ? "/hr/blog/" : "/blog/"}>{locale === "hr" ? "Bilješke" : "Notes"}</Link><Link href={alternate}>{locale === "hr" ? "English" : "Hrvatski"}</Link></div><div><span>{locale === "hr" ? "Kontakt" : "Contact"}</span><Link href={contact}>{locale === "hr" ? "Pošaljite upit" : "Send an enquiry"}</Link><a href="https://www.linkedin.com/in/karlo-ri%C4%91an-2aa4a7217/" target="_blank" rel="noreferrer">LinkedIn</a></div></div><div className="growth-container growth-footer-bottom"><span>© {new Date().getFullYear()} Koupoli</span><span>{locale === "hr" ? "Slavonski Brod, Hrvatska" : "Slavonski Brod, Croatia"}</span></div></footer>
   </div>;
 }

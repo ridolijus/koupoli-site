@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import ContextLinks from "@/components/ContextLinks";
 import GrowthLayout from "@/components/GrowthLayout";
 import PageMeta from "@/components/PageMeta";
 import { hrExperiences } from "@/lib/hrContent";
@@ -47,6 +48,15 @@ export default function GrowthAbout({ locale = "en" }: { locale?: Locale }) {
   const copy = copies[locale];
   const localized = (path: string) => locale === "hr" ? `/hr${path}` : path;
   const experienceList = locale === "hr" ? hrExperiences : experiences;
+  const related = locale === "hr" ? [
+    { href: "/projects/", title: "Projekti", description: "Pogledajte kako se tehnički SEO, sadržaj i isporuka povezuju u stvarnom radu." },
+    { href: "/post/website-migration-seo/", title: "SEO migracija web-stranice", description: "Praktičan vodič za prijenos pretraživačke vrijednosti kroz redizajn ili novo lansiranje." },
+    { href: "/post/generative-engine-optimization/", title: "Generativna optimizacija", description: "Što se u AI pretrazi mijenja, a koji SEO temelji i dalje vrijede." },
+  ] : [
+    { href: "/projects/", title: "Projects", description: "See how technical SEO, content, and delivery connect in live client work." },
+    { href: "/post/website-migration-seo/", title: "Website migration SEO", description: "A practical guide to carrying search value through a redesign or new launch." },
+    { href: "/post/generative-engine-optimization/", title: "Generative engine optimization", description: "What changes in AI search and which SEO foundations still matter." },
+  ];
 
   return <GrowthLayout locale={locale}>
     <PageMeta title={copy.title} description={copy.description} lang={locale} />
@@ -78,6 +88,8 @@ export default function GrowthAbout({ locale = "en" }: { locale?: Locale }) {
         </article>)}</div>
       </div>
     </section>
+
+    <section className="growth-context-section"><div className="growth-container"><ContextLinks locale={locale} items={related} /></div></section>
 
     <section className="growth-page-close"><div className="growth-container"><p className="growth-kicker">{copy.closeKicker}</p><h2>{copy.closeHeading}</h2><Link className="growth-button growth-button-primary" href={localized("/projects/")}>{copy.closeCta}</Link></div></section>
   </GrowthLayout>;

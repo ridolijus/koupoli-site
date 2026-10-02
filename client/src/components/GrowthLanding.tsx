@@ -43,7 +43,8 @@ type Copy = {
   proofPoints: { label: string; value: string; detail: string }[];
   articlesEyebrow: string;
   articlesTitle: string;
-  articles: { number: string; title: string; description: string }[];
+  articles: { number: string; title: string; description: string; href: string }[];
+  articlesLink: string;
   faqEyebrow: string;
   faqTitle: string;
   faqLead: string;
@@ -111,12 +112,13 @@ const copies: Record<Locale, Copy> = {
       { label: "Organic foundation", value: "300k", detail: "click project built on durable SEO fundamentals" },
       { label: "Experience", value: "8+", detail: "years across technical, product, and organic growth work" },
     ],
-    articlesEyebrow: "Field notes in development",
-    articlesTitle: "The questions this site will answer in public.",
+    articlesEyebrow: "Field notes",
+    articlesTitle: "Practical answers for the work that compounds.",
+    articlesLink: "View all Notes",
     articles: [
-      { number: "01", title: "What AI search visibility should actually be measured against", description: "A practical framework for separating visibility theatre from signals that matter." },
-      { number: "02", title: "The organic launch checklist for teams shipping a new category", description: "What needs to be decided before a site, campaign, or product story goes live." },
-      { number: "03", title: "Technical SEO for AI search: what has changed, and what has not", description: "A grounded guide to the foundations that still earn discovery." },
+      { number: "01", title: "What AI search visibility should actually be measured against", description: "A practical framework for separating visibility theatre from signals that matter.", href: "/post/ai-search-visibility/" },
+      { number: "02", title: "The organic launch checklist for teams shipping a new category", description: "What needs to be decided before a site, campaign, or product story goes live.", href: "/post/website-migration-seo/" },
+      { number: "03", title: "Technical SEO for AI search: what has changed, and what has not", description: "A grounded guide to the foundations that still earn discovery.", href: "/post/generative-engine-optimization/" },
     ],
     faqEyebrow: "Frequently asked questions",
     faqTitle: "A few useful answers before the first conversation.",
@@ -190,12 +192,13 @@ const copies: Record<Locale, Copy> = {
       { label: "Organski temelj", value: "300k", detail: "klikova na projektu izgrađenom na dugotrajnim SEO osnovama" },
       { label: "Iskustvo", value: "8+", detail: "godina kroz tehnički, produktni i organski rast" },
     ],
-    articlesEyebrow: "Bilješke s terena u pripremi",
-    articlesTitle: "Pitanja na koja će ova stranica javno odgovarati.",
+    articlesEyebrow: "Terenske bilješke",
+    articlesTitle: "Praktični odgovori za rad čiji se učinak akumulira.",
+    articlesLink: "Pogledajte sve bilješke",
     articles: [
-      { number: "01", title: "Što zaista treba mjeriti kod vidljivosti u AI pretrazi", description: "Praktičan okvir za razdvajanje prividne vidljivosti od signala koji stvarno vrijede." },
-      { number: "02", title: "Checklista za organsko lansiranje nove kategorije", description: "Što treba odlučiti prije lansiranja weba, kampanje ili produktne priče." },
-      { number: "03", title: "Tehnički SEO za AI pretragu: što se promijenilo, a što nije", description: "Utemeljen vodič kroz osnove koje i dalje donose otkrivanje." },
+      { number: "01", title: "Što zaista treba mjeriti kod vidljivosti u AI pretrazi", description: "Praktičan okvir za razdvajanje prividne vidljivosti od signala koji stvarno vrijede.", href: "/post/ai-search-visibility/" },
+      { number: "02", title: "Checklista za organsko lansiranje nove kategorije", description: "Što treba odlučiti prije lansiranja weba, kampanje ili produktne priče.", href: "/post/website-migration-seo/" },
+      { number: "03", title: "Tehnički SEO za AI pretragu: što se promijenilo, a što nije", description: "Utemeljen vodič kroz osnove koje i dalje donose otkrivanje.", href: "/post/generative-engine-optimization/" },
     ],
     faqEyebrow: "Česta pitanja",
     faqTitle: "Nekoliko korisnih odgovora prije prvog razgovora.",
@@ -323,8 +326,8 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
 
     <section className="growth-articles-section">
       <div className="growth-container">
-        <div className="growth-articles-header"><div><p className="growth-kicker growth-kicker-blue">{copy.articlesEyebrow}</p><h2>{copy.articlesTitle}</h2></div><span>{locale === "hr" ? "Uskoro" : "Coming soon"}</span></div>
-        <div className="growth-article-grid">{copy.articles.map((article) => <article key={article.number}><span>{article.number}</span><h3>{article.title}</h3><p>{article.description}</p></article>)}</div>
+        <div className="growth-articles-header"><div><p className="growth-kicker growth-kicker-blue">{copy.articlesEyebrow}</p><h2>{copy.articlesTitle}</h2></div><Link className="growth-text-link" href={localized("/blog/")}>{copy.articlesLink}<Arrow /></Link></div>
+        <div className="growth-article-grid">{copy.articles.map((article) => <article key={article.number}><span>{article.number}</span><h3><Link href={localized(article.href)}>{article.title}</Link></h3><p>{article.description}</p><Link className="growth-text-link" href={localized(article.href)}>{locale === "hr" ? "Pročitajte" : "Read note"}<Arrow /></Link></article>)}</div>
       </div>
     </section>
 

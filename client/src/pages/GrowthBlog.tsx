@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import ContextLinks from "@/components/ContextLinks";
 import GrowthLayout from "@/components/GrowthLayout";
 import PageMeta from "@/components/PageMeta";
 import { editorialNotes } from "@/lib/editorialNotes";
@@ -43,10 +44,19 @@ export default function GrowthBlog({ locale = "en" }: { locale?: Locale }) {
   const notes: NoteCard[] = editorialNotes[locale];
   const prefix = locale === "hr" ? "/hr" : "";
   const legacyPath = `${prefix}/post/the-illusion-of-ai-productivity/`;
+  const related = locale === "hr" ? [
+    { href: "/#offers", title: "Koupoli usluge", description: "Pogledajte dva načina suradnje: savjetodavni plan ili kontinuiranu operativnu podršku." },
+    { href: "/projects/", title: "Projekti", description: "Pogledajte rad u kojem su tehnički SEO, sadržaj i razvoj morali funkcionirati zajedno." },
+    { href: "/contact/", title: "Započnite razgovor", description: "Donesite pitanje, lansiranje ili tehničku prepreku u prvi razgovor." },
+  ] : [
+    { href: "/#offers", title: "Koupoli offers", description: "See the two ways to work together: an advisory plan or ongoing operational support." },
+    { href: "/projects/", title: "Projects", description: "See client work where technical SEO, content, and development had to work together." },
+    { href: "/contact/", title: "Start a conversation", description: "Bring a question, launch, or technical constraint to a first conversation." },
+  ];
 
   return <GrowthLayout locale={locale}>
     <PageMeta title={copy.title} description={copy.description} lang={locale} />
     <section className="growth-page-hero growth-blog-page-hero"><div className="growth-container growth-blog-hero-copy"><p className="growth-kicker">{copy.kicker}</p><h1>{copy.heading}</h1><p>{copy.lead}</p></div></section>
-    <section className="growth-blog-page-section"><div className="growth-container"><div className="growth-note-grid">{notes.map((note) => <article className="growth-note-card" key={note.slug}><Link href={`${prefix}/post/${note.slug}/`} className="growth-note-image"><img src={note.image} alt={note.imageAlt} /></Link><p>{note.date}</p><h2><Link href={`${prefix}/post/${note.slug}/`}>{note.title}</Link></h2><span>{note.excerpt}</span><Link className="growth-text-link" href={`${prefix}/post/${note.slug}/`}>{copy.cta}</Link></article>)}</div><div className="growth-archive-note"><p>{copy.legacyLabel}</p><h2><Link href={legacyPath}>{legacy.title}</Link></h2><span>{legacy.excerpt}</span><Link className="growth-text-link" href={legacyPath}>{copy.cta}</Link></div></div></section>
+    <section className="growth-blog-page-section"><div className="growth-container"><div className="growth-note-grid">{notes.map((note) => <article className="growth-note-card" key={note.slug}><Link href={`${prefix}/post/${note.slug}/`} className="growth-note-image"><img src={note.image} alt={note.imageAlt} /></Link><p>{note.date}</p><h2><Link href={`${prefix}/post/${note.slug}/`}>{note.title}</Link></h2><span>{note.excerpt}</span><Link className="growth-text-link" href={`${prefix}/post/${note.slug}/`}>{copy.cta}</Link></article>)}</div><div className="growth-archive-note"><p>{copy.legacyLabel}</p><h2><Link href={legacyPath}>{legacy.title}</Link></h2><span>{legacy.excerpt}</span><Link className="growth-text-link" href={legacyPath}>{copy.cta}</Link></div><ContextLinks locale={locale} items={related} /></div></section>
   </GrowthLayout>;
 }
