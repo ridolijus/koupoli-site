@@ -20,8 +20,8 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
       metaTitle: "AI Search Visibility: What to Measure | Koupoli",
       metaDescription: "A practical framework for measuring AI search visibility without confusing impressions, mentions, rankings, and commercial outcomes.",
       excerpt: "A practical measurement framework for teams that want to understand AI-search visibility before buying tools or chasing mentions.",
-      image: "/assets/koupoli-search-systems-infographic.webp",
-      imageAlt: "Illustration of connected search systems and information signals",
+      image: "/assets/koupoli-ai-search-visibility-infographic.webp",
+      imageAlt: "Editorial infographic showing AI search visibility measurement signals",
       sections: [
         {
           heading: "Start with the decision, not the dashboard",
@@ -70,8 +70,8 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
       metaTitle: "Website Migration SEO: A Practical Checklist | Koupoli",
       metaDescription: "A practical SEO launch checklist for safeguarding URLs, redirects, indexation, content, and measurement during a website migration.",
       excerpt: "A concise migration checklist for teams that want a new website without sacrificing search equity or creating avoidable technical debt.",
-      image: "/assets/koupoli-project-evidence-infographic.webp",
-      imageAlt: "Illustration of a structured website migration and evidence flow",
+      image: "/assets/koupoli-website-migration-infographic.webp",
+      imageAlt: "Editorial infographic showing a structured website migration map",
       sections: [
         {
           heading: "A migration is an information move, not just a redesign",
@@ -119,8 +119,8 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
       metaTitle: "Generative Engine Optimization: What Matters | Koupoli",
       metaDescription: "Generative engine optimization explained in practical terms: durable SEO foundations, original information, technical clarity, and useful measurement.",
       excerpt: "GEO is useful language for a changing search experience, but it is not a replacement for SEO or a shortcut around real website work.",
-      image: "/assets/koupoli-about-method-infographic.webp",
-      imageAlt: "Illustration of a connected organic growth method and search strategy",
+      image: "/assets/koupoli-generative-engine-optimization-infographic.webp",
+      imageAlt: "Editorial infographic showing generative search built on SEO foundations",
       sections: [
         {
           heading: "GEO is a description, not a separate technical system",
@@ -171,8 +171,8 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
       metaTitle: "Vidljivost u AI pretrazi: Što mjeriti | Koupoli",
       metaDescription: "Praktičan okvir za mjerenje vidljivosti u AI pretrazi bez miješanja impresija, spominjanja, pozicija i poslovnih rezultata.",
       excerpt: "Praktičan okvir mjerenja za timove koji žele razumjeti vidljivost u AI pretrazi prije kupnje alata ili lova na spominjanja.",
-      image: "/assets/koupoli-search-systems-infographic.webp",
-      imageAlt: "Ilustracija povezanih sustava pretraživanja i informacijskih signala",
+      image: "/assets/koupoli-ai-search-visibility-infographic.webp",
+      imageAlt: "Urednički infografički prikaz signala za mjerenje vidljivosti u AI pretrazi",
       sections: [
         {
           heading: "Krenite od odluke, a ne od nadzorne ploče",
@@ -221,8 +221,8 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
       metaTitle: "SEO migracija web-stranice: Kontrolni popis | Koupoli",
       metaDescription: "Praktičan SEO kontrolni popis za zaštitu URL-ova, redirekcija, indeksiranja, sadržaja i mjerenja tijekom migracije web-stranice.",
       excerpt: "Sažet kontrolni popis migracije za timove koji žele novu web-stranicu bez nepotrebnog gubitka organske vidljivosti.",
-      image: "/assets/koupoli-project-evidence-infographic.webp",
-      imageAlt: "Ilustracija strukturirane migracije web-stranice i tijeka provjere",
+      image: "/assets/koupoli-website-migration-infographic.webp",
+      imageAlt: "Urednički infografički prikaz strukturirane migracijske mape web-stranice",
       sections: [
         {
           heading: "Migracija je premještanje informacija, a ne samo redizajn",
@@ -270,8 +270,8 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
       metaTitle: "Generativna optimizacija: Što je važno | Koupoli",
       metaDescription: "Generativna optimizacija objašnjena praktično: čvrsti SEO temelji, originalne informacije, tehnička jasnoća i korisno mjerenje.",
       excerpt: "GEO je koristan naziv za promijenjeno iskustvo pretraživanja, ali nije zamjena za SEO ni prečac oko stvarnog rada na web-stranici.",
-      image: "/assets/koupoli-about-method-infographic.webp",
-      imageAlt: "Ilustracija povezanog pristupa organskom rastu i strategiji pretraživanja",
+      image: "/assets/koupoli-generative-engine-optimization-infographic.webp",
+      imageAlt: "Urednički infografički prikaz generativne pretrage izgrađene na SEO temeljima",
       sections: [
         {
           heading: "GEO je opis, a ne zaseban tehnički sustav",
