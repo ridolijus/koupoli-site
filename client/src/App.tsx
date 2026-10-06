@@ -8,6 +8,7 @@ import GrowthAbout from "./pages/GrowthAbout";
 import GrowthBlog from "./pages/GrowthBlog";
 import GrowthBlogPost from "./pages/GrowthBlogPost";
 import GrowthContact from "./pages/GrowthContact";
+import GrowthGlossary from "./pages/GrowthGlossary";
 import GrowthHome from "./pages/GrowthHome";
 import GrowthProjects from "./pages/GrowthProjects";
 
@@ -80,6 +81,10 @@ function Router({ ssrPath }: { ssrPath?: string }) {
     <Route path="/contact/"><GrowthContact /></Route>
     <Route path="/hr/contact"><GrowthContact locale="hr" /></Route>
     <Route path="/hr/contact/"><GrowthContact locale="hr" /></Route>
+    <Route path="/glossary"><GrowthGlossary /></Route>
+    <Route path="/glossary/"><GrowthGlossary /></Route>
+    <Route path="/hr/pojmovnik"><GrowthGlossary locale="hr" /></Route>
+    <Route path="/hr/pojmovnik/"><GrowthGlossary locale="hr" /></Route>
     <Route><GrowthHome /></Route>
   </Switch></WouterRouter>;
 }

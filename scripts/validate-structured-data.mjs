@@ -19,6 +19,8 @@ const pages = [
   ["/hr/post/website-migration-seo/", "BlogPosting", "/post/website-migration-seo/"],
   ["/post/generative-engine-optimization/", "BlogPosting", "/hr/post/generative-engine-optimization/"],
   ["/hr/post/generative-engine-optimization/", "BlogPosting", "/post/generative-engine-optimization/"],
+  ["/glossary/", "CollectionPage", "/hr/pojmovnik/"],
+  ["/hr/pojmovnik/", "CollectionPage", "/glossary/"],
   ["/contact/", "ContactPage", "/hr/contact/"],
   ["/hr/contact/", "ContactPage", "/contact/"],
 ];
@@ -58,6 +60,11 @@ for (const [route, expectedType, alternateRoute] of pages) {
   if (expectedType === "BlogPosting") {
     const article = schema["@graph"].find((node) => node["@type"] === "BlogPosting");
     if (!article.headline || !article.image || !article.datePublished || !article.author || !article.publisher) throw new Error(`Incomplete BlogPosting schema for ${route}`);
+  }
+  if (route === "/glossary/" || route === "/hr/pojmovnik/") {
+    const termSet = schema["@graph"].find((node) => node["@type"] === "DefinedTermSet");
+    const expectedCount = route === "/glossary/" ? 29 : 20;
+    if (!termSet || !Array.isArray(termSet.hasDefinedTerm) || termSet.hasDefinedTerm.length !== expectedCount) throw new Error(`Incomplete glossary schema for ${route}`);
   }
 }
 

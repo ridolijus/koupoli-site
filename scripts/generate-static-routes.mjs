@@ -7,6 +7,15 @@ const organizationId = `${siteUrl}/#organization`;
 const personId = `${siteUrl}/about/#karlo-ridan`;
 const websiteId = `${siteUrl}/#website`;
 
+const glossaryTerms = {
+  en: [
+    "AI Citations", "AI Mode", "AI Overviews", "AI Search Visibility", "AI SEO", "AI Share of Voice", "Answer Engine Optimization", "Canonical URL", "Core Web Vitals", "Crawling", "E-E-A-T", "Entity SEO", "Generative Engine Optimization", "Generative Search", "Indexing", "Information Architecture", "Internal Links", "JavaScript Rendering", "Large Language Model", "Redirect", "Retrieval-Augmented Generation", "Robots.txt", "Search Demand", "Search Intent", "Structured Data", "Topic Cluster", "Topical Authority", "Website Migration", "XML Sitemap",
+  ],
+  hr: [
+    "AI citati", "AI Overviews", "AI SEO", "Crawlabilnost", "Core Web Vitals", "Entitetski SEO", "Generativna optimizacija", "Indeksiranje", "Informacijska arhitektura", "Interno povezivanje", "Kanonikalni URL", "Namjera pretraživanja", "Robots.txt", "SEO", "Strukturirani podaci", "Tehnički SEO", "Tematski autoritet", "Vidljivost u AI pretrazi", "Web migracija", "XML sitemap",
+  ],
+};
+
 const routes = [
   { route: "/", alternate: "/hr/", title: "Koupoli | Organic Growth, SEO and AI Search", description: "Koupoli helps ambitious teams launch and grow organically through SEO strategy, technical execution, and AI search readiness.", lang: "en", type: "home" },
   { route: "/hr/", alternate: "/", title: "Koupoli | SEO, organski rast i AI pretraga", description: "Koupoli pomaže ambicioznim timovima rasti organski uz SEO strategiju, tehničku izvedbu i spremnost za AI pretragu.", lang: "hr", type: "homeHr" },
@@ -24,6 +33,8 @@ const routes = [
   { route: "/hr/post/website-migration-seo/", alternate: "/post/website-migration-seo/", title: "SEO migracija web-stranice: Kontrolni popis | Koupoli", description: "Praktičan SEO kontrolni popis za zaštitu URL-ova, redirekcija, indeksiranja, sadržaja i mjerenja tijekom migracije web-stranice.", lang: "hr", type: "article", articleTitle: "SEO migracija web-stranice: Praktičan kontrolni popis", articleImage: "/assets/koupoli-website-migration-infographic.webp", published: "2026-10-02T00:00:00+02:00" },
   { route: "/post/generative-engine-optimization/", alternate: "/hr/post/generative-engine-optimization/", title: "Generative Engine Optimization: What Matters | Koupoli", description: "Generative engine optimization explained in practical terms: durable SEO foundations, original information, technical clarity, and useful measurement.", lang: "en", type: "article", articleTitle: "Generative Engine Optimization: What Matters in Practice", articleImage: "/assets/koupoli-generative-engine-optimization-infographic.webp", published: "2026-10-02T00:00:00+02:00" },
   { route: "/hr/post/generative-engine-optimization/", alternate: "/post/generative-engine-optimization/", title: "Generativna optimizacija: Što je važno | Koupoli", description: "Generativna optimizacija objašnjena praktično: čvrsti SEO temelji, originalne informacije, tehnička jasnoća i korisno mjerenje.", lang: "hr", type: "article", articleTitle: "Generativna optimizacija: Što je važno u praksi", articleImage: "/assets/koupoli-generative-engine-optimization-infographic.webp", published: "2026-10-02T00:00:00+02:00" },
+  { route: "/glossary/", alternate: "/hr/pojmovnik/", title: "SEO & AI Search Glossary | Koupoli", description: "A practical SEO and AI search glossary from Koupoli, covering technical foundations, content systems, entities, and generative search visibility.", lang: "en", type: "glossary", terms: glossaryTerms.en },
+  { route: "/hr/pojmovnik/", alternate: "/glossary/", title: "SEO i AI pojmovnik | Koupoli", description: "Praktičan Koupoli pojmovnik za SEO i AI pretragu: tehnički temelji, sustavi sadržaja, entiteti i vidljivost u generativnoj pretrazi.", lang: "hr", type: "glossary", terms: glossaryTerms.hr },
   { route: "/contact/", alternate: "/hr/contact/", title: "Start a Conversation | Koupoli", description: "Tell Koupoli about your business, organic growth goal, and current constraint to begin a focused SEO and AI search conversation.", lang: "en", type: "contact" },
   { route: "/hr/contact/", alternate: "/contact/", title: "Započnite razgovor | Koupoli", description: "Recite Koupoliju nešto o svojem poslovanju, cilju organskog rasta i trenutačnoj prepreci kako biste započeli usmjeren razgovor o SEO-u i pretraživanju uz pomoć umjetne inteligencije.", lang: "hr", type: "contact" },
 ];
@@ -218,6 +229,24 @@ function schemaFor(routeData) {
         })),
       },
     });
+  } else if (type === "glossary") {
+    const termSetId = `${absolute(route)}#defined-term-set`;
+    graph.push({
+      ...page(route, title, description, lang, "CollectionPage"),
+      mainEntity: { "@id": termSetId },
+    }, {
+      "@type": "DefinedTermSet",
+      "@id": termSetId,
+      name: title,
+      description,
+      url: absolute(route),
+      inLanguage: lang,
+      hasDefinedTerm: routeData.terms.map((name) => ({
+        "@type": "DefinedTerm",
+        name,
+        inDefinedTermSet: { "@id": termSetId },
+      })),
+    });
   } else if (type === "article") {
     graph.push({
       "@type": "BlogPosting",
@@ -243,6 +272,7 @@ function socialImage(type, articleImage) {
   if (type === "article" && articleImage) return absolute(articleImage);
   if (type === "about") return absolute("/assets/koupoli-about-method-infographic.webp");
   if (type === "projects") return absolute("/assets/koupoli-project-evidence-infographic.webp");
+  if (type === "glossary") return absolute("/assets/koupoli-glossary-knowledge-atlas.webp");
   if (type === "article") return absolute("/assets/ai-productivity-article.webp");
   return absolute("/assets/koupoli-search-systems-infographic.webp");
 }

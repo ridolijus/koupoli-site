@@ -113,6 +113,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://koupoli.com/post/generative-engine-optimization/" />
   </url>
   <url>
+    <loc>https://koupoli.com/glossary/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://koupoli.com/glossary/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://koupoli.com/hr/pojmovnik/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://koupoli.com/glossary/" />
+  </url>
+  <url>
+    <loc>https://koupoli.com/hr/pojmovnik/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://koupoli.com/glossary/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://koupoli.com/hr/pojmovnik/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://koupoli.com/glossary/" />
+  </url>
+  <url>
     <loc>https://koupoli.com/contact/</loc>
     <lastmod>2026-10-02</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://koupoli.com/contact/" />

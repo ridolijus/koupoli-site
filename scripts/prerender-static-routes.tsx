@@ -22,6 +22,8 @@ const routes = [
   "/hr/post/website-migration-seo/",
   "/post/generative-engine-optimization/",
   "/hr/post/generative-engine-optimization/",
+  "/glossary/",
+  "/hr/pojmovnik/",
   "/contact/",
   "/hr/contact/",
 ];
