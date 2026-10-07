@@ -45,7 +45,18 @@ export default function GrowthLayout({ locale, children }: LayoutProps) {
   const [open, setOpen] = useState(false);
   const [location] = useLocation();
   const home = locale === "hr" ? "/hr/" : "/";
-  const glossaryAlternate = location === "/glossary" || location === "/glossary/" ? "/hr/pojmovnik/" : location === "/hr/pojmovnik" || location === "/hr/pojmovnik/" ? "/glossary/" : null;
+  const normalizedLocation = location.length > 1 ? location.replace(/\/$/, "") : location;
+  const guideAlternates: Record<string, string> = {
+    "/glossary/technical-seo": "/hr/pojmovnik/tehnicki-seo/",
+    "/hr/pojmovnik/tehnicki-seo": "/glossary/technical-seo/",
+    "/glossary/entity-seo": "/hr/pojmovnik/entitetski-seo/",
+    "/hr/pojmovnik/entitetski-seo": "/glossary/entity-seo/",
+    "/glossary/ai-search-visibility": "/hr/pojmovnik/vidljivost-u-ai-pretrazi/",
+    "/hr/pojmovnik/vidljivost-u-ai-pretrazi": "/glossary/ai-search-visibility/",
+    "/glossary/generative-engine-optimization": "/hr/pojmovnik/generativna-optimizacija/",
+    "/hr/pojmovnik/generativna-optimizacija": "/glossary/generative-engine-optimization/",
+  };
+  const glossaryAlternate = guideAlternates[normalizedLocation] || (normalizedLocation === "/glossary" ? "/hr/pojmovnik/" : normalizedLocation === "/hr/pojmovnik" ? "/glossary/" : null);
   const alternate = glossaryAlternate || (locale === "hr" ? location.replace(/^\/hr(?=\/|$)/, "") || "/" : `/hr${location === "/" ? "/" : location}`);
   const contact = locale === "hr" ? "/hr/contact/" : "/contact/";
 

@@ -21,7 +21,7 @@ const defaults = {
 };
 
 function localizedPath(locale: Locale, href: string) {
-  return locale === "hr" ? `/hr${href}` : href;
+  return locale === "hr" && !href.startsWith("/hr/") ? `/hr${href}` : href;
 }
 
 export default function ContextLinks({ locale, items, eyebrow, title }: ContextLinksProps) {

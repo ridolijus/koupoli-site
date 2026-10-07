@@ -3,6 +3,7 @@ import ContextLinks from "@/components/ContextLinks";
 import GrowthLayout from "@/components/GrowthLayout";
 import PageMeta from "@/components/PageMeta";
 import { editorialNotes, getEditorialNote } from "@/lib/editorialNotes";
+import { getGlossaryGuide, type GlossaryGuideKey } from "@/lib/glossaryGuides";
 import { hrArticleCopy, hrBlogPost } from "@/lib/hrContent";
 import { blogPost, site } from "@/lib/siteData";
 
@@ -29,11 +30,21 @@ const croatianCopy = {
   contactLabel: "Isplanirajte organsko lansiranje",
 };
 
+const guideByNote: Record<string, GlossaryGuideKey> = {
+  "ai-search-visibility": "ai-search-visibility",
+  "website-migration-seo": "technical-seo",
+  "generative-engine-optimization": "generative-engine-optimization",
+};
+
 export default function GrowthBlogPost({ locale = "en", slug }: { locale?: Locale; slug?: string }) {
   const blogPath = locale === "hr" ? "/hr/blog/" : "/blog/";
   const contactPath = locale === "hr" ? "/hr/contact/" : "/contact/";
   const note = slug ? getEditorialNote(locale, slug) : undefined;
-  const noteLinks = slug ? editorialNotes[locale].filter((entry) => entry.slug !== slug).slice(0, 2).map((entry) => ({ href: `/post/${entry.slug}/`, title: entry.title, description: entry.excerpt })) : [];
+  const glossaryGuide = slug && guideByNote[slug] ? getGlossaryGuide(locale, guideByNote[slug]) : undefined;
+  const noteLinks = slug ? [
+    ...(glossaryGuide ? [{ href: glossaryGuide.path, title: glossaryGuide.title, description: glossaryGuide.lead }] : []),
+    ...editorialNotes[locale].filter((entry) => entry.slug !== slug).slice(0, 1).map((entry) => ({ href: `/post/${entry.slug}/`, title: entry.title, description: entry.excerpt })),
+  ] : [];
   const serviceLink = locale === "hr" ? { href: "/#offers", title: "SEO i AI Search Operations", description: "Kontinuirana tehnička SEO i sadržajna izvedba za timove kojima treba operativni napredak." } : { href: "/#offers", title: "SEO & AI Search Operations", description: "Ongoing technical SEO and content execution for teams that need operational progress." };
   const legacyLinks = locale === "hr" ? [
     { href: "/post/ai-search-visibility/", title: "Vidljivost u AI pretrazi", description: "Praktičan okvir za mjerenje signala koji su važni prije optimizacije." },

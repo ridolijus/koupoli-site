@@ -9,6 +9,7 @@ import GrowthBlog from "./pages/GrowthBlog";
 import GrowthBlogPost from "./pages/GrowthBlogPost";
 import GrowthContact from "./pages/GrowthContact";
 import GrowthGlossary from "./pages/GrowthGlossary";
+import GrowthGlossaryGuide from "./pages/GrowthGlossaryGuide";
 import GrowthHome from "./pages/GrowthHome";
 import GrowthProjects from "./pages/GrowthProjects";
 
@@ -85,6 +86,22 @@ function Router({ ssrPath }: { ssrPath?: string }) {
     <Route path="/glossary/"><GrowthGlossary /></Route>
     <Route path="/hr/pojmovnik"><GrowthGlossary locale="hr" /></Route>
     <Route path="/hr/pojmovnik/"><GrowthGlossary locale="hr" /></Route>
+    <Route path="/glossary/technical-seo"><GrowthGlossaryGuide guideKey="technical-seo" /></Route>
+    <Route path="/glossary/technical-seo/"><GrowthGlossaryGuide guideKey="technical-seo" /></Route>
+    <Route path="/glossary/entity-seo"><GrowthGlossaryGuide guideKey="entity-seo" /></Route>
+    <Route path="/glossary/entity-seo/"><GrowthGlossaryGuide guideKey="entity-seo" /></Route>
+    <Route path="/glossary/ai-search-visibility"><GrowthGlossaryGuide guideKey="ai-search-visibility" /></Route>
+    <Route path="/glossary/ai-search-visibility/"><GrowthGlossaryGuide guideKey="ai-search-visibility" /></Route>
+    <Route path="/glossary/generative-engine-optimization"><GrowthGlossaryGuide guideKey="generative-engine-optimization" /></Route>
+    <Route path="/glossary/generative-engine-optimization/"><GrowthGlossaryGuide guideKey="generative-engine-optimization" /></Route>
+    <Route path="/hr/pojmovnik/tehnicki-seo"><GrowthGlossaryGuide locale="hr" guideKey="technical-seo" /></Route>
+    <Route path="/hr/pojmovnik/tehnicki-seo/"><GrowthGlossaryGuide locale="hr" guideKey="technical-seo" /></Route>
+    <Route path="/hr/pojmovnik/entitetski-seo"><GrowthGlossaryGuide locale="hr" guideKey="entity-seo" /></Route>
+    <Route path="/hr/pojmovnik/entitetski-seo/"><GrowthGlossaryGuide locale="hr" guideKey="entity-seo" /></Route>
+    <Route path="/hr/pojmovnik/vidljivost-u-ai-pretrazi"><GrowthGlossaryGuide locale="hr" guideKey="ai-search-visibility" /></Route>
+    <Route path="/hr/pojmovnik/vidljivost-u-ai-pretrazi/"><GrowthGlossaryGuide locale="hr" guideKey="ai-search-visibility" /></Route>
+    <Route path="/hr/pojmovnik/generativna-optimizacija"><GrowthGlossaryGuide locale="hr" guideKey="generative-engine-optimization" /></Route>
+    <Route path="/hr/pojmovnik/generativna-optimizacija/"><GrowthGlossaryGuide locale="hr" guideKey="generative-engine-optimization" /></Route>
     <Route><GrowthHome /></Route>
   </Switch></WouterRouter>;
 }

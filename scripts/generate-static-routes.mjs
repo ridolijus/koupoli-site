@@ -35,6 +35,14 @@ const routes = [
   { route: "/hr/post/generative-engine-optimization/", alternate: "/post/generative-engine-optimization/", title: "Generativna optimizacija: Što je važno | Koupoli", description: "Generativna optimizacija objašnjena praktično: čvrsti SEO temelji, originalne informacije, tehnička jasnoća i korisno mjerenje.", lang: "hr", type: "article", articleTitle: "Generativna optimizacija: Što je važno u praksi", articleImage: "/assets/koupoli-generative-engine-optimization-infographic.webp", published: "2026-10-02T00:00:00+02:00" },
   { route: "/glossary/", alternate: "/hr/pojmovnik/", title: "SEO & AI Search Glossary | Koupoli", description: "A practical SEO and AI search glossary from Koupoli, covering technical foundations, content systems, entities, and generative search visibility.", lang: "en", type: "glossary", terms: glossaryTerms.en },
   { route: "/hr/pojmovnik/", alternate: "/glossary/", title: "SEO i AI pojmovnik | Koupoli", description: "Praktičan Koupoli pojmovnik za SEO i AI pretragu: tehnički temelji, sustavi sadržaja, entiteti i vidljivost u generativnoj pretrazi.", lang: "hr", type: "glossary", terms: glossaryTerms.hr },
+  { route: "/glossary/technical-seo/", alternate: "/hr/pojmovnik/tehnicki-seo/", title: "Technical SEO: A Practical Guide | Koupoli", description: "A practical technical SEO guide for making websites crawlable, indexable, understandable, and ready to support durable organic growth.", lang: "en", type: "guide", guideTerm: "Technical SEO", articleImage: "/assets/koupoli-technical-seo-guide.webp" },
+  { route: "/hr/pojmovnik/tehnicki-seo/", alternate: "/glossary/technical-seo/", title: "Tehnički SEO: Praktičan vodič | Koupoli", description: "Praktičan vodič za tehnički SEO koji web-stranice čini dostupnima za crawliranje i indeksiranje te spremnima za održiv organski rast.", lang: "hr", type: "guide", guideTerm: "Tehnički SEO", articleImage: "/assets/koupoli-technical-seo-guide.webp" },
+  { route: "/glossary/entity-seo/", alternate: "/hr/pojmovnik/entitetski-seo/", title: "Entity SEO: A Practical Guide | Koupoli", description: "A practical entity SEO guide for making the people, products, organisations, places, and concepts on a website clear and consistently connected.", lang: "en", type: "guide", guideTerm: "Entity SEO", articleImage: "/assets/koupoli-entity-seo-guide.webp" },
+  { route: "/hr/pojmovnik/entitetski-seo/", alternate: "/glossary/entity-seo/", title: "Entitetski SEO: Praktičan vodič | Koupoli", description: "Praktičan vodič za entitetski SEO koji osobe, proizvode, organizacije, lokacije i koncepte na web-stranici čini jasnima i povezanima.", lang: "hr", type: "guide", guideTerm: "Entitetski SEO", articleImage: "/assets/koupoli-entity-seo-guide.webp" },
+  { route: "/glossary/ai-search-visibility/", alternate: "/hr/pojmovnik/vidljivost-u-ai-pretrazi/", title: "AI Search Visibility: A Practical Guide | Koupoli", description: "A practical guide to AI search visibility: define the decision, measure priority questions, and connect visibility with useful business outcomes.", lang: "en", type: "guide", guideTerm: "AI Search Visibility", articleImage: "/assets/koupoli-ai-search-visibility-guide.webp" },
+  { route: "/hr/pojmovnik/vidljivost-u-ai-pretrazi/", alternate: "/glossary/ai-search-visibility/", title: "Vidljivost u AI pretrazi: Praktičan vodič | Koupoli", description: "Praktičan vodič za vidljivost u AI pretrazi: definirajte odluku, mjerite prioritetna pitanja i povežite vidljivost s korisnim poslovnim ishodima.", lang: "hr", type: "guide", guideTerm: "Vidljivost u AI pretrazi", articleImage: "/assets/koupoli-ai-search-visibility-guide.webp" },
+  { route: "/glossary/generative-engine-optimization/", alternate: "/hr/pojmovnik/generativna-optimizacija/", title: "Generative Engine Optimization: A Practical Guide | Koupoli", description: "A practical generative engine optimization guide for teams that want AI-search visibility without losing sight of technical SEO, useful information, and evidence.", lang: "en", type: "guide", guideTerm: "Generative Engine Optimization", articleImage: "/assets/koupoli-geo-guide.webp" },
+  { route: "/hr/pojmovnik/generativna-optimizacija/", alternate: "/glossary/generative-engine-optimization/", title: "Generativna optimizacija: Praktičan vodič | Koupoli", description: "Praktičan vodič za generativnu optimizaciju za timove koji žele vidljivost u AI pretrazi bez gubitka fokusa na tehnički SEO, korisne informacije i dokaze.", lang: "hr", type: "guide", guideTerm: "Generativna optimizacija", articleImage: "/assets/koupoli-geo-guide.webp" },
   { route: "/contact/", alternate: "/hr/contact/", title: "Start a Conversation | Koupoli", description: "Tell Koupoli about your business, organic growth goal, and current constraint to begin a focused SEO and AI search conversation.", lang: "en", type: "contact" },
   { route: "/hr/contact/", alternate: "/contact/", title: "Započnite razgovor | Koupoli", description: "Recite Koupoliju nešto o svojem poslovanju, cilju organskog rasta i trenutačnoj prepreci kako biste započeli usmjeren razgovor o SEO-u i pretraživanju uz pomoć umjetne inteligencije.", lang: "hr", type: "contact" },
 ];
@@ -247,6 +255,20 @@ function schemaFor(routeData) {
         inDefinedTermSet: { "@id": termSetId },
       })),
     });
+  } else if (type === "guide") {
+    const guideId = `${absolute(route)}#defined-term`;
+    const glossaryRoute = lang === "hr" ? "/hr/pojmovnik/" : "/glossary/";
+    graph.push({
+      ...page(route, title, description, lang),
+      mainEntity: { "@id": guideId },
+    }, {
+      "@type": "DefinedTerm",
+      "@id": guideId,
+      name: routeData.guideTerm,
+      description,
+      inLanguage: lang,
+      inDefinedTermSet: { "@id": `${absolute(glossaryRoute)}#defined-term-set` },
+    });
   } else if (type === "article") {
     graph.push({
       "@type": "BlogPosting",
@@ -273,6 +295,7 @@ function socialImage(type, articleImage) {
   if (type === "about") return absolute("/assets/koupoli-about-method-infographic.webp");
   if (type === "projects") return absolute("/assets/koupoli-project-evidence-infographic.webp");
   if (type === "glossary") return absolute("/assets/koupoli-glossary-knowledge-atlas.webp");
+  if (type === "guide") return absolute(articleImage);
   if (type === "article") return absolute("/assets/ai-productivity-article.webp");
   return absolute("/assets/koupoli-search-systems-infographic.webp");
 }
