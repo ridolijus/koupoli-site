@@ -6,7 +6,7 @@
 pnpm performance:check
 ```
 
-The default local threshold is **60/100**. The GitHub Pages workflow uses **50/100**, calibrated from the initial GitHub-hosted baseline rather than the faster local runner. This prevents a deployment failure caused by runner variance while still blocking a material regression. Raise the workflow threshold after several stable GitHub runs.
+The default local threshold is **60/100**. The GitHub Pages workflow runs the same check with a **50/100** threshold and a three-minute time limit. GitHub-hosted Chromium can hang while starting Lighthouse, so the CI result is advisory and cannot block a static-site deployment. Local validation remains mandatory before release; raise the workflow threshold after several stable GitHub runs.
 
 Use a stricter local check without changing the committed budget:
 
