@@ -6,7 +6,9 @@
 pnpm performance:check
 ```
 
-The default threshold is **60/100**, calibrated against the current static site in the headless CI environment. Increase it for a stricter local check without changing the committed budget:
+The default local threshold is **60/100**. The GitHub Pages workflow uses **50/100**, calibrated from the initial GitHub-hosted baseline rather than the faster local runner. This prevents a deployment failure caused by runner variance while still blocking a material regression. Raise the workflow threshold after several stable GitHub runs.
+
+Use a stricter local check without changing the committed budget:
 
 ```bash
 LIGHTHOUSE_MIN_SCORE=0.7 pnpm performance:check

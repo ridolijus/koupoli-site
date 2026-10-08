@@ -42,6 +42,10 @@ jobs:
           node scripts/generate-static-routes.mjs
       - name: Enforce mobile performance budget
         run: pnpm performance:check
+        env:
+          LIGHTHOUSE_MIN_SCORE: "0.5"
+      - name: Verify navigation and language switching
+        run: pnpm interaction:check
       - name: Validate structured data
         run: node scripts/validate-structured-data.mjs
       - name: Upload Pages artifact

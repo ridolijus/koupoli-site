@@ -264,7 +264,7 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
             <a className="growth-text-link" href="#offers">{copy.secondaryCta}<ArrowDownRight size={17} /></a>
           </div>
         </div>
-        <figure className="growth-hero-graphic"><img src="/assets/koupoli-search-systems-infographic.webp?v=full-panel" alt={locale === "hr" ? "Urednička mapa tehničkih temelja, korisnog sadržaja i vidljivosti u pretrazi" : "Editorial map of technical foundation, useful content, and search visibility"} /></figure>
+        <figure className="growth-hero-graphic"><img src="/assets/koupoli-search-systems-hero.webp" alt={locale === "hr" ? "Urednička mapa tehničkih temelja, korisnog sadržaja i vidljivosti u pretrazi" : "Editorial map of technical foundation, useful content, and search visibility"} width={960} height={960} fetchPriority="high" /></figure>
       </div>
     </section>
 
