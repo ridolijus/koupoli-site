@@ -9,6 +9,7 @@
     "start": "NODE_ENV=production node dist/index.js",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
+    "performance:check": "node scripts/check-performance.mjs",
     "visual:check": "node scripts/visual-regression.mjs",
     "visual:update": "node scripts/visual-regression.mjs --update",
     "format": "prettier --write ."
@@ -79,6 +80,7 @@
     "add": "^2.0.6",
     "autoprefixer": "^10.4.20",
     "esbuild": "^0.25.0",
+    "lighthouse": "^13.5.0",
     "pnpm": "^10.15.1",
     "postcss": "^8.4.47",
     "prettier": "^3.6.2",

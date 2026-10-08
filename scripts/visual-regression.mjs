@@ -12,10 +12,14 @@ const baselineDir = path.join(root, "tests", "visual-regression", "baselines");
 const currentDir = path.join(root, "tests", "visual-regression", "current");
 const captures = [
   { name: "home-desktop", route: "/", size: "1440,1000" },
+  { name: "croatian-home-desktop", route: "/hr/", size: "1440,1000" },
   { name: "glossary-desktop", route: "/glossary/", size: "1440,1000" },
+  { name: "projects-desktop", route: "/projects/", size: "1440,1000" },
   { name: "contact-desktop", route: "/contact/", size: "1440,1000" },
   { name: "home-mobile", route: "/", size: "390,844" },
+  { name: "croatian-home-mobile", route: "/hr/", size: "390,844" },
   { name: "glossary-mobile", route: "/glossary/", size: "390,844" },
+  { name: "projects-mobile", route: "/projects/", size: "390,844" },
   { name: "contact-mobile", route: "/contact/", size: "390,844" },
 ];
 

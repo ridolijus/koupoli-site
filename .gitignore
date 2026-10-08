@@ -114,3 +114,4 @@ client/public/__manus__/version.json
 
 # Temporary visual regression captures
 tests/visual-regression/current/
+tests/lighthouse/current/
