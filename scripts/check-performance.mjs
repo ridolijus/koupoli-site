@@ -14,7 +14,10 @@ const pages = [
 ];
 
 function run(command, args) {
-  const result = spawnSync(command, args, { cwd: root, stdio: "inherit" });
+  const result = spawnSync(command, args, { cwd: root, stdio: "inherit", timeout: 120_000, killSignal: "SIGTERM" });
+  if (result.error?.code === "ETIMEDOUT") {
+    throw new Error(`${command} ${args.join(" ")} timed out after 120 seconds.`);
+  }
   if (result.status !== 0) {
     throw new Error(`${command} ${args.join(" ")} failed.`);
   }
