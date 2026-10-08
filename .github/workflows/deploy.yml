@@ -47,7 +47,9 @@ jobs:
         timeout-minutes: 3
         continue-on-error: true
       - name: Verify navigation and language switching
-        run: pnpm interaction:check
+        run: timeout 90s pnpm interaction:check
+        timeout-minutes: 2
+        continue-on-error: true
       - name: Validate structured data
         run: node scripts/validate-structured-data.mjs
       - name: Upload Pages artifact

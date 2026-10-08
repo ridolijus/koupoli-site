@@ -14,6 +14,7 @@ const candidates = [
   "/usr/bin/google-chrome-stable",
 ].filter(Boolean);
 const executablePath = candidates.find((candidate) => existsSync(candidate));
+const pageOptions = { waitUntil: "domcontentloaded", timeout: 15_000 };
 
 if (!executablePath) {
   throw new Error("No supported Chromium executable was found for navigation checks.");
@@ -58,22 +59,24 @@ try {
 
   try {
     const desktop = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
-    await desktop.goto(`${baseUrl}/`, { waitUntil: "networkidle" });
+    desktop.setDefaultTimeout(10_000);
+    await desktop.goto(`${baseUrl}/`, pageOptions);
     await desktop.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await desktop.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "Projects", exact: true }).click();
     await expectPath(desktop, "/projects/");
     await expectAtTop(desktop, "Desktop menu navigation");
 
-    await desktop.goto(`${baseUrl}/about/`, { waitUntil: "networkidle" });
+    await desktop.goto(`${baseUrl}/about/`, pageOptions);
     await desktop.getByRole("link", { name: "Prebaci na hrvatsku verziju" }).click();
     await expectPath(desktop, "/hr/about/");
 
-    await desktop.goto(`${baseUrl}/hr/projects/`, { waitUntil: "networkidle" });
+    await desktop.goto(`${baseUrl}/hr/projects/`, pageOptions);
     await desktop.getByRole("link", { name: "Switch to the English version" }).click();
     await expectPath(desktop, "/projects/");
 
     const mobile = await browser.newPage({ viewport: { width: 390, height: 844 } });
-    await mobile.goto(`${baseUrl}/`, { waitUntil: "networkidle" });
+    mobile.setDefaultTimeout(10_000);
+    await mobile.goto(`${baseUrl}/`, pageOptions);
     await mobile.getByRole("button", { name: "Open navigation" }).click();
     await mobile.locator('.growth-mobile-panel a[href="/projects/"]').click();
     await expectPath(mobile, "/projects/");
