@@ -6,7 +6,6 @@ import GrowthLayout from "@/components/GrowthLayout";
 type Locale = "en" | "hr";
 
 type Offer = {
-  number: string;
   title: string;
   eyebrow: string;
   description: string;
@@ -22,7 +21,7 @@ type Copy = {
   secondaryCta: string;
   signalTitle: string;
   signalLead: string;
-  signals: { label: string; title: string; description: string }[];
+  signals: { title: string; description: string }[];
   thesisEyebrow: string;
   thesisTitle: string;
   thesisBody: string;
@@ -69,9 +68,9 @@ const copies: Record<Locale, Copy> = {
     signalTitle: "Search is now a system of signals.",
     signalLead: "A launch needs more than a homepage and a list of keywords. It needs a clear position, a technically sound site, and evidence that search engines and AI answers can understand.",
     signals: [
-      { label: "01 / Foundation", title: "Technical clarity", description: "Crawlability, indexing, structure, performance, and structured data in place before demand arrives." },
-      { label: "02 / Demand", title: "A useful point of view", description: "Information architecture and content that answer real buyer questions across the journey." },
-      { label: "03 / Visibility", title: "Search and AI signals", description: "A durable presence in Google alongside visibility across AI-mediated discovery." },
+      { title: "Technical clarity", description: "Crawlability, indexing, structure, performance, and structured data in place before demand arrives." },
+      { title: "A useful point of view", description: "Information architecture and content that answer real buyer questions across the journey." },
+      { title: "Search and AI signals", description: "A durable presence in Google alongside visibility across AI-mediated discovery." },
     ],
     thesisEyebrow: "The Koupoli view",
     thesisTitle: "SEO is the operating system. AI search is the new interface.",
@@ -81,7 +80,6 @@ const copies: Record<Locale, Copy> = {
     offersLead: "One engagement designs the system. The other carries it into the work. Both begin with the commercial context, not a pre-packaged list of SEO tasks.",
     offers: [
       {
-        number: "01",
         eyebrow: "For teams that need direction",
         title: "Organic Launch Consultation",
         description: "A focused advisory engagement for leaders who need an organic growth plan they can actually use across product, brand, content, and development.",
@@ -89,7 +87,6 @@ const copies: Record<Locale, Copy> = {
         fit: "Best for new launches, repositioning, new market entry, or a stalled growth plan.",
       },
       {
-        number: "02",
         eyebrow: "For teams that need hands-on momentum",
         title: "SEO & AI Search Operations",
         description: "Ongoing technical SEO and search-content execution for teams that want an experienced operator working alongside marketing, product, and development.",
@@ -159,9 +156,9 @@ const copies: Record<Locale, Copy> = {
     signalTitle: "Pretraga je danas sustav signala.",
     signalLead: "Za lansiranje nije dovoljna početna stranica i popis ključnih riječi. Potrebni su jasna pozicija, tehnički ispravna stranica i dokazi koje pretraživači i AI odgovori mogu razumjeti.",
     signals: [
-      { label: "01 / Temelj", title: "Tehnička jasnoća", description: "Crawlabilnost, indeksiranje, struktura, brzina i strukturirani podaci spremni prije dolaska potražnje." },
-      { label: "02 / Potražnja", title: "Korisna perspektiva", description: "Informacijska arhitektura i sadržaj koji odgovaraju na stvarna pitanja kupaca kroz cijeli put odlučivanja." },
-      { label: "03 / Vidljivost", title: "Signali za pretragu i AI", description: "Dugoročna prisutnost u Googleu uz vidljivost u otkrivanju sadržaja posredovanom umjetnom inteligencijom." },
+      { title: "Tehnička jasnoća", description: "Crawlabilnost, indeksiranje, struktura, brzina i strukturirani podaci spremni prije dolaska potražnje." },
+      { title: "Korisna perspektiva", description: "Informacijska arhitektura i sadržaj koji odgovaraju na stvarna pitanja kupaca kroz cijeli put odlučivanja." },
+      { title: "Signali za pretragu i AI", description: "Dugoročna prisutnost u Googleu uz vidljivost u otkrivanju sadržaja posredovanom umjetnom inteligencijom." },
     ],
     thesisEyebrow: "Koupoli pristup",
     thesisTitle: "SEO je operativni sustav. AI pretraga je novo sučelje.",
@@ -171,7 +168,6 @@ const copies: Record<Locale, Copy> = {
     offersLead: "Jedan angažman postavlja sustav. Drugi ga provodi kroz konkretan rad. Oba počinju poslovnim kontekstom, a ne unaprijed pripremljenom listom SEO zadataka.",
     offers: [
       {
-        number: "01",
         eyebrow: "Za timove kojima treba smjer",
         title: "Konzultacije za organsko lansiranje",
         description: "Fokusirani savjetodavni angažman za voditelje kojima je potreban plan organskog rasta koji mogu koristiti kroz proizvod, brend, sadržaj i razvoj.",
@@ -179,7 +175,6 @@ const copies: Record<Locale, Copy> = {
         fit: "Najbolje za nova lansiranja, repozicioniranje, ulazak na novo tržište ili stagnirajući plan rasta.",
       },
       {
-        number: "02",
         eyebrow: "Za timove kojima treba izvedba",
         title: "SEO i AI Search Operations",
         description: "Kontinuirana tehnička SEO i sadržajna izvedba za timove koji žele iskusnog operativca uz marketing, proizvod i razvoj.",
@@ -281,7 +276,6 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
         </div>
         <div className="growth-signal-grid">
           {copy.signals.map((signal) => <article className="growth-signal-card" key={signal.title}>
-            <p>{signal.label}</p>
             <h3>{signal.title}</h3>
             <span>{signal.description}</span>
           </article>)}
@@ -307,8 +301,7 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
           <p>{copy.offersLead}</p>
         </div>
         <div className="growth-offer-grid">
-          {copy.offers.map((offer) => <article className="growth-offer-card" key={offer.number}>
-            <div className="growth-offer-top"><span>{offer.number}</span></div>
+          {copy.offers.map((offer) => <article className="growth-offer-card" key={offer.title}>
             <p className="growth-offer-eyebrow">{offer.eyebrow}</p>
             <h3>{offer.title}</h3>
             <p className="growth-offer-description">{offer.description}</p>
@@ -327,8 +320,7 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
           <h2>{copy.systemsTitle}</h2>
         </div>
         <div className="growth-system-list">
-          {copy.systems.map((system, index) => <article key={system.title}>
-            <span>0{index + 1}</span>
+          {copy.systems.map((system) => <article key={system.title}>
             <div><h3>{system.title}</h3><p>{system.description}</p></div>
           </article>)}
         </div>
@@ -352,14 +344,14 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
     <section className="growth-articles-section">
       <div className="growth-container">
         <div className="growth-articles-header"><div><p className="growth-kicker growth-kicker-blue">{copy.articlesEyebrow}</p><h2>{copy.articlesTitle}</h2></div><Link className="growth-text-link" href={localized("/blog/")}>{copy.articlesLink}<Arrow /></Link></div>
-        <div className="growth-article-grid">{copy.articles.map((article) => <article key={article.number}><span>{article.number}</span><h3><Link href={localized(article.href)}>{article.title}</Link></h3><p>{article.description}</p><Link className="growth-text-link" href={localized(article.href)}>{locale === "hr" ? "Pročitajte" : "Read note"}<Arrow /></Link></article>)}</div>
+        <div className="growth-article-grid">{copy.articles.map((article) => <article key={article.href}><h3><Link href={localized(article.href)}>{article.title}</Link></h3><p>{article.description}</p><Link className="growth-text-link" href={localized(article.href)}>{locale === "hr" ? "Pročitajte" : "Read note"}<Arrow /></Link></article>)}</div>
       </div>
     </section>
 
     <section className="growth-guide-index-section" aria-labelledby="guide-index-title">
       <div className="growth-container">
         <div className="growth-guide-index-header"><div><p className="growth-kicker growth-kicker-blue">{copy.guidesEyebrow}</p><h2 id="guide-index-title">{copy.guidesTitle}</h2></div><p>{copy.guidesLead}</p></div>
-        <nav className="growth-guide-index-grid" aria-label={copy.guidesEyebrow}>{copy.guides.map((guide) => <Link href={localized(guide.href)} key={guide.href}><span>{guide.number}</span><h3>{guide.title}</h3><p>{guide.description}</p><strong>{locale === "hr" ? "Pročitajte vodič" : "Read guide"}<Arrow /></strong></Link>)}</nav>
+        <nav className="growth-guide-index-grid" aria-label={copy.guidesEyebrow}>{copy.guides.map((guide) => <Link href={localized(guide.href)} key={guide.href}><h3>{guide.title}</h3><p>{guide.description}</p><strong>{locale === "hr" ? "Pročitajte vodič" : "Read guide"}<Arrow /></strong></Link>)}</nav>
         <Link className="growth-text-link growth-guide-index-link" href={localized(locale === "hr" ? "/pojmovnik/" : "/glossary/")}>{copy.guidesLink}<Arrow /></Link>
       </div>
     </section>
