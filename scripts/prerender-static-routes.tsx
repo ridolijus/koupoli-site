@@ -1,7 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
+import React from "react";
 import { renderToString } from "react-dom/server";
-import App from "../client/src/App";
+import AppStatic from "../client/src/AppStatic";
 
 const output = path.resolve("dist/public");
 const template = fs.readFileSync(path.join(output, "index.html"), "utf8");
@@ -38,7 +39,7 @@ const routes = [
 
 for (const route of routes) {
   const destination = route === "/" ? path.join(output, "index.html") : path.join(output, route, "index.html");
-  const markup = renderToString(<App ssrPath={route} />);
+  const markup = renderToString(<AppStatic ssrPath={route} />);
   const html = template.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
   fs.mkdirSync(path.dirname(destination), { recursive: true });
   fs.writeFileSync(destination, html);
