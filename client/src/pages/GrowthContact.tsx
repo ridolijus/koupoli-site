@@ -2,9 +2,11 @@ import { FormEvent, useState } from "react";
 import ContextLinks from "@/components/ContextLinks";
 import GrowthLayout from "@/components/GrowthLayout";
 import PageMeta from "@/components/PageMeta";
-import { site } from "@/lib/siteData";
 
 type Locale = "en" | "hr";
+type SubmissionState = "idle" | "submitting" | "success" | "error";
+
+const formEndpoint = "https://formspree.io/f/xgaokqng";
 
 const copies = {
   en: {
@@ -14,7 +16,7 @@ const copies = {
     heading: "Bring the context, not a perfect brief.",
     lead: "Answer three practical questions so the first conversation can focus on the business, the buyers, and the work that will matter most.",
     next: "What happens next",
-    note: "Your answers open a prepared email enquiry. Nothing is published or added to a mailing list.",
+    note: "Your answers are sent directly to Koupoli. Nothing is published or added to a mailing list.",
     name: "Name",
     namePlaceholder: "Your name",
     email: "Work email",
@@ -25,9 +27,9 @@ const copies = {
       ["What is getting in the way right now?", "Describe the main uncertainty, bottleneck, or search problem."],
     ],
     submit: "Send enquiry",
-    success: "Your email app should now be ready with the full enquiry.",
-    subject: (name: string) => `Koupoli enquiry from ${name || "a visitor"}`,
-    emailLabels: ["Name", "Email", "Business or site", "Organic growth goal", "Current constraint"],
+    sending: "Sending enquiry...",
+    success: "Thanks - your enquiry has been sent. Koupoli will reply to the email you provided.",
+    error: "The enquiry could not be sent. Please try again shortly.",
   },
   hr: {
     title: "Započnite razgovor | Koupoli",
@@ -36,7 +38,7 @@ const copies = {
     heading: "Donesite kontekst, ne savršen brief.",
     lead: "Odgovorite na tri praktična pitanja kako bismo se u prvom razgovoru mogli usredotočiti na poslovanje, kupce i aktivnosti koje će imati najveći učinak.",
     next: "Što slijedi",
-    note: "Vaši odgovori otvorit će unaprijed pripremljenu poruku s upitom. Ništa se neće objaviti niti dodati na popis za slanje e-pošte.",
+    note: "Vaši odgovori šalju se izravno Koupoliju. Ništa se neće objaviti niti dodati na popis za slanje e-pošte.",
     name: "Ime",
     namePlaceholder: "Vaše ime",
     email: "Poslovna e-adresa",
@@ -47,50 +49,59 @@ const copies = {
       ["Što vam trenutačno stoji na putu?", "Opišite glavnu nedoumicu, usko grlo ili problem povezan s pretraživanjem."],
     ],
     submit: "Pošaljite upit",
-    success: "Vaša bi aplikacija za e-poštu sada trebala biti otvorena s cjelovitim upitom.",
-    subject: (name: string) => `Koupoli upit od ${name || "posjetitelja"}`,
-    emailLabels: ["Ime", "E-pošta", "Tvrtka ili web-stranica", "Cilj organskog rasta", "Trenutačna prepreka"],
+    sending: "Slanje upita...",
+    success: "Hvala - upit je poslan. Koupoli će odgovoriti na e-adresu koju ste naveli.",
+    error: "Upit nije moguće poslati. Pokušajte ponovno uskoro.",
   },
 } as const;
 
 export default function GrowthContact({ locale = "en" }: { locale?: Locale }) {
-  const [sent, setSent] = useState(false);
+  const [submissionState, setSubmissionState] = useState<SubmissionState>("idle");
   const copy = copies[locale];
   const related = locale === "hr" ? [
-    { href: "/#offers", title: "Dva načina suradnje", description: "Odaberite savjetodavni plan za lansiranje ili kontinuirani SEO i AI Search rad." },
-    { href: "/post/ai-search-visibility/", title: "Vidljivost u AI pretrazi", description: "Razjasnite što je korisno mjeriti prije prvog razgovora o AI pretrazi." },
-    { href: "/projects/", title: "Projekti", description: "Pogledajte odabrani rad iz tehničkog SEO-a, sadržaja i razvoja web-stranica." },
+    { href: "/hr/#offers", title: "Dva načina suradnje", description: "Odaberite savjetodavni plan za lansiranje ili kontinuirani SEO i AI Search rad." },
+    { href: "/hr/post/ai-search-visibility/", title: "Vidljivost u AI pretrazi", description: "Razjasnite što je korisno mjeriti prije prvog razgovora o AI pretrazi." },
+    { href: "/hr/projects/", title: "Projekti", description: "Pogledajte odabrani rad iz tehničkog SEO-a, sadržaja i razvoja web-stranica." },
   ] : [
     { href: "/#offers", title: "Two ways to work together", description: "Choose a launch advisory plan or ongoing SEO and AI search execution." },
     { href: "/post/ai-search-visibility/", title: "AI Search Visibility", description: "Clarify what is useful to measure before a first conversation about AI search." },
     { href: "/projects/", title: "Projects", description: "See selected work across technical SEO, content, and website development." },
   ];
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
-    const name = String(form.get("name") || "");
-    const email = String(form.get("email") || "");
-    const business = String(form.get("business") || "");
-    const goal = String(form.get("goal") || "");
-    const constraint = String(form.get("constraint") || "");
-    const [nameLabel, emailLabel, businessLabel, goalLabel, constraintLabel] = copy.emailLabels;
-    const body = [`${nameLabel}: ${name}`, `${emailLabel}: ${email}`, "", `1. ${businessLabel}`, business, "", `2. ${goalLabel}`, goal, "", `3. ${constraintLabel}`, constraint].join("\n");
+    const form = event.currentTarget;
+    setSubmissionState("submitting");
 
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(copy.subject(name))}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+    try {
+      const response = await fetch(formEndpoint, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) throw new Error("Formspree submission failed");
+      form.reset();
+      setSubmissionState("success");
+    } catch {
+      setSubmissionState("error");
+    }
   }
+
+  const isSubmitting = submissionState === "submitting";
 
   return <GrowthLayout locale={locale}>
     <PageMeta title={copy.title} description={copy.description} lang={locale} />
     <section className="growth-contact-page">
       <div className="growth-container growth-contact-grid">
         <div className="growth-contact-copy"><p className="growth-kicker">{copy.kicker}</p><h1>{copy.heading}</h1><p>{copy.lead}</p><div className="growth-contact-note"><span>{copy.next}</span><p>{copy.note}</p></div></div>
-        <form className="growth-contact-form" onSubmit={handleSubmit}>
+        <form className="growth-contact-form" action={formEndpoint} method="POST" onSubmit={handleSubmit}>
+          <label className="growth-contact-honeypot" aria-hidden="true"><span>Leave this field empty</span><input name="_gotcha" tabIndex={-1} autoComplete="off" /></label>
           <div className="growth-contact-details"><label><span>{copy.name}</span><input required name="name" autoComplete="name" placeholder={copy.namePlaceholder} /></label><label><span>{copy.email}</span><input required type="email" name="email" autoComplete="email" placeholder={copy.emailPlaceholder} /></label></div>
           {copy.questions.map(([legend, placeholder], index) => <fieldset key={legend}><legend>{index + 1}. {legend}</legend><textarea required name={index === 0 ? "business" : index === 1 ? "goal" : "constraint"} rows={3} placeholder={placeholder} /></fieldset>)}
-          <button className="growth-button growth-button-primary" type="submit">{copy.submit}</button>
-          {sent && <p className="growth-contact-success" role="status">{copy.success}</p>}
+          <button className="growth-button growth-button-primary" type="submit" disabled={isSubmitting}>{isSubmitting ? copy.sending : copy.submit}</button>
+          {submissionState === "success" && <p className="growth-contact-success" role="status">{copy.success}</p>}
+          {submissionState === "error" && <p className="growth-contact-error" role="alert">{copy.error}</p>}
         </form>
       </div>
       <div className="growth-container"><ContextLinks locale={locale} items={related} /></div>

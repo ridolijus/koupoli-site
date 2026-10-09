@@ -386,3 +386,8 @@ body { min-width: 320px; margin: 0; background: #f5f1e8; }
   .growth-footer-grid { grid-template-columns: 1fr; gap: 30px; }
   .growth-footer-grid > div:first-child { grid-column: auto; }
 }
+
+
+.growth-contact-honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.growth-contact-form .growth-button:disabled { cursor: wait; opacity: .72; }
+.growth-contact-error { margin: -9px 0 0; color: #9d2936; font-size: 16px; line-height: 1.5; }

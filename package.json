@@ -10,6 +10,7 @@
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
     "interaction:check": "node scripts/check-navigation.mjs",
+    "contact:check": "node scripts/check-contact-form.mjs",
     "performance:check": "node scripts/check-performance.mjs",
     "visual:check": "node scripts/visual-regression.mjs",
     "visual:update": "node scripts/visual-regression.mjs --update",

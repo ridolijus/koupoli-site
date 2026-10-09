@@ -21,6 +21,22 @@ const captures = [
   { name: "glossary-mobile", route: "/glossary/", size: "390,844" },
   { name: "projects-mobile", route: "/projects/", size: "390,844" },
   { name: "contact-mobile", route: "/contact/", size: "390,844" },
+  { name: "article-ai-search-mobile", route: "/post/ai-search-visibility/", size: "390,844" },
+  { name: "article-ai-search-hr-mobile", route: "/hr/post/ai-search-visibility/", size: "390,844" },
+  { name: "article-migration-mobile", route: "/post/website-migration-seo/", size: "390,844" },
+  { name: "article-migration-hr-mobile", route: "/hr/post/website-migration-seo/", size: "390,844" },
+  { name: "article-geo-mobile", route: "/post/generative-engine-optimization/", size: "390,844" },
+  { name: "article-geo-hr-mobile", route: "/hr/post/generative-engine-optimization/", size: "390,844" },
+  { name: "article-ai-productivity-mobile", route: "/post/the-illusion-of-ai-productivity/", size: "390,844" },
+  { name: "article-ai-productivity-hr-mobile", route: "/hr/post/the-illusion-of-ai-productivity/", size: "390,844" },
+  { name: "guide-technical-seo-mobile", route: "/glossary/technical-seo/", size: "390,844" },
+  { name: "guide-technical-seo-hr-mobile", route: "/hr/pojmovnik/tehnicki-seo/", size: "390,844" },
+  { name: "guide-entity-seo-mobile", route: "/glossary/entity-seo/", size: "390,844" },
+  { name: "guide-entity-seo-hr-mobile", route: "/hr/pojmovnik/entitetski-seo/", size: "390,844" },
+  { name: "guide-ai-search-mobile", route: "/glossary/ai-search-visibility/", size: "390,844" },
+  { name: "guide-ai-search-hr-mobile", route: "/hr/pojmovnik/vidljivost-u-ai-pretrazi/", size: "390,844" },
+  { name: "guide-geo-mobile", route: "/glossary/generative-engine-optimization/", size: "390,844" },
+  { name: "guide-geo-hr-mobile", route: "/hr/pojmovnik/generativna-optimizacija/", size: "390,844" },
 ];
 
 function run(command, args) {

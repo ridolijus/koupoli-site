@@ -50,6 +50,9 @@ jobs:
         run: timeout 90s pnpm interaction:check
         timeout-minutes: 2
         continue-on-error: true
+      - name: Verify enquiry delivery states
+        run: timeout 60s pnpm contact:check
+        timeout-minutes: 2
       - name: Validate structured data
         run: node scripts/validate-structured-data.mjs
       - name: Upload Pages artifact
