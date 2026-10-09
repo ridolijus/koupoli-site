@@ -75,6 +75,8 @@ try {
     if (result.status !== 0) {
       throw new Error(`Chromium could not capture ${capture.name}.`);
     }
+
+    run("python3", ["scripts/optimize-visual-capture.py", output]);
   }
 
   if (update) {

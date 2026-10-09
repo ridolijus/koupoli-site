@@ -48,6 +48,18 @@ async function expectPath(page, pathname) {
   }
 }
 
+async function expectNoHorizontalOverflow(page, route) {
+  await page.goto(`${baseUrl}${route}`, pageOptions);
+  const { viewport, scrollWidth } = await page.evaluate(() => ({
+    viewport: window.innerWidth,
+    scrollWidth: document.documentElement.scrollWidth,
+  }));
+
+  if (scrollWidth > viewport + 1) {
+    throw new Error(`${route} has ${scrollWidth - viewport}px of mobile horizontal overflow.`);
+  }
+}
+
 const preview = spawn("pnpm", ["vite", "preview", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], {
   cwd: root,
   stdio: "ignore",
@@ -81,6 +93,31 @@ try {
     await mobile.locator('.growth-mobile-panel a[href="/projects/"]').click();
     await expectPath(mobile, "/projects/");
     await expectAtTop(mobile, "Mobile menu navigation");
+
+    const mobileRoutes = [
+      "/", "/hr/", "/about/", "/hr/about/", "/projects/", "/hr/projects/", "/blog/", "/hr/blog/",
+      "/post/the-illusion-of-ai-productivity/", "/hr/post/the-illusion-of-ai-productivity/",
+      "/post/ai-search-visibility/", "/hr/post/ai-search-visibility/",
+      "/post/website-migration-seo/", "/hr/post/website-migration-seo/",
+      "/post/generative-engine-optimization/", "/hr/post/generative-engine-optimization/",
+      "/contact/", "/hr/contact/", "/glossary/", "/hr/pojmovnik/",
+      "/glossary/technical-seo/", "/hr/pojmovnik/tehnicki-seo/",
+      "/glossary/entity-seo/", "/hr/pojmovnik/entitetski-seo/",
+      "/glossary/ai-search-visibility/", "/hr/pojmovnik/vidljivost-u-ai-pretrazi/",
+      "/glossary/generative-engine-optimization/", "/hr/pojmovnik/generativna-optimizacija/",
+    ];
+
+    for (const route of mobileRoutes) {
+      await expectNoHorizontalOverflow(mobile, route);
+    }
+
+    await mobile.goto(`${baseUrl}/`, pageOptions);
+    for (const selector of [".growth-section-intro-split", ".growth-thesis-grid", ".growth-proof-points", ".growth-footer-grid"]) {
+      const columns = await mobile.locator(selector).first().evaluate((element) => getComputedStyle(element).gridTemplateColumns);
+      if (columns.split(" ").length !== 1) {
+        throw new Error(`${selector} must stack into a single column on mobile.`);
+      }
+    }
   } finally {
     await browser.close();
   }
