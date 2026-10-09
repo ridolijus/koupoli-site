@@ -1,4 +1,5 @@
 import { spawn } from "node:child_process";
+import { once } from "node:events";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -33,7 +34,7 @@ async function fillRequiredFields(page) {
   await page.locator('textarea[name="constraint"]').fill("Technical SEO backlog");
 }
 
-const preview = spawn("pnpm", ["vite", "preview", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], {
+const preview = spawn(process.execPath, ["node_modules/vite/bin/vite.js", "preview", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], {
   cwd: root,
   stdio: "ignore",
 });
@@ -75,4 +76,9 @@ try {
   console.log("Formspree enquiry success and failure states passed.");
 } finally {
   preview.kill("SIGTERM");
+  await Promise.race([
+    once(preview, "exit"),
+    new Promise((resolve) => setTimeout(resolve, 5_000)),
+  ]);
+  if (preview.exitCode === null) preview.kill("SIGKILL");
 }
