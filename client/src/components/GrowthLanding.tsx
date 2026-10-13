@@ -11,6 +11,7 @@ type Offer = {
   description: string;
   deliverables: string[];
   fit: string;
+  serviceHref?: string;
 };
 
 type Copy = {
@@ -18,6 +19,7 @@ type Copy = {
   heroTitle: string;
   heroLead: string;
   primaryCta: string;
+  serviceCta: string;
   secondaryCta: string;
   signalTitle: string;
   signalLead: string;
@@ -42,13 +44,13 @@ type Copy = {
   proofPoints: { label: string; value: string; detail: string }[];
   articlesEyebrow: string;
   articlesTitle: string;
-  articles: { number: string; title: string; description: string; href: string }[];
+  articles: { title: string; description: string; href: string }[];
   articlesLink: string;
   guidesEyebrow: string;
   guidesTitle: string;
   guidesLead: string;
   guidesLink: string;
-  guides: { number: string; title: string; description: string; href: string }[];
+  guides: { title: string; description: string; href: string }[];
   faqEyebrow: string;
   faqTitle: string;
   faqLead: string;
@@ -64,6 +66,7 @@ const copies: Record<Locale, Copy> = {
     heroTitle: "Launch with a search system, not a content gamble.",
     heroLead: "Koupoli brings together SEO strategy, technical execution, and AI-search readiness for ambitious teams entering a new market, category, or growth phase.",
     primaryCta: "Plan an organic launch",
+    serviceCta: "Explore this service",
     secondaryCta: "See the two ways we work",
     signalTitle: "Search is now a system of signals.",
     signalLead: "A launch needs more than a homepage and a list of keywords. It needs a clear position, a technically sound site, and evidence that search engines and AI answers can understand.",
@@ -92,6 +95,7 @@ const copies: Record<Locale, Copy> = {
         description: "Ongoing technical SEO and search-content execution for teams that want an experienced operator working alongside marketing, product, and development.",
         deliverables: ["Technical SEO audits and implementation tickets", "Information architecture and content briefs", "Schema, indexing, migration, and performance work", "AI-search visibility tracking and reporting"],
         fit: "Best for teams with a clear direction that need consistent operational progress.",
+        serviceHref: "/services/technical-seo-ai-search/",
       },
     ],
     systemsEyebrow: "What the work connects",
@@ -118,19 +122,19 @@ const copies: Record<Locale, Copy> = {
     articlesTitle: "Practical answers for the work that compounds.",
     articlesLink: "View all Notes",
     articles: [
-      { number: "01", title: "What AI search visibility should actually be measured against", description: "A practical framework for separating visibility theatre from signals that matter.", href: "/post/ai-search-visibility/" },
-      { number: "02", title: "The organic launch checklist for teams shipping a new category", description: "What needs to be decided before a site, campaign, or product story goes live.", href: "/post/website-migration-seo/" },
-      { number: "03", title: "Technical SEO for AI search: what has changed, and what has not", description: "A grounded guide to the foundations that still earn discovery.", href: "/post/generative-engine-optimization/" },
+      { title: "What AI search visibility should actually be measured against", description: "A practical framework for separating visibility theatre from signals that matter.", href: "/post/ai-search-visibility/" },
+      { title: "The organic launch checklist for teams shipping a new category", description: "What needs to be decided before a site, campaign, or product story goes live.", href: "/post/website-migration-seo/" },
+      { title: "Technical SEO for AI search: what has changed, and what has not", description: "A grounded guide to the foundations that still earn discovery.", href: "/post/generative-engine-optimization/" },
     ],
     guidesEyebrow: "Glossary guides",
     guidesTitle: "Four foundations worth understanding before you commission the work.",
     guidesLead: "Short working guides for the technical, entity, and AI-search language that gives a launch plan its structure.",
     guidesLink: "Explore the full glossary",
     guides: [
-      { number: "01", title: "Technical SEO", description: "How technical foundations make important pages discoverable and dependable.", href: "/glossary/technical-seo/" },
-      { number: "02", title: "Entity SEO", description: "How clear relationships between people, services, and proof reduce ambiguity.", href: "/glossary/entity-seo/" },
-      { number: "03", title: "AI search visibility", description: "What to measure before a mention count becomes a reporting problem.", href: "/glossary/ai-search-visibility/" },
-      { number: "04", title: "Generative engine optimization", description: "What stays the same when AI changes the way buyers discover information.", href: "/glossary/generative-engine-optimization/" },
+      { title: "Technical SEO", description: "How technical foundations make important pages discoverable and dependable.", href: "/glossary/technical-seo/" },
+      { title: "Entity SEO", description: "How clear relationships between people, services, and proof reduce ambiguity.", href: "/glossary/entity-seo/" },
+      { title: "AI search visibility", description: "What to measure before a mention count becomes a reporting problem.", href: "/glossary/ai-search-visibility/" },
+      { title: "Generative engine optimization", description: "What stays the same when AI changes the way buyers discover information.", href: "/glossary/generative-engine-optimization/" },
     ],
     faqEyebrow: "Frequently asked questions",
     faqTitle: "A few useful answers before the first conversation.",
@@ -152,6 +156,7 @@ const copies: Record<Locale, Copy> = {
     heroTitle: "Lansirajte s planom za pretragu, ne s nagađanjem sadržaja.",
     heroLead: "Koupoli povezuje SEO strategiju, tehničku izvedbu i spremnost za AI pretragu za ambiciozne timove koji ulaze na novo tržište, u novu kategoriju ili novu fazu rasta.",
     primaryCta: "Isplaniraj organsko lansiranje",
+    serviceCta: "Pogledajte uslugu",
     secondaryCta: "Pogledaj kako radimo",
     signalTitle: "Pretraga je danas sustav signala.",
     signalLead: "Za lansiranje nije dovoljna početna stranica i popis ključnih riječi. Potrebni su jasna pozicija, tehnički ispravna stranica i dokazi koje pretraživači i AI odgovori mogu razumjeti.",
@@ -180,6 +185,7 @@ const copies: Record<Locale, Copy> = {
         description: "Kontinuirana tehnička SEO i sadržajna izvedba za timove koji žele iskusnog operativca uz marketing, proizvod i razvoj.",
         deliverables: ["Tehnički SEO auditi i zadaci za implementaciju", "Informacijska arhitektura i briefovi za sadržaj", "Schema, indeksiranje, migracije i brzina", "Praćenje i izvještavanje o AI vidljivosti"],
         fit: "Najbolje za timove s jasnim smjerom kojima treba kontinuirani operativni napredak.",
+        serviceHref: "/usluge/seo-optimizacija/",
       },
     ],
     systemsEyebrow: "Što rad povezuje",
@@ -206,19 +212,19 @@ const copies: Record<Locale, Copy> = {
     articlesTitle: "Praktični odgovori za rad čiji se učinak akumulira.",
     articlesLink: "Pogledajte sve bilješke",
     articles: [
-      { number: "01", title: "Što zaista treba mjeriti kod vidljivosti u AI pretrazi", description: "Praktičan okvir za razdvajanje prividne vidljivosti od signala koji stvarno vrijede.", href: "/post/ai-search-visibility/" },
-      { number: "02", title: "Checklista za organsko lansiranje nove kategorije", description: "Što treba odlučiti prije lansiranja weba, kampanje ili produktne priče.", href: "/post/website-migration-seo/" },
-      { number: "03", title: "Tehnički SEO za AI pretragu: što se promijenilo, a što nije", description: "Utemeljen vodič kroz osnove koje i dalje donose otkrivanje.", href: "/post/generative-engine-optimization/" },
+      { title: "Što zaista treba mjeriti kod vidljivosti u AI pretrazi", description: "Praktičan okvir za razdvajanje prividne vidljivosti od signala koji stvarno vrijede.", href: "/post/ai-search-visibility/" },
+      { title: "Checklista za organsko lansiranje nove kategorije", description: "Što treba odlučiti prije lansiranja weba, kampanje ili produktne priče.", href: "/post/website-migration-seo/" },
+      { title: "Tehnički SEO za AI pretragu: što se promijenilo, a što nije", description: "Utemeljen vodič kroz osnove koje i dalje donose otkrivanje.", href: "/post/generative-engine-optimization/" },
     ],
     guidesEyebrow: "Vodiči kroz pojmove",
     guidesTitle: "Četiri temelja koja treba razumjeti prije ugovaranja posla.",
     guidesLead: "Kratki praktični vodiči za tehnički, entitetski i AI jezik pretrage koji planu lansiranja daje strukturu.",
     guidesLink: "Istražite cijeli pojmovnik",
     guides: [
-      { number: "01", title: "Tehnički SEO", description: "Kako tehnički temelji važne stranice čine dostupnima i pouzdanima.", href: "/pojmovnik/tehnicki-seo/" },
-      { number: "02", title: "Entitetski SEO", description: "Kako jasni odnosi među ljudima, uslugama i dokazima smanjuju nejasnoću.", href: "/pojmovnik/entitetski-seo/" },
-      { number: "03", title: "Vidljivost u AI pretrazi", description: "Što mjeriti prije nego broj spominjanja postane problem izvještavanja.", href: "/pojmovnik/vidljivost-u-ai-pretrazi/" },
-      { number: "04", title: "Generativna optimizacija", description: "Što ostaje isto kada AI promijeni način na koji kupci otkrivaju informacije.", href: "/pojmovnik/generativna-optimizacija/" },
+      { title: "Tehnički SEO", description: "Kako tehnički temelji važne stranice čine dostupnima i pouzdanima.", href: "/pojmovnik/tehnicki-seo/" },
+      { title: "Entitetski SEO", description: "Kako jasni odnosi među ljudima, uslugama i dokazima smanjuju nejasnoću.", href: "/pojmovnik/entitetski-seo/" },
+      { title: "Vidljivost u AI pretrazi", description: "Što mjeriti prije nego broj spominjanja postane problem izvještavanja.", href: "/pojmovnik/vidljivost-u-ai-pretrazi/" },
+      { title: "Generativna optimizacija", description: "Što ostaje isto kada AI promijeni način na koji kupci otkrivaju informacije.", href: "/pojmovnik/generativna-optimizacija/" },
     ],
     faqEyebrow: "Česta pitanja",
     faqTitle: "Nekoliko korisnih odgovora prije prvog razgovora.",
@@ -307,7 +313,7 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
             <p className="growth-offer-description">{offer.description}</p>
             <ul>{offer.deliverables.map((item) => <li key={item}>{item}</li>)}</ul>
             <p className="growth-offer-fit">{offer.fit}</p>
-            <Link href={localized("/contact/")} className="growth-offer-link">{copy.primaryCta}<Arrow /></Link>
+            <Link href={offer.serviceHref ? offer.serviceHref : localized("/contact/")} className="growth-offer-link">{offer.serviceHref ? copy.serviceCta : copy.primaryCta}<Arrow /></Link>
           </article>)}
         </div>
       </div>

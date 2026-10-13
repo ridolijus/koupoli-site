@@ -33,6 +33,8 @@ const routes = [
   { route: "/hr/post/website-migration-seo/", alternate: "/post/website-migration-seo/", title: "SEO migracija web-stranice: Kontrolni popis | Koupoli", description: "Praktičan SEO kontrolni popis za zaštitu URL-ova, redirekcija, indeksiranja, sadržaja i mjerenja tijekom migracije web-stranice.", lang: "hr", type: "article", articleTitle: "SEO migracija web-stranice: Praktičan kontrolni popis", articleImage: "/assets/koupoli-website-migration-infographic.webp", published: "2026-10-02T00:00:00+02:00" },
   { route: "/post/generative-engine-optimization/", alternate: "/hr/post/generative-engine-optimization/", title: "Generative Engine Optimization: What Matters | Koupoli", description: "Generative engine optimization explained in practical terms: durable SEO foundations, original information, technical clarity, and useful measurement.", lang: "en", type: "article", articleTitle: "Generative Engine Optimization: What Matters in Practice", articleImage: "/assets/koupoli-generative-engine-optimization-infographic.webp", published: "2026-10-02T00:00:00+02:00" },
   { route: "/hr/post/generative-engine-optimization/", alternate: "/post/generative-engine-optimization/", title: "Generativna optimizacija: Što je važno | Koupoli", description: "Generativna optimizacija objašnjena praktično: čvrsti SEO temelji, originalne informacije, tehnička jasnoća i korisno mjerenje.", lang: "hr", type: "article", articleTitle: "Generativna optimizacija: Što je važno u praksi", articleImage: "/assets/koupoli-generative-engine-optimization-infographic.webp", published: "2026-10-02T00:00:00+02:00" },
+  { route: "/services/technical-seo-ai-search/", alternate: "/usluge/seo-optimizacija/", title: "Technical SEO Services & AI Search Operations | Koupoli", description: "Technical SEO services and AI search operations for teams that need clearer crawl paths, indexation, site structure, structured data, and delivery that reaches the live site.", lang: "en", type: "service", serviceName: "Technical SEO Services & AI Search Operations", serviceType: "Technical SEO and AI search operations", articleImage: "/assets/koupoli-technical-seo-guide.webp" },
+  { route: "/usluge/seo-optimizacija/", alternate: "/services/technical-seo-ai-search/", title: "SEO Optimizacija | Tehnički SEO i savjetovanje | Koupoli", description: "SEO optimizacija za timove kojima trebaju jasni prioriteti za tehnički SEO, indeksiranje, brzinu web stranice, strukturirane podatke i sadržaj koji podržava organski rast.", lang: "hr", type: "service", serviceName: "SEO optimizacija", serviceType: "SEO optimizacija i tehnički SEO", articleImage: "/assets/koupoli-search-systems-hero.webp" },
   { route: "/glossary/", alternate: "/hr/pojmovnik/", title: "SEO & AI Search Glossary | Koupoli", description: "A practical SEO and AI search glossary from Koupoli, covering technical foundations, content systems, entities, and generative search visibility.", lang: "en", type: "glossary", terms: glossaryTerms.en },
   { route: "/hr/pojmovnik/", alternate: "/glossary/", title: "SEO i AI pojmovnik | Koupoli", description: "Praktičan Koupoli pojmovnik za SEO i AI pretragu: tehnički temelji, sustavi sadržaja, entiteti i vidljivost u generativnoj pretrazi.", lang: "hr", type: "glossary", terms: glossaryTerms.hr },
   { route: "/glossary/technical-seo/", alternate: "/hr/pojmovnik/tehnicki-seo/", title: "Technical SEO: A Practical Guide | Koupoli", description: "A practical technical SEO guide for making websites crawlable, indexable, understandable, and ready to support durable organic growth.", lang: "en", type: "guide", guideTerm: "Technical SEO", articleImage: "/assets/koupoli-technical-seo-guide.webp" },
@@ -283,6 +285,9 @@ function schemaFor(routeData) {
       publisher: { "@id": organizationId },
       inLanguage: lang,
     }, page(route, title, description, lang));
+  } else if (type === "service") {
+    const serviceId = `${absolute(route)}#service`;
+    graph.push({ ...page(route, title, description, lang), mainEntity: { "@id": serviceId } }, { "@type": "Service", "@id": serviceId, name: routeData.serviceName, description, serviceType: routeData.serviceType, provider: { "@id": organizationId }, areaServed: lang === "hr" ? ["Croatia", "Europe"] : ["Europe", "United States"], inLanguage: lang });
   } else if (type === "contact") {
     graph.push({ ...page(route, title, description, lang, "ContactPage"), mainEntity: { "@id": organizationId } });
   }
@@ -296,6 +301,7 @@ function socialImage(type, articleImage) {
   if (type === "projects") return absolute("/assets/koupoli-project-evidence-infographic.webp");
   if (type === "glossary") return absolute("/assets/koupoli-glossary-knowledge-atlas.webp");
   if (type === "guide") return absolute(articleImage);
+  if (type === "service") return absolute(articleImage);
   if (type === "article") return absolute("/assets/ai-productivity-article.webp");
   return absolute("/assets/koupoli-search-systems-infographic.webp");
 }

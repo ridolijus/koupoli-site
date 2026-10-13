@@ -45,7 +45,7 @@ export default function GrowthBlogPost({ locale = "en", slug }: { locale?: Local
     ...(glossaryGuide ? [{ href: glossaryGuide.path, title: glossaryGuide.title, description: glossaryGuide.lead }] : []),
     ...editorialNotes[locale].filter((entry) => entry.slug !== slug).slice(0, 1).map((entry) => ({ href: `/post/${entry.slug}/`, title: entry.title, description: entry.excerpt })),
   ] : [];
-  const serviceLink = locale === "hr" ? { href: "/#offers", title: "SEO i AI Search Operations", description: "Kontinuirana tehnička SEO i sadržajna izvedba za timove kojima treba operativni napredak." } : { href: "/#offers", title: "SEO & AI Search Operations", description: "Ongoing technical SEO and content execution for teams that need operational progress." };
+  const serviceLink = locale === "hr" ? { href: "/usluge/seo-optimizacija/", title: "SEO optimizacija", description: "Tehnički SEO, sadržaj i prioriteti za timove kojima treba operativni napredak." } : { href: "/services/technical-seo-ai-search/", title: "Technical SEO services", description: "Technical SEO and AI-search operations for teams that need practical delivery." };
   const legacyLinks = locale === "hr" ? [
     { href: "/post/ai-search-visibility/", title: "Vidljivost u AI pretrazi", description: "Praktičan okvir za mjerenje signala koji su važni prije optimizacije." },
     { href: "/projects/", title: "Projekti", description: "Pogledajte tehnički SEO, sadržaj i razvoj kroz stvaran rad s klijentima." },

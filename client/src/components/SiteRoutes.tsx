@@ -11,10 +11,11 @@ export type SitePages = {
   Contact: ComponentType<any>;
   Glossary: ComponentType<any>;
   GlossaryGuide: ComponentType<any>;
+  Service: ComponentType<any>;
 };
 
 export function SiteRoutes({ pages }: { pages: SitePages }) {
-  const { Home, CroatianHome, About, Projects, Blog, BlogPost, Contact, Glossary, GlossaryGuide } = pages;
+  const { Home, CroatianHome, About, Projects, Blog, BlogPost, Contact, Glossary, GlossaryGuide, Service } = pages;
 
   return (
     <Switch>
@@ -49,6 +50,10 @@ export function SiteRoutes({ pages }: { pages: SitePages }) {
       <Route path="/post/generative-engine-optimization/"><BlogPost slug="generative-engine-optimization" /></Route>
       <Route path="/hr/post/generative-engine-optimization"><BlogPost locale="hr" slug="generative-engine-optimization" /></Route>
       <Route path="/hr/post/generative-engine-optimization/"><BlogPost locale="hr" slug="generative-engine-optimization" /></Route>
+      <Route path="/services/technical-seo-ai-search"><Service /></Route>
+      <Route path="/services/technical-seo-ai-search/"><Service /></Route>
+      <Route path="/usluge/seo-optimizacija"><Service locale="hr" /></Route>
+      <Route path="/usluge/seo-optimizacija/"><Service locale="hr" /></Route>
       <Route path="/contact"><Contact /></Route>
       <Route path="/contact/"><Contact /></Route>
       <Route path="/hr/contact"><Contact locale="hr" /></Route>

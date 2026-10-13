@@ -100,6 +100,7 @@ try {
       "/post/ai-search-visibility/", "/hr/post/ai-search-visibility/",
       "/post/website-migration-seo/", "/hr/post/website-migration-seo/",
       "/post/generative-engine-optimization/", "/hr/post/generative-engine-optimization/",
+      "/services/technical-seo-ai-search/", "/usluge/seo-optimizacija/",
       "/contact/", "/hr/contact/", "/glossary/", "/hr/pojmovnik/",
       "/glossary/technical-seo/", "/hr/pojmovnik/tehnicki-seo/",
       "/glossary/entity-seo/", "/hr/pojmovnik/entitetski-seo/",

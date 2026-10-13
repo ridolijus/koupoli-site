@@ -25,73 +25,61 @@ export const projects = [
     name: "GemBet",
     url: "https://gem.bet/",
     scope: "Writing optimized content, created and implemented an SEO audit on the site and also helped developers with testing and user experience changes. Currently working on blog re-design.",
-    index: "01",
   },
   {
     name: "GemPartner",
     url: "https://gempartner.io/",
     scope: "Optimized webpage copy in WordPress, general SEO efforts for affiliate project.",
-    index: "02",
   },
   {
     name: "Maxtreme Sports",
     url: "http://www.maxtremesports.com",
     scope: "Optimization, blog and social media posts.",
-    index: "03",
   },
   {
     name: "Soldered Electronics",
     url: "https://soldered.com/",
     scope: "On-page and off-page SEO efforts, redesign and relaunch of the new shop.",
-    index: "04",
   },
   {
     name: "Top Betting Sites Singapore",
     url: "https://topbettingsites-sg.com/",
     scope: "General SEO efforts from the ground up.",
-    index: "05",
   },
   {
     name: "Ultralytics",
     url: "https://www.ultralytics.com/",
     scope: "Designed and developed multiple live pages in Webflow. Performed standard SEO audit and activities.",
-    index: "06",
   },
   {
     name: "Alfa Gradnja",
     url: "https://www.alfagradnja.hr/",
     scope: "Created and optimized a new website for a local business.",
-    index: "07",
   },
   {
     name: "Parilica",
     url: "https://parilica.hr/izy/",
     scope: "Created and optimized a new landing page for an Izy Vape campaign that lasted two months.",
-    index: "08",
   },
   {
     name: "ProgeCAD",
     url: "https://www.progecad.com.hr/",
     scope: "Analyzed website, created and implemented SEO audit on a WordPress site, and helped developers with user experience changes.",
-    index: "09",
   },
   {
     name: "CAD Global",
     url: "https://cadglobal.uk/",
     scope: "Analyzed website, created and implemented SEO audit on a WordPress site, and helped developers with user experience changes.",
-    index: "10",
   },
   {
     name: "CAD4Africa",
     url: "https://cad4africa.co.za/",
     scope: "Analyzed website, created and implemented SEO audit on a WordPress site, and helped developers with user experience changes.",
-    index: "11",
   },
   {
     name: "Thorns Underwear",
     url: "https://www.thornsunderwear.com/",
     scope: "Adjusted web design to be more user friendly, created new Google and Facebook Ads campaigns. Sold out two times.",
-    index: "12",
   },
 ];
 

@@ -15,6 +15,7 @@ const pages: SitePages = {
   Contact: lazy(() => import("./pages/GrowthContact")),
   Glossary: lazy(() => import("./pages/GrowthGlossary")),
   GlossaryGuide: lazy(() => import("./pages/GrowthGlossaryGuide")),
+  Service: lazy(() => import("./pages/GrowthService")),
 };
 
 function ScrollToPageStart() {
@@ -30,7 +31,11 @@ function ScrollToPageStart() {
   }, []);
 
   useLayoutEffect(() => {
-    const anchor = window.location.hash ? document.getElementById(decodeURIComponent(window.location.hash.slice(1))) : null;
+    const anchor = window.location.hash
+      ? document.getElementById(
+          decodeURIComponent(window.location.hash.slice(1))
+        )
+      : null;
 
     if (anchor) {
       const frame = window.requestAnimationFrame(() => anchor.scrollIntoView());

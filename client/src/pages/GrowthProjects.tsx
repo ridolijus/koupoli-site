@@ -54,11 +54,11 @@ export default function GrowthProjects({ locale = "en" }: { locale?: Locale }) {
   const copy = copies[locale];
   const related = locale === "hr" ? [
     { href: "/about/", title: "O Karlu", description: "Upoznajte iskustvo iza rada koji povezuje strategiju s implementacijom." },
-    { href: "/post/website-migration-seo/", title: "SEO migracija web-stranice", description: "Kontrolni popis za redizajne, promjene strukture i lansiranja." },
+    { href: "/usluge/seo-optimizacija/", title: "SEO optimizacija", description: "Tehnički SEO, sadržaj i prioriteti za timove kojima treba konkretna izvedba." },
     { href: "/contact/", title: "Započnite razgovor", description: "Opišite projekt, tržište ili prepreku za fokusiran prvi razgovor." },
   ] : [
     { href: "/about/", title: "About Karlo", description: "Meet the experience behind work that connects strategy to implementation." },
-    { href: "/post/website-migration-seo/", title: "Website migration SEO", description: "A checklist for redesigns, structural changes, and launches." },
+    { href: "/services/technical-seo-ai-search/", title: "Technical SEO services", description: "Technical SEO and AI-search operations for teams that need implementation, not a scorecard." },
     { href: "/contact/", title: "Start a conversation", description: "Share the project, market, or constraint for a focused first conversation." },
   ];
 
@@ -71,7 +71,7 @@ export default function GrowthProjects({ locale = "en" }: { locale?: Locale }) {
       </div>
     </section>
 
-    <section className="growth-projects-section"><div className="growth-container"><div className="growth-page-section-heading"><p className="growth-kicker growth-kicker-blue">{copy.portfolio}</p><h2>{copy.portfolioHeading}</h2></div><div className="growth-projects-grid">{projects.map((project) => <a className="growth-project-card" href={project.url} target="_blank" rel="noreferrer" key={project.name}><span>{project.index}</span>{logos[project.name] && <div className="growth-project-logo"><img src={logos[project.name]} alt={`${project.name} ${copy.logo}`} /></div>}<h3>{project.name}</h3><p>{locale === "hr" ? hrProjectScopes[project.name] : project.scope}</p><small>{displayUrl(project.url)}</small></a>)}</div></div></section>
+    <section className="growth-projects-section"><div className="growth-container"><div className="growth-page-section-heading"><p className="growth-kicker growth-kicker-blue">{copy.portfolio}</p><h2>{copy.portfolioHeading}</h2></div><div className="growth-projects-grid">{projects.map((project) => <a className="growth-project-card" href={project.url} target="_blank" rel="noreferrer" key={project.name}>{logos[project.name] && <div className="growth-project-logo"><img src={logos[project.name]} alt={`${project.name} ${copy.logo}`} /></div>}<h3>{project.name}</h3><p>{locale === "hr" ? hrProjectScopes[project.name] : project.scope}</p><small>{displayUrl(project.url)}</small></a>)}</div></div></section>
     <section className="growth-context-section"><div className="growth-container"><ContextLinks locale={locale} items={related} /></div></section>
   </GrowthLayout>;
 }
