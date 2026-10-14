@@ -21,6 +21,8 @@ const logos: Record<string, string> = {
   "Thorns Underwear": "/assets/thorns-project-logo.png",
 };
 
+const featuredProject = "GemBet";
+
 const copies = {
   en: {
     title: "SEO and Organic Growth Projects | Koupoli",
@@ -71,7 +73,13 @@ export default function GrowthProjects({ locale = "en" }: { locale?: Locale }) {
       </div>
     </section>
 
-    <section className="growth-projects-section"><div className="growth-container"><div className="growth-page-section-heading"><p className="growth-kicker growth-kicker-blue">{copy.portfolio}</p><h2>{copy.portfolioHeading}</h2></div><div className="growth-projects-grid">{projects.map((project) => <a className="growth-project-card" href={project.url} target="_blank" rel="noreferrer" key={project.name}>{logos[project.name] && <div className="growth-project-logo"><img src={logos[project.name]} alt={`${project.name} ${copy.logo}`} /></div>}<h3>{project.name}</h3><p>{locale === "hr" ? hrProjectScopes[project.name] : project.scope}</p><small>{displayUrl(project.url)}</small></a>)}</div></div></section>
+    <section className="growth-projects-section"><div className="growth-container"><div className="growth-page-section-heading"><p className="growth-kicker growth-kicker-blue">{copy.portfolio}</p><h2>{copy.portfolioHeading}</h2></div><div className="growth-projects-grid">{projects.map((project) => {
+      const isFeatured = project.name === featuredProject;
+      return <a className={`growth-project-card${isFeatured ? " is-featured" : ""}`} href={project.url} target="_blank" rel="noreferrer" key={project.name}>
+        {isFeatured && logos[project.name] && <div className="growth-project-feature-visual"><img src={logos[project.name]} alt={`${project.name} ${copy.logo}`} /></div>}
+        <div className="growth-project-card-copy">{!isFeatured && logos[project.name] && <div className="growth-project-logo"><img src={logos[project.name]} alt={`${project.name} ${copy.logo}`} /></div>}<h3>{project.name}</h3><p>{locale === "hr" ? hrProjectScopes[project.name] : project.scope}</p><small>{displayUrl(project.url)}</small></div>
+      </a>;
+    })}</div></div></section>
     <section className="growth-context-section"><div className="growth-container"><ContextLinks locale={locale} items={related} /></div></section>
   </GrowthLayout>;
 }

@@ -9,6 +9,8 @@ type Offer = {
   title: string;
   eyebrow: string;
   description: string;
+  image: string;
+  imageAlt: string;
   deliverables: string[];
   fit: string;
   serviceHref?: string;
@@ -86,6 +88,8 @@ const copies: Record<Locale, Copy> = {
         eyebrow: "For teams that need direction",
         title: "Organic Launch Consultation",
         description: "A focused advisory engagement for leaders who need to decide where organic growth can matter, which risk needs clearing first, and who owns the plan across product, brand, content, and development.",
+        image: "/assets/koupoli-organic-launch-consultation.webp",
+        imageAlt: "Editorial map connecting market context, priorities, risks, and a practical launch plan",
         deliverables: ["Prioritised market and search opportunity map", "Organic launch decision brief and priorities", "Technical and content risk review", "A practical 90-day plan with named ownership"],
         fit: "Best for a new launch, repositioning, market entry, or a growth plan that has lost momentum.",
       },
@@ -93,6 +97,8 @@ const copies: Record<Locale, Copy> = {
         eyebrow: "For teams that need hands-on momentum",
         title: "SEO & AI Search Operations",
         description: "Ongoing technical SEO and search-content execution for teams with an approved direction that need one experienced operator to keep marketing, product, and development moving together.",
+        image: "/assets/koupoli-service-technical-delivery.webp",
+        imageAlt: "Editorial technical delivery map connecting site structure, implementation, and verification",
         deliverables: ["Technical SEO audits and implementation-ready tickets", "Information architecture and content briefs", "Schema, indexing, migration, and performance work", "AI-search visibility tracking linked to priority questions"],
         fit: "Best for teams that know where they are heading but need consistent operational progress.",
         serviceHref: "/services/technical-seo-ai-search/",
@@ -176,6 +182,8 @@ const copies: Record<Locale, Copy> = {
         eyebrow: "Za timove kojima treba smjer",
         title: "Konzultacije za organsko lansiranje",
         description: "Fokusirani savjetodavni angažman za voditelje koji trebaju odlučiti gdje organski rast može imati učinak, koji rizik prvo treba ukloniti i tko nosi plan kroz proizvod, brend, sadržaj i razvoj.",
+        image: "/assets/koupoli-organic-launch-consultation.webp",
+        imageAlt: "Urednička mapa koja povezuje tržišni kontekst, prioritete, rizike i praktičan plan lansiranja",
         deliverables: ["Prioritizirana mapa tržišnih prilika i potražnje", "Sažetak odluke i prioriteta za organsko lansiranje", "Pregled tehničkih i sadržajnih rizika", "Praktičan plan za 90 dana s jasnim vlasnicima zadataka"],
         fit: "Najbolje za novo lansiranje, repozicioniranje, ulazak na tržište ili plan rasta koji je izgubio zamah.",
       },
@@ -183,6 +191,8 @@ const copies: Record<Locale, Copy> = {
         eyebrow: "Za timove kojima treba izvedba",
         title: "SEO i AI Search Operations",
         description: "Kontinuirana tehnička SEO i sadržajna izvedba za timove s odobrenim smjerom kojima treba jedan iskusni operativac da marketing, proizvod i razvoj nastave raditi povezano.",
+        image: "/assets/koupoli-service-technical-delivery.webp",
+        imageAlt: "Urednička mapa tehničke izvedbe koja povezuje strukturu weba, implementaciju i provjeru",
         deliverables: ["Tehnički SEO auditi i zadaci spremni za implementaciju", "Informacijska arhitektura i briefovi za sadržaj", "Schema, indeksiranje, migracije i brzina", "Praćenje AI vidljivosti povezano s prioritetnim pitanjima"],
         fit: "Najbolje za timove koji znaju kamo idu, ali trebaju kontinuirani operativni napredak.",
         serviceHref: "/hr/usluge/seo-optimizacija/",
@@ -316,6 +326,7 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
           {copy.offers.map((offer) => <article className="growth-offer-card" key={offer.title}>
             <p className="growth-offer-eyebrow">{offer.eyebrow}</p>
             <h3>{offer.title}</h3>
+            <figure className="growth-offer-card-visual"><img src={offer.image} alt={offer.imageAlt} width={1400} height={1050} loading="lazy" /></figure>
             <p className="growth-offer-description">{offer.description}</p>
             <ul>{offer.deliverables.map((item) => <li key={item}>{item}</li>)}</ul>
             <p className="growth-offer-fit">{offer.fit}</p>

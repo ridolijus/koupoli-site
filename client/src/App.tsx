@@ -1,4 +1,3 @@
-import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { lazy, Suspense, useLayoutEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -69,7 +68,6 @@ export default function App({ ssrPath }: { ssrPath?: string }) {
   return (
     <ErrorBoundary>
       <TooltipProvider>
-        <Toaster />
         <Router ssrPath={ssrPath} />
       </TooltipProvider>
     </ErrorBoundary>

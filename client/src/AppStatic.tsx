@@ -1,6 +1,5 @@
-import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Suspense, useLayoutEffect } from "react";
+import React, { Suspense, useLayoutEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { SiteRoutes, type SitePages } from "./components/SiteRoutes";
 import { Router as WouterRouter, useLocation } from "wouter";
@@ -65,7 +64,6 @@ export default function AppStatic({ ssrPath }: { ssrPath?: string }) {
   return (
     <ErrorBoundary>
       <TooltipProvider>
-        <Toaster />
         <WouterRouter ssrPath={ssrPath}>
           <ScrollToPageStart />
           <Suspense fallback={null}>
