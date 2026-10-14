@@ -41,9 +41,9 @@ const copies: Record<Locale, ServiceCopy> = {
     heading: "Technical SEO services that make important pages easier to find.",
     lead: "Koupoli helps teams find and resolve technical blockers, turn findings into clear implementation work, and connect technical SEO with the content and entity signals that search engines and AI answers can use.",
     cta: "Discuss a technical SEO project",
-    image: "/assets/koupoli-technical-seo-guide.webp",
+    image: "/assets/koupoli-service-technical-delivery.webp",
     imageAlt:
-      "Technical SEO illustration showing a site structure, crawl paths, and search signals",
+      "Technical SEO delivery illustration showing a site structure, implementation plan, and verified live page",
     principleTitle: "Technical SEO is not a scorecard.",
     principle: [
       "A useful audit explains what is stopping the pages that matter from being discovered, rendered, indexed, or understood. The goal is not a long list of warnings. It is a focused sequence that reaches the live site.",
@@ -169,9 +169,9 @@ const copies: Record<Locale, ServiceCopy> = {
       "SEO optimizacija koja povezuje tehnički rad, sadržaj i poslovni cilj.",
     lead: "Koupoli pomaže timovima pronaći prepreke u tehničkom SEO-u, pretvoriti nalaze u jasne zadatke i povezati indeksiranje, strukturu sadržaja i mjerljive signale organskog rasta.",
     cta: "Razgovarajmo o SEO optimizaciji",
-    image: "/assets/koupoli-search-systems-hero.webp",
+    image: "/assets/koupoli-service-technical-delivery.webp",
     imageAlt:
-      "Urednička mapa tehničkih temelja, korisnog sadržaja i vidljivosti u pretrazi",
+      "Vizual tehničke SEO izvedbe koji povezuje strukturu weba, plan implementacije i provjerenu objavljenu stranicu",
     principleTitle: "SEO optimizacija nije samo popis preporuka.",
     principle: [
       "Koristan tehnički pregled pokazuje zašto važne stranice nisu dovoljno lako dostupne, crawlable, indeksirane ili razumljive. Cilj nije dugačak izvještaj s upozorenjima, nego prioriteti koji mogu doći do objavljene web-stranice.",
@@ -324,8 +324,8 @@ export default function GrowthService({ locale = "en" }: { locale?: Locale }) {
                 <Arrow />
               </Link>
             </div>
-            <figure>
-              <img src={copy.image} alt={copy.imageAlt} />
+            <figure className="growth-service-visual">
+              <img src={copy.image} alt={copy.imageAlt} width={1400} height={1050} />
             </figure>
           </div>
         </header>

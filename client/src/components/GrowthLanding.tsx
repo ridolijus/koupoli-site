@@ -330,6 +330,7 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
         <div className="growth-systems-aside">
           <p className="growth-kicker">{copy.systemsEyebrow}</p>
           <h2>{copy.systemsTitle}</h2>
+          <figure className="growth-systems-visual"><img src="/assets/koupoli-growth-system-map.webp" alt={locale === "hr" ? "Vizual povezanog sustava pozicioniranja, strukture, dokaza i mjerenja" : "Visual of a connected system for positioning, architecture, evidence, and measurement"} width={1200} height={1200} loading="lazy" /></figure>
         </div>
         <div className="growth-system-list">
           {copy.systems.map((system) => <article key={system.title}>
