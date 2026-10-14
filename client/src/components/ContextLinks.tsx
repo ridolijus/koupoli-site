@@ -16,8 +16,8 @@ type ContextLinksProps = {
 };
 
 const defaults = {
-  en: { eyebrow: "Continue exploring", title: "Related work and practical reading" },
-  hr: { eyebrow: "Istražite dalje", title: "Povezani rad i praktične bilješke" },
+  en: { eyebrow: "Keep the decision moving", title: "Related work and practical reading" },
+  hr: { eyebrow: "Nastavite prema sljedećoj odluci", title: "Povezani rad i praktične bilješke" },
 };
 
 function localizedPath(locale: Locale, href: string) {

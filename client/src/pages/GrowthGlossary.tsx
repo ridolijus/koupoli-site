@@ -44,8 +44,8 @@ export default function GrowthGlossary({ locale = "en" }: GlossaryProps) {
     <section className="growth-glossary-directory" aria-labelledby="glossary-directory-title">
       <div className="growth-container">
         <div className="growth-glossary-directory-header">
-          <div><p className="growth-kicker growth-kicker-blue">{locale === "hr" ? "Pojmovnik" : "Term directory"}</p><h2 id="glossary-directory-title">{locale === "hr" ? "Pronađite izraz koji trebate objasniti." : "Find the language behind the work."}</h2></div>
-          <p>{locale === "hr" ? "Filtrirajte područje ili upišite pojam. Svaka je definicija napisana za razgovor o stvarnom poslu, a ne samo za tražilicu." : "Filter by discipline or search a term. Each definition is written for a real working conversation, not only for a search engine."}</p>
+          <div><p className="growth-kicker growth-kicker-blue">{locale === "hr" ? "Pojmovnik" : "Term directory"}</p><h2 id="glossary-directory-title">{locale === "hr" ? "Pronađite izraz koji razjašnjava sljedeću odluku." : "Find the language that clarifies the next decision."}</h2></div>
+          <p>{locale === "hr" ? "Filtrirajte područje ili upišite pojam. Svaka je definicija napisana za razgovor o stvarnom poslu i odluci koja slijedi, a ne samo za tražilicu." : "Filter by discipline or search a term. Each definition is written for a real working conversation and the decision that follows, not only for a search engine."}</p>
         </div>
         <div className="growth-glossary-controls">
           <div className="growth-glossary-tabs" role="group" aria-label={locale === "hr" ? "Kategorije pojmova" : "Glossary categories"}>
@@ -62,11 +62,11 @@ export default function GrowthGlossary({ locale = "en" }: GlossaryProps) {
     <section className="growth-glossary-principle"><div className="growth-container"><div><p className="growth-kicker">{locale === "hr" ? "Kako je napravljen" : "How it is made"}</p><h2>{content.principleTitle}</h2></div><p>{content.principleCopy}</p></div></section>
 
     <section className="growth-glossary-resources"><div className="growth-container"><p className="growth-kicker growth-kicker-blue">{content.resourceKicker}</p><h2>{content.resourceTitle}</h2><nav className="growth-glossary-resource-grid" aria-label={content.resourceKicker}>{content.resources.map((resource) => <Link href={`${pathPrefix}${resource.href}`} key={resource.href}><strong>{resource.title}</strong><span>{resource.description}</span></Link>)}</nav><ContextLinks locale={locale} items={locale === "hr" ? [
-      { href: "/#offers", title: "Koupoli usluge", description: "Pogledajte dva načina suradnje: savjetodavni plan ili kontinuiranu operativnu podršku." },
+      { href: "/#offers", title: "Koupoli usluge", description: "Pogledajte koja podrška odgovara odluci koja je pred vama: savjetodavni plan ili kontinuirani operativni rad." },
       { href: "/projects/", title: "Projekti", description: "Pogledajte rad u kojem su tehnički SEO, sadržaj i razvoj morali funkcionirati zajedno." },
       { href: "/about/", title: "O meni", description: "Saznajte više o iskustvu koje stoji iza Koupoli pristupa." },
     ] : [
-      { href: "/#offers", title: "Koupoli offers", description: "See the two ways to work together: an advisory plan or ongoing operational support." },
+      { href: "/#offers", title: "Koupoli offers", description: "See which support fits the decision ahead: an advisory plan or ongoing operational work." },
       { href: "/projects/", title: "Projects", description: "See client work where technical SEO, content, and development had to work together." },
       { href: "/about/", title: "About", description: "Meet the experience behind the Koupoli approach." },
     ]} /></div></section>
