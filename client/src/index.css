@@ -7,7 +7,7 @@ body { min-width: 320px; margin: 0; background: #f5f1e8; }
 /* English-first organic growth experience */
 .growth-site { --growth-ink: #17202f; --growth-blue: #4c639f; --growth-blue-deep: #344b83; --growth-paper: #f5f1e8; --growth-paper-deep: #e9e2d3; --growth-wash: #dde4ee; --growth-line: rgba(23, 32, 47, .14); min-height: 100vh; overflow: hidden; background: var(--growth-paper); color: var(--growth-ink); font-family: var(--growth-body); font-size: 16px; line-height: 1.45; }
 .growth-site * { box-sizing: border-box; }
-.growth-site a { text-decoration: none; }
+.growth-site a { color: inherit; text-decoration: none; }
 .growth-container { width: min(calc(100% - 80px), 1320px); margin: 0 auto; }
 .growth-header { position: fixed; z-index: 40; top: 0; right: 0; left: 0; border-bottom: 1px solid rgba(23, 32, 47, .08); background: rgba(245, 241, 232, .88);  }
 .growth-nav { display: flex; min-height: 78px; align-items: center; justify-content: space-between; gap: 28px; }
