@@ -291,7 +291,10 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
 
     <section className="growth-thesis-section">
       <div className="growth-container growth-thesis-grid">
-        <div><p className="growth-kicker growth-kicker-blue">{copy.thesisEyebrow}</p></div>
+        <div className="growth-thesis-side">
+          <p className="growth-kicker growth-kicker-blue">{copy.thesisEyebrow}</p>
+          <figure className="growth-thesis-visual"><img src="/assets/koupoli-thesis-search-interface.webp" alt={locale === "hr" ? "Vizual tehničke SEO osnove koja povezuje stranice, signale i AI pretragu" : "Visual of a technical SEO foundation connecting pages, signals, and AI search"} width={1000} height={1250} loading="lazy" /></figure>
+        </div>
         <div>
           <h2>{copy.thesisTitle}</h2>
           <p>{copy.thesisBody}</p>
@@ -301,10 +304,13 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
 
     <section className="growth-offers-section" id="offers">
       <div className="growth-container">
-        <div className="growth-section-intro">
-          <p className="growth-kicker growth-kicker-blue">{copy.offersEyebrow}</p>
-          <h2>{copy.offersTitle}</h2>
-          <p>{copy.offersLead}</p>
+        <div className="growth-section-intro growth-offer-intro">
+          <div>
+            <p className="growth-kicker growth-kicker-blue">{copy.offersEyebrow}</p>
+            <h2>{copy.offersTitle}</h2>
+            <p>{copy.offersLead}</p>
+          </div>
+          <figure className="growth-offer-visual"><img src="/assets/koupoli-offer-pathways.webp" alt={locale === "hr" ? "Dvije putanje od poslovne odluke do provedbe organskog rasta" : "Two pathways from a business decision to organic growth delivery"} width={1400} height={1050} loading="lazy" /></figure>
         </div>
         <div className="growth-offer-grid">
           {copy.offers.map((offer) => <article className="growth-offer-card" key={offer.title}>
