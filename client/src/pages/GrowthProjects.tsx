@@ -54,7 +54,7 @@ export default function GrowthProjects({ locale = "en" }: { locale?: Locale }) {
   const copy = copies[locale];
   const related = locale === "hr" ? [
     { href: "/about/", title: "O Karlu", description: "Upoznajte iskustvo iza rada koji povezuje strategiju s implementacijom." },
-    { href: "/usluge/seo-optimizacija/", title: "SEO optimizacija", description: "Tehnički SEO, sadržaj i prioriteti za timove kojima treba konkretna izvedba." },
+    { href: "/hr/usluge/seo-optimizacija/", title: "SEO optimizacija", description: "Tehnički SEO, sadržaj i prioriteti za timove kojima treba konkretna izvedba." },
     { href: "/contact/", title: "Započnite razgovor", description: "Opišite projekt, tržište ili prepreku za fokusiran prvi razgovor." },
   ] : [
     { href: "/about/", title: "About Karlo", description: "Meet the experience behind work that connects strategy to implementation." },

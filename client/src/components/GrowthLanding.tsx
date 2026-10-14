@@ -185,7 +185,7 @@ const copies: Record<Locale, Copy> = {
         description: "Kontinuirana tehnička SEO i sadržajna izvedba za timove s odobrenim smjerom kojima treba jedan iskusni operativac da marketing, proizvod i razvoj nastave raditi povezano.",
         deliverables: ["Tehnički SEO auditi i zadaci spremni za implementaciju", "Informacijska arhitektura i briefovi za sadržaj", "Schema, indeksiranje, migracije i brzina", "Praćenje AI vidljivosti povezano s prioritetnim pitanjima"],
         fit: "Najbolje za timove koji znaju kamo idu, ali trebaju kontinuirani operativni napredak.",
-        serviceHref: "/usluge/seo-optimizacija/",
+        serviceHref: "/hr/usluge/seo-optimizacija/",
       },
     ],
     systemsEyebrow: "Što rad povezuje",

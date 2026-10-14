@@ -19,8 +19,8 @@ const pages = [
   ["/hr/post/website-migration-seo/", "BlogPosting", "/post/website-migration-seo/"],
   ["/post/generative-engine-optimization/", "BlogPosting", "/hr/post/generative-engine-optimization/"],
   ["/hr/post/generative-engine-optimization/", "BlogPosting", "/post/generative-engine-optimization/"],
-  ["/services/technical-seo-ai-search/", "Service", "/usluge/seo-optimizacija/"],
-  ["/usluge/seo-optimizacija/", "Service", "/services/technical-seo-ai-search/"],
+  ["/services/technical-seo-ai-search/", "Service", "/hr/usluge/seo-optimizacija/"],
+  ["/hr/usluge/seo-optimizacija/", "Service", "/services/technical-seo-ai-search/"],
   ["/glossary/", "CollectionPage", "/hr/pojmovnik/"],
   ["/hr/pojmovnik/", "CollectionPage", "/glossary/"],
   ["/glossary/technical-seo/", "DefinedTerm", "/hr/pojmovnik/tehnicki-seo/"],
@@ -57,7 +57,7 @@ for (const [route, expectedType, alternateRoute] of pages) {
   for (const name of ["twitter:card", "twitter:title", "twitter:description", "twitter:image"]) {
     if (!html.includes(`name="${name}"`)) throw new Error(`Missing ${name} for ${route}`);
   }
-  const isCroatianRoute = route.startsWith("/hr/") || route === "/hr/" || route.startsWith("/usluge/");
+  const isCroatianRoute = route.startsWith("/hr/") || route === "/hr/";
   const englishRoute = isCroatianRoute ? alternateRoute : route;
   const croatianRoute = isCroatianRoute ? route : alternateRoute;
   if (!html.includes(`hreflang="en" href="https://koupoli.com${englishRoute}"`)) throw new Error(`Missing English hreflang for ${route}`);

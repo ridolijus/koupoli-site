@@ -52,8 +52,8 @@ export function SiteRoutes({ pages }: { pages: SitePages }) {
       <Route path="/hr/post/generative-engine-optimization/"><BlogPost locale="hr" slug="generative-engine-optimization" /></Route>
       <Route path="/services/technical-seo-ai-search"><Service /></Route>
       <Route path="/services/technical-seo-ai-search/"><Service /></Route>
-      <Route path="/usluge/seo-optimizacija"><Service locale="hr" /></Route>
-      <Route path="/usluge/seo-optimizacija/"><Service locale="hr" /></Route>
+      <Route path="/hr/usluge/seo-optimizacija"><Service locale="hr" /></Route>
+      <Route path="/hr/usluge/seo-optimizacija/"><Service locale="hr" /></Route>
       <Route path="/contact"><Contact /></Route>
       <Route path="/contact/"><Contact /></Route>
       <Route path="/hr/contact"><Contact locale="hr" /></Route>

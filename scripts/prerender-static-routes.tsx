@@ -24,7 +24,7 @@ const routes = [
   "/post/generative-engine-optimization/",
   "/hr/post/generative-engine-optimization/",
   "/services/technical-seo-ai-search/",
-  "/usluge/seo-optimizacija/",
+  "/hr/usluge/seo-optimizacija/",
   "/glossary/",
   "/hr/pojmovnik/",
   "/glossary/technical-seo/",
