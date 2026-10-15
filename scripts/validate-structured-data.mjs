@@ -19,6 +19,8 @@ const pages = [
   ["/hr/post/website-migration-seo/", "BlogPosting", "/post/website-migration-seo/"],
   ["/post/generative-engine-optimization/", "BlogPosting", "/hr/post/generative-engine-optimization/"],
   ["/hr/post/generative-engine-optimization/", "BlogPosting", "/post/generative-engine-optimization/"],
+  ["/services/organic-launch-advisory/", "Service", "/hr/usluge/seo-savjetovanje/"],
+  ["/hr/usluge/seo-savjetovanje/", "Service", "/services/organic-launch-advisory/"],
   ["/services/technical-seo-ai-search/", "Service", "/hr/usluge/seo-optimizacija/"],
   ["/hr/usluge/seo-optimizacija/", "Service", "/services/technical-seo-ai-search/"],
   ["/glossary/", "CollectionPage", "/hr/pojmovnik/"],

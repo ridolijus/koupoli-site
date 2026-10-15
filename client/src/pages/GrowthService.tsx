@@ -147,10 +147,10 @@ const copies: Record<Locale, ServiceCopy> = {
           "A practical guide to crawlability, indexation, structure, performance, and dependable rendering.",
       },
       {
-        href: "/glossary/ai-search-visibility/",
-        title: "AI search visibility guide",
+        href: "/services/organic-launch-advisory/",
+        title: "Organic launch advisory",
         description:
-          "A grounded way to define the questions, signals, and outcomes worth measuring.",
+          "The strategy-first engagement for teams that need a usable organic plan before implementation begins.",
       },
       {
         href: "/post/website-migration-seo/",
@@ -274,10 +274,10 @@ const copies: Record<Locale, ServiceCopy> = {
           "Praktičan vodič kroz crawlabilnost, indeksiranje, strukturu, brzinu i pouzdan prikaz stranice.",
       },
       {
-        href: "/pojmovnik/vidljivost-u-ai-pretrazi/",
-        title: "Vodič za AI vidljivost",
+        href: "/hr/usluge/seo-savjetovanje/",
+        title: "SEO savjetovanje",
         description:
-          "Utemeljen pristup pitanjima, signalima i poslovnim ishodima koje vrijedi mjeriti.",
+          "Savjetodavni angažman za timove kojima prije izvedbe treba upotrebljiv plan organskog rasta.",
       },
       {
         href: "/post/website-migration-seo/",

@@ -92,6 +92,7 @@ const copies: Record<Locale, Copy> = {
         imageAlt: "Editorial map connecting market context, priorities, risks, and a practical launch plan",
         deliverables: ["Prioritised market and search opportunity map", "Organic launch decision brief and priorities", "Technical and content risk review", "A practical 90-day plan with named ownership"],
         fit: "Best for a new launch, repositioning, market entry, or a growth plan that has lost momentum.",
+        serviceHref: "/services/organic-launch-advisory/",
       },
       {
         eyebrow: "For teams that need hands-on momentum",
@@ -186,6 +187,7 @@ const copies: Record<Locale, Copy> = {
         imageAlt: "Urednička mapa koja povezuje tržišni kontekst, prioritete, rizike i praktičan plan lansiranja",
         deliverables: ["Prioritizirana mapa tržišnih prilika i potražnje", "Sažetak odluke i prioriteta za organsko lansiranje", "Pregled tehničkih i sadržajnih rizika", "Praktičan plan za 90 dana s jasnim vlasnicima zadataka"],
         fit: "Najbolje za novo lansiranje, repozicioniranje, ulazak na tržište ili plan rasta koji je izgubio zamah.",
+        serviceHref: "/hr/usluge/seo-savjetovanje/",
       },
       {
         eyebrow: "Za timove kojima treba izvedba",

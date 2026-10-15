@@ -7,6 +7,7 @@ import { Router as WouterRouter, useLocation } from "wouter";
 const pages: SitePages = {
   Home: lazy(() => import("./pages/GrowthHome")),
   CroatianHome: lazy(() => import("./pages/CroatianHome")),
+  Advisory: lazy(() => import("./pages/GrowthAdvisory")),
   About: lazy(() => import("./pages/GrowthAbout")),
   Projects: lazy(() => import("./pages/GrowthProjects")),
   Blog: lazy(() => import("./pages/GrowthBlog")),

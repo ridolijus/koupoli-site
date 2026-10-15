@@ -1,0 +1,75 @@
+{
+  "routes": [
+    { "path": "/", "title": "Koupoli" },
+    { "path": "/hr/", "title": "Koupoli Hrvatski" },
+    { "path": "/about/", "title": "About" },
+    { "path": "/hr/about/", "title": "O Karlu" },
+    { "path": "/projects/", "title": "Projects" },
+    { "path": "/hr/projects/", "title": "Projekti" },
+    { "path": "/blog/", "title": "Notes" },
+    { "path": "/hr/blog/", "title": "Bilješke" },
+    {
+      "path": "/post/the-illusion-of-ai-productivity/",
+      "title": "The Illusion of AI Productivity"
+    },
+    {
+      "path": "/hr/post/the-illusion-of-ai-productivity/",
+      "title": "Iluzija produktivnosti uz AI"
+    },
+    { "path": "/post/ai-search-visibility/", "title": "AI Search Visibility" },
+    {
+      "path": "/hr/post/ai-search-visibility/",
+      "title": "Vidljivost u AI pretrazi"
+    },
+    {
+      "path": "/post/website-migration-seo/",
+      "title": "Website Migration SEO"
+    },
+    {
+      "path": "/hr/post/website-migration-seo/",
+      "title": "SEO migracija web-stranice"
+    },
+    {
+      "path": "/post/generative-engine-optimization/",
+      "title": "Generative Engine Optimization"
+    },
+    {
+      "path": "/hr/post/generative-engine-optimization/",
+      "title": "Generativna optimizacija"
+    },
+    {
+      "path": "/services/organic-launch-advisory/",
+      "title": "Organic Launch Advisory"
+    },
+    { "path": "/hr/usluge/seo-savjetovanje/", "title": "SEO savjetovanje" },
+    {
+      "path": "/services/technical-seo-ai-search/",
+      "title": "Technical SEO Services"
+    },
+    { "path": "/usluge/seo-optimizacija/", "title": "SEO optimizacija" },
+    { "path": "/glossary/", "title": "Glossary" },
+    { "path": "/hr/pojmovnik/", "title": "Pojmovnik" },
+    { "path": "/glossary/technical-seo/", "title": "Technical SEO" },
+    { "path": "/hr/pojmovnik/tehnicki-seo/", "title": "Tehnički SEO" },
+    { "path": "/glossary/entity-seo/", "title": "Entity SEO" },
+    { "path": "/hr/pojmovnik/entitetski-seo/", "title": "Entitetski SEO" },
+    {
+      "path": "/glossary/ai-search-visibility/",
+      "title": "AI Search Visibility Guide"
+    },
+    {
+      "path": "/hr/pojmovnik/vidljivost-u-ai-pretrazi/",
+      "title": "Vidljivost u AI pretrazi"
+    },
+    {
+      "path": "/glossary/generative-engine-optimization/",
+      "title": "Generative Engine Optimization Guide"
+    },
+    {
+      "path": "/hr/pojmovnik/generativna-optimizacija/",
+      "title": "Generativna optimizacija"
+    },
+    { "path": "/contact/", "title": "Contact" },
+    { "path": "/hr/contact/", "title": "Kontakt" }
+  ]
+}

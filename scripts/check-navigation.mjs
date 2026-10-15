@@ -60,7 +60,7 @@ async function expectNoHorizontalOverflow(page, route) {
   }
 }
 
-const preview = spawn("pnpm", ["vite", "preview", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], {
+const preview = spawn(process.execPath, ["node_modules/vite/bin/vite.js", "preview", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], {
   cwd: root,
   stdio: "ignore",
 });
@@ -100,6 +100,7 @@ try {
       "/post/ai-search-visibility/", "/hr/post/ai-search-visibility/",
       "/post/website-migration-seo/", "/hr/post/website-migration-seo/",
       "/post/generative-engine-optimization/", "/hr/post/generative-engine-optimization/",
+      "/services/organic-launch-advisory/", "/hr/usluge/seo-savjetovanje/",
       "/services/technical-seo-ai-search/", "/hr/usluge/seo-optimizacija/",
       "/contact/", "/hr/contact/", "/glossary/", "/hr/pojmovnik/",
       "/glossary/technical-seo/", "/hr/pojmovnik/tehnicki-seo/",

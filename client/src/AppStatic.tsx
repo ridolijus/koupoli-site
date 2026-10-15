@@ -5,6 +5,7 @@ import { SiteRoutes, type SitePages } from "./components/SiteRoutes";
 import { Router as WouterRouter, useLocation } from "wouter";
 import CroatianHome from "./pages/CroatianHome";
 import GrowthAbout from "./pages/GrowthAbout";
+import GrowthAdvisory from "./pages/GrowthAdvisory";
 import GrowthBlog from "./pages/GrowthBlog";
 import GrowthBlogPost from "./pages/GrowthBlogPost";
 import GrowthContact from "./pages/GrowthContact";
@@ -17,6 +18,7 @@ import GrowthService from "./pages/GrowthService";
 const pages: SitePages = {
   Home: GrowthHome,
   CroatianHome,
+  Advisory: GrowthAdvisory,
   About: GrowthAbout,
   Projects: GrowthProjects,
   Blog: GrowthBlog,

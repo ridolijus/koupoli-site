@@ -4,6 +4,7 @@ import type { ComponentType } from "react";
 export type SitePages = {
   Home: ComponentType<any>;
   CroatianHome: ComponentType<any>;
+  Advisory: ComponentType<any>;
   About: ComponentType<any>;
   Projects: ComponentType<any>;
   Blog: ComponentType<any>;
@@ -15,7 +16,7 @@ export type SitePages = {
 };
 
 export function SiteRoutes({ pages }: { pages: SitePages }) {
-  const { Home, CroatianHome, About, Projects, Blog, BlogPost, Contact, Glossary, GlossaryGuide, Service } = pages;
+  const { Home, CroatianHome, Advisory, About, Projects, Blog, BlogPost, Contact, Glossary, GlossaryGuide, Service } = pages;
 
   return (
     <Switch>
@@ -50,6 +51,10 @@ export function SiteRoutes({ pages }: { pages: SitePages }) {
       <Route path="/post/generative-engine-optimization/"><BlogPost slug="generative-engine-optimization" /></Route>
       <Route path="/hr/post/generative-engine-optimization"><BlogPost locale="hr" slug="generative-engine-optimization" /></Route>
       <Route path="/hr/post/generative-engine-optimization/"><BlogPost locale="hr" slug="generative-engine-optimization" /></Route>
+      <Route path="/services/organic-launch-advisory"><Advisory /></Route>
+      <Route path="/services/organic-launch-advisory/"><Advisory /></Route>
+      <Route path="/hr/usluge/seo-savjetovanje"><Advisory locale="hr" /></Route>
+      <Route path="/hr/usluge/seo-savjetovanje/"><Advisory locale="hr" /></Route>
       <Route path="/services/technical-seo-ai-search"><Service /></Route>
       <Route path="/services/technical-seo-ai-search/"><Service /></Route>
       <Route path="/hr/usluge/seo-optimizacija"><Service locale="hr" /></Route>
