@@ -6,6 +6,7 @@ export type ContextLinkItem = {
   href: string;
   title: string;
   description: string;
+  download?: boolean;
 };
 
 type ContextLinksProps = {
@@ -31,10 +32,7 @@ export default function ContextLinks({ locale, items, eyebrow, title }: ContextL
     <p className="growth-kicker growth-kicker-blue">{eyebrow || copy.eyebrow}</p>
     <h2>{title || copy.title}</h2>
     <nav className="growth-context-link-grid">
-      {items.map((item) => <Link href={localizedPath(locale, item.href)} key={item.href}>
-        <strong>{item.title}</strong>
-        <span>{item.description}</span>
-      </Link>)}
+      {items.map((item) => item.download ? <a href={item.href} download key={item.href}><strong>{item.title}</strong><span>{item.description}</span></a> : <Link href={localizedPath(locale, item.href)} key={item.href}><strong>{item.title}</strong><span>{item.description}</span></Link>)}
     </nav>
   </aside>;
 }

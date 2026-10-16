@@ -29,7 +29,7 @@ type ServiceCopy = {
   faqs: { question: string; answer: string }[];
   closeTitle: string;
   closeBody: string;
-  related: { href: string; title: string; description: string }[];
+  related: { href: string; title: string; description: string; download?: boolean }[];
 };
 
 const copies: Record<Locale, ServiceCopy> = {
@@ -153,10 +153,11 @@ const copies: Record<Locale, ServiceCopy> = {
           "The strategy-first engagement for teams that need a usable organic plan before implementation begins.",
       },
       {
-        href: "/post/website-migration-seo/",
-        title: "Website migration SEO",
+        href: "/downloads/website-migration-seo-checklist.md",
+        title: "Website migration SEO checklist",
         description:
-          "A launch checklist for URLs, redirects, canonicals, language versions, and monitoring.",
+          "A reusable Markdown template for URLs, redirects, canonicals, language versions, and launch monitoring.",
+        download: true,
       },
     ],
   },
@@ -280,10 +281,11 @@ const copies: Record<Locale, ServiceCopy> = {
           "Savjetodavni angažman za timove kojima prije izvedbe treba upotrebljiv plan organskog rasta.",
       },
       {
-        href: "/post/website-migration-seo/",
-        title: "SEO migracija web-stranice",
+        href: "/downloads/seo-migracija-kontrolni-popis.md",
+        title: "Kontrolni popis za SEO migraciju",
         description:
-          "Kontrolni popis za URL-ove, redirekcije, canonical oznake, jezične verzije i praćenje.",
+          "Markdown predložak za URL-ove, redirekcije, canonical oznake, jezične verzije i praćenje lansiranja.",
+        download: true,
       },
     ],
   },

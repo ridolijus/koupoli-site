@@ -81,6 +81,19 @@ for (const [route, expectedType, alternateRoute] of pages) {
   }
 }
 
+const legacyRedirects = [["/usluge/seo-optimizacija/", "/hr/usluge/seo-optimizacija/"]];
+for (const [legacyRoute, destinationRoute] of legacyRedirects) {
+  const file = path.join(output, legacyRoute, "index.html");
+  const html = fs.readFileSync(file, "utf8");
+  const destination = `https://koupoli.com${destinationRoute}`;
+  if (!html.includes(`http-equiv="refresh" content="0; url=${destination}"`)) throw new Error(`Missing redirect for ${legacyRoute}`);
+  if (!html.includes(`<link rel="canonical" href="${destination}">`)) throw new Error(`Missing canonical URL for ${legacyRoute}`);
+}
+
+for (const resource of ["website-migration-seo-checklist.md", "seo-migracija-kontrolni-popis.md"]) {
+  if (!fs.existsSync(path.join(output, "downloads", resource))) throw new Error(`Missing published checklist asset: ${resource}`);
+}
+
 const sitemap = fs.readFileSync("client/public/sitemap.xml", "utf8");
 for (const [route, , alternateRoute] of pages) {
   if (!sitemap.includes(`<loc>https://koupoli.com${route}</loc>`)) throw new Error(`Missing sitemap URL for ${route}`);

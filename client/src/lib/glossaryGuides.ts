@@ -23,7 +23,7 @@ type GlossaryGuide = {
   signalsLabel: string;
   signals: string[];
   sections: GuideSection[];
-  note: { slug: string; label: string; description: string };
+  note: { slug: string; label: string; description: string; resource?: { href: string; label: string } };
   related: GlossaryGuideKey[];
   sourcesLabel: string;
   sources: Array<{ label: string; href: string }>;
@@ -82,7 +82,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
           ],
         },
       ],
-      note: { slug: "website-migration-seo", label: "Website Migration SEO", description: "Use this launch checklist to see how redirects, internal links, canonicals, and monitoring fit together in a live migration." },
+      note: { slug: "website-migration-seo", label: "Website Migration SEO", description: "Use this launch checklist to see how redirects, internal links, canonicals, and monitoring fit together in a live migration.", resource: { href: "/downloads/website-migration-seo-checklist.md", label: "Download the migration checklist" } },
       related: ["entity-seo", "ai-search-visibility", "generative-engine-optimization"],
       sourcesLabel: "Sources",
       sources: [
@@ -131,6 +131,18 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
             "Keep names, service descriptions, author information, and references consistent wherever they appear.",
             "Use internal links to make the relationship between a service, an example, and an explanatory resource obvious.",
             "Add structured data only when it accurately describes the visible page and can be maintained over time.",
+          ],
+        },
+        {
+          heading: "Turn the inventory into a relationship map",
+          paragraphs: [
+            "The inventory becomes actionable when it shows how the important entities support each other across the site. A service business can map its organisation, specialist, offers, projects, core concepts, and relevant markets on one working page before deciding where new markup or content is needed.",
+          ],
+          list: [
+            "Link each commercial page to the person or organisation behind the work and to the evidence that supports the offer.",
+            "Use one canonical name for the organisation, service, specialist, and priority concept, then update variations that could create ambiguity.",
+            "Make the relationship between a project, the service delivered, and the problem solved clear without adding outcomes that cannot be verified.",
+            "Treat a missing relationship as a page or internal-link decision before treating it as a schema task.",
           ],
         },
         {
@@ -320,7 +332,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
           ],
         },
       ],
-      note: { slug: "website-migration-seo", label: "SEO migracija web-stranice", description: "Pogledajte kako se redirekcije, interne poveznice, canonical oznake i praćenje uklapaju u stvarnu migraciju." },
+      note: { slug: "website-migration-seo", label: "SEO migracija web-stranice", description: "Pogledajte kako se redirekcije, interne poveznice, canonical oznake i praćenje uklapaju u stvarnu migraciju.", resource: { href: "/downloads/seo-migracija-kontrolni-popis.md", label: "Preuzmite kontrolni popis za migraciju" } },
       related: ["entity-seo", "ai-search-visibility", "generative-engine-optimization"],
       sourcesLabel: "Izvori",
       sources: [
@@ -369,6 +381,18 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
             "Održavajte nazive, opise usluga, podatke o autoru i reference dosljednima gdje god se pojavljuju.",
             "Koristite interne poveznice kako bi odnos između usluge, primjera i objašnjavajućeg izvora bio očit.",
             "Dodajte strukturirane podatke samo kada točno opisuju vidljivu stranicu i kada ih možete održavati kroz vrijeme.",
+          ],
+        },
+        {
+          heading: "Pretvorite inventar u mapu odnosa",
+          paragraphs: [
+            "Inventar postaje primjenjiv kada pokazuje kako se važni entiteti podupiru kroz web-stranicu. Uslužna tvrtka na jednoj radnoj stranici može mapirati organizaciju, stručnjaka, ponude, projekte, glavne pojmove i relevantna tržišta prije odluke gdje su potrebni novi markup ili sadržaj.",
+          ],
+          list: [
+            "Povežite svaku komercijalnu stranicu s osobom ili organizacijom koja stoji iza rada te s dokazima koji podupiru ponudu.",
+            "Za organizaciju, uslugu, stručnjaka i prioritetni pojam koristite jedno kanonikalno ime, a zatim uklonite varijacije koje mogu stvoriti nejasnoću.",
+            "Odnos između projekta, isporučene usluge i riješenog problema objasnite jasno, bez dodavanja ishoda koji se ne mogu provjeriti.",
+            "Nedostajući odnos prvo tretirajte kao odluku o stranici ili internim poveznicama, a tek zatim kao zadatak za schemu.",
           ],
         },
         {

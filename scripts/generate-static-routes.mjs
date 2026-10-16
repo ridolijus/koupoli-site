@@ -332,4 +332,13 @@ for (const routeData of routes) {
   fs.writeFileSync(destination, createPage(routeData, destination));
 }
 
+const legacyRedirects = [["/usluge/seo-optimizacija/", "/hr/usluge/seo-optimizacija/"]];
+for (const [legacyRoute, destinationRoute] of legacyRedirects) {
+  const destinationUrl = absolute(destinationRoute);
+  const destination = path.join(output, legacyRoute.slice(1), "index.html");
+  const html = `<!doctype html><html lang="hr"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=${destinationUrl}"><link rel="canonical" href="${destinationUrl}"><meta name="robots" content="noindex,follow"><title>SEO optimizacija | Koupoli</title></head><body><p>Ova stranica je premještena na <a href="${destinationUrl}">${destinationUrl}</a>.</p></body></html>`;
+  fs.mkdirSync(path.dirname(destination), { recursive: true });
+  fs.writeFileSync(destination, html);
+}
+
 fs.writeFileSync(path.join(output, "404.html"), '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Not found</title></head><body><h1>Page not found</h1></body></html>');

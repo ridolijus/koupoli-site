@@ -269,7 +269,7 @@ const copies: Record<Locale, AdvisoryCopy> = {
     relatedTitle: "Korisna podloga za planiranje rada",
     related: [
       {
-        href: "/usluge/seo-optimizacija/",
+        href: "/hr/usluge/seo-optimizacija/",
         title: "SEO optimizacija",
         description:
           "Usluga za timove koji tehnički SEO i rad u pretrazi trebaju prenijeti u konkretnu izvedbu.",

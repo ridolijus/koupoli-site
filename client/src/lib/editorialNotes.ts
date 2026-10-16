@@ -7,6 +7,7 @@ export type EditorialNote = {
   excerpt: string;
   image: string;
   imageAlt: string;
+  resource?: { href: string; label: string; description: string };
   sections: Array<{ heading: string; paragraphs: string[]; list?: string[] }>;
   sources: Array<{ label: string; href: string }>;
 };
@@ -72,6 +73,7 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
       excerpt: "A concise migration checklist for teams that want a new website without sacrificing search equity or creating avoidable technical debt.",
       image: "/assets/koupoli-website-migration-note-light.webp",
       imageAlt: "Editorial infographic showing a structured website migration map",
+      resource: { href: "/downloads/website-migration-seo-checklist.md", label: "Download the migration checklist", description: "Use the editable Markdown template to assign owners, map URLs, and record launch checks." },
       sections: [
         {
           heading: "A migration is an information move, not just a redesign",
@@ -93,10 +95,34 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
           ],
         },
         {
+          heading: "Turn the inventory into a migration map",
+          paragraphs: [
+            "A useful migration map gives every important legacy URL a named final destination and a reason for the decision. It is the shared record for the people changing content, implementation, analytics, and redirects. Without it, each team can make a locally reasonable change that sends the visitor or crawler somewhere different.",
+          ],
+          list: [
+            "Record the legacy URL, final canonical URL, decision, reason, owner, and test result in one sheet.",
+            "Map each valuable page to the closest equivalent intent, not automatically to the homepage or a category page.",
+            "Flag pages that need new copy, a new destination, or a documented retirement before development work is signed off.",
+            "Test priority redirects as direct, single-hop routes after the final deployment, then replace internal links with the final URL.",
+          ],
+        },
+        {
           heading: "Treat redirects and internal links as one system",
           paragraphs: [
             "A redirect is not a substitute for a clean new architecture. Use direct server-side redirects for moved pages, then update internal navigation, content links, canonicals, hreflang tags, and sitemap URLs to point at the final destination. A visitor and a crawler should not have to pass through unnecessary hops.",
             "After launch, crawl the live site and compare the response codes, canonical URLs, and internal links against the migration map. The best time to discover a loop, a missing page, or an accidental noindex tag is before search traffic has had time to fall.",
+          ],
+        },
+        {
+          heading: "Give launch-day checks a clear owner",
+          paragraphs: [
+            "The launch should have a short checklist that can be completed while the site is public, rather than a technical review that starts after problems appear. The important checks are not only redirects: the destination page, its indexation signals, and the measurement setup need to agree with the plan.",
+          ],
+          list: [
+            "Confirm priority legacy URLs redirect once to live, indexable destination pages.",
+            "Check canonical URLs, hreflang pairs, internal links, and sitemap entries all name the final version.",
+            "Remove temporary noindex or crawl restrictions and confirm analytics and conversion tracking can collect a baseline.",
+            "Resubmit the sitemap only after the final public deployment, then use URL Inspection for the pages carrying the most risk.",
           ],
         },
         {
@@ -223,6 +249,7 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
       excerpt: "Sažet kontrolni popis migracije za timove koji žele novu web-stranicu bez nepotrebnog gubitka organske vidljivosti.",
       image: "/assets/koupoli-website-migration-note-light.webp",
       imageAlt: "Urednički infografički prikaz strukturirane migracijske mape web-stranice",
+      resource: { href: "/downloads/seo-migracija-kontrolni-popis.md", label: "Preuzmite kontrolni popis za migraciju", description: "Upotrijebite prilagodljiv Markdown predložak za dodjelu vlasnika, mapiranje URL-ova i bilježenje provjera pri lansiranju." },
       sections: [
         {
           heading: "Migracija je premještanje informacija, a ne samo redizajn",
@@ -244,10 +271,34 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
           ],
         },
         {
+          heading: "Pretvorite inventar u migracijsku mapu",
+          paragraphs: [
+            "Korisna migracijska mapa svakoj važnoj staroj adresi daje imenovano konačno odredište i razlog odluke. To je zajednički zapis za osobe koje mijenjaju sadržaj, implementaciju, analitiku i redirekcije. Bez njega svaki tim može donijeti lokalno razumnu odluku koja posjetitelja ili crawler vodi na drugo mjesto.",
+          ],
+          list: [
+            "U jednu tablicu zabilježite stari URL, konačni canonical URL, odluku, razlog, vlasnika i rezultat testa.",
+            "Svaku vrijednu stranicu mapirajte na najbližu jednaku namjeru, a ne automatski na početnu stranicu ili kategoriju.",
+            "Označite stranice kojima prije potpisivanja razvoja treba novi tekst, novo odredište ili dokumentirano povlačenje.",
+            "Nakon konačne objave testirajte prioritetne redirekcije kao izravne rute bez dodatnih koraka, a zatim interne poveznice zamijenite konačnim URL-om.",
+          ],
+        },
+        {
           heading: "Redirekcije i interne poveznice čine jedan sustav",
           paragraphs: [
             "Redirekcija nije zamjena za čistu novu arhitekturu. Za premještene stranice koristite izravne redirekcije na razini poslužitelja, a zatim ažurirajte internu navigaciju, poveznice u sadržaju, canonical oznake, hreflang oznake i URL-ove u sitemapu tako da upućuju na konačno odredište.",
             "Nakon lansiranja crawlajte objavljenu web-stranicu i usporedite statusne kodove, canonical URL-ove i interne poveznice s migracijskom mapom. Najbolji je trenutak za otkrivanje petlje, stranice koja nedostaje ili slučajne noindex oznake prije pada organskog prometa.",
+          ],
+        },
+        {
+          heading: "Dodijelite vlasnika provjerama na dan lansiranja",
+          paragraphs: [
+            "Lansiranje treba imati kratak popis provjera koji se može dovršiti dok je web javno dostupan, a ne tehnički pregled koji počinje tek kada se pojave problemi. Važne nisu samo redirekcije: odredišna stranica, signali indeksiranja i mjerenje moraju se slagati s planom.",
+          ],
+          list: [
+            "Potvrdite da prioritetni stari URL-ovi u jednom koraku vode na objavljene, indeksabilne odredišne stranice.",
+            "Provjerite navode li canonical URL-ovi, hreflang parovi, interne poveznice i sitemap konačnu verziju.",
+            "Uklonite privremeni noindex ili ograničenja crawlanja te potvrdite da analitika i praćenje konverzija mogu prikupiti početno stanje.",
+            "Ponovno pošaljite sitemap tek nakon konačne javne objave, a zatim URL Inspectionom provjerite stranice s najvećim rizikom.",
           ],
         },
         {
