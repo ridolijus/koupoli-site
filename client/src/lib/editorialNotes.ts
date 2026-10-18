@@ -1,6 +1,7 @@
 export type EditorialNote = {
   slug: string;
   date: string;
+  updated?: { date: string; iso: string };
   title: string;
   metaTitle: string;
   metaDescription: string;
@@ -17,6 +18,7 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
     {
       slug: "ai-search-visibility",
       date: "October 2, 2026",
+      updated: { date: "October 18, 2026", iso: "2026-10-18" },
       title: "AI Search Visibility: What to Measure Before You Optimise",
       metaTitle: "AI Search Visibility: What to Measure | Koupoli",
       metaDescription: "A practical framework for measuring AI search visibility without confusing impressions, mentions, rankings, and commercial outcomes.",
@@ -52,6 +54,18 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
           ],
         },
         {
+          heading: "Use a small measurement record",
+          paragraphs: [
+            "A useful review starts with one priority question, the page intended to answer it, and the commercial decision behind the work. Record normal Search performance alongside AI-feature impressions when they become available, then note the next action the evidence supports.",
+            "For example, rising AI-feature impressions with no qualified visits may call for a stronger page path or clearer commercial context. Rising normal-search impressions with weak average position may call for more supporting evidence, not a new page for every wording variation.",
+          ],
+          list: [
+            "Keep the review to a small set of priority pages and revisit it weekly rather than reacting to daily movement.",
+            "Separate normal-search impressions, generative AI impressions, qualified visits, and enquiries instead of combining them into one score.",
+            "Write down the release or content change beside the observation so the team can understand what may have influenced it.",
+          ],
+        },
+        {
           heading: "What not to optimise for",
           paragraphs: [
             "Avoid treating a third-party mention counter as a rank tracker. AI answers can change with the question, location, model, and source set. A tool can be useful for discovering patterns, but it cannot replace first-party Search Console data or commercial analytics.",
@@ -63,10 +77,12 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
         { label: "Google Search Central: Optimizing your website for generative AI features", href: "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" },
         { label: "Google Search Central: Generative AI performance reports", href: "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" },
       ],
+      resource: { href: "/downloads/ai-search-visibility-scorecard.md", label: "Download the AI search visibility scorecard", description: "Use the editable Markdown scorecard to track priority questions, supporting pages, and the next decision." },
     },
     {
       slug: "website-migration-seo",
       date: "October 2, 2026",
+      updated: { date: "October 18, 2026", iso: "2026-10-18" },
       title: "Website Migration SEO: A Practical Launch Checklist",
       metaTitle: "Website Migration SEO: A Practical Checklist | Koupoli",
       metaDescription: "A practical SEO launch checklist for safeguarding URLs, redirects, indexation, content, and measurement during a website migration.",
@@ -98,12 +114,17 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
           heading: "Turn the inventory into a migration map",
           paragraphs: [
             "A useful migration map gives every important legacy URL a named final destination and a reason for the decision. It is the shared record for the people changing content, implementation, analytics, and redirects. Without it, each team can make a locally reasonable change that sends the visitor or crawler somewhere different.",
+            "The sequence below turns a migration plan into work that can be assigned and checked. Each step needs an owner and a pass condition before the next one is treated as complete.",
           ],
           list: [
-            "Record the legacy URL, final canonical URL, decision, reason, owner, and test result in one sheet.",
-            "Map each valuable page to the closest equivalent intent, not automatically to the homepage or a category page.",
-            "Flag pages that need new copy, a new destination, or a documented retirement before development work is signed off.",
-            "Test priority redirects as direct, single-hop routes after the final deployment, then replace internal links with the final URL.",
+            "1. Benchmark: record priority landing pages, queries, conversions, backlinks, and technical baselines. Owner: SEO or analytics lead. Pass condition: the baseline is saved before work begins.",
+            "2. Inventory: list current URLs and identify the pages that carry distinct traffic, links, conversions, or business intent. Owner: SEO and content lead. Pass condition: every priority URL has a status.",
+            "3. Map destinations: assign each priority legacy URL its closest final equivalent. Owner: SEO and content lead. Pass condition: no important intent is redirected by default to the homepage.",
+            "4. Preserve intent: confirm that final pages retain the information, title, heading, and internal-link context needed for their purpose. Owner: content lead. Pass condition: priority pages have an indexable final destination.",
+            "5. Prepare redirects: implement and test direct, single-hop redirects from legacy URLs to their final destinations. Owner: developer. Pass condition: no loop, chain, or irrelevant homepage redirect remains.",
+            "6. Validate final signals: check canonical URLs, hreflang pairs, robots directives, structured data, and sitemap entries. Owner: SEO and developer. Pass condition: every signal names the final page.",
+            "7. Run launch QA: test mobile layouts, forms, analytics, priority paths, and live response codes. Owner: delivery lead. Pass condition: the launch checklist is signed off against the public site.",
+            "8. Monitor after launch: inspect high-risk URLs, sitemap processing, and priority search pages in Search Console. Owner: SEO or analytics lead. Pass condition: clear issues are logged, owned, and fixed without delay.",
           ],
         },
         {
@@ -111,6 +132,7 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
           paragraphs: [
             "A redirect is not a substitute for a clean new architecture. Use direct server-side redirects for moved pages, then update internal navigation, content links, canonicals, hreflang tags, and sitemap URLs to point at the final destination. A visitor and a crawler should not have to pass through unnecessary hops.",
             "After launch, crawl the live site and compare the response codes, canonical URLs, and internal links against the migration map. The best time to discover a loop, a missing page, or an accidental noindex tag is before search traffic has had time to fall.",
+            "For example, a retired guide about a specific product should not automatically redirect to the homepage. If it has no close successor, document the retirement or create a relevant destination. The homepage is only appropriate when it genuinely fulfils the old page's intent.",
           ],
         },
         {
@@ -193,6 +215,7 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
     {
       slug: "ai-search-visibility",
       date: "2. listopada 2026.",
+      updated: { date: "18. listopada 2026.", iso: "2026-10-18" },
       title: "Vidljivost u AI pretrazi: Što mjeriti prije optimizacije",
       metaTitle: "Vidljivost u AI pretrazi: Što mjeriti | Koupoli",
       metaDescription: "Praktičan okvir za mjerenje vidljivosti u AI pretrazi bez miješanja impresija, spominjanja, pozicija i poslovnih rezultata.",
@@ -228,6 +251,18 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
           ],
         },
         {
+          heading: "Koristite mali zapis mjerenja",
+          paragraphs: [
+            "Koristan pregled počinje jednim prioritetnim pitanjem, stranicom koja na njega treba odgovoriti i poslovnom odlukom koja stoji iza rada. Zabilježite uobičajenu izvedbu u Pretraživanju uz impresije AI značajki kada postanu dostupne, a zatim odredite koju sljedeću radnju dokaz podupire.",
+            "Primjerice, rast impresija AI značajki bez kvalificiranih posjeta može značiti da stranici treba jasniji put prema usluzi ili bolji poslovni kontekst. Rast uobičajenih impresija uz slabu prosječnu poziciju može značiti da treba više potpornih dokaza, a ne novu stranicu za svaku varijantu upita.",
+          ],
+          list: [
+            "Pregled ograničite na mali skup prioritetnih stranica i ponavljajte ga jednom tjedno umjesto reakcije na dnevna kretanja.",
+            "Odvojite uobičajene impresije pretraživanja, impresije generativnog AI-ja, kvalificirane posjete i upite umjesto da ih spajate u jednu ocjenu.",
+            "Uz opažanje zabilježite izdanje ili promjenu sadržaja kako bi tim razumio što je moglo utjecati na rezultat.",
+          ],
+        },
+        {
           heading: "Što ne treba optimizirati",
           paragraphs: [
             "Nemojte brojilo spominjanja treće strane tretirati kao alat za praćenje pozicija. AI odgovori mogu se mijenjati ovisno o pitanju, lokaciji, modelu i skupu izvora. Alat može pomoći u pronalasku uzoraka, ali ne može zamijeniti podatke iz Search Consolea ili poslovnu analitiku.",
@@ -239,10 +274,12 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
         { label: "Google Search Central: Optimizacija web-stranice za generativne AI značajke", href: "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" },
         { label: "Google Search Central: Izvještaji o uspješnosti generativnog AI-ja", href: "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" },
       ],
+      resource: { href: "/downloads/scorecard-vidljivosti-u-ai-pretrazi.md", label: "Preuzmite kontrolni pregled vidljivosti u AI pretrazi", description: "Upotrijebite prilagodljivi Markdown pregled za praćenje prioritetnih pitanja, povezanih stranica i sljedeće odluke." },
     },
     {
       slug: "website-migration-seo",
       date: "2. listopada 2026.",
+      updated: { date: "18. listopada 2026.", iso: "2026-10-18" },
       title: "SEO migracija web-stranice: Praktičan kontrolni popis",
       metaTitle: "SEO migracija web-stranice: Kontrolni popis | Koupoli",
       metaDescription: "Praktičan SEO kontrolni popis za zaštitu URL-ova, redirekcija, indeksiranja, sadržaja i mjerenja tijekom migracije web-stranice.",
@@ -274,12 +311,17 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
           heading: "Pretvorite inventar u migracijsku mapu",
           paragraphs: [
             "Korisna migracijska mapa svakoj važnoj staroj adresi daje imenovano konačno odredište i razlog odluke. To je zajednički zapis za osobe koje mijenjaju sadržaj, implementaciju, analitiku i redirekcije. Bez njega svaki tim može donijeti lokalno razumnu odluku koja posjetitelja ili crawler vodi na drugo mjesto.",
+            "Slijed u nastavku pretvara plan migracije u posao koji se može dodijeliti i provjeriti. Svaki korak treba vlasnika i uvjet prolaza prije nego što se sljedeći smatra dovršenim.",
           ],
           list: [
-            "U jednu tablicu zabilježite stari URL, konačni canonical URL, odluku, razlog, vlasnika i rezultat testa.",
-            "Svaku vrijednu stranicu mapirajte na najbližu jednaku namjeru, a ne automatski na početnu stranicu ili kategoriju.",
-            "Označite stranice kojima prije potpisivanja razvoja treba novi tekst, novo odredište ili dokumentirano povlačenje.",
-            "Nakon konačne objave testirajte prioritetne redirekcije kao izravne rute bez dodatnih koraka, a zatim interne poveznice zamijenite konačnim URL-om.",
+            "1. Postavite početno stanje: zabilježite prioritetne odredišne stranice, upite, konverzije, povratne poveznice i tehničke pokazatelje. Vlasnik: SEO ili analitički voditelj. Uvjet prolaza: početno stanje spremljeno je prije početka rada.",
+            "2. Izradite inventar: popišite postojeće URL-ove i označite stranice s posebnim prometom, poveznicama, konverzijama ili poslovnom namjerom. Vlasnik: SEO i sadržajni voditelj. Uvjet prolaza: svaki prioritetni URL ima status.",
+            "3. Mapirajte odredišta: odredite najbliži konačni ekvivalent za svaki prioritetni stari URL. Vlasnik: SEO i sadržajni voditelj. Uvjet prolaza: važna namjera nije automatski redirektana na početnu stranicu.",
+            "4. Sačuvajte namjeru: potvrdite da konačne stranice zadržavaju informacije, naslov, podnaslov i kontekst internih poveznica potrebne za svoju svrhu. Vlasnik: sadržajni voditelj. Uvjet prolaza: prioritetne stranice imaju indeksabilno konačno odredište.",
+            "5. Pripremite redirekcije: implementirajte i testirajte izravne redirekcije s jednim korakom na konačna odredišta. Vlasnik: programer. Uvjet prolaza: nema petlje, lanca ni nerelevantne redirekcije na početnu stranicu.",
+            "6. Provjerite konačne signale: pregledajte canonical URL-ove, hreflang parove, robots direktive, strukturirane podatke i stavke sitemapa. Vlasnik: SEO i programer. Uvjet prolaza: svaki signal navodi konačnu stranicu.",
+            "7. Provedite provjeru lansiranja: testirajte mobilni prikaz, obrasce, analitiku, prioritetne putanje i odgovore objavljene stranice. Vlasnik: voditelj isporuke. Uvjet prolaza: kontrolni popis lansiranja potvrđen je na javnoj web-stranici.",
+            "8. Pratite nakon lansiranja: u Search Consoleu pregledajte URL-ove s najvećim rizikom, obradu sitemapa i prioritetne stranice u pretrazi. Vlasnik: SEO ili analitički voditelj. Uvjet prolaza: jasni problemi evidentirani su, dodijeljeni i brzo riješeni.",
           ],
         },
         {
@@ -287,6 +329,7 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
           paragraphs: [
             "Redirekcija nije zamjena za čistu novu arhitekturu. Za premještene stranice koristite izravne redirekcije na razini poslužitelja, a zatim ažurirajte internu navigaciju, poveznice u sadržaju, canonical oznake, hreflang oznake i URL-ove u sitemapu tako da upućuju na konačno odredište.",
             "Nakon lansiranja crawlajte objavljenu web-stranicu i usporedite statusne kodove, canonical URL-ove i interne poveznice s migracijskom mapom. Najbolji je trenutak za otkrivanje petlje, stranice koja nedostaje ili slučajne noindex oznake prije pada organskog prometa.",
+            "Primjerice, povučeni vodič o određenom proizvodu ne treba automatski redirektati na početnu stranicu. Ako nema bliskog nasljednika, povlačenje treba dokumentirati ili izraditi relevantno odredište. Početna stranica je prikladna samo kada doista ispunjava namjeru stare stranice.",
           ],
         },
         {
@@ -327,7 +370,7 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
         {
           heading: "GEO je opis, a ne zaseban tehnički sustav",
           paragraphs: [
-            "Generative engine optimization, često skraćeno GEO, koristi se za opis rada koji želi poboljšati vidljivost u odgovorima koje generira AI. To može biti koristan naziv kada tim treba razgovarati o promjeni ponašanja u pretraživanju.",
+            "Generativna optimizacija, često skraćeno GEO, koristi se za opis rada koji želi poboljšati vidljivost u odgovorima koje generira AI. To može biti koristan naziv kada tim treba razgovarati o promjeni ponašanja u pretraživanju.",
             "Za Google Pretraživanje načelo je jednostavnije. Generativne značajke oslanjaju se na isti indeks i sustave kvalitete. Stranica i dalje mora biti dostupna, indeksirana, korisna i relevantna prije nego što uopće može biti odabrana kao potporna informacija.",
           ],
         },
@@ -355,7 +398,7 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
           heading: "Gradite autoritet dokazima, a ne količinom",
           paragraphs: [
             "Uslužnoj web-stranici ne trebaju stotine stranica da sudjeluje u pretraživanju posredovanom AI-jem. Potrebna joj je mala, povezana biblioteka koja objašnjava stručnost, pokazuje kako se stručnost primjenjuje i kupcima daje dovoljno detalja za odluku.",
-            "Za Koupoli to znači povezivanje praktičnih Bilješki s dvije ponude: konzultacijama za organsko lansiranje te SEO i AI Search Operations radom. Sadržaj treba razjasniti što se mjeri, što se implementira i što kupac može očekivati od suradnje.",
+            "Za Koupoli to znači povezivanje praktičnih Bilješki s dvije ponude: konzultacijama za organsko lansiranje te SEO i AI operativnim radom. Sadržaj treba razjasniti što se mjeri, što se implementira i što kupac može očekivati od suradnje.",
           ],
         },
       ],

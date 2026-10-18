@@ -45,9 +45,9 @@ export default function GrowthBlog({ locale = "en" }: { locale?: Locale }) {
   const prefix = locale === "hr" ? "/hr" : "";
   const legacyPath = `${prefix}/post/the-illusion-of-ai-productivity/`;
   const related = locale === "hr" ? [
-    { href: "/#offers", title: "Koupoli usluge", description: "Pogledajte dva načina suradnje: savjetodavni plan ili kontinuiranu operativnu podršku." },
-    { href: "/projects/", title: "Projekti", description: "Pogledajte rad u kojem su tehnički SEO, sadržaj i razvoj morali funkcionirati zajedno." },
-    { href: "/contact/", title: "Započnite razgovor", description: "Donesite pitanje, lansiranje ili tehničku prepreku u prvi razgovor." },
+    { href: "/hr/#offers", title: "Koupoli usluge", description: "Pogledajte dva načina suradnje: savjetodavni plan ili kontinuiranu operativnu podršku." },
+    { href: "/hr/projects/", title: "Projekti", description: "Pogledajte rad u kojem su tehnički SEO, sadržaj i razvoj morali funkcionirati zajedno." },
+    { href: "/hr/contact/", title: "Započnite razgovor", description: "Donesite pitanje, lansiranje ili tehničku prepreku u prvi razgovor." },
   ] : [
     { href: "/#offers", title: "Koupoli offers", description: "See the two ways to work together: an advisory plan or ongoing operational support." },
     { href: "/projects/", title: "Projects", description: "See client work where technical SEO, content, and development had to work together." },

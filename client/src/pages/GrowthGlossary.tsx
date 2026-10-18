@@ -62,9 +62,9 @@ export default function GrowthGlossary({ locale = "en" }: GlossaryProps) {
     <section className="growth-glossary-principle"><div className="growth-container"><div><p className="growth-kicker">{locale === "hr" ? "Kako je napravljen" : "How it is made"}</p><h2>{content.principleTitle}</h2></div><p>{content.principleCopy}</p></div></section>
 
     <section className="growth-glossary-resources"><div className="growth-container"><p className="growth-kicker growth-kicker-blue">{content.resourceKicker}</p><h2>{content.resourceTitle}</h2><nav className="growth-glossary-resource-grid" aria-label={content.resourceKicker}>{content.resources.map((resource) => <Link href={`${pathPrefix}${resource.href}`} key={resource.href}><strong>{resource.title}</strong><span>{resource.description}</span></Link>)}</nav><ContextLinks locale={locale} items={locale === "hr" ? [
-      { href: "/#offers", title: "Koupoli usluge", description: "Pogledajte koja podrška odgovara odluci koja je pred vama: savjetodavni plan ili kontinuirani operativni rad." },
-      { href: "/projects/", title: "Projekti", description: "Pogledajte rad u kojem su tehnički SEO, sadržaj i razvoj morali funkcionirati zajedno." },
-      { href: "/about/", title: "O meni", description: "Saznajte više o iskustvu koje stoji iza Koupoli pristupa." },
+      { href: "/hr/#offers", title: "Koupoli usluge", description: "Pogledajte koja podrška odgovara odluci koja je pred vama: savjetodavni plan ili kontinuirani operativni rad." },
+      { href: "/hr/projects/", title: "Projekti", description: "Pogledajte rad u kojem su tehnički SEO, sadržaj i razvoj morali funkcionirati zajedno." },
+      { href: "/hr/about/", title: "O meni", description: "Saznajte više o iskustvu koje stoji iza Koupoli pristupa." },
     ] : [
       { href: "/#offers", title: "Koupoli offers", description: "See which support fits the decision ahead: an advisory plan or ongoing operational work." },
       { href: "/projects/", title: "Projects", description: "See client work where technical SEO, content, and development had to work together." },

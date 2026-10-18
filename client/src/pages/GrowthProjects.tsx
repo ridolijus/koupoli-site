@@ -55,10 +55,10 @@ function displayUrl(url: string) {
 export default function GrowthProjects({ locale = "en" }: { locale?: Locale }) {
   const copy = copies[locale];
   const related = locale === "hr" ? [
-    { href: "/about/", title: "O Karlu", description: "Upoznajte iskustvo iza rada koji povezuje strategiju s implementacijom." },
+    { href: "/hr/about/", title: "O Karlu", description: "Upoznajte iskustvo iza rada koji povezuje strategiju s implementacijom." },
     { href: "/hr/usluge/seo-optimizacija/", title: "SEO optimizacija", description: "Tehnički SEO, sadržaj i prioriteti za timove kojima treba konkretna izvedba." },
     { href: "/downloads/seo-migracija-kontrolni-popis.md", title: "Kontrolni popis za SEO migraciju", description: "Markdown predložak za planiranje URL-ova, redirekcija i praćenja prije i nakon lansiranja.", download: true },
-    { href: "/contact/", title: "Započnite razgovor", description: "Opišite projekt, tržište ili prepreku za fokusiran prvi razgovor." },
+    { href: "/hr/contact/", title: "Započnite razgovor", description: "Opišite projekt, tržište ili prepreku za fokusiran prvi razgovor." },
   ] : [
     { href: "/about/", title: "About Karlo", description: "Meet the experience behind work that connects strategy to implementation." },
     { href: "/services/technical-seo-ai-search/", title: "Technical SEO services", description: "Technical SEO and AI-search operations for teams that need implementation, not a scorecard." },

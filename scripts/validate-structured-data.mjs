@@ -2,6 +2,20 @@ import fs from "node:fs";
 import path from "node:path";
 
 const output = path.resolve("dist/public");
+const refreshedArticles = new Set([
+  "/post/ai-search-visibility/",
+  "/hr/post/ai-search-visibility/",
+  "/post/website-migration-seo/",
+  "/hr/post/website-migration-seo/",
+]);
+const downloads = [
+  "/downloads/entity-seo-claim-inventory.md",
+  "/downloads/inventar-entitetskih-tvrdnji.md",
+  "/downloads/website-migration-seo-checklist.md",
+  "/downloads/seo-migracija-kontrolni-popis.md",
+  "/downloads/ai-search-visibility-scorecard.md",
+  "/downloads/scorecard-vidljivosti-u-ai-pretrazi.md",
+];
 const pages = [
   ["/", "FAQPage", "/hr/"],
   ["/hr/", "FAQPage", "/"],
@@ -73,6 +87,7 @@ for (const [route, expectedType, alternateRoute] of pages) {
   if (expectedType === "BlogPosting") {
     const article = schema["@graph"].find((node) => node["@type"] === "BlogPosting");
     if (!article.headline || !article.image || !article.datePublished || !article.author || !article.publisher) throw new Error(`Incomplete BlogPosting schema for ${route}`);
+    if (refreshedArticles.has(route) && article.dateModified !== "2026-10-18T00:00:00+02:00") throw new Error(`Missing or incorrect material update date for ${route}`);
   }
   if (route === "/glossary/" || route === "/hr/pojmovnik/") {
     const termSet = schema["@graph"].find((node) => node["@type"] === "DefinedTermSet");
@@ -98,6 +113,11 @@ const sitemap = fs.readFileSync("client/public/sitemap.xml", "utf8");
 for (const [route, , alternateRoute] of pages) {
   if (!sitemap.includes(`<loc>https://koupoli.com${route}</loc>`)) throw new Error(`Missing sitemap URL for ${route}`);
   if (!sitemap.includes(`href="https://koupoli.com${alternateRoute}"`)) throw new Error(`Missing sitemap alternate URL for ${route}`);
+}
+
+for (const download of downloads) {
+  const file = path.join(output, download);
+  if (!fs.existsSync(file) || fs.statSync(file).size === 0) throw new Error(`Missing downloadable resource ${download}`);
 }
 
 console.log("Structured data and bilingual static SEO validation passed for all public routes.");

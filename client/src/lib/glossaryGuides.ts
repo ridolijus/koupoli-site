@@ -12,6 +12,7 @@ type GlossaryGuide = {
   slug: string;
   path: string;
   title: string;
+  updated?: { date: string; iso: string };
   metaTitle: string;
   metaDescription: string;
   kicker: string;
@@ -27,6 +28,7 @@ type GlossaryGuide = {
   related: GlossaryGuideKey[];
   sourcesLabel: string;
   sources: Array<{ label: string; href: string }>;
+  resource?: { label: string; href: string };
   glossaryLabel: string;
   glossaryDescription: string;
   contactLabel: string;
@@ -99,6 +101,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
       slug: "entity-seo",
       path: "/glossary/entity-seo/",
       title: "Entity SEO: A Practical Guide",
+      updated: { date: "October 18, 2026", iso: "2026-10-18" },
       metaTitle: "Entity SEO: A Practical Guide | Koupoli",
       metaDescription: "A practical entity SEO guide for making the people, products, organisations, places, and concepts on a website clear and consistently connected.",
       kicker: "Glossary guide",
@@ -134,14 +137,19 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
           ],
         },
         {
-          heading: "Turn the inventory into a relationship map",
+          heading: "Map the relationships a buyer needs to understand",
           paragraphs: [
             "The inventory becomes actionable when it shows how the important entities support each other across the site. A service business can map its organisation, specialist, offers, projects, core concepts, and relevant markets on one working page before deciding where new markup or content is needed.",
+            "Koupoli uses five connected entities to make a specialist service business easier to understand: the organisation, the specialist responsible for the work, a defined service, a selected project, and a practical guide that explains the method. Each has a different job. Together, they give a prospective client a route from the offer to the person behind it and the supporting evidence.",
+            "For example, the Technical SEO services page explains the delivery scope. The About page identifies the specialist and relevant experience. A project shows where related work has been applied, without turning a broad project description into an unverified performance claim. The Entity SEO guide then explains why those relationships should be consistent and easy to follow.",
           ],
           list: [
-            "Link each commercial page to the person or organisation behind the work and to the evidence that supports the offer.",
+            "Organisation: Koupoli. Claim: specialist-led SEO, organic-growth, and AI-search work. Evidence: the About page and public service pages.",
+            "Specialist: Karlo Ridan. Claim: the person responsible for the guidance and delivery. Evidence: documented experience and visible authorship on Koupoli Notes and guides.",
+            "Service: Technical SEO services. Claim: practical work across crawl paths, indexation, architecture, structured data, migrations, and AI-search measurement. Evidence: the service scope and process.",
+            "Project: a selected client project. Claim: related work has been applied in a real delivery context. Evidence: the approved project description, without inventing an outcome.",
+            "Practical resource: this Entity SEO guide and claim-inventory template. Claim: the method starts with clear, supportable information before markup. Evidence: the visible process and sources on this page.",
             "Use one canonical name for the organisation, service, specialist, and priority concept, then update variations that could create ambiguity.",
-            "Make the relationship between a project, the service delivered, and the problem solved clear without adding outcomes that cannot be verified.",
             "Treat a missing relationship as a page or internal-link decision before treating it as a schema task.",
           ],
         },
@@ -160,6 +168,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
         { label: "Google Search Central: Introduction to structured data markup", href: "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" },
         { label: "Google Search Central: Creating helpful, reliable, people-first content", href: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content" },
       ],
+      resource: { label: "Download the entity SEO claim inventory", href: "/downloads/entity-seo-claim-inventory.md" },
       glossaryLabel: "Explore the glossary",
       glossaryDescription: "Return to the full SEO and AI search terminology index.",
       contactLabel: "Discuss your information architecture",
@@ -349,6 +358,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
       slug: "entitetski-seo",
       path: "/hr/pojmovnik/entitetski-seo/",
       title: "Entitetski SEO: Praktičan vodič",
+      updated: { date: "18. listopada 2026.", iso: "2026-10-18" },
       metaTitle: "Entitetski SEO: Praktičan vodič | Koupoli",
       metaDescription: "Praktičan vodič za entitetski SEO koji osobe, proizvode, organizacije, lokacije i koncepte na web-stranici čini jasnima i povezanima.",
       kicker: "Vodič kroz pojmovnik",
@@ -384,14 +394,19 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
           ],
         },
         {
-          heading: "Pretvorite inventar u mapu odnosa",
+          heading: "Mapirajte odnose koje kupac treba razumjeti",
           paragraphs: [
             "Inventar postaje primjenjiv kada pokazuje kako se važni entiteti podupiru kroz web-stranicu. Uslužna tvrtka na jednoj radnoj stranici može mapirati organizaciju, stručnjaka, ponude, projekte, glavne pojmove i relevantna tržišta prije odluke gdje su potrebni novi markup ili sadržaj.",
+            "Koupoli koristi pet povezanih entiteta kako bi se specijalistička uslužna tvrtka lakše razumjela: organizaciju, stručnjaka odgovornog za rad, definiranu uslugu, odabrani projekt i praktični vodič koji objašnjava metodu. Svaki ima drukčiji zadatak. Zajedno potencijalnom klijentu daju put od ponude do osobe koja stoji iza rada i popratnog dokaza.",
+            "Primjerice, stranica SEO optimizacije objašnjava opseg izvedbe. Stranica O Karlu identificira stručnjaka i relevantno iskustvo. Projekt pokazuje gdje je srodan rad primijenjen u stvarnoj isporuci, bez pretvaranja opisa projekta u neprovjerenu tvrdnju o rezultatu. Vodič o entitetskom SEO-u zatim objašnjava zašto ti odnosi trebaju biti dosljedni i jednostavni za pratiti.",
           ],
           list: [
-            "Povežite svaku komercijalnu stranicu s osobom ili organizacijom koja stoji iza rada te s dokazima koji podupiru ponudu.",
+            "Organizacija: Koupoli. Tvrdnja: specijalistički rad u SEO-u, organskom rastu i AI pretrazi. Dokaz: stranica O Karlu i javne stranice usluga.",
+            "Stručnjak: Karlo Ridan. Tvrdnja: osoba odgovorna za smjernice i isporuku. Dokaz: dokumentirano iskustvo i vidljivo autorstvo Koupolijevih Bilješki i vodiča.",
+            "Usluga: SEO optimizacija. Tvrdnja: praktičan rad kroz crawl putanje, indeksiranje, arhitekturu, strukturirane podatke, migracije i mjerenje AI pretrage. Dokaz: opseg usluge i proces.",
+            "Projekt: odabrani klijentski projekt. Tvrdnja: srodan rad primijenjen je u stvarnom kontekstu isporuke. Dokaz: odobren opis projekta, bez izmišljanja ishoda.",
+            "Praktičan izvor: ovaj vodič i predložak inventara tvrdnji. Tvrdnja: metoda počinje jasnim informacijama koje se mogu potkrijepiti prije markupa. Dokaz: vidljiv proces i izvori na ovoj stranici.",
             "Za organizaciju, uslugu, stručnjaka i prioritetni pojam koristite jedno kanonikalno ime, a zatim uklonite varijacije koje mogu stvoriti nejasnoću.",
-            "Odnos između projekta, isporučene usluge i riješenog problema objasnite jasno, bez dodavanja ishoda koji se ne mogu provjeriti.",
             "Nedostajući odnos prvo tretirajte kao odluku o stranici ili internim poveznicama, a tek zatim kao zadatak za schemu.",
           ],
         },
@@ -410,6 +425,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
         { label: "Google Search Central: Uvod u strukturirane podatke", href: "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" },
         { label: "Google Search Central: Koristan, pouzdan sadržaj usmjeren na ljude", href: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content" },
       ],
+      resource: { label: "Preuzmite inventar tvrdnji za entitetski SEO", href: "/downloads/inventar-entitetskih-tvrdnji.md" },
       glossaryLabel: "Istražite pojmovnik",
       glossaryDescription: "Vratite se na cjeloviti indeks SEO i AI pojmova.",
       contactLabel: "Razgovarajte o informacijskoj arhitekturi",

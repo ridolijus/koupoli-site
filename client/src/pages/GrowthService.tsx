@@ -269,7 +269,7 @@ const copies: Record<Locale, ServiceCopy> = {
       "Prvi razgovor služi razumijevanju web-stranice, odluke koja slijedi i procjeni može li Koupoli pomoći u provedbi rada.",
     related: [
       {
-        href: "/pojmovnik/tehnicki-seo/",
+        href: "/hr/pojmovnik/tehnicki-seo/",
         title: "Vodič za tehnički SEO",
         description:
           "Praktičan vodič kroz crawlabilnost, indeksiranje, strukturu, brzinu i pouzdan prikaz stranice.",
@@ -279,6 +279,12 @@ const copies: Record<Locale, ServiceCopy> = {
         title: "SEO savjetovanje",
         description:
           "Savjetodavni angažman za timove kojima prije izvedbe treba upotrebljiv plan organskog rasta.",
+      },
+      {
+        href: "/hr/pojmovnik/vidljivost-u-ai-pretrazi/",
+        title: "Vodič za AI vidljivost",
+        description:
+          "Praktičan vodič za mjerenje signala koji su važni prije optimizacije.",
       },
       {
         href: "/downloads/seo-migracija-kontrolni-popis.md",

@@ -49,9 +49,9 @@ export default function GrowthAbout({ locale = "en" }: { locale?: Locale }) {
   const localized = (path: string) => locale === "hr" ? `/hr${path}` : path;
   const experienceList = locale === "hr" ? hrExperiences : experiences;
   const related = locale === "hr" ? [
-    { href: "/projects/", title: "Projekti", description: "Pogledajte kako se tehnički SEO, sadržaj i isporuka povezuju u stvarnom radu." },
-    { href: "/post/website-migration-seo/", title: "SEO migracija web-stranice", description: "Praktičan vodič za prijenos pretraživačke vrijednosti kroz redizajn ili novo lansiranje." },
-    { href: "/post/generative-engine-optimization/", title: "Generativna optimizacija", description: "Što se u AI pretrazi mijenja, a koji SEO temelji i dalje vrijede." },
+    { href: "/hr/projects/", title: "Projekti", description: "Pogledajte kako se tehnički SEO, sadržaj i isporuka povezuju u stvarnom radu." },
+    { href: "/hr/post/website-migration-seo/", title: "SEO migracija web-stranice", description: "Praktičan vodič za prijenos pretraživačke vrijednosti kroz redizajn ili novo lansiranje." },
+    { href: "/hr/post/generative-engine-optimization/", title: "Generativna optimizacija", description: "Što se u AI pretrazi mijenja, a koji SEO temelji i dalje vrijede." },
   ] : [
     { href: "/projects/", title: "Projects", description: "See how technical SEO, content, and delivery connect in live client work." },
     { href: "/post/website-migration-seo/", title: "Website migration SEO", description: "A practical guide to carrying search value through a redesign or new launch." },
