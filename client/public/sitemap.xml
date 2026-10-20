@@ -211,6 +211,48 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://koupoli.com/services/technical-seo-ai-search/" />
   </url>
   <url>
+    <loc>https://koupoli.com/glossary/semantic-seo/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://koupoli.com/glossary/semantic-seo/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://koupoli.com/hr/pojmovnik/semanticki-seo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://koupoli.com/glossary/semantic-seo/" />
+  </url>
+  <url>
+    <loc>https://koupoli.com/hr/pojmovnik/semanticki-seo/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://koupoli.com/glossary/semantic-seo/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://koupoli.com/hr/pojmovnik/semanticki-seo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://koupoli.com/glossary/semantic-seo/" />
+  </url>
+  <url>
+    <loc>https://koupoli.com/glossary/knowledge-graph/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://koupoli.com/glossary/knowledge-graph/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://koupoli.com/hr/pojmovnik/graf-znanja/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://koupoli.com/glossary/knowledge-graph/" />
+  </url>
+  <url>
+    <loc>https://koupoli.com/hr/pojmovnik/graf-znanja/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://koupoli.com/glossary/knowledge-graph/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://koupoli.com/hr/pojmovnik/graf-znanja/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://koupoli.com/glossary/knowledge-graph/" />
+  </url>
+  <url>
+    <loc>https://koupoli.com/glossary/entity-mapping/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://koupoli.com/glossary/entity-mapping/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://koupoli.com/hr/pojmovnik/mapiranje-entiteta/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://koupoli.com/glossary/entity-mapping/" />
+  </url>
+  <url>
+    <loc>https://koupoli.com/hr/pojmovnik/mapiranje-entiteta/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://koupoli.com/glossary/entity-mapping/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://koupoli.com/hr/pojmovnik/mapiranje-entiteta/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://koupoli.com/glossary/entity-mapping/" />
+  </url>
+  <url>
     <loc>https://koupoli.com/contact/</loc>
     <lastmod>2026-10-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://koupoli.com/contact/" />

@@ -71,6 +71,12 @@ export function SiteRoutes({ pages }: { pages: SitePages }) {
       <Route path="/glossary/technical-seo/"><GlossaryGuide guideKey="technical-seo" /></Route>
       <Route path="/glossary/entity-seo"><GlossaryGuide guideKey="entity-seo" /></Route>
       <Route path="/glossary/entity-seo/"><GlossaryGuide guideKey="entity-seo" /></Route>
+      <Route path="/glossary/semantic-seo"><GlossaryGuide guideKey="semantic-seo" /></Route>
+      <Route path="/glossary/semantic-seo/"><GlossaryGuide guideKey="semantic-seo" /></Route>
+      <Route path="/glossary/knowledge-graph"><GlossaryGuide guideKey="knowledge-graph" /></Route>
+      <Route path="/glossary/knowledge-graph/"><GlossaryGuide guideKey="knowledge-graph" /></Route>
+      <Route path="/glossary/entity-mapping"><GlossaryGuide guideKey="entity-mapping" /></Route>
+      <Route path="/glossary/entity-mapping/"><GlossaryGuide guideKey="entity-mapping" /></Route>
       <Route path="/glossary/ai-search-visibility"><GlossaryGuide guideKey="ai-search-visibility" /></Route>
       <Route path="/glossary/ai-search-visibility/"><GlossaryGuide guideKey="ai-search-visibility" /></Route>
       <Route path="/glossary/generative-engine-optimization"><GlossaryGuide guideKey="generative-engine-optimization" /></Route>
@@ -79,6 +85,12 @@ export function SiteRoutes({ pages }: { pages: SitePages }) {
       <Route path="/hr/pojmovnik/tehnicki-seo/"><GlossaryGuide locale="hr" guideKey="technical-seo" /></Route>
       <Route path="/hr/pojmovnik/entitetski-seo"><GlossaryGuide locale="hr" guideKey="entity-seo" /></Route>
       <Route path="/hr/pojmovnik/entitetski-seo/"><GlossaryGuide locale="hr" guideKey="entity-seo" /></Route>
+      <Route path="/hr/pojmovnik/semanticki-seo"><GlossaryGuide locale="hr" guideKey="semantic-seo" /></Route>
+      <Route path="/hr/pojmovnik/semanticki-seo/"><GlossaryGuide locale="hr" guideKey="semantic-seo" /></Route>
+      <Route path="/hr/pojmovnik/graf-znanja"><GlossaryGuide locale="hr" guideKey="knowledge-graph" /></Route>
+      <Route path="/hr/pojmovnik/graf-znanja/"><GlossaryGuide locale="hr" guideKey="knowledge-graph" /></Route>
+      <Route path="/hr/pojmovnik/mapiranje-entiteta"><GlossaryGuide locale="hr" guideKey="entity-mapping" /></Route>
+      <Route path="/hr/pojmovnik/mapiranje-entiteta/"><GlossaryGuide locale="hr" guideKey="entity-mapping" /></Route>
       <Route path="/hr/pojmovnik/vidljivost-u-ai-pretrazi"><GlossaryGuide locale="hr" guideKey="ai-search-visibility" /></Route>
       <Route path="/hr/pojmovnik/vidljivost-u-ai-pretrazi/"><GlossaryGuide locale="hr" guideKey="ai-search-visibility" /></Route>
       <Route path="/hr/pojmovnik/generativna-optimizacija"><GlossaryGuide locale="hr" guideKey="generative-engine-optimization" /></Route>

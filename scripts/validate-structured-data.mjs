@@ -43,6 +43,12 @@ const pages = [
   ["/hr/pojmovnik/tehnicki-seo/", "DefinedTerm", "/glossary/technical-seo/"],
   ["/glossary/entity-seo/", "DefinedTerm", "/hr/pojmovnik/entitetski-seo/"],
   ["/hr/pojmovnik/entitetski-seo/", "DefinedTerm", "/glossary/entity-seo/"],
+  ["/glossary/semantic-seo/", "DefinedTerm", "/hr/pojmovnik/semanticki-seo/"],
+  ["/hr/pojmovnik/semanticki-seo/", "DefinedTerm", "/glossary/semantic-seo/"],
+  ["/glossary/knowledge-graph/", "DefinedTerm", "/hr/pojmovnik/graf-znanja/"],
+  ["/hr/pojmovnik/graf-znanja/", "DefinedTerm", "/glossary/knowledge-graph/"],
+  ["/glossary/entity-mapping/", "DefinedTerm", "/hr/pojmovnik/mapiranje-entiteta/"],
+  ["/hr/pojmovnik/mapiranje-entiteta/", "DefinedTerm", "/glossary/entity-mapping/"],
   ["/glossary/ai-search-visibility/", "DefinedTerm", "/hr/pojmovnik/vidljivost-u-ai-pretrazi/"],
   ["/hr/pojmovnik/vidljivost-u-ai-pretrazi/", "DefinedTerm", "/glossary/ai-search-visibility/"],
   ["/glossary/generative-engine-optimization/", "DefinedTerm", "/hr/pojmovnik/generativna-optimizacija/"],
@@ -91,7 +97,7 @@ for (const [route, expectedType, alternateRoute] of pages) {
   }
   if (route === "/glossary/" || route === "/hr/pojmovnik/") {
     const termSet = schema["@graph"].find((node) => node["@type"] === "DefinedTermSet");
-    const expectedCount = route === "/glossary/" ? 29 : 20;
+    const expectedCount = route === "/glossary/" ? 33 : 23;
     if (!termSet || !Array.isArray(termSet.hasDefinedTerm) || termSet.hasDefinedTerm.length !== expectedCount) throw new Error(`Incomplete glossary schema for ${route}`);
   }
 }

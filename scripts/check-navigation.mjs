@@ -105,6 +105,9 @@ try {
       "/contact/", "/hr/contact/", "/glossary/", "/hr/pojmovnik/",
       "/glossary/technical-seo/", "/hr/pojmovnik/tehnicki-seo/",
       "/glossary/entity-seo/", "/hr/pojmovnik/entitetski-seo/",
+      "/glossary/semantic-seo/", "/hr/pojmovnik/semanticki-seo/",
+      "/glossary/knowledge-graph/", "/hr/pojmovnik/graf-znanja/",
+      "/glossary/entity-mapping/", "/hr/pojmovnik/mapiranje-entiteta/",
       "/glossary/ai-search-visibility/", "/hr/pojmovnik/vidljivost-u-ai-pretrazi/",
       "/glossary/generative-engine-optimization/", "/hr/pojmovnik/generativna-optimizacija/",
     ];

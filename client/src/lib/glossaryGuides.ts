@@ -1,5 +1,5 @@
 export type GlossaryGuideLocale = "en" | "hr";
-export type GlossaryGuideKey = "technical-seo" | "entity-seo" | "ai-search-visibility" | "generative-engine-optimization";
+export type GlossaryGuideKey = "technical-seo" | "entity-seo" | "semantic-seo" | "knowledge-graph" | "entity-mapping" | "ai-search-visibility" | "generative-engine-optimization";
 
 type GuideSection = {
   heading: string;
@@ -162,7 +162,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
         },
       ],
       note: { slug: "generative-engine-optimization", label: "Generative Engine Optimization", description: "See why accurate entities, original information, and connected pages matter more than invented AI-only tactics." },
-      related: ["technical-seo", "ai-search-visibility", "generative-engine-optimization"],
+      related: ["semantic-seo", "knowledge-graph", "entity-mapping"],
       sourcesLabel: "Sources",
       sources: [
         { label: "Google Search Central: Introduction to structured data markup", href: "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" },
@@ -173,6 +173,187 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
       glossaryDescription: "Return to the full SEO and AI search terminology index.",
       contactLabel: "Discuss your information architecture",
       contactDescription: "Bring a positioning, content, or technical structure question to a focused first conversation.",
+    },
+    "semantic-seo": {
+      key: "semantic-seo",
+      slug: "semantic-seo",
+      path: "/glossary/semantic-seo/",
+      title: "Semantic SEO: A Practical Guide",
+      updated: { date: "October 20, 2026", iso: "2026-10-20" },
+      metaTitle: "Semantic SEO: A Practical Guide | Koupoli",
+      metaDescription: "A practical semantic SEO guide for explaining a topic clearly through meaning, context, intent, and connected information instead of isolated keywords.",
+      kicker: "Glossary guide",
+      lead: "Semantic SEO is the work of helping a page answer the meaning behind a question, not only match the words typed into a search box.",
+      image: "/assets/koupoli-guide-semantic-seo-system.webp",
+      imageAlt: "Editorial semantic SEO system connecting a central question with meaning, intent, context, and related information",
+      definitionLabel: "Working definition",
+      definition: "Semantic SEO is the practice of structuring useful content around the meaning, context, and intent of a subject so people and search systems can understand what a page explains and how its information relates to other relevant concepts.",
+      signalsLabel: "What to look for first",
+      signals: [
+        "Each priority page has one clear subject and resolves the main question a visitor brings to it.",
+        "Headings, examples, and supporting links add necessary context instead of repeating a keyword in slightly different forms.",
+        "The page uses the same precise language for important concepts, services, people, and outcomes wherever those relationships matter.",
+      ],
+      sections: [
+        {
+          heading: "Meaning is more useful than repetition",
+          paragraphs: [
+            "A search query is often shorthand for a larger need. Someone looking for Entity SEO may want a definition, a method, a way to connect information across a site, or confidence that a proposed implementation is not just a markup exercise. A useful page makes the main answer clear, then gives the reader enough context to understand the decision behind it.",
+            "That is different from treating every related phrase as a separate target. Semantic SEO is not a technique for hiding more variations in a page. It is the discipline of deciding what a page is truly about, what it needs to explain, and which supporting ideas help a visitor act on the answer.",
+          ],
+        },
+        {
+          heading: "Build the page around the real question",
+          paragraphs: [
+            "Start with the question that makes the page necessary. Then identify the terms a reader may need, the trade-offs that affect the answer, and the next page or action that follows naturally. This gives a page a job beyond attracting an impression.",
+          ],
+          list: [
+            "State the primary subject in the title, main heading, opening answer, and supporting metadata without forcing exact-match repetition.",
+            "Use subheadings to answer the questions that make the primary answer useful, such as scope, constraints, examples, and decisions.",
+            "Connect to pages that deepen a necessary relationship, rather than creating links solely because terms look similar.",
+            "Remove sections that do not help the reader understand the subject or decide what to do next.",
+          ],
+        },
+        {
+          heading: "Use semantic structure before structured data",
+          paragraphs: [
+            "Clear writing, logical headings, internal links, and accurate names give a page its semantic structure. Structured data can add machine-readable clues, but it should describe the visible page rather than replace the work of making the subject understandable.",
+            "For a specialist service business, this can be as practical as keeping the name of an offer consistent, explaining which problem it solves, showing who delivers it, and linking to the relevant project or guide. The relationship is valuable because a buyer can follow it too.",
+          ],
+        },
+      ],
+      note: { slug: "generative-engine-optimization", label: "Generative Engine Optimization", description: "See why useful, original information remains more valuable than pages made only to cover phrase variations." },
+      related: ["entity-seo", "knowledge-graph", "entity-mapping"],
+      sourcesLabel: "Sources",
+      sources: [
+        { label: "Google Search Central: Creating helpful, reliable, people-first content", href: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content" },
+        { label: "Google Search Central: Structured data markup", href: "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" },
+      ],
+      glossaryLabel: "Explore the glossary",
+      glossaryDescription: "Return to the full SEO and AI search terminology index.",
+      contactLabel: "Discuss your content structure",
+      contactDescription: "Bring a topic, positioning, or site-structure question to a focused first conversation.",
+    },
+    "knowledge-graph": {
+      key: "knowledge-graph",
+      slug: "knowledge-graph",
+      path: "/glossary/knowledge-graph/",
+      title: "Knowledge Graph: A Practical Guide",
+      updated: { date: "October 20, 2026", iso: "2026-10-20" },
+      metaTitle: "Knowledge Graph: A Practical Guide | Koupoli",
+      metaDescription: "A practical knowledge graph guide for connecting accurate information about organisations, people, services, projects, and concepts across a website.",
+      kicker: "Glossary guide",
+      lead: "A knowledge graph is a connected representation of real-world things and their relationships. For a website, the practical task is making those facts clear, accurate, and maintainable.",
+      image: "/assets/koupoli-guide-knowledge-graph-system.webp",
+      imageAlt: "Editorial knowledge graph connecting an organisation with services, a specialist, evidence, and core concepts",
+      definitionLabel: "Working definition",
+      definition: "A knowledge graph is a connected model of real-world entities and the relationships between them. In SEO, it is useful as a way to think about whether information about an organisation, person, service, product, place, or concept is unambiguous, connected, and supported by evidence.",
+      signalsLabel: "What to look for first",
+      signals: [
+        "Important names, descriptions, and claims are consistent wherever they appear on the site.",
+        "A visitor can move from an organisation to its people, services, examples, and supporting resources without needing to infer the relationship.",
+        "Structured data, where used, reflects the same visible information and is kept current as the site changes.",
+      ],
+      sections: [
+        {
+          heading: "A graph is a model, not a Google Knowledge Panel",
+          paragraphs: [
+            "The phrase knowledge graph is often used as if it means earning a branded panel in Google results. That is too narrow. The useful part for a website is the underlying idea: a search system and a visitor need reliable facts about the things a page describes and the relationships between them.",
+            "A service site might connect its organisation to the specialist responsible for delivery, to a defined service, to a project that demonstrates relevant work, and to a guide that explains the method. Those are different entities with different roles. The site becomes easier to trust when the relationships are explicit and consistent.",
+          ],
+        },
+        {
+          heading: "Connect facts that can be supported",
+          paragraphs: [
+            "The strongest graph starts with information the business can stand behind. That means using a canonical name, a clear description, a real page for the subject, and evidence that is visible to a visitor. It does not mean claiming relationships that are difficult to prove or publishing thin pages for every possible entity.",
+          ],
+          list: [
+            "Give each important entity a clear role: organisation, person, service, project, product, location, or explanatory concept.",
+            "Keep important identifiers and descriptions consistent across the pages where a reader expects to find them.",
+            "Link from a service to the person, method, evidence, and supporting guide that make the offer understandable.",
+            "Use structured data to describe the page truthfully, then validate it as the content and templates evolve.",
+          ],
+        },
+        {
+          heading: "Make relationships useful to the reader",
+          paragraphs: [
+            "A connected site is not a diagram for its own sake. The relationship should help a visitor answer a practical question: who does this work, what exactly is being offered, where has a related method been used, and what can I read before deciding whether to enquire?",
+            "That is why knowledge-graph thinking works best alongside Entity SEO and Entity Mapping. Entity SEO clarifies the things that matter. Mapping decides which claims and pages need to connect. The graph is the resulting body of consistent, visible relationships.",
+          ],
+        },
+      ],
+      note: { slug: "ai-search-visibility", label: "AI Search Visibility: What to Measure", description: "Use a measurement framework that checks whether connected, useful pages are being discovered for the questions that matter." },
+      related: ["entity-seo", "semantic-seo", "entity-mapping"],
+      sourcesLabel: "Sources",
+      sources: [
+        { label: "Google Search Central: Structured data markup", href: "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" },
+        { label: "Schema.org: Thing", href: "https://schema.org/Thing" },
+      ],
+      glossaryLabel: "Explore the glossary",
+      glossaryDescription: "Return to the full SEO and AI search terminology index.",
+      contactLabel: "Discuss your information architecture",
+      contactDescription: "Bring an organisation, service, content, or evidence question to a focused first conversation.",
+    },
+    "entity-mapping": {
+      key: "entity-mapping",
+      slug: "entity-mapping",
+      path: "/glossary/entity-mapping/",
+      title: "Entity Mapping: A Practical Guide",
+      updated: { date: "October 20, 2026", iso: "2026-10-20" },
+      metaTitle: "Entity Mapping: A Practical Guide | Koupoli",
+      metaDescription: "A practical entity mapping guide for documenting the people, services, claims, evidence, and page relationships a website needs to explain clearly.",
+      kicker: "Glossary guide",
+      lead: "Entity mapping is a practical way to decide which real-world things matter to a website, what can be claimed about them, and where each relationship should be made visible.",
+      image: "/assets/koupoli-guide-entity-mapping-system.webp",
+      imageAlt: "Editorial entity mapping workflow connecting an organisation, specialist, service, evidence, audience question, and canonical page",
+      definitionLabel: "Working definition",
+      definition: "Entity mapping is the process of documenting the high-value entities on a website, the claims attached to them, the evidence that supports those claims, and the pages or internal links that should make the relationships clear to people and search systems.",
+      signalsLabel: "What to look for first",
+      signals: [
+        "The organisation, specialist, services, projects, and priority concepts are listed with one accurate canonical name.",
+        "Every important claim has a visible page, source, or approved example that can support it.",
+        "Missing information is treated as a content, evidence, or internal-link decision before it becomes a markup task.",
+      ],
+      sections: [
+        {
+          heading: "Start with the information a buyer needs to trust",
+          paragraphs: [
+            "Entity mapping is not a technical inventory for its own sake. It starts with the facts a prospective client needs before they can understand an offer: who is responsible, what is included, where the method has been used, which concepts shape the work, and what proof is available.",
+            "Writing these relationships down exposes gaps early. A service may be clear but lack an accountable person. A project may exist but not explain its relevance. A guide may define a concept without pointing to the service or evidence that makes it practical. Each gap has a different solution.",
+          ],
+        },
+        {
+          heading: "Use a claim, evidence, and page model",
+          paragraphs: [
+            "For every important entity, write the canonical name, the claim that matters, the evidence that supports it, and the page where a visitor should be able to verify it. This creates a small working map that can guide content, internal links, metadata, and structured data without inflating any one of them.",
+          ],
+          list: [
+            "Organisation: define the business and its primary offer without using multiple competing descriptions.",
+            "Person: identify the specialist responsible for guidance or delivery and link to verifiable experience.",
+            "Service: explain the scope, constraints, and intended outcome in language a buyer can evaluate.",
+            "Evidence: connect a project, approved example, or first-party resource to the claim it supports.",
+            "Concept: use a guide or glossary page to explain the method, then link it back to the relevant service or example.",
+          ],
+        },
+        {
+          heading: "Use the map before changing markup",
+          paragraphs: [
+            "A map makes it easier to choose the next useful action. Sometimes that is a new page. Sometimes it is an internal link, an author line, a corrected service description, or a decision not to make a claim until evidence exists. Markup comes after the visible information is correct and connected.",
+            "This sequence is especially useful during a launch or migration. It reduces the chance that a changed URL, removed page, or inconsistent name breaks an important relationship that visitors and search systems relied on before the change.",
+          ],
+        },
+      ],
+      note: { slug: "website-migration-seo", label: "Website Migration SEO", description: "Use the migration checklist to see how page relationships, redirects, canonicals, and internal links need to survive a site change.", resource: { href: "/downloads/website-migration-seo-checklist.md", label: "Download the migration checklist" } },
+      related: ["entity-seo", "semantic-seo", "knowledge-graph"],
+      sourcesLabel: "Sources",
+      sources: [
+        { label: "Google Search Central: Structured data markup", href: "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" },
+        { label: "Google Search Central: AI search experiences", href: "https://developers.google.com/search/blog/2025/05/succeeding-in-ai-search" },
+      ],
+      glossaryLabel: "Explore the glossary",
+      glossaryDescription: "Return to the full SEO and AI search terminology index.",
+      contactLabel: "Map the next decision",
+      contactDescription: "Bring a launch, service, content, or website-structure question to a focused first conversation.",
     },
     "ai-search-visibility": {
       key: "ai-search-visibility",
@@ -419,7 +600,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
         },
       ],
       note: { slug: "generative-engine-optimization", label: "Generativna optimizacija", description: "Pogledajte zašto su točni entiteti, originalne informacije i povezane stranice važniji od izmišljenih AI taktika." },
-      related: ["technical-seo", "ai-search-visibility", "generative-engine-optimization"],
+      related: ["semantic-seo", "knowledge-graph", "entity-mapping"],
       sourcesLabel: "Izvori",
       sources: [
         { label: "Google Search Central: Uvod u strukturirane podatke", href: "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" },
@@ -430,6 +611,187 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
       glossaryDescription: "Vratite se na cjeloviti indeks SEO i AI pojmova.",
       contactLabel: "Razgovarajte o informacijskoj arhitekturi",
       contactDescription: "Donesite pitanje o pozicioniranju, sadržaju ili tehničkoj strukturi u prvi usmjereni razgovor.",
+    },
+    "semantic-seo": {
+      key: "semantic-seo",
+      slug: "semanticki-seo",
+      path: "/hr/pojmovnik/semanticki-seo/",
+      title: "Semantički SEO: Praktičan vodič",
+      updated: { date: "20. listopada 2026.", iso: "2026-10-20" },
+      metaTitle: "Semantički SEO: Praktičan vodič | Koupoli",
+      metaDescription: "Praktičan vodič za semantički SEO koji temu objašnjava kroz značenje, kontekst, namjeru i povezane informacije umjesto izoliranih ključnih riječi.",
+      kicker: "Vodič kroz pojmovnik",
+      lead: "Semantički SEO je rad koji stranici pomaže odgovoriti na značenje pitanja, a ne samo podudarati riječi upisane u tražilicu.",
+      image: "/assets/koupoli-guide-semantic-seo-system.webp",
+      imageAlt: "Urednički sustav semantičkog SEO-a koji povezuje središnje pitanje sa značenjem, namjerom, kontekstom i povezanim informacijama",
+      definitionLabel: "Radna definicija",
+      definition: "Semantički SEO je praksa oblikovanja korisnog sadržaja oko značenja, konteksta i namjere teme kako bi ljudi i tražilice razumjeli što stranica objašnjava i kako su njezine informacije povezane s drugim relevantnim konceptima.",
+      signalsLabel: "Što prvo provjeriti",
+      signals: [
+        "Svaka prioritetna stranica ima jednu jasnu temu i rješava glavno pitanje s kojim posjetitelj dolazi.",
+        "Naslovi, primjeri i popratne poveznice dodaju potreban kontekst umjesto da ponavljaju ključnu riječ u malo drukčijim oblicima.",
+        "Stranica koristi isti precizan jezik za važne koncepte, usluge, osobe i ishode gdje su ti odnosi bitni.",
+      ],
+      sections: [
+        {
+          heading: "Značenje je korisnije od ponavljanja",
+          paragraphs: [
+            "Upit u pretrazi često je skraćenica za širu potrebu. Netko tko traži entitetski SEO može tražiti definiciju, metodu, način povezivanja informacija na web-stranici ili sigurnost da predložena izvedba nije samo vježba sa strukturiranim podacima. Korisna stranica najprije jasno daje odgovor, a zatim čitatelju daje dovoljno konteksta da razumije odluku koja stoji iza njega.",
+            "To se razlikuje od tretiranja svake povezane fraze kao zasebne mete. Semantički SEO nije tehnika za skrivanje više varijacija na stranici. To je disciplina odlučivanja o tome o čemu stranica doista govori, što treba objasniti i koje popratne ideje pomažu posjetitelju djelovati na temelju odgovora.",
+          ],
+        },
+        {
+          heading: "Gradite stranicu oko stvarnog pitanja",
+          paragraphs: [
+            "Počnite od pitanja zbog kojeg je stranica potrebna. Zatim utvrdite pojmove koje čitatelj možda treba, kompromise koji utječu na odgovor i sljedeću stranicu ili radnju koja prirodno slijedi. Tako stranica dobiva zadatak koji je širi od privlačenja impresije.",
+          ],
+          list: [
+            "Navedite glavnu temu u naslovu, glavnom naslovu, uvodnom odgovoru i popratnim metapodacima bez forsiranja točnog podudaranja.",
+            "Podnaslovima odgovorite na pitanja koja glavni odgovor čine korisnim, poput opsega, ograničenja, primjera i odluka.",
+            "Povežite stranice koje produbljuju nužan odnos, umjesto stvaranja poveznica samo zato što pojmovi zvuče slično.",
+            "Uklonite cjeline koje čitatelju ne pomažu razumjeti temu ili odlučiti što učiniti dalje.",
+          ],
+        },
+        {
+          heading: "Koristite semantičku strukturu prije strukturiranih podataka",
+          paragraphs: [
+            "Jasno pisanje, logični naslovi, interne poveznice i točni nazivi daju stranici semantičku strukturu. Strukturirani podaci mogu dodati strojno čitljive tragove, ali trebaju opisivati vidljivu stranicu, a ne zamijeniti rad na tome da tema bude razumljiva.",
+            "Za specijalističku uslužnu tvrtku to može biti jednako praktično kao dosljedno navođenje usluge, objašnjavanje problema koji rješava, pokazivanje tko je isporučuje i povezivanje s relevantnim projektom ili vodičem. Odnos je vrijedan jer ga može pratiti i kupac.",
+          ],
+        },
+      ],
+      note: { slug: "generative-engine-optimization", label: "Generativna optimizacija", description: "Pogledajte zašto su korisne i originalne informacije vrijednije od stranica izrađenih samo za pokrivanje varijacija fraza." },
+      related: ["entity-seo", "knowledge-graph", "entity-mapping"],
+      sourcesLabel: "Izvori",
+      sources: [
+        { label: "Google Search Central: Koristan, pouzdan sadržaj usmjeren na ljude", href: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content" },
+        { label: "Google Search Central: Strukturirani podaci", href: "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" },
+      ],
+      glossaryLabel: "Istražite pojmovnik",
+      glossaryDescription: "Vratite se na cjeloviti indeks SEO i AI pojmova.",
+      contactLabel: "Razgovarajte o strukturi sadržaja",
+      contactDescription: "Donesite temu, pitanje pozicioniranja ili strukture web-stranice u prvi usmjereni razgovor.",
+    },
+    "knowledge-graph": {
+      key: "knowledge-graph",
+      slug: "graf-znanja",
+      path: "/hr/pojmovnik/graf-znanja/",
+      title: "Graf znanja: Praktičan vodič",
+      updated: { date: "20. listopada 2026.", iso: "2026-10-20" },
+      metaTitle: "Graf znanja: Praktičan vodič | Koupoli",
+      metaDescription: "Praktičan vodič za graf znanja koji povezuje točne informacije o organizacijama, osobama, uslugama, projektima i konceptima na web-stranici.",
+      kicker: "Vodič kroz pojmovnik",
+      lead: "Graf znanja povezan je prikaz stvarnih stvari i njihovih odnosa. Za web-stranicu je praktičan zadatak učiniti te činjenice jasnima, točnima i održivima.",
+      image: "/assets/koupoli-guide-knowledge-graph-system.webp",
+      imageAlt: "Urednički graf znanja koji povezuje organizaciju s uslugama, stručnjakom, dokazima i glavnim konceptima",
+      definitionLabel: "Radna definicija",
+      definition: "Graf znanja je povezani model stvarnih entiteta i odnosa među njima. U SEO-u je koristan kao način razmišljanja o tome jesu li informacije o organizaciji, osobi, usluzi, proizvodu, lokaciji ili konceptu nedvosmislene, povezane i potkrijepljene dokazima.",
+      signalsLabel: "Što prvo provjeriti",
+      signals: [
+        "Važni nazivi, opisi i tvrdnje dosljedni su gdje god se pojavljuju na web-stranici.",
+        "Posjetitelj može doći od organizacije do osoba, usluga, primjera i popratnih izvora bez nagađanja o njihovom odnosu.",
+        "Strukturirani podaci, kada se koriste, odražavaju iste vidljive informacije i održavaju se pri promjenama web-stranice.",
+      ],
+      sections: [
+        {
+          heading: "Graf nije Google Knowledge Panel",
+          paragraphs: [
+            "Izraz graf znanja često se koristi kao da znači dobivanje brendiranog panela u Googleovim rezultatima. To je preusko. Koristan dio za web-stranicu je temeljna ideja: tražilica i posjetitelj trebaju pouzdane činjenice o stvarima koje stranica opisuje i odnosima među njima.",
+            "Uslužna web-stranica može povezati organizaciju sa stručnjakom odgovornim za isporuku, definiranom uslugom, projektom koji pokazuje srodan rad i vodičem koji objašnjava metodu. To su različiti entiteti s različitim ulogama. Web-stranica postaje lakša za povjerenje kada su odnosi izričiti i dosljedni.",
+          ],
+        },
+        {
+          heading: "Povežite činjenice koje možete potkrijepiti",
+          paragraphs: [
+            "Najčvršći graf počinje informacijama iza kojih poslovanje može stajati. To znači koristiti kanonikalni naziv, jasan opis, stvarnu stranicu za temu i dokaz koji je vidljiv posjetitelju. Ne znači izmišljati odnose koje je teško dokazati ni objavljivati tanke stranice za svaki mogući entitet.",
+          ],
+          list: [
+            "Dajte svakom važnom entitetu jasnu ulogu: organizacija, osoba, usluga, projekt, proizvod, lokacija ili objašnjavajući koncept.",
+            "Održavajte važne identifikatore i opise dosljednima na stranicama gdje ih čitatelj očekuje pronaći.",
+            "Povežite uslugu s osobom, metodom, dokazom i vodičem koji ponude čine razumljivima.",
+            "Koristite strukturirane podatke kako biste istinito opisali stranicu, a zatim ih validirajte dok se sadržaj i predlošci mijenjaju.",
+          ],
+        },
+        {
+          heading: "Neka odnosi budu korisni čitatelju",
+          paragraphs: [
+            "Povezana web-stranica nije dijagram radi dijagrama. Odnos treba pomoći posjetitelju odgovoriti na praktično pitanje: tko radi ovaj posao, što se točno nudi, gdje je srodan pristup primijenjen i što mogu pročitati prije odluke o upitu?",
+            "Zato razmišljanje o grafu znanja najbolje funkcionira uz entitetski SEO i mapiranje entiteta. Entitetski SEO razjašnjava stvari koje su važne. Mapiranje odlučuje koje se tvrdnje i stranice trebaju povezati. Graf je rezultirajuće tijelo dosljednih, vidljivih odnosa.",
+          ],
+        },
+      ],
+      note: { slug: "ai-search-visibility", label: "Vidljivost u AI pretrazi: Što mjeriti", description: "Koristite okvir mjerenja koji provjerava otkrivaju li se povezane i korisne stranice za pitanja koja su važna." },
+      related: ["entity-seo", "semantic-seo", "entity-mapping"],
+      sourcesLabel: "Izvori",
+      sources: [
+        { label: "Google Search Central: Strukturirani podaci", href: "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" },
+        { label: "Schema.org: Thing", href: "https://schema.org/Thing" },
+      ],
+      glossaryLabel: "Istražite pojmovnik",
+      glossaryDescription: "Vratite se na cjeloviti indeks SEO i AI pojmova.",
+      contactLabel: "Razgovarajte o informacijskoj arhitekturi",
+      contactDescription: "Donesite pitanje o organizaciji, usluzi, sadržaju ili dokazima u prvi usmjereni razgovor.",
+    },
+    "entity-mapping": {
+      key: "entity-mapping",
+      slug: "mapiranje-entiteta",
+      path: "/hr/pojmovnik/mapiranje-entiteta/",
+      title: "Mapiranje entiteta: Praktičan vodič",
+      updated: { date: "20. listopada 2026.", iso: "2026-10-20" },
+      metaTitle: "Mapiranje entiteta: Praktičan vodič | Koupoli",
+      metaDescription: "Praktičan vodič za mapiranje entiteta koji dokumentira osobe, usluge, tvrdnje, dokaze i odnose među stranicama koje web-stranica treba jasno objasniti.",
+      kicker: "Vodič kroz pojmovnik",
+      lead: "Mapiranje entiteta praktičan je način odlučivanja koje su stvarne stvari važne za web-stranicu, što se o njima može tvrditi i gdje svaki odnos treba biti vidljiv.",
+      image: "/assets/koupoli-guide-entity-mapping-system.webp",
+      imageAlt: "Urednički proces mapiranja entiteta koji povezuje organizaciju, stručnjaka, uslugu, dokaz, pitanje publike i kanonikalnu stranicu",
+      definitionLabel: "Radna definicija",
+      definition: "Mapiranje entiteta je proces dokumentiranja važnih entiteta na web-stranici, tvrdnji koje su uz njih vezane, dokaza koji te tvrdnje podupiru i stranica ili internih poveznica koje trebaju jasno prikazati odnose ljudima i tražilicama.",
+      signalsLabel: "Što prvo provjeriti",
+      signals: [
+        "Organizacija, stručnjak, usluge, projekti i prioritetni koncepti navedeni su pod jednim točnim kanonikalnim nazivom.",
+        "Svaka važna tvrdnja ima vidljivu stranicu, izvor ili odobren primjer koji je može poduprijeti.",
+        "Nedostajuće informacije najprije se tretiraju kao odluka o sadržaju, dokazu ili internim poveznicama, a tek zatim kao zadatak za markup.",
+      ],
+      sections: [
+        {
+          heading: "Počnite od informacija kojima kupac treba vjerovati",
+          paragraphs: [
+            "Mapiranje entiteta nije tehnički inventar radi inventara. Počinje činjenicama koje potencijalni klijent treba prije razumijevanja ponude: tko je odgovoran, što je uključeno, gdje je pristup primijenjen, koji koncepti oblikuju rad i koji dokaz postoji.",
+            "Zapisivanje tih odnosa rano otkriva praznine. Usluga može biti jasna, ali bez osobe odgovorne za isporuku. Projekt može postojati, ali ne objašnjavati svoju relevantnost. Vodič može definirati pojam bez povezivanja na uslugu ili dokaz koji ga čini praktičnim. Svaka praznina traži drukčije rješenje.",
+          ],
+        },
+        {
+          heading: "Koristite model tvrdnje, dokaza i stranice",
+          paragraphs: [
+            "Za svaki važan entitet napišite kanonikalni naziv, tvrdnju koja je važna, dokaz koji je podupire i stranicu na kojoj je posjetitelj može provjeriti. Tako nastaje mali radni plan koji može usmjeriti sadržaj, interne poveznice, metapodatke i strukturirane podatke bez preuveličavanja bilo kojeg od tih slojeva.",
+          ],
+          list: [
+            "Organizacija: definirajte poslovanje i primarnu ponudu bez više konkurentskih opisa.",
+            "Osoba: identificirajte stručnjaka odgovornog za smjernice ili isporuku i povežite ga s provjerljivim iskustvom.",
+            "Usluga: objasnite opseg, ograničenja i namjeravani ishod jezikom koji kupac može procijeniti.",
+            "Dokaz: povežite projekt, odobren primjer ili izvor prve strane s tvrdnjom koju podupire.",
+            "Koncept: pomoću vodiča ili stranice pojmovnika objasnite metodu, a zatim je povežite s relevantnom uslugom ili primjerom.",
+          ],
+        },
+        {
+          heading: "Upotrijebite mapu prije promjene markupa",
+          paragraphs: [
+            "Mapa olakšava odabir sljedeće korisne radnje. Ponekad je to nova stranica. Ponekad interna poveznica, autorska linija, ispravljen opis usluge ili odluka da se tvrdnja ne iznosi dok dokaz ne postoji. Markup dolazi nakon što su vidljive informacije točne i povezane.",
+            "Taj redoslijed posebno je koristan tijekom lansiranja ili migracije. Smanjuje mogućnost da promijenjeni URL, uklonjena stranica ili nedosljedan naziv prekine važan odnos na koji su se posjetitelji i tražilice prije oslanjali.",
+          ],
+        },
+      ],
+      note: { slug: "website-migration-seo", label: "SEO migracija web-stranice", description: "Pogledajte kroz kontrolni popis kako odnosi među stranicama, redirekcije, canonical oznake i interne poveznice trebaju preživjeti promjenu web-stranice.", resource: { href: "/downloads/seo-migracija-kontrolni-popis.md", label: "Preuzmite kontrolni popis za migraciju" } },
+      related: ["entity-seo", "semantic-seo", "knowledge-graph"],
+      sourcesLabel: "Izvori",
+      sources: [
+        { label: "Google Search Central: Strukturirani podaci", href: "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" },
+        { label: "Google Search Central: AI značajke u pretrazi", href: "https://developers.google.com/search/blog/2025/05/succeeding-in-ai-search" },
+      ],
+      glossaryLabel: "Istražite pojmovnik",
+      glossaryDescription: "Vratite se na cjeloviti indeks SEO i AI pojmova.",
+      contactLabel: "Mapirajte sljedeću odluku",
+      contactDescription: "Donesite pitanje o lansiranju, usluzi, sadržaju ili strukturi web-stranice u prvi usmjereni razgovor.",
     },
     "ai-search-visibility": {
       key: "ai-search-visibility",
