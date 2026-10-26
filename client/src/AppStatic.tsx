@@ -12,6 +12,7 @@ import GrowthContact from "./pages/GrowthContact";
 import GrowthGlossary from "./pages/GrowthGlossary";
 import GrowthGlossaryGuide from "./pages/GrowthGlossaryGuide";
 import GrowthHome from "./pages/GrowthHome";
+import GrowthMigrationCaseStudy from "./pages/GrowthMigrationCaseStudy";
 import GrowthProjects from "./pages/GrowthProjects";
 import GrowthService from "./pages/GrowthService";
 
@@ -27,6 +28,7 @@ const pages: SitePages = {
   Glossary: GrowthGlossary,
   GlossaryGuide: GrowthGlossaryGuide,
   Service: GrowthService,
+  MigrationCaseStudy: GrowthMigrationCaseStudy,
 };
 
 function ScrollToPageStart() {

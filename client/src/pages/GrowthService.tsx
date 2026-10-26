@@ -153,11 +153,10 @@ const copies: Record<Locale, ServiceCopy> = {
           "The strategy-first engagement for teams that need a usable organic plan before implementation begins.",
       },
       {
-        href: "/downloads/website-migration-seo-checklist.md",
-        title: "Website migration SEO checklist",
+        href: "/case-studies/multi-market-website-migration/",
+        title: "Website migration case study",
         description:
-          "A reusable Markdown template for URLs, redirects, canonicals, language versions, and launch monitoring.",
-        download: true,
+          "An anonymised record of migration coordination across technical SEO, mobile optimisation, WordPress, and content work.",
       },
     ],
   },
@@ -287,11 +286,10 @@ const copies: Record<Locale, ServiceCopy> = {
           "Praktičan vodič za mjerenje signala koji su važni prije optimizacije.",
       },
       {
-        href: "/downloads/seo-migracija-kontrolni-popis.md",
-        title: "Kontrolni popis za SEO migraciju",
+        href: "/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/",
+        title: "Studija slučaja SEO migracije",
         description:
-          "Markdown predložak za URL-ove, redirekcije, canonical oznake, jezične verzije i praćenje lansiranja.",
-        download: true,
+          "Anonimizirani zapis o koordinaciji migracije kroz tehnički SEO, mobilnu optimizaciju, WordPress i sadržaj.",
       },
     ],
   },

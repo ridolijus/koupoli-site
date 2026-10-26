@@ -13,10 +13,11 @@ export type SitePages = {
   Glossary: ComponentType<any>;
   GlossaryGuide: ComponentType<any>;
   Service: ComponentType<any>;
+  MigrationCaseStudy: ComponentType<any>;
 };
 
 export function SiteRoutes({ pages }: { pages: SitePages }) {
-  const { Home, CroatianHome, Advisory, About, Projects, Blog, BlogPost, Contact, Glossary, GlossaryGuide, Service } = pages;
+  const { Home, CroatianHome, Advisory, About, Projects, Blog, BlogPost, Contact, Glossary, GlossaryGuide, Service, MigrationCaseStudy } = pages;
 
   return (
     <Switch>
@@ -51,6 +52,10 @@ export function SiteRoutes({ pages }: { pages: SitePages }) {
       <Route path="/post/generative-engine-optimization/"><BlogPost slug="generative-engine-optimization" /></Route>
       <Route path="/hr/post/generative-engine-optimization"><BlogPost locale="hr" slug="generative-engine-optimization" /></Route>
       <Route path="/hr/post/generative-engine-optimization/"><BlogPost locale="hr" slug="generative-engine-optimization" /></Route>
+      <Route path="/case-studies/multi-market-website-migration"><MigrationCaseStudy /></Route>
+      <Route path="/case-studies/multi-market-website-migration/"><MigrationCaseStudy /></Route>
+      <Route path="/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista"><MigrationCaseStudy locale="hr" /></Route>
+      <Route path="/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/"><MigrationCaseStudy locale="hr" /></Route>
       <Route path="/services/organic-launch-advisory"><Advisory /></Route>
       <Route path="/services/organic-launch-advisory/"><Advisory /></Route>
       <Route path="/hr/usluge/seo-savjetovanje"><Advisory locale="hr" /></Route>

@@ -65,6 +65,8 @@ export default function GrowthLayout({ locale, children }: LayoutProps) {
     "/hr/usluge/seo-savjetovanje": "/services/organic-launch-advisory/",
     "/services/technical-seo-ai-search": "/hr/usluge/seo-optimizacija/",
     "/hr/usluge/seo-optimizacija": "/services/technical-seo-ai-search/",
+    "/case-studies/multi-market-website-migration": "/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/",
+    "/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista": "/case-studies/multi-market-website-migration/",
   };
   const glossaryAlternate = guideAlternates[normalizedLocation] || (normalizedLocation === "/glossary" ? "/hr/pojmovnik/" : normalizedLocation === "/hr/pojmovnik" ? "/glossary/" : null);
   const alternate = glossaryAlternate || (locale === "hr" ? location.replace(/^\/hr(?=\/|$)/, "") || "/" : `/hr${location === "/" ? "/" : location}`);

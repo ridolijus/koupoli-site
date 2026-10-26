@@ -55,14 +55,12 @@ function displayUrl(url: string) {
 export default function GrowthProjects({ locale = "en" }: { locale?: Locale }) {
   const copy = copies[locale];
   const related = locale === "hr" ? [
-    { href: "/hr/about/", title: "O Karlu", description: "Upoznajte iskustvo iza rada koji povezuje strategiju s implementacijom." },
+    { href: "/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/", title: "Studija slučaja SEO migracije", description: "Anonimizirani zapis o migraciji na web-strukturu za više tržišta." },
     { href: "/hr/usluge/seo-optimizacija/", title: "SEO optimizacija", description: "Tehnički SEO, sadržaj i prioriteti za timove kojima treba konkretna izvedba." },
-    { href: "/downloads/seo-migracija-kontrolni-popis.md", title: "Kontrolni popis za SEO migraciju", description: "Markdown predložak za planiranje URL-ova, redirekcija i praćenja prije i nakon lansiranja.", download: true },
     { href: "/hr/contact/", title: "Započnite razgovor", description: "Opišite projekt, tržište ili prepreku za fokusiran prvi razgovor." },
   ] : [
-    { href: "/about/", title: "About Karlo", description: "Meet the experience behind work that connects strategy to implementation." },
+    { href: "/case-studies/multi-market-website-migration/", title: "Website migration case study", description: "An anonymised record of a move to a multi-market website structure." },
     { href: "/services/technical-seo-ai-search/", title: "Technical SEO services", description: "Technical SEO and AI-search operations for teams that need implementation, not a scorecard." },
-    { href: "/downloads/website-migration-seo-checklist.md", title: "Website migration SEO checklist", description: "A reusable Markdown template for planning URLs, redirects, and monitoring before and after launch.", download: true },
     { href: "/contact/", title: "Start a conversation", description: "Share the project, market, or constraint for a focused first conversation." },
   ];
 

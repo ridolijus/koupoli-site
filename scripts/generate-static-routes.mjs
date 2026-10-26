@@ -33,6 +33,8 @@ const routes = [
   { route: "/hr/post/website-migration-seo/", alternate: "/post/website-migration-seo/", title: "SEO migracija web-stranice: Kontrolni popis | Koupoli", description: "Praktičan SEO kontrolni popis za zaštitu URL-ova, redirekcija, indeksiranja, sadržaja i mjerenja tijekom migracije web-stranice.", lang: "hr", type: "article", articleTitle: "SEO migracija web-stranice: Praktičan kontrolni popis", articleImage: "/assets/koupoli-website-migration-infographic.webp", published: "2026-10-02T00:00:00+02:00", modified: "2026-10-18T00:00:00+02:00" },
   { route: "/post/generative-engine-optimization/", alternate: "/hr/post/generative-engine-optimization/", title: "Generative Engine Optimization: What Matters | Koupoli", description: "Generative engine optimization explained in practical terms: durable SEO foundations, original information, technical clarity, and useful measurement.", lang: "en", type: "article", articleTitle: "Generative Engine Optimization: What Matters in Practice", articleImage: "/assets/koupoli-generative-engine-optimization-infographic.webp", published: "2026-10-02T00:00:00+02:00" },
   { route: "/hr/post/generative-engine-optimization/", alternate: "/post/generative-engine-optimization/", title: "Generativna optimizacija: Što je važno | Koupoli", description: "Generativna optimizacija objašnjena praktično: čvrsti SEO temelji, originalne informacije, tehnička jasnoća i korisno mjerenje.", lang: "hr", type: "article", articleTitle: "Generativna optimizacija: Što je važno u praksi", articleImage: "/assets/koupoli-generative-engine-optimization-infographic.webp", published: "2026-10-02T00:00:00+02:00" },
+  { route: "/case-studies/multi-market-website-migration/", alternate: "/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/", title: "Website Migration Case Study: Multi-Market SEO Delivery | Koupoli", description: "An anonymised Koupoli case study on coordinating a website migration from one domain to geo-specialised subdomains, with technical SEO, mobile, and WordPress work.", lang: "en", type: "caseStudy", articleTitle: "A Multi-Market Website Migration, Managed as a Search Transition", articleImage: "/assets/koupoli-website-migration-note-light.webp", articleSection: "Case study", published: "2026-10-26T00:00:00+01:00" },
+  { route: "/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/", alternate: "/case-studies/multi-market-website-migration/", title: "Studija slučaja SEO migracije: Više tržišta | Koupoli", description: "Anonimizirana Koupoli studija slučaja o koordinaciji migracije web-stranice s jedne domene na geografski specijalizirane poddomene, uz tehnički SEO, mobilnu i WordPress optimizaciju.", lang: "hr", type: "caseStudy", articleTitle: "Migracija web-stranice za više tržišta, vođena kao prijelaz u pretraživanju", articleImage: "/assets/koupoli-website-migration-note-light.webp", articleSection: "Studija slučaja", published: "2026-10-26T00:00:00+01:00" },
   { route: "/services/organic-launch-advisory/", alternate: "/hr/usluge/seo-savjetovanje/", title: "Organic Launch Advisory & SEO Consulting | Koupoli", description: "Organic launch advisory and SEO consulting for teams that need a clear market, technical, content, and measurement plan before a launch, repositioning, or new market move.", lang: "en", type: "service", serviceName: "Organic Launch Advisory", serviceType: "Organic growth advisory and SEO consulting", articleImage: "/assets/koupoli-organic-launch-consultation.webp" },
   { route: "/hr/usluge/seo-savjetovanje/", alternate: "/services/organic-launch-advisory/", title: "SEO Savjetovanje za organsko lansiranje | Koupoli", description: "SEO savjetovanje za timove koji prije lansiranja, repozicioniranja ili ulaska na novo tržište trebaju jasan plan za pretragu, sadržaj, tehničke prioritete i mjerenje.", lang: "hr", type: "service", serviceName: "SEO savjetovanje", serviceType: "SEO savjetovanje i organsko lansiranje", articleImage: "/assets/koupoli-organic-launch-consultation.webp" },
   { route: "/services/technical-seo-ai-search/", alternate: "/hr/usluge/seo-optimizacija/", title: "Technical SEO Services & AI Search Operations | Koupoli", description: "Technical SEO services and AI search operations for teams that need clearer crawl paths, indexation, site structure, structured data, and delivery that reaches the live site.", lang: "en", type: "service", serviceName: "Technical SEO Services & AI Search Operations", serviceType: "Technical SEO and AI search operations", articleImage: "/assets/koupoli-technical-seo-guide.webp" },
@@ -294,6 +296,21 @@ function schemaFor(routeData) {
       publisher: { "@id": organizationId },
       inLanguage: lang,
     }, page(route, title, description, lang));
+  } else if (type === "caseStudy") {
+    graph.push({
+      "@type": "Article",
+      "@id": `${absolute(route)}#case-study`,
+      mainEntityOfPage: { "@id": `${absolute(route)}#webpage` },
+      url: absolute(route),
+      headline: routeData.articleTitle,
+      description,
+      image: absolute(routeData.articleImage),
+      datePublished: routeData.published,
+      author: { "@id": personId },
+      publisher: { "@id": organizationId },
+      articleSection: routeData.articleSection,
+      inLanguage: lang,
+    }, page(route, title, description, lang));
   } else if (type === "service") {
     const serviceId = `${absolute(route)}#service`;
     graph.push({ ...page(route, title, description, lang), mainEntity: { "@id": serviceId } }, { "@type": "Service", "@id": serviceId, name: routeData.serviceName, description, serviceType: routeData.serviceType, provider: { "@id": organizationId }, areaServed: lang === "hr" ? ["Croatia", "Europe"] : ["Europe", "United States"], inLanguage: lang });
@@ -305,7 +322,7 @@ function schemaFor(routeData) {
 }
 
 function socialImage(type, articleImage) {
-  if (type === "article" && articleImage) return absolute(articleImage);
+  if ((type === "article" || type === "caseStudy") && articleImage) return absolute(articleImage);
   if (type === "about") return absolute("/assets/koupoli-about-method-infographic.webp");
   if (type === "projects") return absolute("/assets/koupoli-project-evidence-infographic.webp");
   if (type === "glossary") return absolute("/assets/koupoli-glossary-knowledge-atlas.webp");
@@ -321,8 +338,8 @@ function pageHead(routeData, canonical) {
   const englishUrl = routeData.lang === "en" ? canonical : absolute(routeData.alternate);
   const croatianUrl = routeData.lang === "hr" ? canonical : absolute(routeData.alternate);
   const alternate = `\n    <link rel="alternate" hreflang="en" href="${englishUrl}" />\n    <link rel="alternate" hreflang="hr" href="${croatianUrl}" />\n    <link rel="alternate" hreflang="x-default" href="${englishUrl}" />`;
-  const articleMeta = routeData.type === "article" ? `\n    <meta property="article:published_time" content="${routeData.published || "2025-06-20T00:00:00+02:00"}" />${routeData.modified ? `\n    <meta property="article:modified_time" content="${routeData.modified}" />` : ""}` : "";
-  return `<link rel="canonical" href="${canonical}" />${alternate}\n    <meta property="og:type" content="${routeData.type === "article" ? "article" : "website"}" />\n    <meta property="og:site_name" content="Koupoli" />\n    <meta property="og:locale" content="${locale}" />\n    <meta property="og:url" content="${canonical}" />\n    <meta property="og:title" content="${escapeAttribute(routeData.title)}" />\n    <meta property="og:description" content="${escapeAttribute(routeData.description)}" />\n    <meta property="og:image" content="${image}" />\n    <meta name="twitter:card" content="summary_large_image" />\n    <meta name="twitter:title" content="${escapeAttribute(routeData.title)}" />\n    <meta name="twitter:description" content="${escapeAttribute(routeData.description)}" />\n    <meta name="twitter:image" content="${image}" />${articleMeta}\n    <script type="application/ld+json">${JSON.stringify(schemaFor(routeData)).replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026")}</script>`;
+  const articleMeta = routeData.type === "article" || routeData.type === "caseStudy" ? `\n    <meta property="article:published_time" content="${routeData.published || "2025-06-20T00:00:00+02:00"}" />${routeData.modified ? `\n    <meta property="article:modified_time" content="${routeData.modified}" />` : ""}` : "";
+  return `<link rel="canonical" href="${canonical}" />${alternate}\n    <meta property="og:type" content="${routeData.type === "article" || routeData.type === "caseStudy" ? "article" : "website"}" />\n    <meta property="og:site_name" content="Koupoli" />\n    <meta property="og:locale" content="${locale}" />\n    <meta property="og:url" content="${canonical}" />\n    <meta property="og:title" content="${escapeAttribute(routeData.title)}" />\n    <meta property="og:description" content="${escapeAttribute(routeData.description)}" />\n    <meta property="og:image" content="${image}" />\n    <meta name="twitter:card" content="summary_large_image" />\n    <meta name="twitter:title" content="${escapeAttribute(routeData.title)}" />\n    <meta name="twitter:description" content="${escapeAttribute(routeData.description)}" />\n    <meta name="twitter:image" content="${image}" />${articleMeta}\n    <script type="application/ld+json">${JSON.stringify(schemaFor(routeData)).replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026")}</script>`;
 }
 
 function createPage(routeData, destination) {

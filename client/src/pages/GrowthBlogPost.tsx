@@ -56,10 +56,14 @@ export default function GrowthBlogPost({ locale = "en", slug }: { locale?: Local
   const contactPath = locale === "hr" ? "/hr/contact/" : "/contact/";
   const note = slug ? getEditorialNote(locale, slug) : undefined;
   const glossaryGuide = slug && guideByNote[slug] ? getGlossaryGuide(locale, guideByNote[slug]) : undefined;
-  const migrationGuide = slug === "website-migration-seo" ? getGlossaryGuide(locale, "entity-seo") : undefined;
+  const migrationCaseStudy = slug === "website-migration-seo"
+    ? locale === "hr"
+      ? { href: "/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/", title: "Studija slučaja SEO migracije", description: "Anonimizirani zapis o koordinaciji prelaska na web-strukturu za više tržišta." }
+      : { href: "/case-studies/multi-market-website-migration/", title: "Website migration case study", description: "An anonymised record of coordinating a move to a multi-market site structure." }
+    : undefined;
   const noteLinks = slug ? [
     ...(glossaryGuide ? [{ href: glossaryGuide.path, title: glossaryGuide.title, description: glossaryGuide.lead }] : []),
-    ...(migrationGuide ? [{ href: migrationGuide.path, title: migrationGuide.title, description: migrationGuide.lead }] : []),
+    ...(migrationCaseStudy ? [migrationCaseStudy] : []),
     ...editorialNotes[locale].filter((entry) => entry.slug !== slug).slice(0, 1).map((entry) => ({ href: localizedPath(locale, `/post/${entry.slug}/`), title: entry.title, description: entry.excerpt })),
   ] : [];
   const serviceLink = locale === "hr"

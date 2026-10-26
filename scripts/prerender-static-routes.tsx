@@ -23,6 +23,8 @@ const routes = [
   "/hr/post/website-migration-seo/",
   "/post/generative-engine-optimization/",
   "/hr/post/generative-engine-optimization/",
+  "/case-studies/multi-market-website-migration/",
+  "/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/",
   "/services/organic-launch-advisory/",
   "/hr/usluge/seo-savjetovanje/",
   "/services/technical-seo-ai-search/",

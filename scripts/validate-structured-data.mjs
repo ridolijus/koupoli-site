@@ -33,6 +33,8 @@ const pages = [
   ["/hr/post/website-migration-seo/", "BlogPosting", "/post/website-migration-seo/"],
   ["/post/generative-engine-optimization/", "BlogPosting", "/hr/post/generative-engine-optimization/"],
   ["/hr/post/generative-engine-optimization/", "BlogPosting", "/post/generative-engine-optimization/"],
+  ["/case-studies/multi-market-website-migration/", "Article", "/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/"],
+  ["/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/", "Article", "/case-studies/multi-market-website-migration/"],
   ["/services/organic-launch-advisory/", "Service", "/hr/usluge/seo-savjetovanje/"],
   ["/hr/usluge/seo-savjetovanje/", "Service", "/services/organic-launch-advisory/"],
   ["/services/technical-seo-ai-search/", "Service", "/hr/usluge/seo-optimizacija/"],
@@ -94,6 +96,10 @@ for (const [route, expectedType, alternateRoute] of pages) {
     const article = schema["@graph"].find((node) => node["@type"] === "BlogPosting");
     if (!article.headline || !article.image || !article.datePublished || !article.author || !article.publisher) throw new Error(`Incomplete BlogPosting schema for ${route}`);
     if (refreshedArticles.has(route) && article.dateModified !== "2026-10-18T00:00:00+02:00") throw new Error(`Missing or incorrect material update date for ${route}`);
+  }
+  if (expectedType === "Article") {
+    const article = schema["@graph"].find((node) => node["@type"] === "Article");
+    if (!article.headline || !article.image || !article.datePublished || !article.author || !article.publisher || !article.articleSection) throw new Error(`Incomplete case-study Article schema for ${route}`);
   }
   if (route === "/glossary/" || route === "/hr/pojmovnik/") {
     const termSet = schema["@graph"].find((node) => node["@type"] === "DefinedTermSet");

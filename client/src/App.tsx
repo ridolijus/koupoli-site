@@ -16,6 +16,7 @@ const pages: SitePages = {
   Glossary: lazy(() => import("./pages/GrowthGlossary")),
   GlossaryGuide: lazy(() => import("./pages/GrowthGlossaryGuide")),
   Service: lazy(() => import("./pages/GrowthService")),
+  MigrationCaseStudy: lazy(() => import("./pages/GrowthMigrationCaseStudy")),
 };
 
 function ScrollToPageStart() {

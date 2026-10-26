@@ -25,6 +25,8 @@ const captures = [
   { name: "article-ai-search-hr-mobile", route: "/hr/post/ai-search-visibility/", size: "390,844" },
   { name: "article-migration-mobile", route: "/post/website-migration-seo/", size: "390,844" },
   { name: "article-migration-hr-mobile", route: "/hr/post/website-migration-seo/", size: "390,844" },
+  { name: "case-study-migration-mobile", route: "/case-studies/multi-market-website-migration/", size: "390,844" },
+  { name: "case-study-migration-hr-mobile", route: "/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/", size: "390,844" },
   { name: "article-geo-mobile", route: "/post/generative-engine-optimization/", size: "390,844" },
   { name: "article-geo-hr-mobile", route: "/hr/post/generative-engine-optimization/", size: "390,844" },
   { name: "article-ai-productivity-mobile", route: "/post/the-illusion-of-ai-productivity/", size: "390,844" },
