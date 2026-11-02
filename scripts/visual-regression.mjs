@@ -11,6 +11,12 @@ const baseUrl = `http://127.0.0.1:${port}`;
 const baselineDir = path.join(root, "tests", "visual-regression", "baselines");
 const currentDir = path.join(root, "tests", "visual-regression", "current");
 const captures = [
+  { name: "guide-search-visibility-mobile", route: "/glossary/search-visibility/", size: "390,844" },
+  { name: "guide-search-visibility-hr-mobile", route: "/hr/pojmovnik/vidljivost-u-pretrazi/", size: "390,844" },
+  { name: "guide-structured-data-mobile", route: "/glossary/structured-data/", size: "390,844" },
+  { name: "guide-structured-data-hr-mobile", route: "/hr/pojmovnik/strukturirani-podaci/", size: "390,844" },
+  { name: "article-geo-process-mobile", route: "/post/generative-engine-optimization-process/", size: "390,844" },
+  { name: "article-geo-process-hr-mobile", route: "/hr/post/generative-engine-optimization-process/", size: "390,844" },
   { name: "home-desktop", route: "/", size: "1440,1000" },
   { name: "croatian-home-desktop", route: "/hr/", size: "1440,1000" },
   { name: "glossary-desktop", route: "/glossary/", size: "1440,1000" },

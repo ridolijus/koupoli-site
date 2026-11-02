@@ -1,5 +1,5 @@
 export type GlossaryGuideLocale = "en" | "hr";
-export type GlossaryGuideKey = "technical-seo" | "entity-seo" | "semantic-seo" | "knowledge-graph" | "entity-mapping" | "ai-search-visibility" | "generative-engine-optimization";
+export type GlossaryGuideKey = "search-visibility" | "structured-data" | "technical-seo" | "entity-seo" | "semantic-seo" | "knowledge-graph" | "entity-mapping" | "ai-search-visibility" | "generative-engine-optimization";
 
 type GuideSection = {
   heading: string;
@@ -37,6 +37,239 @@ type GlossaryGuide = {
 
 export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey, GlossaryGuide>> = {
   en: {
+    "search-visibility": {
+      key: "search-visibility",
+      slug: "search-visibility",
+      path: "/glossary/search-visibility/",
+      title: "Search visibility",
+      updated: {
+        date: "November 2, 2026",
+        iso: "2026-11-02"
+      },
+      metaTitle: "Search Visibility: Meaning, Metrics and Checks | Koupoli",
+      metaDescription: "Understand organic search visibility using Search Console impressions, clicks, CTR and position. Compare visibility indexes and diagnose changes with context.",
+      kicker: "Glossary guide",
+      lead: "Search visibility describes whether people can find your pages in unpaid search results. To understand progress, measure relevant appearances and clicks together, rather than relying on one score.",
+      image: "/assets/koupoli-guide-search-visibility-system.webp",
+      imageAlt: "Organic search visibility measurement using impressions, clicks, CTR and average position",
+      definitionLabel: "What is search visibility?",
+      definition: "Search visibility is the extent to which a website appears for relevant searches. It is not a single universal metric. Google Search Console reports your site's observed search performance; SEO platforms may calculate their own visibility indexes.",
+      signalsLabel: "Three signals to read together",
+      signals: [
+        "Relevant impressions show where your pages are appearing, not how many people visited.",
+        "Clicks and CTR show how often recorded appearances lead to a click.",
+        "Position and search context help explain changes without assuming their cause."
+      ],
+      sections: [
+        {
+          heading: "Start with four Search Console metrics",
+          paragraphs: [
+            "For Google organic search, use the Search results performance report as your first-party starting point. Select the date range and search type before comparing results."
+          ],
+          list: [
+            "Impressions count recorded appearances under Google's rules. An impression does not prove someone read your result; counting depends on the result format.",
+            "Clicks count recorded clicks from search results to your site. They are not the same measure as analytics sessions or enquiries.",
+            "CTR, or click-through rate, is clicks divided by impressions, multiplied by 100 to express a percentage.",
+            "Average position averages the topmost result for your site or page across recorded impressions. It is not a fixed ranking that every searcher sees."
+          ]
+        },
+        {
+          heading: "A visibility index is not actual traffic",
+          paragraphs: [
+            "A third-party visibility index is a calculated score based on a provider's keyword sample, observed rankings and weighting method. For example, SISTRIX weights rankings using factors including search volume and click probability, and explicitly distinguishes its index from traffic.",
+            "Use an index to compare ranking trends within the same tool and market. Record the provider, country, device and keyword coverage. Different tools' scores are not interchangeable, and a niche may be poorly represented. A rising score does not establish more visits or sales."
+          ]
+        },
+        {
+          heading: "Keep the query, page, country and device in view",
+          paragraphs: [
+            "Sitewide averages mix different searches. Filter a relevant query or query group, inspect which page appears, then compare country and device. Separate branded searches from searches by people who do not yet know your name.",
+            "Compare equal-length periods with the same filters, allowing for seasonality. More impressions can reflect stronger rankings, increased demand or a broader query mix. New appearances at lower positions can worsen average position while expanding reach. Search Console chart and page totals can also differ because they aggregate results differently."
+          ]
+        },
+        {
+          heading: "Worked example: hypothetical, not client data",
+          paragraphs: [
+            "Imagine one guide, one query group, Croatia and mobile devices across two equal periods. Period A has 800 impressions and 16 clicks: 16 ÷ 800 × 100 = 2% CTR. Period B has 1,200 impressions and 18 clicks: 18 ÷ 1,200 × 100 = 1.5% CTR.",
+            "Impressions increased by 50% and clicks by 12.5%, while CTR fell by 0.5 percentage points. This is not evidence that the title became worse. Check whether newly appearing queries have lower positions, whether intent changed and whether the results layout differs. The totals alone cannot identify the cause."
+          ]
+        },
+        {
+          heading: "A decision checklist before changing a page",
+          paragraphs: [
+            "Small samples are unstable. With 50 impressions, one extra click changes CTR by 2 percentage points. Extend the comparison window when data is sparse; there is no universal impression threshold that makes every conclusion reliable."
+          ],
+          list: [
+            "No relevant impressions? Check indexing and whether the page addresses the intended search need.",
+            "Impressions mainly at low positions? Examine relevance and competing pages before blaming titles.",
+            "Persistently weak CTR at comparable positions? Review intent, result layout, title and description together.",
+            "Clicks without useful enquiries? Review the landing page and measurement, not visibility alone.",
+            "Record the change and review comparable periods. An improvement after an edit does not prove the edit caused it."
+          ]
+        }
+      ],
+      note: {
+        slug: "ai-search-visibility",
+        label: "Looking for AI search visibility?",
+        description: "This guide focuses on conventional organic results. Read the separate guide for visibility in AI-generated answers."
+      },
+      related: [
+        "ai-search-visibility",
+        "technical-seo",
+        "generative-engine-optimization"
+      ],
+      sourcesLabel: "Sources",
+      sources: [
+        {
+          label: "Google: impressions, position and clicks",
+          href: "https://support.google.com/webmasters/answer/7042828?hl=en"
+        },
+        {
+          label: "Google: Search results performance report",
+          href: "https://support.google.com/webmasters/answer/7576553?hl=en"
+        },
+        {
+          label: "Google: performance data and aggregation",
+          href: "https://support.google.com/webmasters/answer/17011364?hl=en"
+        },
+        {
+          label: "Google: analysing performance changes",
+          href: "https://support.google.com/webmasters/answer/17010961?hl=en"
+        },
+        {
+          label: "SISTRIX: Visibility Index strengths and limits",
+          href: "https://www.sistrix.com/visibility-index/strengths-and-limits"
+        }
+      ],
+      glossaryLabel: "Explore the glossary",
+      glossaryDescription: "Read related definitions for technical SEO and AI search visibility.",
+      contactLabel: "Discuss your search visibility",
+      contactDescription: "Talk to Karlo Ridan, Koupoli's independent SEO and organic-growth specialist, about interpreting your search data."
+    },
+    "structured-data": {
+      key: "structured-data",
+      slug: "structured-data",
+      path: "/glossary/structured-data/",
+      title: "Structured data: types, facts and validation",
+      updated: {
+        date: "November 2, 2026",
+        iso: "2026-11-02"
+      },
+      metaTitle: "Structured Data: Schema.org, JSON-LD and Testing | Koupoli",
+      metaDescription: "Learn how structured data, Schema.org, JSON-LD and rich results differ, with a Koupoli service example, validation tools and a practical maintenance workflow.",
+      kicker: "Glossary guide",
+      lead: "Structured data should describe facts readers can already find on a page. Start with the content, choose appropriate types and check both the markup and the live page.",
+      image: "/assets/koupoli-guide-structured-data-system.webp",
+      imageAlt: "Structured data workflow connecting visible page facts, Schema.org types, JSON-LD and validation",
+      definitionLabel: "What is structured data?",
+      definition: "Structured data is machine-readable markup that labels page content and its properties, such as a service’s name and provider.",
+      signalsLabel: "What to check first",
+      signals: [
+        "The markup matches visible facts.",
+        "Types and properties fit the page.",
+        "Validation is followed by live-page checks."
+      ],
+      sections: [
+        {
+          heading: "Structured data, Schema.org, JSON-LD and rich results",
+          paragraphs: [
+            "These terms are not interchangeable. Structured data is the general approach. Schema.org supplies a vocabulary of types, such as Organization and Service, and properties, such as name and provider. JSON-LD is a format for expressing that information in a page’s script element. Google also supports Microdata and RDFa, but generally recommends JSON-LD for easier maintenance.",
+            "Rich results are enhanced search appearances, not a markup format. Schema.org validity alone does not make a page eligible for one. Google’s feature documentation defines its supported features and their requirements."
+          ]
+        },
+        {
+          heading: "Choose types that match visible content",
+          paragraphs: [
+            "Choose the most specific applicable type, not the one that seems most attractive in search. Article, BreadcrumbList and Product have documented Google features with their own conditions. Organization and profile-page markup serve different purposes. Service is a Schema.org type, but Google does not list a dedicated Service rich result.",
+            "Names, descriptions and provider relationships must reflect the page. Do not add hidden achievements, prices or ratings. Supply required properties for the relevant Google feature; add recommended properties only when accurate and applicable."
+          ]
+        },
+        {
+          heading: "Worked example: Koupoli, Karlo and a service",
+          paragraphs: [
+            "Consider an illustrative model, not a report of deployed or tested markup. An Organization has the name Koupoli and url https://koupoli.com/. Its proposed @id is https://koupoli.com/#organization. A Person named Karlo Ridan uses the example identifier https://koupoli.com/about/#karlo-ridan. The About page visibly identifies Karlo as Koupoli’s founder, supporting a founder reference from the organization to the person.",
+            "A Service has the name Technical SEO services and url https://koupoli.com/services/technical-seo-ai-search/. Its proposed identifier could add #service to that URL. Its provider references the same Koupoli organization identifier. Its description can summarize the page’s visible crawl and indexation, site architecture, rendering and structured-data work. Do not invent results or reviews.",
+            "The url points to the relevant page; @id identifies the described item for consistent references. Check existing identifiers before adopting these examples. Keep each fact visible on the page its markup describes."
+          ]
+        },
+        {
+          heading: "A workflow from page selection to maintenance",
+          paragraphs: [
+            "Treat structured data as maintained page information, not a one-off plugin setting."
+          ],
+          list: [
+            "Choose the page and document the facts it actually publishes.",
+            "Choose the type and check Google’s documentation if targeting a supported feature.",
+            "Map properties to visible facts. Reuse stable identifiers rather than creating conflicting copies.",
+            "Have the person responsible for the business confirm provider and founder facts, then assign responsibility for keeping them current.",
+            "Test the draft, resolve errors and review warnings without inventing missing facts.",
+            "Deploy, retest the public URL and use Search Console URL Inspection to check access and rendered content.",
+            "Monitor applicable enhancement reports and revisit markup after content, template or service changes."
+          ]
+        },
+        {
+          heading: "Use both validators and avoid false confidence",
+          paragraphs: [
+            "Google’s Rich Results Test checks supported Google features and their technical requirements. Schema Markup Validator checks Schema.org markup more broadly, including types without dedicated Google rich results. It extracts the data and flags syntax issues without Google-specific feature validation. Neither tool verifies factual truth or every quality rule.",
+            "Common mistakes include conflicting plugin output, changing identifiers, marking up invisible claims, stale service details and interpreting no eligible rich result as invalid Schema.org markup. Check the page and the relevant tool before changing types.",
+            "A passing test does not guarantee rich results, higher rankings or AI citations. Google requires no special schema for AI Overviews or AI Mode. Useful visible content and crawlable pages still matter."
+          ]
+        }
+      ],
+      note: {
+        slug: "generative-engine-optimization",
+        label: "Structured data and AI search",
+        description: "Read the GEO guide for AI-search context without treating markup as a citation shortcut."
+      },
+      related: [
+        "entity-seo",
+        "technical-seo",
+        "knowledge-graph"
+      ],
+      sourcesLabel: "Sources and further reading",
+      sources: [
+        {
+          label: "Google: introduction to structured data",
+          href: "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data"
+        },
+        {
+          label: "Google: general structured data guidelines",
+          href: "https://developers.google.com/search/docs/appearance/structured-data/sd-policies"
+        },
+        {
+          label: "Google: supported structured data features",
+          href: "https://developers.google.com/search/docs/appearance/structured-data/search-gallery"
+        },
+        {
+          label: "Google: choosing a structured data testing tool",
+          href: "https://developers.google.com/search/docs/appearance/structured-data"
+        },
+        {
+          label: "Schema.org: Markup Validator documentation",
+          href: "https://schema.org/docs/validator.html"
+        },
+        {
+          label: "Schema.org: Service and provider properties",
+          href: "https://schema.org/Service"
+        },
+        {
+          label: "Google: AI features and your website",
+          href: "https://developers.google.com/search/docs/appearance/ai-features"
+        },
+        {
+          label: "Koupoli: About Karlo Ridan",
+          href: "https://koupoli.com/about/"
+        },
+        {
+          label: "Koupoli: technical SEO services",
+          href: "https://koupoli.com/services/technical-seo-ai-search/"
+        }
+      ],
+      glossaryLabel: "Explore the glossary",
+      glossaryDescription: "Find related explanations of entity SEO and technical foundations.",
+      contactLabel: "Discuss your structured data",
+      contactDescription: "Talk to Karlo Ridan about page facts, validation or a technical SEO implementation."
+    },
     "technical-seo": {
       key: "technical-seo",
       slug: "technical-seo",
@@ -162,7 +395,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
         },
       ],
       note: { slug: "generative-engine-optimization", label: "Generative Engine Optimization", description: "See why accurate entities, original information, and connected pages matter more than invented AI-only tactics." },
-      related: ["semantic-seo", "knowledge-graph", "entity-mapping"],
+      related: ["structured-data", "knowledge-graph", "entity-mapping"],
       sourcesLabel: "Sources",
       sources: [
         { label: "Google Search Central: Introduction to structured data markup", href: "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" },
@@ -403,7 +636,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
         },
       ],
       note: { slug: "ai-search-visibility", label: "What to Measure Before You Optimise", description: "Read the longer Koupoli Note on building a practical AI-search measurement framework." },
-      related: ["technical-seo", "entity-seo", "generative-engine-optimization"],
+      related: ["search-visibility", "entity-seo", "generative-engine-optimization"],
       sourcesLabel: "Sources",
       sources: [
         { label: "Google Search Central: Optimizing your website for generative AI features", href: "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" },
@@ -461,7 +694,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
           ],
         },
       ],
-      note: { slug: "generative-engine-optimization", label: "What Matters in Practice", description: "Read the Koupoli Note on using GEO language without losing sight of real SEO work." },
+      note: { slug: "generative-engine-optimization-process", label: "Put GEO into practice", description: "Choose a buyer question, check the page, add useful evidence, and review a bounded implementation pilot." },
       related: ["technical-seo", "entity-seo", "ai-search-visibility"],
       sourcesLabel: "Sources",
       sources: [
@@ -475,6 +708,239 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
     },
   },
   hr: {
+    "search-visibility": {
+      key: "search-visibility",
+      slug: "vidljivost-u-pretrazi",
+      path: "/hr/pojmovnik/vidljivost-u-pretrazi/",
+      title: "Vidljivost u pretrazi",
+      updated: {
+        date: "2. studenoga 2026.",
+        iso: "2026-11-02"
+      },
+      metaTitle: "Vidljivost u pretrazi: značenje, metrike i provjere | Koupoli",
+      metaDescription: "Saznajte kako mjeriti organsku vidljivost prikazivanjima, klikovima, CTR-om i pozicijom u Search Consoleu te razlikovati indeks vidljivosti od stvarnog prometa.",
+      kicker: "Vodič iz pojmovnika",
+      lead: "Vidljivost u pretrazi opisuje mogu li ljudi pronaći vaše stranice u neplaćenim rezultatima pretraživanja. Za razumijevanje napretka pratite relevantna prikazivanja i klikove zajedno, umjesto da se oslanjate na jednu ocjenu.",
+      image: "/assets/koupoli-guide-search-visibility-system.webp",
+      imageAlt: "Mjerenje organske vidljivosti prikazivanjima, klikovima, CTR-om i prosječnom pozicijom",
+      definitionLabel: "Što je vidljivost u pretrazi?",
+      definition: "Vidljivost u pretrazi označava u kojoj se mjeri web-mjesto pojavljuje za relevantne upite. Nije riječ o jednoj univerzalnoj metrici. Google Search Console prikazuje zabilježenu izvedbu vašeg web-mjesta u pretrazi, dok SEO alati mogu izračunavati vlastite indekse vidljivosti.",
+      signalsLabel: "Tri pokazatelja koja treba promatrati zajedno",
+      signals: [
+        "Relevantna prikazivanja pokazuju gdje se vaše stranice pojavljuju, a ne koliko ih je ljudi posjetilo.",
+        "Klikovi i CTR pokazuju koliko često zabilježena prikazivanja dovode do klika.",
+        "Pozicija i kontekst pretraživanja pomažu objasniti promjene bez preuranjenih zaključaka o uzroku."
+      ],
+      sections: [
+        {
+          heading: "Počnite s četiri metrike u Search Consoleu",
+          paragraphs: [
+            "Za Googleovu organsku pretragu krenite od izvješća o izvedbi u rezultatima pretraživanja. Ono daje podatke za vaše web-mjesto, a ne procjenu vanjskog SEO alata. Prije usporedbe odaberite razdoblje i vrstu pretraživanja."
+          ],
+          list: [
+            "Prikazivanja bilježe pojavljivanja prema Googleovim pravilima. Prikazivanje ne dokazuje da je netko pročitao vaš rezultat; način brojanja ovisi o formatu rezultata.",
+            "Klikovi bilježe klikove iz rezultata pretraživanja na vaše web-mjesto. Nisu ista mjera kao sesije u analitici ili primljeni upiti za uslugu.",
+            "CTR, odnosno stopa klikanja, izračunava se dijeljenjem klikova s prikazivanjima i množenjem sa 100 kako bi se dobio postotak.",
+            "Prosječna pozicija predstavlja prosjek najviše pozicioniranog rezultata vašeg web-mjesta ili stranice kroz zabilježena prikazivanja. Nije stalna pozicija koju vidi svaki korisnik."
+          ]
+        },
+        {
+          heading: "Indeks vidljivosti nije stvarni promet",
+          paragraphs: [
+            "Indeks vidljivosti vanjskog alata izračunata je vrijednost koja se temelji na uzorku ključnih riječi, zabilježenim pozicijama i metodi ponderiranja tog alata. Primjerice, SISTRIX pri ponderiranju uzima u obzir opseg pretraživanja i vjerojatnost klika te jasno razlikuje svoj indeks od prometa.",
+            "Indeks koristite za usporedbu trendova pozicija unutar istog alata i tržišta. Zabilježite alat, državu, uređaj i obuhvat ključnih riječi. Vrijednosti različitih alata nisu izravno usporedive, a uska niša može biti slabo zastupljena. Rast indeksa ne dokazuje rast posjeta ili prodaje."
+          ]
+        },
+        {
+          heading: "Promatrajte upit, stranicu, državu i uređaj",
+          paragraphs: [
+            "Prosjeci za cijelo web-mjesto spajaju različita pretraživanja. Filtrirajte relevantan upit ili skupinu upita, provjerite koja se stranica pojavljuje, a zatim usporedite državu i uređaj. Odvojite upite s nazivom brenda od pretraživanja ljudi koji vas još ne poznaju.",
+            "Uspoređujte jednako duga razdoblja s istim filtrima i uzmite u obzir sezonalnost. Više prikazivanja može biti posljedica boljih pozicija, veće potražnje ili šireg skupa upita. Nova pojavljivanja na nižim pozicijama mogu pogoršati prosjek, a istodobno proširiti doseg. Zbrojevi na grafikonu i po stranicama mogu se razlikovati jer Search Console različito objedinjuje te podatke."
+          ]
+        },
+        {
+          heading: "Izračun na izmišljenom primjeru, ne na podacima klijenta",
+          paragraphs: [
+            "Zamislite jedan vodič, jednu skupinu upita, Hrvatsku i mobilne uređaje u dva jednako duga razdoblja. Razdoblje A ima 800 prikazivanja i 16 klikova: 16 ÷ 800 × 100 = 2 % CTR-a. Razdoblje B ima 1.200 prikazivanja i 18 klikova: 18 ÷ 1.200 × 100 = 1,5 % CTR-a.",
+            "Prikazivanja su porasla za 50 %, a klikovi za 12,5 %, dok je CTR pao za 0,5 postotnih bodova. To nije dokaz da je naslov postao lošiji. Provjerite imaju li novi upiti niže pozicije, je li se namjera pretraživanja promijenila i razlikuje li se raspored rezultata. Sami ukupni brojevi ne otkrivaju uzrok."
+          ]
+        },
+        {
+          heading: "Što provjeriti prije izmjene stranice",
+          paragraphs: [
+            "Mali uzorci daju nestabilne rezultate. Kod 50 prikazivanja jedan dodatni klik mijenja CTR za 2 postotna boda. Ako je podataka malo, usporedite dulja razdoblja. Ne postoji univerzalan broj prikazivanja nakon kojeg je svaki zaključak pouzdan."
+          ],
+          list: [
+            "Nema relevantnih prikazivanja? Provjerite indeksiranje i odgovara li stranica na ciljanu potrebu korisnika.",
+            "Prikazivanja su uglavnom na niskim pozicijama? Ispitajte relevantnost i konkurentske stranice prije nego što okrivite naslove.",
+            "CTR je trajno slab na usporedivim pozicijama? Zajedno pregledajte namjeru korisnika, raspored rezultata, naslov i opis.",
+            "Klikovi ne donose relevantne upite za uslugu? Pregledajte odredišnu stranicu i mjerenje, ne samo vidljivost.",
+            "Zabilježite izmjenu i usporedite odgovarajuća razdoblja. Poboljšanje nakon izmjene ne dokazuje da ga je ta izmjena uzrokovala."
+          ]
+        }
+      ],
+      note: {
+        slug: "ai-search-visibility",
+        label: "Zanima vas vidljivost u AI pretrazi?",
+        description: "Ovaj je vodič usmjeren na klasične organske rezultate. Za vidljivost u odgovorima umjetne inteligencije pročitajte zaseban vodič."
+      },
+      related: [
+        "ai-search-visibility",
+        "technical-seo",
+        "generative-engine-optimization"
+      ],
+      sourcesLabel: "Izvori",
+      sources: [
+        {
+          label: "Google: prikazivanja, pozicija i klikovi",
+          href: "https://support.google.com/webmasters/answer/7042828?hl=en"
+        },
+        {
+          label: "Google: izvješće o izvedbi u rezultatima pretraživanja",
+          href: "https://support.google.com/webmasters/answer/7576553?hl=en"
+        },
+        {
+          label: "Google: podaci o izvedbi i njihovo objedinjavanje",
+          href: "https://support.google.com/webmasters/answer/17011364?hl=en"
+        },
+        {
+          label: "Google: analiza promjena izvedbe",
+          href: "https://support.google.com/webmasters/answer/17010961?hl=en"
+        },
+        {
+          label: "SISTRIX: prednosti i ograničenja indeksa vidljivosti",
+          href: "https://www.sistrix.com/visibility-index/strengths-and-limits"
+        }
+      ],
+      glossaryLabel: "Istražite pojmovnik",
+      glossaryDescription: "Pročitajte povezane definicije tehničkog SEO-a i vidljivosti u AI pretrazi.",
+      contactLabel: "Razgovarajmo o vašoj vidljivosti u pretrazi",
+      contactDescription: "Obratite se Karlu Ridanu, samostalnom stručnjaku za SEO i organski rast iza Koupolija, za tumačenje svojih podataka iz pretraživanja."
+    },
+    "structured-data": {
+      key: "structured-data",
+      slug: "strukturirani-podaci",
+      path: "/hr/pojmovnik/strukturirani-podaci/",
+      title: "Strukturirani podaci: tipovi, činjenice i provjera",
+      updated: {
+        date: "2. studenoga 2026.",
+        iso: "2026-11-02"
+      },
+      metaTitle: "Strukturirani podaci: Schema.org, JSON-LD i provjera | Koupoli",
+      metaDescription: "Saznajte kako se razlikuju strukturirani podaci, Schema.org, JSON-LD i obogaćeni rezultati uz Koupolijev primjer usluge, alate za provjeru i postupak održavanja.",
+      kicker: "Vodič iz pojmovnika",
+      lead: "Strukturirani podaci trebaju opisivati činjenice koje čitatelji već mogu pronaći na stranici. Krenite od sadržaja, odaberite odgovarajuće tipove te provjerite oznake i objavljenu stranicu.",
+      image: "/assets/koupoli-guide-structured-data-system.webp",
+      imageAlt: "Postupak povezivanja vidljivih činjenica na stranici, tipova Schema.org, formata JSON-LD i provjere strukturiranih podataka",
+      definitionLabel: "Što su strukturirani podaci?",
+      definition: "Strukturirani podaci strojno su čitljive oznake koje opisuju sadržaj stranice i njegova svojstva, primjerice naziv usluge i njezina pružatelja.",
+      signalsLabel: "Što prvo provjeriti",
+      signals: [
+        "Oznake odgovaraju vidljivim činjenicama.",
+        "Tipovi i svojstva odgovaraju stranici.",
+        "Nakon validacije slijedi provjera objavljene stranice."
+      ],
+      sections: [
+        {
+          heading: "Strukturirani podaci, Schema.org, JSON-LD i obogaćeni rezultati",
+          paragraphs: [
+            "Ti pojmovi ne znače isto. Strukturirani podaci opći su pristup. Schema.org daje rječnik tipova, kao što su Organization i Service, te svojstava, kao što su name i provider. JSON-LD format je za zapisivanje tih informacija unutar elementa script na stranici. Google podržava i Microdata i RDFa, ali uglavnom preporučuje JSON-LD zbog lakšeg održavanja.",
+            "Obogaćeni rezultati prošireni su prikazi u pretraživanju, a ne format zapisa. Ispravan zapis prema Schema.org sam po sebi ne znači da stranica ispunjava uvjete za takav prikaz. Googleova dokumentacija određuje podržane značajke i njihove zahtjeve."
+          ]
+        },
+        {
+          heading: "Odaberite tipove prema vidljivom sadržaju",
+          paragraphs: [
+            "Odaberite najprecizniji primjenjivi tip, a ne onaj koji izgleda najprivlačnije u pretraživanju. Article, BreadcrumbList i Product imaju dokumentirane Googleove značajke s vlastitim uvjetima. Oznake Organization i oznake profilnih stranica imaju druge namjene. Service jest tip u rječniku Schema.org, ali Google ne navodi zaseban obogaćeni rezultat za njega.",
+            "Nazivi, opisi i odnosi s pružateljem moraju odgovarati stranici. Ne dodajte skrivena postignuća, cijene ni ocjene. Uključite obvezna svojstva za odgovarajuću Googleovu značajku, a preporučena samo kada su točna i primjenjiva."
+          ]
+        },
+        {
+          heading: "Praktičan primjer: Koupoli, Karlo i usluga",
+          paragraphs: [
+            "Ovo je ilustrativni model, a ne izvještaj o objavljenim ili testiranim oznakama. Organization ima naziv Koupoli i url https://koupoli.com/. Predloženi @id jest https://koupoli.com/#organization. Person naziva Karlo Ridan koristi ogledni identifikator https://koupoli.com/about/#karlo-ridan. Stranica O meni vidljivo navodi Karla kao osnivača Koupolija, što podupire povezivanje organizacije s osobom svojstvom founder.",
+            "Service ima naziv Technical SEO services i url https://koupoli.com/services/technical-seo-ai-search/. Predloženi identifikator mogao bi dodati #service tom URL-u. Svojstvo provider upućuje na isti identifikator organizacije Koupoli. Opis može sažeti vidljivo navedeni rad na indeksiranju i pristupu robotima, arhitekturi weba, renderiranju i strukturiranim podacima. Ne izmišljajte rezultate ni recenzije.",
+            "Svojstvo url vodi na odgovarajuću stranicu, a @id identificira opisani entitet radi dosljednog povezivanja. Prije preuzimanja ovih primjera provjerite postojeće identifikatore. Svaka činjenica treba biti vidljiva na stranici koju oznake opisuju."
+          ]
+        },
+        {
+          heading: "Postupak od odabira stranice do održavanja",
+          paragraphs: [
+            "Strukturirane podatke tretirajte kao informacije o stranici koje treba održavati, a ne kao jednokratnu postavku dodatka."
+          ],
+          list: [
+            "Odaberite stranicu i zabilježite činjenice koje stvarno objavljuje.",
+            "Odaberite tip i provjerite Googleovu dokumentaciju ako ciljate podržanu značajku.",
+            "Povežite svojstva s vidljivim činjenicama. Ponovno koristite stabilne identifikatore umjesto stvaranja proturječnih kopija.",
+            "Neka odgovorna osoba u poslovanju potvrdi podatke o pružatelju i osnivaču, a zatim odredite tko će ih održavati.",
+            "Testirajte nacrt, ispravite pogreške i pregledajte upozorenja bez izmišljanja podataka koji nedostaju.",
+            "Objavite, ponovno testirajte javni URL i alatom za pregled URL-a u Search Consoleu provjerite dostupnost i renderirani sadržaj.",
+            "Pratite dostupna izvješća o poboljšanjima i pregledajte oznake nakon promjena sadržaja, predloška ili usluge."
+          ]
+        },
+        {
+          heading: "Koristite oba validatora bez lažne sigurnosti",
+          paragraphs: [
+            "Googleov Rich Results Test provjerava podržane Googleove značajke i njihove tehničke zahtjeve. Schema Markup Validator šire provjerava oznake Schema.org, uključujući tipove bez zasebnih Googleovih obogaćenih rezultata. Izdvaja podatke i prijavljuje sintaktičke pogreške, bez provjere Googleovih posebnih zahtjeva. Nijedan alat ne potvrđuje istinitost činjenica ni ispunjavanje svih pravila kvalitete.",
+            "Česte su pogreške proturječne oznake iz dodataka, mijenjanje identifikatora, označavanje nevidljivih tvrdnji i zastarjeli podaci o usluzi. Pogrešno je i izostanak prihvatljivog obogaćenog rezultata tumačiti kao neispravan zapis Schema.org. Prije promjene tipa provjerite stranicu i odgovarajući alat.",
+            "Prolazak testa ne jamči obogaćene rezultate, više pozicije ni citiranje u odgovorima umjetne inteligencije. Google ne zahtijeva posebnu shemu za AI Overviews ni AI Mode. Koristan vidljivi sadržaj i stranice dostupne robotima i dalje su važni."
+          ]
+        }
+      ],
+      note: {
+        slug: "generative-engine-optimization",
+        label: "Strukturirani podaci i AI pretraživanje",
+        description: "Pročitajte vodič o GEO-u za kontekst AI pretraživanja, bez tretiranja oznaka kao prečaca do citiranja."
+      },
+      related: [
+        "entity-seo",
+        "technical-seo",
+        "knowledge-graph"
+      ],
+      sourcesLabel: "Izvori i dodatno čitanje",
+      sources: [
+        {
+          label: "Google: uvod u strukturirane podatke",
+          href: "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data"
+        },
+        {
+          label: "Google: opće smjernice za strukturirane podatke",
+          href: "https://developers.google.com/search/docs/appearance/structured-data/sd-policies"
+        },
+        {
+          label: "Google: podržane značajke strukturiranih podataka",
+          href: "https://developers.google.com/search/docs/appearance/structured-data/search-gallery"
+        },
+        {
+          label: "Google: odabir alata za provjeru strukturiranih podataka",
+          href: "https://developers.google.com/search/docs/appearance/structured-data"
+        },
+        {
+          label: "Schema.org: dokumentacija alata Markup Validator",
+          href: "https://schema.org/docs/validator.html"
+        },
+        {
+          label: "Schema.org: Service i svojstvo provider",
+          href: "https://schema.org/Service"
+        },
+        {
+          label: "Google: AI značajke i vaša web-stranica",
+          href: "https://developers.google.com/search/docs/appearance/ai-features"
+        },
+        {
+          label: "Koupoli: o Karlu Ridanu",
+          href: "https://koupoli.com/about/"
+        },
+        {
+          label: "Koupoli: usluge tehničkog SEO-a",
+          href: "https://koupoli.com/services/technical-seo-ai-search/"
+        }
+      ],
+      glossaryLabel: "Istražite pojmovnik",
+      glossaryDescription: "Pronađite povezana objašnjenja SEO-a entiteta i tehničkih osnova.",
+      contactLabel: "Razgovarajmo o strukturiranim podacima",
+      contactDescription: "Razgovarajte s Karlom Ridanom o činjenicama na stranici, provjeri ili implementaciji tehničkog SEO-a."
+    },
     "technical-seo": {
       key: "technical-seo",
       slug: "tehnicki-seo",
@@ -600,7 +1066,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
         },
       ],
       note: { slug: "generative-engine-optimization", label: "Generativna optimizacija", description: "Pogledajte zašto su točni entiteti, originalne informacije i povezane stranice važniji od izmišljenih AI taktika." },
-      related: ["semantic-seo", "knowledge-graph", "entity-mapping"],
+      related: ["structured-data", "knowledge-graph", "entity-mapping"],
       sourcesLabel: "Izvori",
       sources: [
         { label: "Google Search Central: Uvod u strukturirane podatke", href: "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" },
@@ -841,7 +1307,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
         },
       ],
       note: { slug: "ai-search-visibility", label: "Što mjeriti prije optimizacije", description: "Pročitajte dulju Koupoli Bilješku o izgradnji praktičnog okvira za mjerenje AI pretrage." },
-      related: ["technical-seo", "entity-seo", "generative-engine-optimization"],
+      related: ["search-visibility", "entity-seo", "generative-engine-optimization"],
       sourcesLabel: "Izvori",
       sources: [
         { label: "Google Search Central: Optimizacija web-stranice za generativne AI značajke", href: "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" },
@@ -899,7 +1365,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
           ],
         },
       ],
-      note: { slug: "generative-engine-optimization", label: "Što je važno u praksi", description: "Pročitajte Koupoli Bilješku o korištenju GEO naziva bez gubitka fokusa na stvarni SEO rad." },
+      note: { slug: "generative-engine-optimization-process", label: "Primijenite generativnu optimizaciju", description: "Odaberite pitanje kupca, provjerite stranicu, dodajte korisne dokaze i procijenite ograničeni probni projekt." },
       related: ["technical-seo", "entity-seo", "ai-search-visibility"],
       sourcesLabel: "Izvori",
       sources: [

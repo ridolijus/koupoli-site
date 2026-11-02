@@ -100,6 +100,18 @@ export function SiteRoutes({ pages }: { pages: SitePages }) {
       <Route path="/hr/pojmovnik/vidljivost-u-ai-pretrazi/"><GlossaryGuide locale="hr" guideKey="ai-search-visibility" /></Route>
       <Route path="/hr/pojmovnik/generativna-optimizacija"><GlossaryGuide locale="hr" guideKey="generative-engine-optimization" /></Route>
       <Route path="/hr/pojmovnik/generativna-optimizacija/"><GlossaryGuide locale="hr" guideKey="generative-engine-optimization" /></Route>
+      <Route path="/glossary/search-visibility"><GlossaryGuide guideKey="search-visibility" /></Route>
+      <Route path="/glossary/search-visibility/"><GlossaryGuide guideKey="search-visibility" /></Route>
+      <Route path="/glossary/structured-data"><GlossaryGuide guideKey="structured-data" /></Route>
+      <Route path="/glossary/structured-data/"><GlossaryGuide guideKey="structured-data" /></Route>
+      <Route path="/post/generative-engine-optimization-process"><BlogPost slug="generative-engine-optimization-process" /></Route>
+      <Route path="/post/generative-engine-optimization-process/"><BlogPost slug="generative-engine-optimization-process" /></Route>
+      <Route path="/hr/pojmovnik/vidljivost-u-pretrazi"><GlossaryGuide locale="hr" guideKey="search-visibility" /></Route>
+      <Route path="/hr/pojmovnik/vidljivost-u-pretrazi/"><GlossaryGuide locale="hr" guideKey="search-visibility" /></Route>
+      <Route path="/hr/pojmovnik/strukturirani-podaci"><GlossaryGuide locale="hr" guideKey="structured-data" /></Route>
+      <Route path="/hr/pojmovnik/strukturirani-podaci/"><GlossaryGuide locale="hr" guideKey="structured-data" /></Route>
+      <Route path="/hr/post/generative-engine-optimization-process"><BlogPost locale="hr" slug="generative-engine-optimization-process" /></Route>
+      <Route path="/hr/post/generative-engine-optimization-process/"><BlogPost locale="hr" slug="generative-engine-optimization-process" /></Route>
       <Route><Home /></Route>
     </Switch>
   );

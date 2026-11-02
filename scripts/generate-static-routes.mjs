@@ -9,14 +9,20 @@ const websiteId = `${siteUrl}/#website`;
 
 const glossaryTerms = {
   en: [
-    "AI Citations", "AI Mode", "AI Overviews", "AI Search Visibility", "AI SEO", "AI Share of Voice", "Answer Engine Optimization", "Canonical URL", "Core Web Vitals", "Crawling", "E-E-A-T", "Entity Mapping", "Entity SEO", "Generative Engine Optimization", "Generative Search", "Indexing", "Information Architecture", "Internal Links", "JavaScript Rendering", "Knowledge Graph", "Large Language Model", "Redirect", "Retrieval-Augmented Generation", "Robots.txt", "Search Demand", "Search Intent", "Semantic SEO", "Structured Data", "Technical SEO", "Topic Cluster", "Topical Authority", "Website Migration", "XML Sitemap",
+    "AI Citations", "AI Mode", "AI Overviews", "AI Search Visibility", "AI SEO", "AI Share of Voice", "Answer Engine Optimization", "Canonical URL", "Core Web Vitals", "Crawling", "E-E-A-T", "Entity Mapping", "Entity SEO", "Generative Engine Optimization", "Generative Search", "Indexing", "Information Architecture", "Internal Links", "JavaScript Rendering", "Knowledge Graph", "Large Language Model", "Redirect", "Retrieval-Augmented Generation", "Robots.txt", "Search Demand", "Search Intent", "Search Visibility", "Semantic SEO", "Structured Data", "Technical SEO", "Topic Cluster", "Topical Authority", "Website Migration", "XML Sitemap",
   ],
   hr: [
-    "AI citati", "AI Overviews", "AI SEO", "Crawlabilnost", "Core Web Vitals", "Entitetski SEO", "Generativna optimizacija", "Graf znanja", "Indeksiranje", "Informacijska arhitektura", "Interno povezivanje", "Kanonikalni URL", "Mapiranje entiteta", "Namjera pretraživanja", "Robots.txt", "SEO", "Semantički SEO", "Strukturirani podaci", "Tehnički SEO", "Tematski autoritet", "Vidljivost u AI pretrazi", "Web migracija", "XML sitemap",
+    "AI citati", "AI Overviews", "AI SEO", "Crawlabilnost", "Core Web Vitals", "Entitetski SEO", "Generativna optimizacija", "Graf znanja", "Indeksiranje", "Informacijska arhitektura", "Interno povezivanje", "Kanonikalni URL", "Mapiranje entiteta", "Namjera pretraživanja", "Robots.txt", "SEO", "Semantički SEO", "Strukturirani podaci", "Tehnički SEO", "Tematski autoritet", "Vidljivost u AI pretrazi", "Vidljivost u pretrazi", "Web migracija", "XML sitemap",
   ],
 };
 
 const routes = [
+  {route: "/glossary/search-visibility/", alternate: "/hr/pojmovnik/vidljivost-u-pretrazi/", title: "Search Visibility: Meaning, Metrics and Checks | Koupoli", description: "Understand organic search visibility using Search Console impressions, clicks, CTR and position. Compare visibility indexes and diagnose changes with context.", lang: "en", type: "guide", guideTerm: "Search Visibility", articleImage: "/assets/koupoli-guide-search-visibility-system.webp"},
+  {route: "/hr/pojmovnik/vidljivost-u-pretrazi/", alternate: "/glossary/search-visibility/", title: "Vidljivost u pretrazi: značenje, metrike i provjere | Koupoli", description: "Saznajte kako mjeriti organsku vidljivost prikazivanjima, klikovima, CTR-om i pozicijom u Search Consoleu te razlikovati indeks vidljivosti od stvarnog prometa.", lang: "hr", type: "guide", guideTerm: "Vidljivost u pretrazi", articleImage: "/assets/koupoli-guide-search-visibility-system.webp"},
+  {route: "/glossary/structured-data/", alternate: "/hr/pojmovnik/strukturirani-podaci/", title: "Structured Data: Schema.org, JSON-LD and Testing | Koupoli", description: "Learn how structured data, Schema.org, JSON-LD and rich results differ, with a Koupoli service example, validation tools and a practical maintenance workflow.", lang: "en", type: "guide", guideTerm: "Structured Data", articleImage: "/assets/koupoli-guide-structured-data-system.webp"},
+  {route: "/hr/pojmovnik/strukturirani-podaci/", alternate: "/glossary/structured-data/", title: "Strukturirani podaci: Schema.org, JSON-LD i provjera | Koupoli", description: "Saznajte kako se razlikuju strukturirani podaci, Schema.org, JSON-LD i obogaćeni rezultati uz Koupolijev primjer usluge, alate za provjeru i postupak održavanja.", lang: "hr", type: "guide", guideTerm: "Strukturirani podaci", articleImage: "/assets/koupoli-guide-structured-data-system.webp"},
+  {route: "/post/generative-engine-optimization-process/", alternate: "/hr/post/generative-engine-optimization-process/", title: "How to Implement Generative Engine Optimization | Koupoli", description: "Implement generative engine optimization with a one-page pilot: check eligibility, add evidence, record changes and compare results without claiming causality.", lang: "en", type: "article", articleTitle: "How to Implement Generative Engine Optimization: A Practical Plan", articleImage: "/assets/koupoli-geo-implementation-plan.webp", published: "2026-11-02T00:00:00+01:00"},
+  {route: "/hr/post/generative-engine-optimization-process/", alternate: "/post/generative-engine-optimization-process/", title: "Kako provesti generativnu optimizaciju: Plan | Koupoli", description: "Provedite generativnu optimizaciju na jednoj stranici: provjerite uvjete prikaza, dodajte dokaze, zabilježite izmjene i usporedite podatke bez tvrdnji o uzročnosti.", lang: "hr", type: "article", articleTitle: "Kako provesti generativnu optimizaciju: Praktičan plan", articleImage: "/assets/koupoli-geo-implementation-plan.webp", published: "2026-11-02T00:00:00+01:00"},
   { route: "/", alternate: "/hr/", title: "Koupoli | Organic Growth, SEO and AI Search", description: "Koupoli helps teams turn a launch, migration, or growth constraint into an organic plan spanning SEO strategy, technical execution, and AI search.", lang: "en", type: "home" },
   { route: "/hr/", alternate: "/", title: "Koupoli | SEO, organski rast i AI pretraga", description: "Koupoli timovima pomaže pretvoriti lansiranje, migraciju ili prepreku rastu u organski plan koji povezuje SEO strategiju, tehničku izvedbu i AI pretragu.", lang: "hr", type: "homeHr" },
   { route: "/about/", alternate: "/hr/about/", title: "About Karlo Ridan | Koupoli", description: "Meet Karlo Ridan, the SEO and organic growth specialist behind Koupoli. Decision-led strategy, technical SEO, content systems, and implementation.", lang: "en", type: "about" },
@@ -61,12 +67,14 @@ const routes = [
 
 const blogArticles = {
   en: [
+    ["How to Implement Generative Engine Optimization: A Practical Plan", "/post/generative-engine-optimization-process/", "2026-11-02T00:00:00+01:00"],
     ["AI Search Visibility: What to Measure Before You Optimise", "/post/ai-search-visibility/", "2026-10-02T00:00:00+02:00"],
     ["Website Migration SEO: A Practical Launch Checklist", "/post/website-migration-seo/", "2026-10-02T00:00:00+02:00"],
     ["Generative Engine Optimization: What Matters in Practice", "/post/generative-engine-optimization/", "2026-10-02T00:00:00+02:00"],
     ["The Illusion of AI Productivity: Fast Fixes, But Real Projects Leave Most People Stuck", "/post/the-illusion-of-ai-productivity/", "2025-06-20T00:00:00+02:00"],
   ],
   hr: [
+    ["Kako provesti generativnu optimizaciju: Praktičan plan", "/hr/post/generative-engine-optimization-process/", "2026-11-02T00:00:00+01:00"],
     ["Vidljivost u AI pretrazi: Što mjeriti prije optimizacije", "/hr/post/ai-search-visibility/", "2026-10-02T00:00:00+02:00"],
     ["SEO migracija web-stranice: Praktičan kontrolni popis", "/hr/post/website-migration-seo/", "2026-10-02T00:00:00+02:00"],
     ["Generativna optimizacija: Što je važno u praksi", "/hr/post/generative-engine-optimization/", "2026-10-02T00:00:00+02:00"],

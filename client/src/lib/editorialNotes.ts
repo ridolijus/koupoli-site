@@ -16,6 +16,112 @@ export type EditorialNote = {
 export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
   en: [
     {
+      slug: "generative-engine-optimization-process",
+      date: "November 2, 2026",
+      title: "How to Implement Generative Engine Optimization: A Practical Plan",
+      metaTitle: "How to Implement Generative Engine Optimization | Koupoli",
+      metaDescription: "Implement generative engine optimization with a one-page pilot: check eligibility, add evidence, record changes and compare results without claiming causality.",
+      excerpt: "A six-step GEO implementation plan for one buyer question and one page, with acceptance checks, a release record and an editable pilot template.",
+      image: "/assets/koupoli-geo-implementation-plan.webp",
+      imageAlt: "GEO implementation plan connecting a buyer question, evidence, page checks and measurement",
+      resource: {
+        href: "/downloads/geo-implementation-pilot.md",
+        label: "Download the editable GEO pilot record",
+        description: "Record one question, page, baseline, evidence, release and review decision in a Markdown template."
+      },
+      sections: [
+        {
+          heading: "Choose one buyer question and one page",
+          paragraphs: [
+            "To implement generative engine optimization, improve one useful page around a buyer question, record the change and review comparable data. This plan focuses on Google's AI search features. The deliverable is a better answer and a documented decision, not a guaranteed citation.",
+            "Choose a question heard in enquiries or visible in Search Console, then identify the page that should answer it. Keep related wordings together instead of creating competing pages. Set an effort cap before starting.",
+            "Illustrative service-business example, not a client case: a Zagreb office-cleaning business could answer 'What does an office cleaning quote include?' on its existing Croatian quote guide. The intended action is a relevant quote request."
+          ],
+          list: [
+            "Acceptance check: record one question, market, language, target URL, intended action and effort cap."
+          ]
+        },
+        {
+          heading: "Save the baseline and clear eligibility blockers",
+          paragraphs: [
+            "Export the page's Search Console Web performance before editing. Save dates, property, page, country, device and any query filter alongside impressions, clicks and average position. Keep an unfiltered page view as well as any query subset. Record qualified enquiries separately if tracking exists. If the page is new, label its baseline unavailable; do not substitute sitewide figures as if they belonged to it.",
+            "Inspect the indexed URL and canonical. Check the live response, Googlebot access, rendered answer text, indexing directives and snippet controls. In Search Console, check the effective Search generative AI inclusion setting, including inherited choices. Repair blockers first and date those repairs separately. Being indexed and snippet-eligible, with inclusion enabled, does not guarantee selection."
+          ],
+          list: [
+            "Acceptance check: baseline export saved; HTTP 200, crawl access, visible answer, canonical, index status and snippet controls checked; inclusion setting recorded."
+          ]
+        },
+        {
+          heading: "Replace generic copy with checkable evidence",
+          paragraphs: [
+            "Draft the direct answer, then explain what changes it. In the cleaning example, distinguish routine cleaning from optional tasks, state what information a quote needs and explain exclusions. Do not invent a price, turnaround time or customer outcome to make the answer sound specific.",
+            "Add something the business can substantiate, such as its actual site-visit checklist or an anonymised scope example used with permission. Explain where the material came from and its limits. Identify the real author or reviewer and link to relevant background. Check service areas, inclusions and contact details against current business records."
+          ],
+          list: [
+            "Acceptance check: a buyer can identify the answer, verify one original supporting item and see who checked the facts."
+          ]
+        },
+        {
+          heading: "Connect the page and describe it accurately",
+          paragraphs: [
+            "Link to the pilot page from a relevant service page and an existing related guide, where useful. Use descriptive link text and confirm the links reach the canonical destination. Give the answer page a clear route to the intended enquiry action.",
+            "Review existing structured data rather than installing an AI schema package. For an article, check that its author and dates match the visible page. Use only markup appropriate to the content. Google requires neither special AI markup nor llms.txt for these features. The downloadable Markdown record is a working document for people, not an eligibility mechanism."
+          ],
+          list: [
+            "Acceptance check: contextual links work, the enquiry route works on mobile and any structured data matches visible facts."
+          ]
+        },
+        {
+          heading: "Publish a limited change with a release record",
+          paragraphs: [
+            "Save the previous version and record exactly what changed: answer, evidence, authorship, links and markup. Name one accountable owner, whether the business owner or a specialist such as Koupoli's Karlo Ridan. Separate technical repairs from content improvements in the log.",
+            "After publishing, repeat the live-page checks and record the release date. Later, note when URL Inspection shows a crawl after the release. Choose the comparison windows and review date now. A 28-day checkpoint is a planning choice, not Google's promised response time. Avoid unrelated rewrites during the pilot; log unavoidable changes. The implementation can pass its acceptance checks even when visibility data remains inconclusive. Do not make a citation the condition for completing useful page work."
+          ],
+          list: [
+            "Acceptance check: the previous version, change log, owner, live checks and scheduled review are saved in the pilot record."
+          ]
+        },
+        {
+          heading: "Compare like with like and make one decision",
+          paragraphs: [
+            "Compare equal complete windows using the same property, page, country, device, search type and query-filter rules. Review overall Web impressions and clicks, plus qualified enquiries separately. Where available, record the page's Generative AI report impressions with matching supported filters. Those impressions already sit within Web totals; do not add them together.",
+            "Do not infer AI citations from ordinary query impressions or average position. The dedicated AI report has no query dimension. A missing report may reflect insufficient impressions. Search Console also omits anonymised query rows, so a handful of observations cannot establish success or failure.",
+            "Choose one decision: fix a blocker, keep the improvement, extend observation or revise the answer. Note recrawling, demand changes and other releases as possible explanations. A before-and-after difference alone does not prove the pilot caused it."
+          ]
+        }
+      ],
+      sources: [
+        {
+          label: "Google Search Central: Optimizing your website for generative AI features",
+          href: "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide"
+        },
+        {
+          label: "Google Search Central: AI features and your website",
+          href: "https://developers.google.com/search/docs/appearance/ai-features"
+        },
+        {
+          label: "Google Search Central: Creating helpful, reliable, people-first content",
+          href: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+        },
+        {
+          label: "Google Search Console: Search generative AI control",
+          href: "https://support.google.com/webmasters/answer/16908024?hl=en"
+        },
+        {
+          label: "Google Search Console: Generative AI performance report, Search",
+          href: "https://support.google.com/webmasters/answer/16984139?hl=en"
+        },
+        {
+          label: "Google Search Console: Advanced filtering and comparison",
+          href: "https://support.google.com/webmasters/answer/17011165?hl=en"
+        },
+        {
+          label: "Google Search Console: Dimensions and data groupings",
+          href: "https://support.google.com/webmasters/answer/17011259?hl=en"
+        }
+      ]
+    },
+    {
       slug: "ai-search-visibility",
       date: "October 2, 2026",
       updated: { date: "October 18, 2026", iso: "2026-10-18" },
@@ -212,6 +318,112 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
     },
   ],
   hr: [
+    {
+      slug: "generative-engine-optimization-process",
+      date: "2. studenoga 2026.",
+      title: "Kako provesti generativnu optimizaciju: Praktičan plan",
+      metaTitle: "Kako provesti generativnu optimizaciju: Plan | Koupoli",
+      metaDescription: "Provedite generativnu optimizaciju na jednoj stranici: provjerite uvjete prikaza, dodajte dokaze, zabilježite izmjene i usporedite podatke bez tvrdnji o uzročnosti.",
+      excerpt: "Plan generativne optimizacije u šest koraka za jedno pitanje kupca i jednu stranicu, s provjerama, zapisom objave i predloškom za probnu provedbu.",
+      image: "/assets/koupoli-geo-implementation-plan.webp",
+      imageAlt: "Plan generativne optimizacije koji povezuje pitanje kupca, dokaze, provjere stranice i mjerenje",
+      resource: {
+        href: "/downloads/plan-probne-generativne-optimizacije.md",
+        label: "Preuzmite predložak za probnu generativnu optimizaciju",
+        description: "Zabilježite pitanje, stranicu, početno stanje, dokaze, objavu i odluku u prilagodljivom Markdown predlošku."
+      },
+      sections: [
+        {
+          heading: "Odaberite jedno pitanje kupca i jednu stranicu",
+          paragraphs: [
+            "Generativnu optimizaciju provedite tako da poboljšate jednu korisnu stranicu oko pitanja kupca, zabilježite izmjenu i pregledate usporedive podatke. Ovaj se plan odnosi na Googleove AI značajke pretraživanja. Ishod rada je bolji odgovor i dokumentirana odluka, a ne zajamčeno citiranje.",
+            "Odaberite pitanje iz stvarnih upita kupaca ili Search Consolea, a zatim stranicu koja na njega treba odgovoriti. Srodne formulacije obradite zajedno umjesto izrade konkurentskih stranica. Prije početka odredite koliko ćete vremena uložiti.",
+            "Ilustrativan primjer uslužne tvrtke, ne prikaz klijentskog projekta: tvrtka za čišćenje ureda u Zagrebu mogla bi odgovoriti na pitanje 'Što uključuje ponuda za čišćenje ureda?' u postojećem vodiču na hrvatskom jeziku. Željena radnja je relevantan zahtjev za ponudu."
+          ],
+          list: [
+            "Uvjet prolaza: zabilježeni su jedno pitanje, tržište, jezik, ciljni URL, željena radnja i vremensko ograničenje rada."
+          ]
+        },
+        {
+          heading: "Spremite početno stanje i uklonite tehničke prepreke",
+          paragraphs: [
+            "Prije uređivanja izvezite podatke stranice iz Search Consoleova izvještaja o web-pretraživanju. Uz impresije, klikove i prosječnu poziciju spremite datume, svojstvo, stranicu, državu, uređaj i eventualni filtar upita. Sačuvajte i pregled stranice bez filtra upita. Kvalificirane poslovne upite bilježite zasebno ako ih već pratite. Za novu stranicu navedite da početni podaci nisu dostupni; nemojte ih zamijeniti podacima cijelog weba kao da pripadaju toj stranici.",
+            "Pregledajte indeksirani URL i kanonsku adresu. Provjerite HTTP odgovor, pristup Googlebota, prikaz teksta odgovora, direktive indeksiranja i kontrole isječaka. U Search Consoleu provjerite uključuje li važeća postavka stranicu u generativne AI značajke, uključujući naslijeđene postavke. Prepreke uklonite prvo i zasebno zabilježite datum popravka. Indeksiranje, dopušten prikaz isječka i uključivanje u značajke ne jamče odabir."
+          ],
+          list: [
+            "Uvjet prolaza: izvoz je spremljen; provjereni su HTTP 200, pristup robotu, vidljiv odgovor, kanonska adresa, indeksiranje i kontrole isječaka; postavka uključivanja je zabilježena."
+          ]
+        },
+        {
+          heading: "Zamijenite općenit tekst provjerljivim dokazima",
+          paragraphs: [
+            "Napišite izravan odgovor, a zatim objasnite o čemu on ovisi. U primjeru čišćenja odvojite redovito čišćenje od dodatnih poslova, navedite podatke potrebne za ponudu i objasnite što nije uključeno. Nemojte izmišljati cijenu, rok ili rezultat klijenta kako bi odgovor zvučao konkretnije.",
+            "Dodajte nešto što tvrtka može potkrijepiti, poput stvarnog kontrolnog popisa za obilazak prostora ili anonimiziranog primjera opsega posla za koji postoji dopuštenje za objavu. Objasnite podrijetlo materijala i njegova ograničenja. Navedite stvarnog autora ili stručnog recenzenta i povežite podatke o njegovu iskustvu. Područje usluge, uključene poslove i kontakte usporedite s aktualnim poslovnim podacima."
+          ],
+          list: [
+            "Uvjet prolaza: kupac može pronaći odgovor, provjeriti jedan izvorni potporni materijal i vidjeti tko je provjerio činjenice."
+          ]
+        },
+        {
+          heading: "Povežite stranicu i opišite je točnim oznakama",
+          paragraphs: [
+            "Povežite probnu stranicu s relevantne stranice usluge i postojećeg povezanog vodiča, gdje je to korisno. Koristite opisni tekst poveznica i provjerite vode li na kanonsku adresu. Sa stranice s odgovorom omogućite jasan put prema slanju poslovnog upita.",
+            "Pregledajte postojeće strukturirane podatke umjesto dodavanja paketa AI oznaka. Ako je riječ o članku, provjerite odgovaraju li autor i datumi vidljivom sadržaju. Koristite samo oznake primjerene sadržaju. Google za ove značajke ne zahtijeva posebne AI oznake ni llms.txt. Markdown predložak za preuzimanje radni je dokument za ljude, a ne uvjet prikaza."
+          ],
+          list: [
+            "Uvjet prolaza: kontekstualne poveznice rade, slanje upita funkcionira na mobitelu, a strukturirani podaci odgovaraju vidljivim činjenicama."
+          ]
+        },
+        {
+          heading: "Objavite ograničenu izmjenu i zabilježite je",
+          paragraphs: [
+            "Spremite prethodnu verziju i navedite što se točno mijenjalo: odgovor, dokazi, autorstvo, poveznice i oznake. Odredite jednu odgovornu osobu, bilo vlasnika tvrtke ili stručnjaka poput Koupolijeva Karla Ridana. U zapisu odvojite tehničke popravke od poboljšanja sadržaja.",
+            "Nakon objave ponovite provjere na javnoj stranici i zabilježite datum. Naknadno zapišite kada URL Inspection pokaže Googleov posjet nakon objave. Sada odredite razdoblja usporedbe i datum pregleda. Pregled nakon 28 dana služi planiranju, nije Googleovo obećanje o roku reakcije. Tijekom probe izbjegavajte nepovezane prerade; neizbježne promjene zabilježite. Provedba može zadovoljiti provjere i kada podaci o vidljivosti ne dopuštaju zaključak. Nemojte citiranje postaviti kao uvjet završetka korisnog rada na stranici."
+          ],
+          list: [
+            "Uvjet prolaza: spremljeni su prethodna verzija, zapis izmjena, odgovorna osoba, provjere javne stranice i datum pregleda."
+          ]
+        },
+        {
+          heading: "Usporedite iste uvjete i donesite jednu odluku",
+          paragraphs: [
+            "Usporedite jednako duga završena razdoblja uz isto svojstvo, stranicu, državu, uređaj, vrstu pretraživanja i pravila filtriranja upita. Pregledajte ukupne web-impresije i klikove, a kvalificirane poslovne upite zasebno. Kada su dostupne, zabilježite impresije stranice iz izvještaja o generativnom AI-ju uz iste podržane filtre. One su već uključene u ukupne web-podatke; nemojte ih zbrajati.",
+            "Iz uobičajenih impresija upita ili prosječne pozicije nemojte zaključivati da vas AI citira. Zaseban AI izvještaj nema dimenziju upita. Njegov izostanak može značiti da nema dovoljno impresija. Search Console također izostavlja anonimizirane upite, pa nekoliko opažanja ne može potvrditi uspjeh ni neuspjeh.",
+            "Odaberite jednu odluku: ukloniti prepreku, zadržati poboljšanje, produljiti promatranje ili doraditi odgovor. Kao moguća objašnjenja zabilježite Googleov ponovni posjet, promjene potražnje i druge objave. Sama razlika prije i poslije ne dokazuje da ju je uzrokovala probna provedba."
+          ]
+        }
+      ],
+      sources: [
+        {
+          label: "Google Search Central: Optimizacija web-stranice za generativne AI značajke",
+          href: "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide"
+        },
+        {
+          label: "Google Search Central: AI značajke i vaša web-stranica",
+          href: "https://developers.google.com/search/docs/appearance/ai-features"
+        },
+        {
+          label: "Google Search Central: Koristan, pouzdan sadržaj usmjeren na ljude",
+          href: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+        },
+        {
+          label: "Google Search Console: Upravljanje uključivanjem u generativne AI značajke",
+          href: "https://support.google.com/webmasters/answer/16908024?hl=en"
+        },
+        {
+          label: "Google Search Console: Izvještaj o uspješnosti generativnog AI-ja u Pretraživanju",
+          href: "https://support.google.com/webmasters/answer/16984139?hl=en"
+        },
+        {
+          label: "Google Search Console: Napredno filtriranje i usporedba",
+          href: "https://support.google.com/webmasters/answer/17011165?hl=en"
+        },
+        {
+          label: "Google Search Console: Dimenzije i grupiranje podataka",
+          href: "https://support.google.com/webmasters/answer/17011259?hl=en"
+        }
+      ]
+    },
     {
       slug: "ai-search-visibility",
       date: "2. listopada 2026.",

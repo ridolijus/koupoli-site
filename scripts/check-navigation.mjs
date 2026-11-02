@@ -95,6 +95,12 @@ try {
     await expectAtTop(mobile, "Mobile menu navigation");
 
     const mobileRoutes = [
+      "/glossary/search-visibility/",
+      "/hr/pojmovnik/vidljivost-u-pretrazi/",
+      "/glossary/structured-data/",
+      "/hr/pojmovnik/strukturirani-podaci/",
+      "/post/generative-engine-optimization-process/",
+      "/hr/post/generative-engine-optimization-process/",
       "/", "/hr/", "/about/", "/hr/about/", "/projects/", "/hr/projects/", "/blog/", "/hr/blog/",
       "/post/the-illusion-of-ai-productivity/", "/hr/post/the-illusion-of-ai-productivity/",
       "/post/ai-search-visibility/", "/hr/post/ai-search-visibility/",

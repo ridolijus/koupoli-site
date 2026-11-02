@@ -9,6 +9,8 @@ const refreshedArticles = new Set([
   "/hr/post/website-migration-seo/",
 ]);
 const downloads = [
+  "/downloads/geo-implementation-pilot.md",
+  "/downloads/plan-probne-generativne-optimizacije.md",
   "/downloads/entity-seo-claim-inventory.md",
   "/downloads/inventar-entitetskih-tvrdnji.md",
   "/downloads/website-migration-seo-checklist.md",
@@ -17,6 +19,12 @@ const downloads = [
   "/downloads/scorecard-vidljivosti-u-ai-pretrazi.md",
 ];
 const pages = [
+  ["/glossary/search-visibility/", "DefinedTerm", "/hr/pojmovnik/vidljivost-u-pretrazi/"],
+  ["/hr/pojmovnik/vidljivost-u-pretrazi/", "DefinedTerm", "/glossary/search-visibility/"],
+  ["/glossary/structured-data/", "DefinedTerm", "/hr/pojmovnik/strukturirani-podaci/"],
+  ["/hr/pojmovnik/strukturirani-podaci/", "DefinedTerm", "/glossary/structured-data/"],
+  ["/post/generative-engine-optimization-process/", "BlogPosting", "/hr/post/generative-engine-optimization-process/"],
+  ["/hr/post/generative-engine-optimization-process/", "BlogPosting", "/post/generative-engine-optimization-process/"],
   ["/", "FAQPage", "/hr/"],
   ["/hr/", "FAQPage", "/"],
   ["/about/", "AboutPage", "/hr/about/"],
@@ -103,7 +111,7 @@ for (const [route, expectedType, alternateRoute] of pages) {
   }
   if (route === "/glossary/" || route === "/hr/pojmovnik/") {
     const termSet = schema["@graph"].find((node) => node["@type"] === "DefinedTermSet");
-    const expectedCount = route === "/glossary/" ? 33 : 23;
+    const expectedCount = route === "/glossary/" ? 34 : 24;
     if (!termSet || !Array.isArray(termSet.hasDefinedTerm) || termSet.hasDefinedTerm.length !== expectedCount) throw new Error(`Incomplete glossary schema for ${route}`);
   }
 }

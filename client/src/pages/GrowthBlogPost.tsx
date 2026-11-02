@@ -36,6 +36,7 @@ const guideByNote: Record<string, GlossaryGuideKey> = {
   "ai-search-visibility": "ai-search-visibility",
   "website-migration-seo": "technical-seo",
   "generative-engine-optimization": "generative-engine-optimization",
+  "generative-engine-optimization-process": "generative-engine-optimization",
 };
 
 function localizedPath(locale: Locale, path: string) {
@@ -61,10 +62,14 @@ export default function GrowthBlogPost({ locale = "en", slug }: { locale?: Local
       ? { href: "/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/", title: "Studija slučaja SEO migracije", description: "Anonimizirani zapis o koordinaciji prelaska na web-strukturu za više tržišta." }
       : { href: "/case-studies/multi-market-website-migration/", title: "Website migration case study", description: "An anonymised record of coordinating a move to a multi-market site structure." }
     : undefined;
+  const implementationLinks = slug === "generative-engine-optimization-process"
+    ? (["search-visibility", "structured-data"] as const).map((key) => getGlossaryGuide(locale, key)).map((guide) => ({ href: guide.path, title: guide.title, description: guide.lead }))
+    : [];
   const noteLinks = slug ? [
     ...(glossaryGuide ? [{ href: glossaryGuide.path, title: glossaryGuide.title, description: glossaryGuide.lead }] : []),
     ...(migrationCaseStudy ? [migrationCaseStudy] : []),
-    ...editorialNotes[locale].filter((entry) => entry.slug !== slug).slice(0, 1).map((entry) => ({ href: localizedPath(locale, `/post/${entry.slug}/`), title: entry.title, description: entry.excerpt })),
+    ...implementationLinks,
+    ...editorialNotes[locale].filter((entry) => entry.slug !== slug).slice(0, implementationLinks.length ? 0 : 1).map((entry) => ({ href: localizedPath(locale, `/post/${entry.slug}/`), title: entry.title, description: entry.excerpt })),
   ] : [];
   const serviceLink = locale === "hr"
     ? { href: "/hr/usluge/seo-optimizacija/", title: "SEO optimizacija", description: "Tehnički SEO, sadržaj i prioriteti za timove koji su odabrali smjer i trebaju ukloniti sljedeću operativnu prepreku." }
@@ -83,7 +88,7 @@ export default function GrowthBlogPost({ locale = "en", slug }: { locale?: Local
     const copy = locale === "hr" ? croatianCopy : englishCopy;
     return <GrowthLayout locale={locale}>
       <PageMeta title={note.metaTitle} description={note.metaDescription} lang={locale} />
-      <article className="growth-article-page"><header className="growth-article-header"><div className="growth-narrow"><p className="growth-kicker">{note.date}</p><h1>{note.title}</h1><p>{note.excerpt}</p><Byline locale={locale} updated={note.updated} /></div></header><section className="growth-article-body"><div className="growth-narrow"><img className="growth-article-image" src={note.image} alt={note.imageAlt} />{note.resource && <p>{note.resource.description} <a className="growth-text-link" href={note.resource.href} download>{note.resource.label}</a></p>}<div className="growth-rich-text">{note.sections.map((section) => <section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{section.list && <ul>{section.list.map((item) => <li key={item}>{item}</li>)}</ul>}</section>)}<section className="growth-article-sources"><h2>{copy.sourceLabel}</h2><ul>{note.sources.map((source) => <li key={source.href}><a href={source.href} target="_blank" rel="noreferrer">{source.label}</a></li>)}</ul></section></div><ContextLinks locale={locale} items={[...noteLinks, serviceLink]} /><div className="growth-article-return"><Link className="growth-text-link" href={blogPath}>{copy.returnLabel}</Link><Link className="growth-text-link" href={contactPath}>{copy.contactLabel}</Link></div></div></section></article>
+      <article className={`growth-article-page${slug === "generative-engine-optimization-process" ? " growth-reading-layout" : ""}`}><header className="growth-article-header"><div className="growth-narrow"><p className="growth-kicker">{note.date}</p><h1>{note.title}</h1><p>{note.excerpt}</p><Byline locale={locale} updated={note.updated} /></div></header><section className="growth-article-body"><div className="growth-narrow"><img className="growth-article-image" src={note.image} alt={note.imageAlt} width={slug === "generative-engine-optimization-process" ? 1400 : undefined} height={slug === "generative-engine-optimization-process" ? 1050 : undefined} />{note.resource && <p>{note.resource.description} <a className="growth-text-link" href={note.resource.href} download>{note.resource.label}</a></p>}<div className="growth-rich-text">{note.sections.map((section) => <section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{section.list && <ul>{section.list.map((item) => <li key={item}>{item}</li>)}</ul>}</section>)}<section className="growth-article-sources"><h2>{copy.sourceLabel}</h2><ul>{note.sources.map((source) => <li key={source.href}><a href={source.href} target="_blank" rel="noreferrer">{source.label}</a></li>)}</ul></section></div><ContextLinks locale={locale} items={[...noteLinks, serviceLink]} /><div className="growth-article-return"><Link className="growth-text-link" href={blogPath}>{copy.returnLabel}</Link><Link className="growth-text-link" href={contactPath}>{copy.contactLabel}</Link></div></div></section></article>
     </GrowthLayout>;
   }
 
