@@ -63,7 +63,12 @@ export default function GrowthBlogPost({ locale = "en", slug }: { locale?: Local
       : { href: "/case-studies/multi-market-website-migration/", title: "Website migration case study", description: "An anonymised record of coordinating a move to a multi-market site structure." }
     : undefined;
   const implementationLinks = slug === "generative-engine-optimization-process"
-    ? (["search-visibility", "structured-data"] as const).map((key) => getGlossaryGuide(locale, key)).map((guide) => ({ href: guide.path, title: guide.title, description: guide.lead }))
+    ? [
+      ...(["search-visibility", "structured-data"] as const).map((key) => getGlossaryGuide(locale, key)).map((guide) => ({ href: guide.path, title: guide.title, description: guide.lead })),
+      locale === "hr"
+        ? { href: "/downloads/koupoli-primjer-generativne-optimizacije.md", title: "Koupolijev praktičan GEO primjer", description: "Skup pitanja, stvarna izmjena usluge i način procjene bez izmišljanja rezultata.", download: true }
+        : { href: "/downloads/koupoli-geo-working-example.md", title: "Koupoli's GEO working example", description: "A question set, actual service change and measurement record without invented results.", download: true },
+    ]
     : [];
   const noteLinks = slug ? [
     ...(glossaryGuide ? [{ href: glossaryGuide.path, title: glossaryGuide.title, description: glossaryGuide.lead }] : []),

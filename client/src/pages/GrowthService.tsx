@@ -44,10 +44,11 @@ const copies: Record<Locale, ServiceCopy> = {
     image: "/assets/koupoli-service-technical-delivery.webp",
     imageAlt:
       "Technical SEO delivery illustration showing a site structure, implementation plan, and verified live page",
-    principleTitle: "Technical SEO is not a scorecard.",
+    principleTitle: "What does a technical SEO engagement include?",
     principle: [
-      "A useful audit explains what is stopping the pages that matter from being discovered, rendered, indexed, or understood. The goal is not a long list of warnings. It is a focused sequence that reaches the live site.",
-      "The work joins the technical layer to information architecture, content, and measurement. That matters when a new section is launching, a platform is changing, or a team needs to turn a technical review into development tickets that can be prioritised.",
+      "You work directly with Karlo Ridan. The engagement starts with the pages and business decision that matter, then diagnoses the technical conditions affecting discovery. Depending on the agreed scope, this can include crawl paths, indexation, site architecture, rendering, structured data and migration QA.",
+      "The output is a prioritised implementation plan with clear work items, responsibilities and acceptance criteria. Karlo can support implementation or work with your developers. The handoff, checks and measurement are agreed before delivery; a warning count is not the deliverable.",
+      "To begin, share the website URL, platform, priority pages and goal, along with what Search Console data or access is available. Access is arranged securely after scope is agreed, not sent through the enquiry form. Fees, timing and additional work are agreed for the project, with no promise of a particular ranking or AI citation.",
     ],
     scopeTitle: "The technical work behind durable visibility.",
     scopeLead:
@@ -119,6 +120,16 @@ const copies: Record<Locale, ServiceCopy> = {
     faqTitle: "Questions teams usually ask before the work begins.",
     faqs: [
       {
+        question: "What should I prepare for the first conversation?",
+        answer:
+          "Share your website URL and platform, the pages or launch involved, the business goal and what Search Console data is available. You do not need a finished audit. Do not submit passwords or confidential exports through the enquiry form; access is arranged separately if the engagement proceeds.",
+      },
+      {
+        question: "How are scope and progress agreed?",
+        answer:
+          "Agree the priority pages, technical areas, deliverables, implementation responsibilities and review method before work starts. Progress can be checked against completed tickets and live acceptance checks, with search and enquiry data reviewed where available. Additional work, fees and timing are agreed separately; rankings and AI citations are not guaranteed.",
+      },
+      {
         question: "Can Koupoli work with our developers or Webflow team?",
         answer:
           "Yes. The work is structured around implementation: clear priorities, tickets, acceptance criteria, and reviews of the changes that matter. It can support in-house developers, agency partners, or a Webflow delivery process.",
@@ -172,10 +183,11 @@ const copies: Record<Locale, ServiceCopy> = {
     image: "/assets/koupoli-service-technical-delivery.webp",
     imageAlt:
       "Vizual tehničke SEO izvedbe koji povezuje strukturu weba, plan implementacije i provjerenu objavljenu stranicu",
-    principleTitle: "SEO optimizacija nije samo popis preporuka.",
+    principleTitle: "Što uključuje angažman za tehnički SEO?",
     principle: [
-      "Koristan tehnički pregled pokazuje zašto važne stranice nisu dovoljno lako dostupne, crawlable, indeksirane ili razumljive. Cilj nije dugačak izvještaj s upozorenjima, nego prioriteti koji mogu doći do objavljene web-stranice.",
-      "Rad povezuje tehnički SEO s informacijskom arhitekturom, sadržajem i mjerenjem. To je posebno važno prije lansiranja, redizajna, migracije ili većeg sadržajnog projekta.",
+      "Izravno surađujete s Karlom Ridanom. Angažman počinje od važnih stranica i poslovne odluke, a zatim se utvrđuju tehnički uvjeti koji utječu na otkrivanje u pretrazi. Ovisno o dogovorenom opsegu, rad može obuhvatiti pristup tražilica, indeksiranje, strukturu weba, prikaz sadržaja, strukturirane podatke i provjere migracije.",
+      "Isporuka je plan implementacije poredan po prioritetu, s jasnim zadacima, odgovornostima i kriterijima prihvaćanja. Karlo može podržati izvedbu ili raditi s vašim razvojnim timom. Predaja zadataka, provjere i mjerenje dogovaraju se prije rada; broj upozorenja nije isporuka.",
+      "Za početak navedite URL weba, platformu, važne stranice i cilj te koji su podaci ili pristup Search Consoleu dostupni. Pristup se dogovara sigurnim putem nakon definiranja opsega, ne šalje se kroz obrazac za upit. Naknada, rok i dodatni poslovi dogovaraju se za projekt, bez jamstva određene pozicije ili citiranja u AI pretrazi.",
     ],
     scopeTitle: "Što obuhvaća SEO optimizacija.",
     scopeLead:
@@ -246,6 +258,16 @@ const copies: Record<Locale, ServiceCopy> = {
     ],
     faqTitle: "Pitanja prije početka SEO optimizacije.",
     faqs: [
+      {
+        question: "Što trebam pripremiti za prvi razgovor?",
+        answer:
+          "Navedite URL i platformu weba, uključene stranice ili lansiranje, poslovni cilj i dostupne podatke iz Search Consolea. Ne trebate imati gotov audit. Nemojte slati lozinke ni povjerljive izvoze kroz obrazac za upit; pristup se dogovara zasebno ako se suradnja nastavi.",
+      },
+      {
+        question: "Kako se dogovaraju opseg i praćenje napretka?",
+        answer:
+          "Prije rada dogovaraju se prioritetne stranice, tehnička područja, isporuka, odgovornosti za implementaciju i način pregleda. Napredak se provjerava kroz završene zadatke i provjere na javnoj stranici, a podaci o pretrazi i poslovnim upitima pregledavaju se gdje su dostupni. Dodatni rad, naknada i rok dogovaraju se zasebno; pozicije i citiranje u AI pretrazi nisu zajamčeni.",
+      },
       {
         question: "Možete li raditi s našim developerima ili Webflow timom?",
         answer:

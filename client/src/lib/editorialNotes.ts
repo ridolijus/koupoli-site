@@ -18,6 +18,7 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
     {
       slug: "generative-engine-optimization-process",
       date: "November 2, 2026",
+      updated: { date: "November 7, 2026", iso: "2026-11-07" },
       title: "How to Implement Generative Engine Optimization: A Practical Plan",
       metaTitle: "How to Implement Generative Engine Optimization | Koupoli",
       metaDescription: "Implement generative engine optimization with a one-page pilot: check eligibility, add evidence, record changes and compare results without claiming causality.",
@@ -30,6 +31,21 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
         description: "Record one question, page, baseline, evidence, release and review decision in a Markdown template."
       },
       sections: [
+        {
+          "heading": "Koupoli's working example: one answer, two language records",
+          "paragraphs": [
+            "Koupoli's technical SEO service provides an owned-site example, not a client case. The previous English and Croatian pages described scope and delivery steps in separate sections. The change brings the answer to 'What does a technical SEO engagement include?' together near the start of the service page: direct work with Karlo Ridan, the starting information, prioritised tasks, acceptance criteria and an agreed handoff. It adds no new service URL, price or search-result promise.",
+            "Use the five buyer questions below to check whether the answer is complete. They are editorial checks, not queries claimed to appear in Search Console or prompts claimed to have earned AI citations. Keep a separate baseline for each language's canonical service URL, retaining the date window, country, device and query filters. Save the previous page and record the release date. The linked working example supplies the question set and change record; no post-change performance result is reported.",
+            "After release, check the public answer and technical signals, then record when Google has crawled the changed page. Compare equal complete windows with the same filters. Read page-level Generative AI impressions where available, without adding them to Web totals or assigning them to these questions: that report has no query dimension. Sparse data calls for longer observation, not an invented uplift. A before-and-after difference does not establish that the content change caused it."
+          ],
+          "list": [
+            "What does the engagement include? Identify the diagnosis and technical areas relevant to the goal, then distinguish agreed work from possible additions.",
+            "Who will do the work? Make it explicit that the buyer works directly with Karlo Ridan, and clarify how the buyer's development team or partner would be involved.",
+            "What should I provide before the first conversation? State the goal, target URLs, platform and Google Search Console access currently available.",
+            "What will I receive, and who implements it? Describe prioritised tickets, acceptance criteria and the agreed handoff or implementation support.",
+            "How will scope and progress be agreed? Explain which work and measurement are included, without inventing a price, timeline or guaranteed result."
+          ]
+        },
         {
           heading: "Choose one buyer question and one page",
           paragraphs: [
@@ -321,6 +337,7 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
     {
       slug: "generative-engine-optimization-process",
       date: "2. studenoga 2026.",
+      updated: { date: "7. studenoga 2026.", iso: "2026-11-07" },
       title: "Kako provesti generativnu optimizaciju: Praktičan plan",
       metaTitle: "Kako provesti generativnu optimizaciju: Plan | Koupoli",
       metaDescription: "Provedite generativnu optimizaciju na jednoj stranici: provjerite uvjete prikaza, dodajte dokaze, zabilježite izmjene i usporedite podatke bez tvrdnji o uzročnosti.",
@@ -333,6 +350,21 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
         description: "Zabilježite pitanje, stranicu, početno stanje, dokaze, objavu i odluku u prilagodljivom Markdown predlošku."
       },
       sections: [
+        {
+          "heading": "Koupolijev praktičan primjer: jedan odgovor, odvojeni jezični zapisi",
+          "paragraphs": [
+            "Koupolijeva usluga tehničkog SEO-a daje primjer na vlastitom webu, a ne prikaz klijentskog projekta. Prethodne engleska i hrvatska stranica opisivale su opseg i korake rada u odvojenim cjelinama. Izmjena objedinjuje odgovor na pitanje 'Što uključuje angažman za tehnički SEO?' blizu početka stranice usluge: izravan rad s Karlom Ridanom, početne podatke, zadatke po prioritetu, kriterije prihvaćanja i dogovorenu predaju. Ne dodaje novi URL usluge, cijenu ni obećanje rezultata u pretraživanju.",
+            "Pet pitanja u nastavku služi provjeri potpunosti odgovora. To su uredničke provjere, a ne upiti za koje se tvrdi da su zabilježeni u Search Consoleu ili da su doveli do AI citiranja. Početno stanje vodite zasebno za kanonski URL usluge na svakom jeziku, uz razdoblje, državu, uređaj i filtre upita. Spremite prethodnu stranicu i zabilježite datum objave. Povezani praktični primjer daje skup pitanja i zapis izmjene; ne navodi rezultat nakon promjene.",
+            "Nakon objave provjerite javni odgovor i tehničke signale te zabilježite kada je Google posjetio izmijenjenu stranicu. Usporedite jednako duga završena razdoblja uz iste filtre. Impresije iz izvještaja o generativnom AI-ju promatrajte prema stranici gdje su dostupne, bez zbrajanja s web-podacima i bez pripisivanja ovim pitanjima: izvještaj nema dimenziju upita. Mali uzorak traži dulje promatranje, a ne izmišljeni rast. Razlika prije i poslije ne dokazuje da ju je uzrokovala izmjena sadržaja."
+          ],
+          "list": [
+            "Što angažman uključuje? Navedite dijagnostiku i tehnička područja važna za cilj te odvojite dogovoreni rad od mogućih dodataka.",
+            "Tko će obavljati posao? Jasno navedite da kupac izravno surađuje s Karlom Ridanom i objasnite kako bi se uključio kupčev razvojni tim ili partner.",
+            "Što trebam pripremiti za prvi razgovor? Navedite cilj, ciljne URL-ove, platformu i trenutačno dostupan pristup Google Search Consoleu.",
+            "Što ću dobiti i tko provodi izmjene? Opišite zadatke poredane po prioritetu, kriterije prihvaćanja i dogovorenu predaju zadataka ili podršku pri implementaciji.",
+            "Kako se dogovaraju opseg i praćenje napretka? Objasnite koji su rad i mjerenje uključeni, bez izmišljanja cijene, roka ili zajamčenog rezultata."
+          ]
+        },
         {
           heading: "Odaberite jedno pitanje kupca i jednu stranicu",
           paragraphs: [

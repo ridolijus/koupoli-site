@@ -652,6 +652,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
       slug: "generative-engine-optimization",
       path: "/glossary/generative-engine-optimization/",
       title: "Generative Engine Optimization: A Practical Guide",
+      updated: { date: "November 7, 2026", iso: "2026-11-07" },
       metaTitle: "Generative Engine Optimization: A Practical Guide | Koupoli",
       metaDescription: "A practical generative engine optimization guide for teams that want AI-search visibility without losing sight of technical SEO, useful information, and evidence.",
       kicker: "Glossary guide",
@@ -693,6 +694,19 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
             "The right experiment begins with a page that deserves to be found, a defined audience question, a technical baseline, and a way to judge whether the work improves a useful outcome. That is a more demanding standard, but it produces work that remains valuable beyond a single feature change.",
           ],
         },
+        {
+          "heading": "Worked example: what does a technical SEO engagement include?",
+          "paragraphs": [
+            "Koupoli's own service offers a concrete example. Karlo Ridan delivers the work directly. Depending on the agreed scope, an engagement can cover diagnosis of crawl and indexing problems, site architecture, rendering, structured data or migration QA. Findings become prioritised implementation tickets with acceptance criteria, followed by a clear handoff, implementation support and measurement where agreed.",
+            "The service page brings the answer together with the information needed to start and the limits of the offer. This guide explains what GEO means; the implementation Note explains how to record and review the change; the service page supplies the visible scope and delivery details. This is an owned-site content example, not a report of improved AI visibility."
+          ],
+          "list": [
+            "Start with the business goal, target URLs, website platform and the Google Search Console access currently available.",
+            "Define the deliverable: a diagnosis, prioritised work items, acceptance criteria and an agreed implementation handoff.",
+            "Use the existing service page as evidence for what Koupoli offers, not as proof of a client outcome or an AI citation.",
+            "Agree scope before promising delivery details. Do not invent a price, timeline or guaranteed search result."
+          ]
+        },
       ],
       note: { slug: "generative-engine-optimization-process", label: "Put GEO into practice", description: "Choose a buyer question, check the page, add useful evidence, and review a bounded implementation pilot." },
       related: ["technical-seo", "entity-seo", "ai-search-visibility"],
@@ -701,6 +715,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
         { label: "Google Search Central: Optimizing your website for generative AI features", href: "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" },
         { label: "Google Search Central: AI features and your website", href: "https://developers.google.com/search/docs/appearance/ai-features" },
       ],
+      resource: { label: "Download the Koupoli GEO working example", href: "/downloads/koupoli-geo-working-example.md" },
       glossaryLabel: "Explore the glossary",
       glossaryDescription: "Return to the full SEO and AI search terminology index.",
       contactLabel: "Discuss AI search readiness",
@@ -1323,6 +1338,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
       slug: "generativna-optimizacija",
       path: "/hr/pojmovnik/generativna-optimizacija/",
       title: "Generativna optimizacija: Praktičan vodič",
+      updated: { date: "7. studenoga 2026.", iso: "2026-11-07" },
       metaTitle: "Generativna optimizacija: Praktičan vodič | Koupoli",
       metaDescription: "Praktičan vodič za generativnu optimizaciju za timove koji žele vidljivost u AI pretrazi bez gubitka fokusa na tehnički SEO, korisne informacije i dokaze.",
       kicker: "Vodič kroz pojmovnik",
@@ -1364,6 +1380,19 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
             "Ispravan eksperiment počinje stranicom koja zaslužuje biti pronađena, definiranim pitanjem publike, tehničkom osnovom i načinom procjene poboljšava li rad koristan ishod. To je zahtjevniji standard, ali stvara rad koji ostaje vrijedan i nakon promjene pojedine značajke.",
           ],
         },
+        {
+          "heading": "Praktičan primjer: što uključuje angažman za tehnički SEO?",
+          "paragraphs": [
+            "Koupolijeva vlastita usluga daje konkretan primjer. Posao izravno vodi i obavlja Karlo Ridan. Ovisno o dogovorenom opsegu, angažman može obuhvatiti dijagnostiku prepreka pri pristupu tražilica i indeksiranju, strukturu web-stranice, prikaz sadržaja, strukturirane podatke ili provjere migracije. Nalazi se pretvaraju u zadatke za implementaciju poredane po prioritetu, s kriterijima prihvaćanja. Slijede jasna predaja zadataka, podrška pri izvedbi i mjerenje, u dogovorenom opsegu.",
+            "Stranica usluge objedinjuje odgovor, podatke potrebne za početak i ograničenja ponude. Ovaj vodič objašnjava što je generativna optimizacija; bilješka o provedbi objašnjava kako zabilježiti i procijeniti izmjenu; stranica usluge daje vidljiv opis opsega i načina rada. Ovo je primjer sadržaja na vlastitom webu, a ne prikaz poboljšane AI vidljivosti."
+          ],
+          "list": [
+            "Za početak navedite poslovni cilj, ciljne URL-ove, platformu web-stranice i trenutačno dostupan pristup Google Search Consoleu.",
+            "Odredite što se isporučuje: dijagnostika, zadaci poredani po prioritetu, kriteriji prihvaćanja i dogovorena predaja zadataka za implementaciju.",
+            "Postojeća stranica usluge potkrepljuje Koupolijevu ponudu, ali nije dokaz klijentskog rezultata ni citiranja u AI odgovoru.",
+            "Dogovorite opseg prije obećanja o izvedbi. Nemojte izmišljati cijenu, rok ili zajamčen rezultat u pretraživanju."
+          ]
+        },
       ],
       note: { slug: "generative-engine-optimization-process", label: "Primijenite generativnu optimizaciju", description: "Odaberite pitanje kupca, provjerite stranicu, dodajte korisne dokaze i procijenite ograničeni probni projekt." },
       related: ["technical-seo", "entity-seo", "ai-search-visibility"],
@@ -1372,6 +1401,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
         { label: "Google Search Central: Optimizacija web-stranice za generativne AI značajke", href: "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" },
         { label: "Google Search Central: AI značajke i vaša web-stranica", href: "https://developers.google.com/search/docs/appearance/ai-features" },
       ],
+      resource: { label: "Preuzmite Koupolijev primjer generativne optimizacije", href: "/downloads/koupoli-primjer-generativne-optimizacije.md" },
       glossaryLabel: "Istražite pojmovnik",
       glossaryDescription: "Vratite se na cjeloviti indeks SEO i AI pojmova.",
       contactLabel: "Razgovarajte o spremnosti za AI pretragu",

@@ -8,7 +8,21 @@ const refreshedArticles = new Set([
   "/post/website-migration-seo/",
   "/hr/post/website-migration-seo/",
 ]);
+const updatedPages = new Set([
+  "/case-studies/multi-market-website-migration/",
+  "/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/",
+  "/services/technical-seo-ai-search/",
+  "/hr/usluge/seo-optimizacija/",
+  "/glossary/generative-engine-optimization/",
+  "/hr/pojmovnik/generativna-optimizacija/",
+  "/post/generative-engine-optimization-process/",
+  "/hr/post/generative-engine-optimization-process/",
+]);
 const downloads = [
+  "/downloads/koupoli-route-qa-record.md",
+  "/downloads/koupoli-zapis-provjere-url-a.md",
+  "/downloads/koupoli-geo-working-example.md",
+  "/downloads/koupoli-primjer-generativne-optimizacije.md",
   "/downloads/geo-implementation-pilot.md",
   "/downloads/plan-probne-generativne-optimizacije.md",
   "/downloads/entity-seo-claim-inventory.md",
@@ -81,6 +95,11 @@ for (const [route, expectedType, alternateRoute] of pages) {
   const types = schema["@graph"].map((node) => node["@type"]);
   if (!types.includes("Organization") || !types.includes("Person") || !types.includes("WebSite")) throw new Error(`Missing shared entity schema for ${route}`);
   if (!types.includes(expectedType)) throw new Error(`Missing ${expectedType} schema for ${route}`);
+  if (updatedPages.has(route)) {
+    const contentType = expectedType === "DefinedTerm" || expectedType === "Service" ? "WebPage" : expectedType;
+    const content = schema["@graph"].find((node) => node["@type"] === contentType);
+    if (content?.dateModified !== "2026-11-07") throw new Error(`Missing material update date for ${route}`);
+  }
   if (!html.includes(`<link rel="canonical" href="https://koupoli.com${route}"`)) throw new Error(`Missing canonical URL for ${route}`);
   if (!/<h1[\s>]/.test(html)) throw new Error(`No pre-rendered h1 found for ${route}`);
   for (const property of ["og:title", "og:description", "og:image"]) {
@@ -108,6 +127,16 @@ for (const [route, expectedType, alternateRoute] of pages) {
   if (expectedType === "Article") {
     const article = schema["@graph"].find((node) => node["@type"] === "Article");
     if (!article.headline || !article.image || !article.datePublished || !article.author || !article.publisher || !article.articleSection) throw new Error(`Incomplete case-study Article schema for ${route}`);
+    const resource = isCroatianRoute ? "/downloads/koupoli-zapis-provjere-url-a.md" : "/downloads/koupoli-route-qa-record.md";
+    if (!html.includes('id="route-qa-record"') || !html.includes(resource)) throw new Error(`Missing owned-site QA evidence for ${route}`);
+  }
+  if (expectedType === "Service" && updatedPages.has(route)) {
+    const heading = isCroatianRoute ? "Što uključuje angažman za tehnički SEO?" : "What does a technical SEO engagement include?";
+    if (!html.includes(heading)) throw new Error(`Missing direct service answer for ${route}`);
+  }
+  if (route.includes("generative-engine-optimization-process") || route === "/glossary/generative-engine-optimization/" || route === "/hr/pojmovnik/generativna-optimizacija/") {
+    const resource = isCroatianRoute ? "/downloads/koupoli-primjer-generativne-optimizacije.md" : "/downloads/koupoli-geo-working-example.md";
+    if (!html.includes(resource)) throw new Error(`Missing GEO working example for ${route}`);
   }
   if (route === "/glossary/" || route === "/hr/pojmovnik/") {
     const termSet = schema["@graph"].find((node) => node["@type"] === "DefinedTermSet");
