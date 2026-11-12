@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import postcss from "postcss";
 
 const siteUrl = "https://koupoli.com";
 const output = path.resolve("dist/public");
@@ -352,8 +353,33 @@ function pageHead(routeData, canonical) {
   return `<link rel="canonical" href="${canonical}" />${alternate}\n    <meta property="og:type" content="${routeData.type === "article" || routeData.type === "caseStudy" ? "article" : "website"}" />\n    <meta property="og:site_name" content="Koupoli" />\n    <meta property="og:locale" content="${locale}" />\n    <meta property="og:url" content="${canonical}" />\n    <meta property="og:title" content="${escapeAttribute(routeData.title)}" />\n    <meta property="og:description" content="${escapeAttribute(routeData.description)}" />\n    <meta property="og:image" content="${image}" />\n    <meta name="twitter:card" content="summary_large_image" />\n    <meta name="twitter:title" content="${escapeAttribute(routeData.title)}" />\n    <meta name="twitter:description" content="${escapeAttribute(routeData.description)}" />\n    <meta name="twitter:image" content="${image}" />${articleMeta}\n    <script type="application/ld+json">${JSON.stringify(schemaFor(routeData)).replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026")}</script>`;
 }
 
+function optimizeHomeStyles(source, lang) {
+  return source.replace(/<link\b(?=[^>]*\brel="stylesheet")(?=[^>]*\bhref="([^"]+)")[^>]*>/g, (_, href) => {
+    const css = postcss.parse(fs.readFileSync(path.join(output, href.replace(/^\//, "")), "utf8"));
+    const fonts = new Set();
+    css.walkAtRules("font-face", (rule) => {
+      const declarations = Object.fromEntries(rule.nodes.filter((node) => node.type === "decl").map((node) => [node.prop, node.value]));
+      if (!/DM Serif Display|IBM Plex Sans/.test(declarations["font-family"]) || declarations["font-style"] !== "normal") return;
+      if (!declarations["unicode-range"].includes("U+0000") && !(lang === "hr" && declarations["unicode-range"].includes("U+0100"))) return;
+      const url = declarations.src.match(/url\(["']?([^"')]+)["']?\)/)?.[1];
+      if (url) fonts.add(url);
+    });
+    const critical = css.clone();
+    critical.walkRules((rule) => {
+      const selectors = rule.selectors.filter((selector) => /growth-(hero|header|nav|brand|desktop-nav|language|menu|mobile-panel|container|actions|button|text-link|kicker|lead)\b/.test(selector) || [":root", "html", "body", "#root", ".growth-site", ".growth-site *", ".growth-site a", ".growth-site picture"].includes(selector) || selector.startsWith(".growth-site h"));
+      if (selectors.length) rule.selectors = selectors;
+      else rule.remove();
+    });
+    critical.walkAtRules((rule) => { if (rule.nodes && !rule.nodes.length) rule.remove(); });
+    critical.walkComments((comment) => comment.remove());
+    const preloads = [...fonts].map((url) => `<link rel="preload" href="${url}" as="font" type="font/woff2" crossorigin>`).join("\n    ");
+    return `${preloads}\n    <style id="home-critical-css">${critical.toString().replace(/<\/style/gi, "<\\/style")}</style>\n    <link rel="preload" as="style" href="${href}" onload="this.onload=null;this.rel='stylesheet'">\n    <noscript><link rel="stylesheet" href="${href}"></noscript>`;
+  });
+}
+
 function createPage(routeData, destination) {
-  const source = fs.readFileSync(destination, "utf8");
+  const html = fs.readFileSync(destination, "utf8");
+  const source = routeData.route === "/" || routeData.route === "/hr/" ? optimizeHomeStyles(html, routeData.lang) : html;
   const canonical = absolute(routeData.route);
   return source
     .replace('<html lang="en">', `<html lang="${routeData.lang}">`)

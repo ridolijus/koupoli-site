@@ -1,6 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Link, useLocation } from "wouter";
+import { homeMedia } from "@/lib/homeMedia";
 
 type Locale = "en" | "hr";
 type LayoutProps = { locale: Locale; children: ReactNode };
@@ -29,7 +30,7 @@ const navigation: Record<Locale, NavigationItem[]> = {
 
 function Brand({ locale }: { locale: Locale }) {
   const home = locale === "hr" ? "/hr/" : "/";
-  return <Link href={home} className="growth-brand" aria-label="Koupoli home"><img src="/favicon-512.png" alt="" /><span>Koupoli</span></Link>;
+  return <Link href={home} className="growth-brand" aria-label="Koupoli home"><img src={homeMedia.brandMark} alt="" width={96} height={96} /><span>Koupoli</span></Link>;
 }
 
 function LanguageLabel({ locale, compact = false }: { locale: Locale; compact?: boolean }) {

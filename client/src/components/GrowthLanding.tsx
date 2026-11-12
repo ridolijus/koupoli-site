@@ -2,6 +2,7 @@ import { ArrowDownRight, ArrowUpRight, ChevronDown } from "lucide-react";
 import { useEffect } from "react";
 import { Link } from "wouter";
 import GrowthLayout from "@/components/GrowthLayout";
+import { homeMedia } from "@/lib/homeMedia";
 
 type Locale = "en" | "hr";
 
@@ -282,7 +283,7 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
             <a className="growth-text-link" href="#offers">{copy.secondaryCta}<ArrowDownRight size={17} /></a>
           </div>
         </div>
-        <figure className="growth-hero-graphic"><img src="/assets/koupoli-search-systems-hero.webp" alt={locale === "hr" ? "Urednička mapa tehničkih temelja, korisnog sadržaja i vidljivosti u pretrazi" : "Editorial map of technical foundation, useful content, and search visibility"} width={960} height={960} fetchPriority="high" /></figure>
+        <figure className="growth-hero-graphic"><picture><source type="image/avif" srcSet={homeMedia.hero.avifSrcSet} sizes={homeMedia.hero.sizes} /><img src={homeMedia.hero.src} srcSet={homeMedia.hero.srcSet} sizes={homeMedia.hero.sizes} alt={locale === "hr" ? "Urednička mapa tehničkih temelja, korisnog sadržaja i vidljivosti u pretrazi" : "Editorial map of technical foundation, useful content, and search visibility"} width={960} height={960} fetchPriority="high" /></picture></figure>
       </div>
     </section>
 
@@ -305,7 +306,7 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
       <div className="growth-container growth-thesis-grid">
         <div className="growth-thesis-side">
           <p className="growth-kicker growth-kicker-blue">{copy.thesisEyebrow}</p>
-          <figure className="growth-thesis-visual"><img src="/assets/koupoli-thesis-search-interface.webp" alt={locale === "hr" ? "Vizual tehničke SEO osnove koja povezuje stranice, signale i AI pretragu" : "Visual of a technical SEO foundation connecting pages, signals, and AI search"} width={1000} height={1250} loading="lazy" /></figure>
+          <figure className="growth-thesis-visual"><picture><source type="image/avif" srcSet={homeMedia.thesis.avifSrcSet} sizes={homeMedia.thesis.sizes} /><img src={homeMedia.thesis.src} srcSet={homeMedia.thesis.srcSet} sizes={homeMedia.thesis.sizes} alt={locale === "hr" ? "Vizual tehničke SEO osnove koja povezuje stranice, signale i AI pretragu" : "Visual of a technical SEO foundation connecting pages, signals, and AI search"} width={1000} height={1250} loading="lazy" decoding="async" /></picture></figure>
         </div>
         <div>
           <h2>{copy.thesisTitle}</h2>
@@ -322,7 +323,7 @@ export default function GrowthLanding({ locale }: { locale: Locale }) {
             <h2>{copy.offersTitle}</h2>
             <p>{copy.offersLead}</p>
           </div>
-          <figure className="growth-offer-visual"><img src="/assets/koupoli-offer-pathways.webp" alt={locale === "hr" ? "Dvije putanje od poslovne odluke do provedbe organskog rasta" : "Two pathways from a business decision to organic growth delivery"} width={1400} height={1050} loading="lazy" /></figure>
+          <figure className="growth-offer-visual"><picture><source type="image/avif" srcSet={homeMedia.offers.avifSrcSet} sizes={homeMedia.offers.sizes} /><img src={homeMedia.offers.src} srcSet={homeMedia.offers.srcSet} sizes={homeMedia.offers.sizes} alt={locale === "hr" ? "Dvije putanje od poslovne odluke do provedbe organskog rasta" : "Two pathways from a business decision to organic growth delivery"} width={1400} height={1050} loading="lazy" decoding="async" /></picture></figure>
         </div>
         <div className="growth-offer-grid">
           {copy.offers.map((offer) => <article className="growth-offer-card" key={offer.title}>
