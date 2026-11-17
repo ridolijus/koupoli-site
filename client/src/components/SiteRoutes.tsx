@@ -112,6 +112,10 @@ export function SiteRoutes({ pages }: { pages: SitePages }) {
       <Route path="/hr/pojmovnik/strukturirani-podaci/"><GlossaryGuide locale="hr" guideKey="structured-data" /></Route>
       <Route path="/hr/post/generative-engine-optimization-process"><BlogPost locale="hr" slug="generative-engine-optimization-process" /></Route>
       <Route path="/hr/post/generative-engine-optimization-process/"><BlogPost locale="hr" slug="generative-engine-optimization-process" /></Route>
+      <Route path="/post/seo-audit-vs-ongoing-technical-seo"><BlogPost slug="seo-audit-vs-ongoing-technical-seo" /></Route>
+      <Route path="/post/seo-audit-vs-ongoing-technical-seo/"><BlogPost slug="seo-audit-vs-ongoing-technical-seo" /></Route>
+      <Route path="/hr/post/seo-audit-vs-ongoing-technical-seo"><BlogPost locale="hr" slug="seo-audit-vs-ongoing-technical-seo" /></Route>
+      <Route path="/hr/post/seo-audit-vs-ongoing-technical-seo/"><BlogPost locale="hr" slug="seo-audit-vs-ongoing-technical-seo" /></Route>
       <Route><Home /></Route>
     </Switch>
   );

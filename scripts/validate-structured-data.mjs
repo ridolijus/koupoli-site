@@ -18,6 +18,14 @@ const updatedPages = new Set([
   "/post/generative-engine-optimization-process/",
   "/hr/post/generative-engine-optimization-process/",
 ]);
+const refreshedLinks = new Map([
+  ["/glossary/entity-seo/", "/glossary/structured-data/"],
+  ["/hr/pojmovnik/entitetski-seo/", "/hr/pojmovnik/strukturirani-podaci/"],
+  ["/post/website-migration-seo/", "/case-studies/multi-market-website-migration/"],
+  ["/hr/post/website-migration-seo/", "/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/"],
+  ["/services/technical-seo-ai-search/", "/post/website-migration-seo/"],
+  ["/hr/usluge/seo-optimizacija/", "/hr/post/website-migration-seo/"],
+]);
 const downloads = [
   "/downloads/koupoli-route-qa-record.md",
   "/downloads/koupoli-zapis-provjere-url-a.md",
@@ -33,6 +41,8 @@ const downloads = [
   "/downloads/scorecard-vidljivosti-u-ai-pretrazi.md",
 ];
 const pages = [
+  ["/post/seo-audit-vs-ongoing-technical-seo/", "BlogPosting", "/hr/post/seo-audit-vs-ongoing-technical-seo/"],
+  ["/hr/post/seo-audit-vs-ongoing-technical-seo/", "BlogPosting", "/post/seo-audit-vs-ongoing-technical-seo/"],
   ["/glossary/search-visibility/", "DefinedTerm", "/hr/pojmovnik/vidljivost-u-pretrazi/"],
   ["/hr/pojmovnik/vidljivost-u-pretrazi/", "DefinedTerm", "/glossary/search-visibility/"],
   ["/glossary/structured-data/", "DefinedTerm", "/hr/pojmovnik/strukturirani-podaci/"],
@@ -95,10 +105,15 @@ for (const [route, expectedType, alternateRoute] of pages) {
   const types = schema["@graph"].map((node) => node["@type"]);
   if (!types.includes("Organization") || !types.includes("Person") || !types.includes("WebSite")) throw new Error(`Missing shared entity schema for ${route}`);
   if (!types.includes(expectedType)) throw new Error(`Missing ${expectedType} schema for ${route}`);
-  if (updatedPages.has(route)) {
+  if (updatedPages.has(route) || refreshedLinks.has(route)) {
     const contentType = expectedType === "DefinedTerm" || expectedType === "Service" ? "WebPage" : expectedType;
     const content = schema["@graph"].find((node) => node["@type"] === contentType);
-    if (content?.dateModified !== "2026-11-07") throw new Error(`Missing material update date for ${route}`);
+    const modified = refreshedLinks.has(route) ? "2026-11-17" : "2026-11-07";
+    if (content?.dateModified !== modified) throw new Error(`Missing material update date for ${route}`);
+  }
+  if (refreshedLinks.has(route)) {
+    const body = html.slice(html.indexOf('<div id="root">'));
+    if (!body.includes(`href="${refreshedLinks.get(route)}"`)) throw new Error(`Missing contextual refresh link for ${route}`);
   }
   if (!html.includes(`<link rel="canonical" href="https://koupoli.com${route}"`)) throw new Error(`Missing canonical URL for ${route}`);
   if (!/<h1[\s>]/.test(html)) throw new Error(`No pre-rendered h1 found for ${route}`);
@@ -122,7 +137,8 @@ for (const [route, expectedType, alternateRoute] of pages) {
   if (expectedType === "BlogPosting") {
     const article = schema["@graph"].find((node) => node["@type"] === "BlogPosting");
     if (!article.headline || !article.image || !article.datePublished || !article.author || !article.publisher) throw new Error(`Incomplete BlogPosting schema for ${route}`);
-    if (refreshedArticles.has(route) && article.dateModified !== "2026-10-18T00:00:00+02:00") throw new Error(`Missing or incorrect material update date for ${route}`);
+    const modified = refreshedLinks.has(route) ? "2026-11-17" : "2026-10-18T00:00:00+02:00";
+    if (refreshedArticles.has(route) && article.dateModified !== modified) throw new Error(`Missing or incorrect material update date for ${route}`);
   }
   if (expectedType === "Article") {
     const article = schema["@graph"].find((node) => node["@type"] === "Article");

@@ -8,13 +8,307 @@ export type EditorialNote = {
   excerpt: string;
   image: string;
   imageAlt: string;
+  imageCaption?: string;
   resource?: { href: string; label: string; description: string };
-  sections: Array<{ heading: string; paragraphs: string[]; list?: string[] }>;
+  sections: Array<{ heading: string; paragraphs: string[]; list?: string[]; link?: { before: string; href: string; label: string; after: string }; comparison?: { caption: string; leftLabel: string; rightLabel: string; rows: Array<{ criterion: string; left: string; right: string }> }; image?: { src: string; alt: string; caption: string; width: number; height: number } }>;
   sources: Array<{ label: string; href: string }>;
 };
 
 export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
   en: [
+    {
+      slug: "seo-audit-vs-ongoing-technical-seo",
+      date: "November 17, 2026",
+      updated: {
+        date: "November 17, 2026",
+        iso: "2026-11-17"
+      },
+      title: "SEO Audit vs Ongoing Technical SEO Support",
+      metaTitle: "SEO Audit vs Ongoing Technical SEO Support | Koupoli",
+      metaDescription: "Compare an SEO audit with ongoing technical SEO support by scope, ownership, deliverables and fees. Choose diagnosis, a focused fix or justified recurring work.",
+      excerpt: "Choose an audit when the cause is unclear and someone can implement the findings. Choose ongoing support for worthwhile recurring work. A known, finite fix may need neither a full audit nor a retainer.",
+      image: "/assets/koupoli-seo-audit-vs-support-hero.webp",
+      imageAlt: "SEO audit and ongoing technical SEO support shown as two routes from diagnosis to verified work",
+      imageCaption: "Buy the diagnosis or implementation support your website needs, not the longest engagement.",
+      sections: [
+        {
+          heading: "Start with what needs doing",
+          paragraphs: [
+            "For a business owner comparing an SEO audit vs ongoing technical SEO support, I ask: do you need diagnosis or execution? Choose an audit for uncertain causes when your team can act on the findings. Choose ongoing support for justified recurring work. A known, bounded problem may suit a focused project instead.",
+            "An SEO audit provides scoped evidence, priorities and recommendations. A technical audit focuses on crawl access, indexing and rendering. Ongoing support addresses agreed recurring priorities through implementation support and checks. Neither label identifies who changes the code.",
+            "Disclosure: I offer both routes through Koupoli. I am Karlo Riđan, the specialist and owner, not a separate agency team. The right purchase depends on the work and who can implement it, not which engagement lasts longer."
+          ],
+          link: {
+            before: "For the underlying concepts, read the ",
+            href: "/glossary/technical-seo/",
+            label: "technical SEO guide",
+            after: "; this article focuses on what to buy."
+          }
+        },
+        {
+          heading: "SEO audit vs ongoing technical SEO support: seven buying criteria",
+          paragraphs: [
+            "Compare engagement models, not assumed inclusions in any provider offer."
+          ],
+          comparison: {
+            caption: "Compare the work, responsibilities and fee structure before comparing providers.",
+            leftLabel: "SEO audit",
+            rightLabel: "Ongoing technical SEO support",
+            rows: [
+              {
+                criterion: "Scope",
+                left: "A defined review of agreed pages, templates and technical areas; broader SEO needs explicit inclusion.",
+                right: "An agreed recurring backlog and coverage; content, links and AI-search work are not automatically included."
+              },
+              {
+                criterion: "Deliverables",
+                left: "Evidence, affected URLs, prioritised recommendations and testable tasks; confirm the actual output.",
+                right: "Agreed work items, change records, verification and unresolved dependencies; distinguish shipped work from advice."
+              },
+              {
+                criterion: "Implementation owner",
+                left: "Usually a handoff unless implementation is included; name the developer, approver and verifier.",
+                right: "May involve implementation, developer guidance or review; agree who owns each task and deployment."
+              },
+              {
+                criterion: "Timing",
+                left: "A scoped delivery date shaped by access and complexity; report delivery is not fix completion.",
+                right: "A working cadence shaped by priorities and release capacity; no fixed search-result deadline."
+              },
+              {
+                criterion: "Measurement and monitoring",
+                left: "A baseline and agreed acceptance checks; follow-up is bounded, not indefinite monitoring.",
+                right: "Defined checks, monitoring coverage and review; alerts need a responsible person and a repair path."
+              },
+              {
+                criterion: "Fee structure",
+                left: "A one-off or project proposal; clarify whether implementation and re-testing are separate.",
+                right: "Recurring scoped billing where agreed; confirm capacity, exclusions, review and exit terms."
+              },
+              {
+                criterion: "Best fit",
+                left: "Uncertain causes, a baseline decision and capacity to implement the recommendations.",
+                right: "A changing site with worthwhile recurring work and a need for external execution support or review."
+              }
+            ]
+          },
+          image: {
+            src: "/assets/koupoli-seo-audit-support-comparison-en.webp",
+            alt: "Comparison of an SEO audit for diagnosis and ongoing technical SEO support for recurring implementation and checks",
+            caption: "An audit clarifies priorities. Ongoing support helps carry justified recurring work through. Implementation ownership must be agreed in either route.",
+            width: 1000,
+            height: 492
+          }
+        },
+        {
+          heading: "Choose an audit when the cause is unclear",
+          paragraphs: [
+            "An audit helps when important pages are missing from search, a redesign raises questions or explanations conflict. It should reduce uncertainty enough to prioritise fixes, not just export warnings.",
+            "Identify the pages and business question. Confirm coverage of their templates, crawl paths, indexing directives and rendered content. A sample review needs explicit limits; a general audit does not include every migration or technical investigation.",
+            "If your developer can implement clear tasks, an audit with a usable handoff may suffice. Otherwise plan and budget for implementation separately. Better information alone leaves the website unresolved."
+          ]
+        },
+        {
+          heading: "Choose a focused project when the fix is already known",
+          paragraphs: [
+            "A known redirect defect, one template producing the wrong canonical, or a bounded launch check does not automatically justify a full audit or monthly SEO services. Discuss a focused scope: the affected URLs, the change, dependencies and the evidence required to close the task.",
+            "This is a scoping alternative, not a standard Koupoli package. Investigation may still be needed to confirm the cause and protect related routes. Agree approval for newly discovered work. When the fix passes its checks and no useful backlog remains, the project can end."
+          ]
+        },
+        {
+          heading: "Choose ongoing support when recurring work warrants it",
+          paragraphs: [
+            "Ongoing support becomes useful when releases repeatedly change templates, navigation or URL behaviour, or a migration creates staged dependencies. It can also make sense when a team has findings but needs regular help turning them into implementation tasks and reviewing the result.",
+            "The case for an SEO retainer should be the next worthwhile work, not a general claim that SEO never stops. Ask what will be handled next, which release it depends on and who can act. Monitoring can reveal regressions, but monitoring alone is not remediation. Define which issues are watched, how often, and who reviews and fixes alerts.",
+            "Support also consumes your team's attention. Review the scope when releases pause, priorities are cleared or dependencies block progress. A stable site does not automatically need a continuing technical engagement."
+          ]
+        },
+        {
+          heading: "Agree the developer handoff before work starts",
+          paragraphs: [
+            "The most important difference between two proposals may be ownership, not the number of checks. An audit recommendation, an implementation ticket and a deployed correction are different deliverables. Ask which one you are buying and how a task moves between them.",
+            "Koupoli provides diagnosis and agreed implementation support. I can support your developers or review relevant changes, but this does not mean every platform is automatically fully implemented by me. The owner, access, handoff and live checks must be agreed for the actual project.",
+            "A usable ticket identifies the affected URL, problem, intended behaviour, verifier and dependencies. Illustrative checks include a redirect reaching its destination, the intended template canonical, or crawlable navigation links with an href attribute, as Google's link guidance recommends."
+          ],
+          list: [
+            "Name who writes and prioritises the task, and who owns the code or platform configuration.",
+            "Agree who implements, approves and deploys the change, including any client-side dependency.",
+            "Define the live test, URL coverage and evidence that will close the task.",
+            "Separate extra investigation, implementation and re-testing from the original scope when needed."
+          ],
+          link: {
+            before: "The ",
+            href: "/services/technical-seo-ai-search/",
+            label: "Koupoli technical SEO service",
+            after: " explains the diagnosis, prioritised tasks and agreed implementation support."
+          }
+        },
+        {
+          heading: "An owned-site ticket: technical acceptance, not ranking uplift",
+          paragraphs: [
+            "Here is a real Koupoli route correction, observed on 7 November 2026. The old /usluge/seo-optimizacija/ route returned a 301 redirect to /hr/usluge/seo-optimizacija/, which returned 200. The destination's canonical matched the final Croatian URL, and the sitemap listed only that final route, not the old one.",
+            "The acceptance criteria are concrete: a direct redirect, an available destination and consistent URL signals. Google's site-move documentation recommends permanent redirects to the mapped destination and updated canonical annotations and URL references.",
+            "This example concerns my own website. It demonstrates observed technical behaviour, not a client's performance, ranking uplift or traffic gain. Passing the checks does not prove that Google has selected that canonical or that the change caused a business result."
+          ],
+          image: {
+            src: "/assets/koupoli-qa-support-example-en.webp",
+            alt: "Koupoli route QA table showing the previous URL, final Croatian service URL and the observed HTTP 301 to HTTP 200 response",
+            caption: "Excerpt from Koupoli’s own QA record, observed 7 November 2026. The full record also checks the canonical and sitemap; it does not establish ranking uplift.",
+            width: 692,
+            height: 206
+          },
+          link: {
+            before: "For the broader coordination involved in a migration, see the ",
+            href: "/case-studies/multi-market-website-migration/",
+            label: "multi-market website migration case",
+            after: ". It is separate from this owned-site route check."
+          }
+        },
+        {
+          heading: "Separate delivery timing from search measurement",
+          paragraphs: [
+            "Agree audit delivery around site size, access, platform complexity and the review required. Agree implementation timing around development capacity, release approvals and external dependencies. Neither an audit deadline nor a support cadence establishes a deadline for improved rankings.",
+            "Measure which tasks shipped, passed checks or remain blocked. Keep a change record and next priority. Warning counts alone can mislead: a larger count may reflect broader crawl coverage rather than deterioration.",
+            "Review available search data using consistent pages, markets and periods. Record qualified enquiries or revenue only with reliable tracking. Note other releases and demand changes. I do not promise traffic, rankings or AI citations; technical acceptance is separate from later search or business response."
+          ]
+        },
+        {
+          heading: "Compare fee structure, not unmatched price tags",
+          paragraphs: [
+            "Koupoli provides scoped proposals with no public rate card. Fees, timing and additional work are agreed for the project. Clarify whether diagnosis, handoff, implementation support and re-testing are included. For ongoing work, agree the recurring scope and review terms rather than inferring them from the word retainer.",
+            "WebFX publishes monthly packages and custom-quote routes. Victorious publishes starting and enterprise budget guidance while customising the final scope and quote. Delante publishes indicative ranges and sets budgets individually. I have not reproduced numeric agency prices here: their scopes, currencies and public ranges are not directly comparable to each other or a Koupoli proposal."
+          ],
+          list: [
+            "Compare the same pages, deliverables and implementation responsibilities.",
+            "Check what re-testing, development and platform costs are included or separate.",
+            "Confirm recurring capacity, exclusions, any minimum commitment and cancellation terms in writing."
+          ]
+        },
+        {
+          heading: "Koupoli, WebFX, Victorious and Delante: contact and capacity",
+          paragraphs: [
+            "Next, choose the delivery model. These descriptions use official provider pages reviewed on 17 November 2026 and listed in Sources. They are not identical scopes or a quality ranking.",
+            "At Koupoli, your consistent contact is me, the specialist and owner connecting diagnosis, tasks and checks. Direct access is not exclusive to independent specialists: Delante explicitly offers technical SEO specialist contact without account managers."
+          ],
+          comparison: {
+            caption: "Published service scope and contact arrangements. Confirm the staffing and responsibilities for your proposal.",
+            leftLabel: "Published offering",
+            rightLabel: "Contact arrangement",
+            rows: [
+              {
+                criterion: "Koupoli",
+                left: "Technical diagnosis, prioritised tasks and agreed implementation support or developer collaboration; scope set for the project.",
+                right: "Direct work with Karlo Riđan, the solo specialist and owner; handoff and responsibilities agreed."
+              },
+              {
+                criterion: "WebFX",
+                left: "Broad ongoing SEO, including technical maintenance, on-page work, content, authority work and reporting.",
+                right: "Dedicated account manager supported by SEO specialists and a wider dedicated team."
+              },
+              {
+                criterion: "Victorious",
+                left: "Enterprise SEO includes continuous technical work, migrations, AEO, content and link building.",
+                right: "Cross-functional collaboration with marketing, product and engineering; a named individual contact was not confirmed on reviewed pages."
+              },
+              {
+                criterion: "Delante",
+                left: "Technical audits, necessary fixes, speed work, migrations, structured data and monthly reporting.",
+                right: "Direct contact with the technical SEO specialist working on the site, explicitly without account managers; broader team delivery."
+              }
+            ]
+          }
+        },
+        {
+          heading: "When a larger team is the better fit",
+          paragraphs: [
+            "More parallel specialists can be useful when technical releases, content production and authority work all need sustained attention, or an enterprise programme spans marketing, product and engineering. WebFX's broader specialist model and Victorious' cross-functional enterprise offering address that kind of coordination. Delante combines technical team delivery with direct specialist contact.",
+            "My one-person practice has finite capacity. Ask about availability and platform fit. Ask agencies about staffing, contact and implementation ownership. Team size establishes neither response speed nor access quality."
+          ]
+        },
+        {
+          heading: "Does an SEO audit include fixing the problems?",
+          paragraphs: [
+            "Not automatically. An audit can end with recommendations. Tickets, developer review, implementation and follow-up checks require explicit inclusion. If you need shipped changes, name the implementation owner before buying diagnosis."
+          ]
+        },
+        {
+          heading: "Can ongoing support start from an existing audit?",
+          paragraphs: [
+            "Yes, if findings remain relevant. Check important issues against the live site and turn valid recommendations into a backlog. A full repeat is not automatically necessary; verification of old findings is."
+          ]
+        },
+        {
+          heading: "Is ongoing technical support the same as full SEO?",
+          paragraphs: [
+            "No. Technical support does not automatically include content production, link acquisition or every AI-search activity. Those may be separate workstreams or agreed additions. Match the proposal to the actual constraint; fixing a technical issue does not replace useful content or create demand."
+          ]
+        },
+        {
+          heading: "When should ongoing support be reviewed or paused?",
+          paragraphs: [
+            "Review support when priorities change or useful delivery stalls. If the next work, owner and completion evidence are unclear, reduce, re-scope or pause under the agreed terms."
+          ]
+        },
+        {
+          heading: "Buy the smallest engagement that answers the need",
+          paragraphs: [
+            "My verdict: buy an audit for unresolved uncertainty; discuss a focused project for a known finite correction; choose ongoing support for justified recurring work. Contact continuity and team capacity do not replace clear scope, ownership and acceptance checks."
+          ],
+          link: {
+            before: "Share your website, platform, priority pages and the decision you need to make, and ",
+            href: "/contact/",
+            label: "discuss the right scope with me",
+            after: ". Access and any implementation responsibilities are agreed separately, not assumed."
+          }
+        }
+      ],
+      sources: [
+        {
+          label: "Koupoli: technical SEO scope and agreed implementation support",
+          href: "/services/technical-seo-ai-search/"
+        },
+        {
+          label: "WebFX: SEO services and dedicated team",
+          href: "https://www.webfx.com/seo/services/"
+        },
+        {
+          label: "WebFX: technical SEO scope and dedicated account manager",
+          href: "https://www.webfx.com/seo/agency/technical-seo/"
+        },
+        {
+          label: "WebFX: published package structure and custom quotes",
+          href: "https://www.webfx.com/seo/pricing/"
+        },
+        {
+          label: "Victorious: customised engagements and published budget guidance",
+          href: "https://victorious.com/"
+        },
+        {
+          label: "Victorious: enterprise SEO and cross-functional collaboration",
+          href: "https://victorious.com/markets/enterprise-seo/"
+        },
+        {
+          label: "Delante: technical SEO scope, individual budgets and direct specialist contact",
+          href: "https://delante.co/technical-seo-services/"
+        },
+        {
+          label: "Delante: quote-led contact and customised plans",
+          href: "https://delante.co/contact/"
+        },
+        {
+          label: "Google Search Central: site moves with URL changes",
+          href: "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes"
+        },
+        {
+          label: "Google Search Central: crawlable links and link best practices",
+          href: "https://developers.google.com/search/docs/crawling-indexing/links-crawlable"
+        },
+        {
+          label: "Koupoli: multi-market website migration case",
+          href: "/case-studies/multi-market-website-migration/"
+        }
+      ]
+    },
     {
       slug: "generative-engine-optimization-process",
       date: "November 2, 2026",
@@ -204,11 +498,11 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
     {
       slug: "website-migration-seo",
       date: "October 2, 2026",
-      updated: { date: "October 18, 2026", iso: "2026-10-18" },
+      updated: { date: "November 17, 2026", iso: "2026-11-17" },
       title: "Website Migration SEO: A Practical Launch Checklist",
       metaTitle: "Website Migration SEO: A Practical Checklist | Koupoli",
-      metaDescription: "A practical SEO launch checklist for safeguarding URLs, redirects, indexation, content, and measurement during a website migration.",
-      excerpt: "A concise migration checklist for teams that want a new website without sacrificing search equity or creating avoidable technical debt.",
+      metaDescription: "Website migration SEO checklist: map URLs, test redirects, check canonical and crawl signals, and monitor indexing and search performance after launch.",
+      excerpt: "Website migration SEO requires a URL inventory, relevant destination mapping, tested redirects, and consistent crawl and canonical signals. Preserve important page intent, verify the live site, and monitor indexing and search performance after launch.",
       image: "/assets/koupoli-website-migration-note-light.webp",
       imageAlt: "Editorial infographic showing a structured website migration map",
       resource: { href: "/downloads/website-migration-seo-checklist.md", label: "Download the migration checklist", description: "Use the editable Markdown template to assign owners, map URLs, and record launch checks." },
@@ -219,6 +513,7 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
             "A new site changes more than the visual system. It can change URL structure, internal links, templates, metadata, page speed, language handling, and the way search engines understand the relationship between pages. Treating it as a design launch leaves too much to chance.",
             "The useful question is not whether every old URL should survive unchanged. It is whether every important search intent, internal link path, and business-critical page has a deliberate destination on the new site.",
           ],
+          link: {before: "The ", href: "/case-studies/multi-market-website-migration/", label: "website migration case study", after: " shows documented migration responsibilities and a separate, reproducible URL check on Koupoli's own site."},
         },
         {
           heading: "Create the inventory before development locks in",
@@ -334,6 +629,299 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
     },
   ],
   hr: [
+    {
+      slug: "seo-audit-vs-ongoing-technical-seo",
+      date: "17. studenoga 2026.",
+      updated: {
+        date: "17. studenoga 2026.",
+        iso: "2026-11-17"
+      },
+      title: "SEO analiza ili kontinuirana tehnička SEO podrška",
+      metaTitle: "SEO analiza ili kontinuirana tehnička SEO podrška | Koupoli",
+      metaDescription: "Usporedite SEO analizu i kontinuiranu tehničku SEO podršku prema opsegu, provedbi i naplati. Odaberite dijagnozu, ciljanu ispravku ili opravdan redoviti rad.",
+      excerpt: "Odaberite SEO analizu kada uzrok nije jasan, a netko može provesti preporuke. Kontinuirana podrška ima smisla za opravdan redoviti rad. Poznata, ograničena ispravka može trebati zaseban projekt.",
+      image: "/assets/koupoli-seo-audit-vs-support-hero.webp",
+      imageAlt: "SEO analiza i kontinuirana tehnička SEO podrška kao dva puta od dijagnoze do provjerenih promjena",
+      imageCaption: "Odaberite dijagnozu ili podršku provedbi koja je potrebna vašem webu, ne najdulju suradnju.",
+      sections: [
+        {
+          heading: "Počnite od posla koji treba obaviti",
+          paragraphs: [
+            "Vlasniku tvrtke koji bira SEO analizu ili kontinuiranu tehničku SEO podršku prvo postavljam jednostavno pitanje: trebate li razumjeti problem ili već imate opravdan posao koji treba provesti? Analizu odaberite kada uzrok nije jasan, a vaš tim može primijeniti nalaze. Kontinuiranu podršku odaberite kada redovite promjene opravdavaju provedbu i provjere. Za poznat, ograničen problem može biti dovoljan ciljani projekt.",
+            "SEO analiza, često nazvana SEO audit, daje dijagnozu: dokaze, prioritete i preporuke u dogovorenom opsegu. Tehnička analiza usmjerena je na pristup tražilica, indeksiranje, prikaz sadržaja i povezane uvjete na webu. Kontinuirana tehnička SEO podrška znači redovit rad na dogovorenim prioritetima, uz podršku provedbi i provjere. Sam naziv usluge ne govori tko mijenja kod.",
+            "Napomena o mojoj ulozi: kroz Koupoli nudim oba pristupa. Ja sam Karlo Riđan, stručnjak i vlasnik, a ne zaseban agencijski tim. Odabir ovisi o potrebnom poslu i tome tko ga može provesti, ne o tome koja suradnja traje dulje."
+          ],
+          link: {
+            before: "Osnovne pojmove objašnjava ",
+            href: "/hr/pojmovnik/tehnicki-seo/",
+            label: "vodič za tehnički SEO",
+            after: "; ovaj članak pomaže odlučiti koju uslugu kupiti."
+          }
+        },
+        {
+          heading: "SEO analiza ili kontinuirana tehnička SEO podrška: sedam kriterija",
+          paragraphs: [
+            "Usporedite modele suradnje, ne pretpostavljene stavke Koupolijeve ili agencijske ponude."
+          ],
+          comparison: {
+            caption: "Prije odabira pružatelja usporedite posao, odgovornosti i model naplate.",
+            leftLabel: "SEO analiza",
+            rightLabel: "Kontinuirana tehnička SEO podrška",
+            rows: [
+              {
+                criterion: "Opseg",
+                left: "Određen pregled dogovorenih stranica, predložaka i tehničkih područja; širi SEO treba posebno uključiti.",
+                right: "Dogovoreni ponavljajući zadaci i pokrivenost; sadržaj, poveznice i AI pretraga nisu automatski uključeni."
+              },
+              {
+                criterion: "Isporuke",
+                left: "Dokazi, pogođeni URL-ovi, preporuke po prioritetu i provjerljivi zadaci; potvrdite stvarnu isporuku.",
+                right: "Dogovoreni zadaci, evidencija promjena, provjere i otvorene ovisnosti; odvojite objavljene promjene od savjeta."
+              },
+              {
+                criterion: "Odgovornost za provedbu",
+                left: "Predaja preporuka ako izvedba nije uključena; imenujte programera, osobu za odobrenje i provjeru.",
+                right: "Izvedba, podrška razvoju ili pregled promjena; dogovorite tko je odgovoran za zadatak i objavu."
+              },
+              {
+                criterion: "Rokovi",
+                left: "Dogovoreni rok ovisi o pristupu i složenosti; predaja izvještaja nije završetak ispravaka.",
+                right: "Ritam rada ovisi o prioritetima i kapacitetu za objave; nema fiksnog roka za rezultate u pretrazi."
+              },
+              {
+                criterion: "Mjerenje i praćenje",
+                left: "Početno stanje i dogovorene provjere; naknadni pregled je ograničen, ne neprekidno praćenje.",
+                right: "Određene provjere, pokrivenost praćenja i pregled nalaza; upozorenja trebaju odgovornu osobu i put do ispravka."
+              },
+              {
+                criterion: "Model naplate",
+                left: "Jednokratna ili projektna ponuda; razjasnite naplaćuju li se izvedba i ponovne provjere zasebno.",
+                right: "Periodična naplata dogovorenog opsega; potvrdite kapacitet, isključenja, preglede i uvjete prestanka suradnje."
+              },
+              {
+                criterion: "Kada je prikladno",
+                left: "Nejasni uzroci, odluka na temelju početnog stanja i kapacitet za provedbu preporuka.",
+                right: "Web koji se mijenja, opravdani redoviti zadaci i potreba za vanjskom podrškom provedbi ili provjerom."
+              }
+            ]
+          },
+          image: {
+            src: "/assets/koupoli-seo-audit-support-comparison-hr.webp",
+            alt: "Usporedba SEO analize za dijagnozu i kontinuirane tehničke SEO podrške za redovitu provedbu i provjere",
+            caption: "Analiza razjašnjava prioritete. Kontinuirana podrška pomaže provesti opravdan redoviti posao. Odgovornost za izvedbu treba dogovoriti u oba pristupa.",
+            width: 1000,
+            height: 492
+          }
+        },
+        {
+          heading: "Odaberite analizu kada uzrok nije jasan",
+          paragraphs: [
+            "Analiza je korisna kada važne stranice nedostaju u pretrazi, redizajn otvara tehnička pitanja ili dobivate proturječna objašnjenja problema. Vrijednost joj je smanjiti neizvjesnost dovoljno da možete odrediti što prvo treba popraviti. Dugačak izvoz upozorenja sam po sebi ne daje tu odluku.",
+            "Prije kupnje odredite važne stranice i poslovno pitanje. Pitajte obuhvaća li pregled njihove predloške, putove kojima tražilica dolazi do sadržaja, upute za indeksiranje i prikazani sadržaj. Pregled uzorka može biti koristan, ali mora biti jasno što pokriva. Opća SEO analiza ne uključuje nužno svaku migraciju ili tehničku istragu.",
+            "Ako vaš programer može provesti jasne zadatke, analiza s uporabljivom predajom može biti dovoljna. Inače zasebno planirajte izvedbu i proračun. Bolje informacije same ne rješavaju web."
+          ]
+        },
+        {
+          heading: "Odaberite ciljani projekt kada je ispravka poznata",
+          paragraphs: [
+            "Poznata pogreška u preusmjeravanju, jedan predložak s pogrešnom kanonskom oznakom ili ograničena provjera objave ne opravdavaju automatski cijelu analizu ni mjesečne SEO usluge. Razgovarajte o ciljanom opsegu: pogođenim URL-ovima, promjeni, ovisnostima i dokazima potrebnima za zatvaranje zadatka.",
+            "To je mogućnost dogovora opsega, ne standardni Koupolijev paket. Možda treba dodatno istražiti uzrok i zaštititi povezane putanje. Dogovorite odobrenje novootkrivenog posla. Kada ispravka prođe provjere i nema opravdanih preostalih zadataka, projekt može završiti."
+          ]
+        },
+        {
+          heading: "Odaberite kontinuiranu podršku za opravdan redoviti rad",
+          paragraphs: [
+            "Kontinuirana podrška korisna je kada objave redovito mijenjaju predloške, navigaciju ili ponašanje URL-ova, ili migracija stvara ovisnosti kroz više faza. Može imati smisla i kada tim ima nalaze, ali treba redovitu pomoć u pretvaranju preporuka u zadatke i provjeri izvedenog.",
+            "Razlog za mjesečnu SEO suradnju treba biti sljedeći opravdani posao, ne opća tvrdnja da SEO nikada ne završava. Pitajte što se sljedeće rješava, o kojoj objavi ovisi i tko to može provesti. Praćenje može otkriti nove pogreške, ali samo praćenje nije njihovo otklanjanje. Odredite što se prati, koliko često te tko pregledava upozorenja i provodi ispravke.",
+            "Podrška traži i pažnju vašeg tima. Pregledajte opseg kada objave stanu, prioriteti budu riješeni ili ovisnosti blokiraju napredak. Stabilan web ne treba automatski kontinuirani tehnički angažman."
+          ]
+        },
+        {
+          heading: "Dogovorite predaju razvojnom timu prije početka",
+          paragraphs: [
+            "Najvažnija razlika između dviju ponuda može biti odgovornost, ne broj provjera. Preporuka iz analize, zadatak pripremljen za razvoj i objavljena ispravka različite su isporuke. Pitajte što kupujete i kako zadatak prelazi iz jedne faze u drugu.",
+            "Koupoli pruža dijagnozu i dogovorenu podršku provedbi. Mogu podržati vaš razvojni tim ili pregledati relevantne promjene, ali to ne znači da automatski sam provodim sve promjene na svakoj platformi. Za stvarni projekt treba dogovoriti odgovornu osobu, pristup, predaju zadataka i provjere javne stranice.",
+            "Uporabljiv zadatak navodi pogođeni URL ili predložak, opaženi problem i očekivano ponašanje. Imenuje osobu za provjeru i bilježi otvorene ovisnosti. Ilustrativni kriteriji prihvaćanja uključuju preusmjeravanje na dogovoreno odredište, očekivanu kanonsku oznaku u predlošku ili navigaciju s poveznicama koje tražilica može slijediti jer imaju atribut href, kako preporučuje Googleova dokumentacija o poveznicama."
+          ],
+          list: [
+            "Imenujte tko piše i određuje prioritet zadatka te tko je odgovoran za kod ili postavke platforme.",
+            "Dogovorite tko provodi, odobrava i objavljuje promjenu, uključujući ovisnosti na strani naručitelja.",
+            "Odredite provjeru javne stranice, obuhvaćene URL-ove i dokaz kojim se zadatak zatvara.",
+            "Po potrebi odvojite dodatnu istragu, izvedbu i ponovnu provjeru od izvornog opsega."
+          ],
+          link: {
+            before: "Stranica ",
+            href: "/hr/usluge/seo-optimizacija/",
+            label: "Koupolijeve usluge tehničkog SEO-a",
+            after: " objašnjava dijagnozu, prioritetne zadatke i dogovorenu podršku provedbi."
+          }
+        },
+        {
+          heading: "Zadatak na vlastitom webu: tehnička provjera, ne rast pozicija",
+          paragraphs: [
+            "Ovo je stvarna ispravka Koupolijeve putanje, provjerena 7. studenoga 2026. Stara putanja /usluge/seo-optimizacija/ vraćala je preusmjeravanje 301 na /hr/usluge/seo-optimizacija/, koja je vraćala status 200. Kanonska oznaka odredišta odgovarala je konačnom hrvatskom URL-u, a karta weba sadržavala je samo konačnu putanju, ne staru.",
+            "Kriteriji su konkretni: izravno preusmjeravanje, dostupno odredište i usklađeni URL signali. Googleova dokumentacija za promjene URL-ova preporučuje trajna preusmjeravanja na mapirano odredište te ažurirane kanonske oznake i reference na URL-ove.",
+            "Primjer je s mojeg weba. Pokazuje opaženo tehničko ponašanje, ne uspješnost klijenta, rast pozicija ili prometa. Prolazak provjera ne dokazuje da je Google odabrao taj kanonski URL niti da je promjena uzrokovala poslovni rezultat."
+          ],
+          image: {
+            src: "/assets/koupoli-qa-support-example-hr.webp",
+            alt: "Tablica provjere Koupolijevih URL-ova sa starom putanjom, konačnim hrvatskim URL-om i opaženim slijedom HTTP 301 na HTTP 200",
+            caption: "Izvadak iz Koupolijeva zapisa provjere od 7. studenoga 2026. Cjelovit zapis provjerava i kanonsku oznaku te kartu weba; ne dokazuje rast pozicija.",
+            width: 692,
+            height: 230
+          },
+          link: {
+            before: "Širu koordinaciju migracije opisuje ",
+            href: "/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/",
+            label: "studija slučaja migracije weba za više tržišta",
+            after: ". To je zaseban primjer, a ne ova provjera vlastite putanje."
+          }
+        },
+        {
+          heading: "Odvojite rok isporuke od mjerenja u pretrazi",
+          paragraphs: [
+            "Rok analize dogovorite prema veličini weba, pristupu, složenosti platforme i potrebnom pregledu. Rok izvedbe ovisi o kapacitetu razvoja, odobrenjima za objavu i vanjskim ovisnostima. Rok izvještaja ni ritam podrške ne određuju rok za bolje pozicije u pretrazi.",
+            "Mjerite koji su zadaci objavljeni, provjereni ili blokirani. Vodite evidenciju promjena i sljedeći prioritet. Sam broj upozorenja može zavarati: rast može značiti širi obuhvat pregleda, ne pogoršanje.",
+            "Pregledajte dostupne podatke o pretrazi uz dosljedne stranice, tržišta i razdoblja. Kvalificirane upite ili prihod bilježite samo uz pouzdano praćenje. Zabilježite druge objave i promjene potražnje. Ne obećavam promet, pozicije ni AI citiranje; tehničko prihvaćanje odvojeno je od kasnijeg odgovora pretrage ili poslovanja."
+          ]
+        },
+        {
+          heading: "Usporedite model naplate, ne neusporedive cijene",
+          paragraphs: [
+            "Koupoli izrađuje ponude prema dogovorenom opsegu i nema javni cjenik. Naknada, rok i dodatni poslovi dogovaraju se za projekt. Pitajte završava li ponuda dijagnozom, uključuje li predaju zadataka ili i određenu podršku provedbi i ponovne provjere. Za kontinuirani rad dogovorite periodični opseg i uvjete pregleda, umjesto da ih pretpostavite iz naziva mjesečne suradnje.",
+            "WebFX objavljuje mjesečne pakete i omogućuje prilagođene ponude. Victorious objavljuje smjernice za početni proračun i velike sustave, uz prilagođavanje konačnog opsega i ponude. Delante objavljuje okvirne raspone i pojedinačno određuje proračun. Ne navodim brojčane agencijske cijene: opsezi, valute i javni rasponi nisu izravno usporedivi međusobno ni s Koupolijevom ponudom."
+          ],
+          list: [
+            "Usporedite iste stranice, isporuke i odgovornosti za izvedbu.",
+            "Provjerite jesu li ponovne provjere, razvoj i troškovi platforme uključeni ili zasebni.",
+            "Pisano potvrdite redoviti kapacitet, isključenja, moguće minimalno trajanje i uvjete otkazivanja."
+          ]
+        },
+        {
+          heading: "Koupoli, WebFX, Victorious i Delante: kontakt i kapacitet",
+          paragraphs: [
+            "Zatim odaberite način izvedbe. Opisi koriste službene stranice pregledane 17. studenoga 2026. i navedene u izvorima. To nisu jednaki opsezi ni ljestvica kvalitete.",
+            "U Koupoliju izravno surađujete sa mnom, stručnjakom i vlasnikom koji povezuje dijagnozu, zadatke i provjere. Izravan pristup nije dostupan samo kod samostalnih stručnjaka: Delante ga izričito nudi bez voditelja klijentskih računa."
+          ],
+          comparison: {
+            caption: "Javno opisani opseg i način kontakta. U svojoj ponudi potvrdite sastav tima i odgovornosti.",
+            leftLabel: "Javno opisana ponuda",
+            rightLabel: "Način kontakta",
+            rows: [
+              {
+                criterion: "Koupoli",
+                left: "Tehnička dijagnoza, prioritetni zadaci i dogovorena podrška izvedbi ili suradnja s razvojem; opseg za konkretan projekt.",
+                right: "Izravan rad s Karlom Riđanom, samostalnim stručnjakom i vlasnikom; dogovorena predaja i odgovornosti."
+              },
+              {
+                criterion: "WebFX",
+                left: "Širi kontinuirani SEO, uključujući tehničko održavanje, optimizaciju stranica, sadržaj, autoritet i izvještavanje.",
+                right: "Dodijeljeni voditelj klijentskog računa uz SEO stručnjake i širi tim zadužen za klijenta."
+              },
+              {
+                criterion: "Victorious",
+                left: "SEO za velike sustave uključuje kontinuirani tehnički rad, migracije, AEO, sadržaj i poveznice.",
+                right: "Suradnja s marketingom, proizvodnim i razvojnim timovima; imenovana pojedinačna kontaktna osoba nije potvrđena na pregledanim stranicama."
+              },
+              {
+                criterion: "Delante",
+                left: "Tehničke analize, potrebne ispravke, brzina, migracije, strukturirani podaci i mjesečni izvještaji.",
+                right: "Izravan kontakt s tehničkim SEO stručnjakom koji radi na webu, izričito bez voditelja klijentskih računa; izvedba šireg tima."
+              }
+            ]
+          }
+        },
+        {
+          heading: "Kada je veći tim bolji izbor",
+          paragraphs: [
+            "Više stručnjaka koji rade paralelno korisno je kada tehničke objave, proizvodnja sadržaja i izgradnja autoriteta istodobno traže redovit rad ili kada program za veliki sustav povezuje marketing, proizvod i razvoj. WebFX-ov širi stručni model i Victoriousova suradnja više funkcija odgovaraju takvoj koordinaciji. Delante povezuje izvedbu tehničkog tima s izravnim stručnim kontaktom.",
+            "Moja samostalna praksa ima ograničen kapacitet. Pitajte o dostupnosti i prikladnosti za platformu. Agencije pitajte o sastavu tima, kontaktu i odgovornosti za izvedbu. Veličina tima ne dokazuje brzinu odgovora ni kvalitetu pristupa."
+          ]
+        },
+        {
+          heading: "Uključuje li SEO analiza i otklanjanje problema?",
+          paragraphs: [
+            "Ne automatski. Može završiti nalazima i preporukama. Ponuda može uključiti pripremu zadataka, pregled s razvojem, izvedbu ili naknadne provjere, ali svaku stavku treba jasno navesti. Ako trebate objavljene promjene, odredite odgovornu osobu za provedbu prije kupnje dijagnoze."
+          ]
+        },
+        {
+          heading: "Može li podrška početi od postojeće analize?",
+          paragraphs: [
+            "Da, ako su nalazi još relevantni. Provjerite važne probleme na javnom webu, utvrdite promjene od analize i pretvorite važeće preporuke u dogovorene zadatke. Ponavljanje cijele analize nije automatski potrebno, ali stare nalaze ne treba provoditi bez provjere."
+          ]
+        },
+        {
+          heading: "Je li tehnička podrška isto što i cjelovit SEO?",
+          paragraphs: [
+            "Nije. Tehnička podrška ne uključuje automatski proizvodnju sadržaja, stjecanje poveznica ni sve aktivnosti za AI pretragu. To mogu biti zasebna područja rada ili dogovoreni dodaci. Ponudu povežite sa stvarnim ograničenjem; tehnička ispravka ne zamjenjuje koristan sadržaj niti stvara potražnju."
+          ]
+        },
+        {
+          heading: "Kada pregledati ili pauzirati kontinuiranu podršku?",
+          paragraphs: [
+            "Pregledajte podršku kada se prioriteti promijene ili korisna isporuka stane. Ako sljedeći posao, odgovorna osoba i dokaz završetka nisu jasni, smanjite, promijenite ili pauzirajte angažman prema dogovorenim uvjetima."
+          ]
+        },
+        {
+          heading: "Odaberite najmanji angažman koji rješava potrebu",
+          paragraphs: [
+            "Moj zaključak: kupite analizu za nerazjašnjen problem i uporabljiv plan provedbe; dogovorite ciljani projekt za poznatu, ograničenu ispravku; odaberite kontinuiranu podršku kada je opravdavaju redoviti zadaci. Dosljedan kontakt i kapacitet tima važni su, ali ne zamjenjuju jasan opseg, odgovornost i kriterije prihvaćanja."
+          ],
+          link: {
+            before: "Navedite web, platformu, važne stranice i odluku koju trebate donijeti pa ",
+            href: "/hr/contact/",
+            label: "razgovarajmo o odgovarajućem opsegu",
+            after: ". Pristup i odgovornosti za provedbu dogovaraju se zasebno, ne pretpostavljaju."
+          }
+        }
+      ],
+      sources: [
+        {
+          label: "Koupoli: opseg tehničkog SEO-a i dogovorena podrška provedbi",
+          href: "/hr/usluge/seo-optimizacija/"
+        },
+        {
+          label: "WebFX: SEO usluge i tim zadužen za klijenta",
+          href: "https://www.webfx.com/seo/services/"
+        },
+        {
+          label: "WebFX: tehnički SEO i dodijeljeni voditelj klijentskog računa",
+          href: "https://www.webfx.com/seo/agency/technical-seo/"
+        },
+        {
+          label: "WebFX: javni paketi i prilagođene ponude",
+          href: "https://www.webfx.com/seo/pricing/"
+        },
+        {
+          label: "Victorious: prilagođeni angažmani i javne proračunske smjernice",
+          href: "https://victorious.com/"
+        },
+        {
+          label: "Victorious: SEO za velike sustave i suradnja više timova",
+          href: "https://victorious.com/markets/enterprise-seo/"
+        },
+        {
+          label: "Delante: tehnički SEO, pojedinačni proračuni i izravan kontakt sa stručnjakom",
+          href: "https://delante.co/technical-seo-services/"
+        },
+        {
+          label: "Delante: kontakt za ponudu i prilagođeni planovi",
+          href: "https://delante.co/contact/"
+        },
+        {
+          label: "Google Search Central: migracije s promjenama URL-ova",
+          href: "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes"
+        },
+        {
+          label: "Google Search Central: poveznice koje tražilice mogu slijediti",
+          href: "https://developers.google.com/search/docs/crawling-indexing/links-crawlable"
+        },
+        {
+          label: "Koupoli: studija slučaja migracije weba za više tržišta",
+          href: "/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/"
+        }
+      ]
+    },
     {
       slug: "generative-engine-optimization-process",
       date: "2. studenoga 2026.",
@@ -523,11 +1111,11 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
     {
       slug: "website-migration-seo",
       date: "2. listopada 2026.",
-      updated: { date: "18. listopada 2026.", iso: "2026-10-18" },
+      updated: { date: "17. studenoga 2026.", iso: "2026-11-17" },
       title: "SEO migracija web-stranice: Praktičan kontrolni popis",
       metaTitle: "SEO migracija web-stranice: Kontrolni popis | Koupoli",
-      metaDescription: "Praktičan SEO kontrolni popis za zaštitu URL-ova, redirekcija, indeksiranja, sadržaja i mjerenja tijekom migracije web-stranice.",
-      excerpt: "Sažet kontrolni popis migracije za timove koji žele novu web-stranicu bez nepotrebnog gubitka organske vidljivosti.",
+      metaDescription: "Kontrolni popis za SEO migraciju: mapiranje URL-ova, provjere redirekcija i tehničkih signala te praćenje indeksiranja i organskog prometa nakon objave.",
+      excerpt: "SEO migracija web-stranice zahtijeva popis postojećih URL-ova, mapiranje relevantnih odredišta, testirane redirekcije i usklađene tehničke signale. Sačuvajte namjeru važnih stranica, provjerite objavljeni web te pratite indeksiranje i rezultate pretraživanja nakon objave.",
       image: "/assets/koupoli-website-migration-note-light.webp",
       imageAlt: "Urednički infografički prikaz strukturirane migracijske mape web-stranice",
       resource: { href: "/downloads/seo-migracija-kontrolni-popis.md", label: "Preuzmite kontrolni popis za migraciju", description: "Upotrijebite prilagodljiv Markdown predložak za dodjelu vlasnika, mapiranje URL-ova i bilježenje provjera pri lansiranju." },
@@ -538,6 +1126,7 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
             "Nova web-stranica mijenja više od vizualnog sustava. Može promijeniti strukturu URL-ova, interne poveznice, predloške, metapodatke, brzinu stranice, jezične verzije i način na koji tražilice razumiju odnos među stranicama. Ako je tretirate samo kao dizajnersko lansiranje, previše toga ostaje slučaju.",
             "Korisnije je pitanje ne treba li svaki stari URL ostati nepromijenjen. Pitanje je ima li svaka važna namjera pretraživanja, put interne poveznice i poslovno važna stranica promišljeno odredište na novoj web-stranici.",
           ],
+          link: {before: "U ", href: "/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/", label: "studiji slučaja SEO migracije", after: " prikazane su dokumentirane odgovornosti pri migraciji i zasebna provjera URL-a na Koupolijevu webu koju možete ponoviti."},
         },
         {
           heading: "Izradite inventar prije zaključavanja razvoja",

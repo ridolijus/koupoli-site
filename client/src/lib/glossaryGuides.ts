@@ -5,6 +5,7 @@ type GuideSection = {
   heading: string;
   paragraphs: string[];
   list?: string[];
+  link?: { before: string; href: string; label: string; after: string };
 };
 
 type GlossaryGuide = {
@@ -334,11 +335,11 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
       slug: "entity-seo",
       path: "/glossary/entity-seo/",
       title: "Entity SEO: A Practical Guide",
-      updated: { date: "October 18, 2026", iso: "2026-10-18" },
+      updated: { date: "November 17, 2026", iso: "2026-11-17" },
       metaTitle: "Entity SEO: A Practical Guide | Koupoli",
-      metaDescription: "A practical entity SEO guide for making the people, products, organisations, places, and concepts on a website clear and consistently connected.",
+      metaDescription: "Learn how entity SEO connects organisations, people, services, and evidence through clear content, consistent page relationships, and accurate structured data.",
       kicker: "Glossary guide",
-      lead: "Entity SEO is the work of reducing ambiguity around the real things your organisation, website, and audience need search systems to understand.",
+      lead: "Entity SEO makes the organisations, people, services, products, places, and concepts on a website clear and consistently connected. It helps readers and search systems understand who provides an offer, what it includes, and how supporting pages relate to it.",
       image: "/assets/koupoli-guide-entity-seo-system.webp",
       imageAlt: "Editorial entity SEO system connecting a central organisation with its services, people, places, and evidence",
       definitionLabel: "Working definition",
@@ -353,7 +354,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
         {
           heading: "Entities make relationships easier to understand",
           paragraphs: [
-            "A website rarely talks about only one thing. It introduces a company, its people, its offers, its customers, and the concepts that make those offers useful. Entity work makes those relationships explicit enough for a reader and a search system to follow without guessing.",
+            "Review a priority service page alongside its About page and a relevant project. Check whether the provider, service name, and description agree across those pages, and whether the links let a reader reach the supporting information without guessing.",
             "That does not mean repeating names mechanically or publishing a web of empty profile pages. It means deciding which things matter to the business, describing them accurately, and connecting them through pages that have a clear job.",
           ],
         },
@@ -392,6 +393,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
             "Structured data can give search systems explicit clues about a page, but it cannot fix vague positioning or thin information. Google advises that markup should describe the content of the page and not be placed on blank pages created solely to hold structured data.",
             "For a service business, the durable result is a connected body of evidence: a clear About page, precise service pages, relevant projects, practical Notes, and a consistent vocabulary. That body of work helps people understand why the business is credible before any individual signal is measured.",
           ],
+          link: {before: "The guide to ", href: "/glossary/structured-data/", label: "structured data", after: " explains how to choose markup that reflects the visible facts on a page and validate it."},
         },
       ],
       note: { slug: "generative-engine-optimization", label: "Generative Engine Optimization", description: "See why accurate entities, original information, and connected pages matter more than invented AI-only tactics." },
@@ -1020,11 +1022,11 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
       slug: "entitetski-seo",
       path: "/hr/pojmovnik/entitetski-seo/",
       title: "Entitetski SEO: Praktičan vodič",
-      updated: { date: "18. listopada 2026.", iso: "2026-10-18" },
+      updated: { date: "17. studenoga 2026.", iso: "2026-11-17" },
       metaTitle: "Entitetski SEO: Praktičan vodič | Koupoli",
-      metaDescription: "Praktičan vodič za entitetski SEO koji osobe, proizvode, organizacije, lokacije i koncepte na web-stranici čini jasnima i povezanima.",
+      metaDescription: "Saznajte kako entitetski SEO povezuje organizacije, osobe, usluge i dokaze jasnim sadržajem, dosljednim odnosima među stranicama i strukturiranim podacima.",
       kicker: "Vodič kroz pojmovnik",
-      lead: "Entitetski SEO je rad na smanjivanju nejasnoće oko stvarnih stvari koje vaša organizacija, web-stranica i publika trebaju jasno razumjeti.",
+      lead: "Entitetski SEO jasno opisuje i dosljedno povezuje organizacije, osobe, usluge, proizvode, lokacije i koncepte na web-stranici. Čitateljima i tražilicama pomaže razumjeti tko pruža uslugu, što ona uključuje i kako su s njom povezane stranice koje nude dodatne informacije i dokaze.",
       image: "/assets/koupoli-guide-entity-seo-system.webp",
       imageAlt: "Urednički sustav entitetskog SEO-a koji povezuje središnju organizaciju s uslugama, osobama, lokacijama i dokazima",
       definitionLabel: "Radna definicija",
@@ -1039,7 +1041,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
         {
           heading: "Entiteti olakšavaju razumijevanje odnosa",
           paragraphs: [
-            "Web-stranica rijetko govori o samo jednoj stvari. Predstavlja tvrtku, njezine ljude, ponude, kupce i koncepte koji ponude čine korisnima. Entitetski rad te odnose čini dovoljno jasnima da ih čitatelj i tražilica mogu pratiti bez nagađanja.",
+            "Pregledajte prioritetnu stranicu usluge zajedno sa stranicom o pružatelju usluge i relevantnim projektom. Provjerite jesu li naziv pružatelja, naziv usluge i njezin opis dosljedni na tim stranicama te vode li poveznice čitatelja do popratnih informacija bez nagađanja.",
             "To ne znači mehaničko ponavljanje naziva ni objavljivanje mreže praznih profilnih stranica. Znači odlučiti koje su stvari važne za poslovanje, opisati ih točno i povezati ih kroz stranice koje imaju jasan zadatak.",
           ],
         },
@@ -1078,6 +1080,7 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
             "Strukturirani podaci tražilicama mogu dati izričite signale o stranici, ali ne mogu popraviti nejasno pozicioniranje ni tanke informacije. Google savjetuje da markup opisuje sadržaj stranice i da se ne stavlja na prazne stranice izrađene samo za strukturirane podatke.",
             "Za uslužnu tvrtku održiv rezultat je povezano tijelo dokaza: jasna stranica O meni, precizne stranice usluga, relevantni projekti, praktične Bilješke i dosljedan rječnik. Takav rad ljudima pomaže razumjeti zašto je tvrtka vjerodostojna prije nego što se izmjeri pojedinačni signal.",
           ],
+          link: {before: "Pogledajte kako ", href: "/hr/pojmovnik/strukturirani-podaci/", label: "strukturirani podaci", after: " mogu opisati vidljive činjenice na stranici te kako odabrati i provjeriti odgovarajući markup."},
         },
       ],
       note: { slug: "generative-engine-optimization", label: "Generativna optimizacija", description: "Pogledajte zašto su točni entiteti, originalne informacije i povezane stranice važniji od izmišljenih AI taktika." },

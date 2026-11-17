@@ -17,6 +17,7 @@ type ServiceCopy = {
   imageAlt: string;
   principleTitle: string;
   principle: string[];
+  context: { before: string; href: string; label: string; after: string };
   scopeTitle: string;
   scopeLead: string;
   scope: { title: string; description: string }[];
@@ -36,10 +37,10 @@ const copies: Record<Locale, ServiceCopy> = {
   en: {
     title: "Technical SEO Services & AI Search Operations | Koupoli",
     description:
-      "Technical SEO services and AI search operations for teams that need clearer crawl paths, indexation, site structure, structured data, and delivery that reaches the live site.",
+      "Technical SEO services for crawl, indexing and rendering issues, with prioritised implementation tasks, developer support and live verification.",
     crumb: "Technical SEO services",
     heading: "Technical SEO services that make important pages easier to find.",
-    lead: "Koupoli helps teams find and resolve technical blockers, turn findings into clear implementation work, and connect technical SEO with the content and entity signals that search engines and AI answers can use.",
+    lead: "Technical SEO services identify crawl, indexing and rendering problems that affect how people find your pages. You work directly with Karlo Ridan on prioritised implementation tasks, with developer support and live checks agreed for your project.",
     cta: "Discuss a technical SEO project",
     image: "/assets/koupoli-service-technical-delivery.webp",
     imageAlt:
@@ -50,6 +51,7 @@ const copies: Record<Locale, ServiceCopy> = {
       "The output is a prioritised implementation plan with clear work items, responsibilities and acceptance criteria. Karlo can support implementation or work with your developers. The handoff, checks and measurement are agreed before delivery; a warning count is not the deliverable.",
       "To begin, share the website URL, platform, priority pages and goal, along with what Search Console data or access is available. Access is arranged securely after scope is agreed, not sent through the enquiry form. Fees, timing and additional work are agreed for the project, with no promise of a particular ranking or AI citation.",
     ],
+    context: { before: "Planning a platform change? Use the ", href: "/post/website-migration-seo/", label: "website migration SEO checklist", after: " to map important URLs, assign owners and agree launch checks before development is final." },
     scopeTitle: "The technical work behind durable visibility.",
     scopeLead:
       "The scope adapts to the site and the decision in front of the team. These are the areas that most often need to be connected.",
@@ -85,7 +87,7 @@ const copies: Record<Locale, ServiceCopy> = {
           "Connect technical health, priority questions, entity coverage, citations, and qualified demand instead of reporting a vanity mention count.",
       },
     ],
-    processTitle: "A delivery sequence teams can use.",
+    processTitle: "Four stages from diagnosis to live checks.",
     processLead:
       "The engagement is designed to produce decisions and work items, not a presentation that waits for a second project to be implemented.",
     process: [
@@ -174,11 +176,11 @@ const copies: Record<Locale, ServiceCopy> = {
   hr: {
     title: "SEO Optimizacija | Tehnički SEO i savjetovanje | Koupoli",
     description:
-      "SEO optimizacija za timove kojima trebaju jasni prioriteti za tehnički SEO, indeksiranje, brzinu web stranice, strukturirane podatke i sadržaj koji podržava organski rast.",
+      "SEO optimizacija za probleme s indeksiranjem i prikazom sadržaja, uz zadatke poredane po prioritetu, podršku razvoju i provjere javne stranice.",
     crumb: "SEO optimizacija",
     heading:
       "SEO optimizacija koja povezuje tehnički rad, sadržaj i poslovni cilj.",
-    lead: "Koupoli pomaže timovima pronaći prepreke u tehničkom SEO-u, pretvoriti nalaze u jasne zadatke i povezati indeksiranje, strukturu sadržaja i mjerljive signale organskog rasta.",
+    lead: "Tehnički SEO otkriva probleme s pristupom tražilica, indeksiranjem i prikazom sadržaja koji utječu na pronalazak vaših stranica. Izravno surađujete s Karlom Ridanom na zadacima poredanima po prioritetu, uz podršku razvoju i provjere javne stranice dogovorene za vaš projekt.",
     cta: "Razgovarajmo o SEO optimizaciji",
     image: "/assets/koupoli-service-technical-delivery.webp",
     imageAlt:
@@ -189,6 +191,7 @@ const copies: Record<Locale, ServiceCopy> = {
       "Isporuka je plan implementacije poredan po prioritetu, s jasnim zadacima, odgovornostima i kriterijima prihvaćanja. Karlo može podržati izvedbu ili raditi s vašim razvojnim timom. Predaja zadataka, provjere i mjerenje dogovaraju se prije rada; broj upozorenja nije isporuka.",
       "Za početak navedite URL weba, platformu, važne stranice i cilj te koji su podaci ili pristup Search Consoleu dostupni. Pristup se dogovara sigurnim putem nakon definiranja opsega, ne šalje se kroz obrazac za upit. Naknada, rok i dodatni poslovi dogovaraju se za projekt, bez jamstva određene pozicije ili citiranja u AI pretrazi.",
     ],
+    context: { before: "Planirate promjenu platforme? Uz ", href: "/hr/post/website-migration-seo/", label: "kontrolni popis za SEO migraciju", after: " mapirajte važne URL-ove, odredite odgovorne osobe i dogovorite provjere prije završetka razvoja." },
     scopeTitle: "Što obuhvaća SEO optimizacija.",
     scopeLead:
       "Opseg se prilagođava web-stranici i poslovnoj odluci. Ovo su područja koja se najčešće moraju riješiti zajedno.",
@@ -224,7 +227,7 @@ const copies: Record<Locale, ServiceCopy> = {
           "Povezivanje tehničkog zdravlja, upita, prioriteta sadržaja i poslovnih signala bez oslanjanja na površne metrike.",
       },
     ],
-    processTitle: "Rad koji završava implementacijom.",
+    processTitle: "Četiri faze od dijagnoze do provjere javne stranice.",
     processLead:
       "Cilj je pomoći timu donijeti odluke i završiti konkretne zadatke, a ne samo isporučiti prezentaciju koja čeka sljedeći projekt.",
     process: [
@@ -364,6 +367,8 @@ export default function GrowthService({ locale = "en" }: { locale?: Locale }) {
               {copy.principle.map(paragraph => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
+              <p>{copy.context.before}<Link className="growth-inline-link" href={copy.context.href}>{copy.context.label}</Link>{copy.context.after}</p>
+              <p>{locale === "hr" ? "Za odabir opsega pročitajte " : "To choose the engagement, compare "}<Link className="growth-inline-link" href={locale === "hr" ? "/hr/post/seo-audit-vs-ongoing-technical-seo/" : "/post/seo-audit-vs-ongoing-technical-seo/"}>{locale === "hr" ? "SEO analizu i kontinuiranu tehničku SEO podršku" : "an SEO audit with ongoing technical SEO support"}</Link>.</p>
             </div>
           </div>
         </section>
