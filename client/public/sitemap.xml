@@ -114,14 +114,14 @@
   </url>
   <url>
     <loc>https://koupoli.com/glossary/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://koupoli.com/glossary/" />
     <xhtml:link rel="alternate" hreflang="hr" href="https://koupoli.com/hr/pojmovnik/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://koupoli.com/glossary/" />
   </url>
   <url>
     <loc>https://koupoli.com/hr/pojmovnik/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://koupoli.com/glossary/" />
     <xhtml:link rel="alternate" hreflang="hr" href="https://koupoli.com/hr/pojmovnik/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://koupoli.com/glossary/" />
@@ -349,5 +349,33 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://koupoli.com/post/seo-consultant-vs-agency/" />
     <xhtml:link rel="alternate" hreflang="hr" href="https://koupoli.com/hr/post/seo-consultant-vs-agency/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://koupoli.com/post/seo-consultant-vs-agency/" />
+  </url>
+  <url>
+    <loc>https://koupoli.com/glossary/technical-seo-audit/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://koupoli.com/glossary/technical-seo-audit/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://koupoli.com/hr/pojmovnik/tehnicka-seo-analiza/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://koupoli.com/glossary/technical-seo-audit/" />
+  </url>
+  <url>
+    <loc>https://koupoli.com/hr/pojmovnik/tehnicka-seo-analiza/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://koupoli.com/glossary/technical-seo-audit/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://koupoli.com/hr/pojmovnik/tehnicka-seo-analiza/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://koupoli.com/glossary/technical-seo-audit/" />
+  </url>
+  <url>
+    <loc>https://koupoli.com/glossary/seo-retainer/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://koupoli.com/glossary/seo-retainer/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://koupoli.com/hr/pojmovnik/kontinuirana-seo-suradnja/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://koupoli.com/glossary/seo-retainer/" />
+  </url>
+  <url>
+    <loc>https://koupoli.com/hr/pojmovnik/kontinuirana-seo-suradnja/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://koupoli.com/glossary/seo-retainer/" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://koupoli.com/hr/pojmovnik/kontinuirana-seo-suradnja/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://koupoli.com/glossary/seo-retainer/" />
   </url>
 </urlset>

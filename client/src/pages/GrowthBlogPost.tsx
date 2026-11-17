@@ -72,8 +72,11 @@ export default function GrowthBlogPost({ locale = "en", slug }: { locale?: Local
         : { href: "/downloads/koupoli-geo-working-example.md", title: "Koupoli's GEO working example", description: "A question set, actual service change and measurement record without invented results.", download: true },
     ]
     : [];
+  const buyingGuides = slug === "seo-audit-vs-ongoing-technical-seo" || slug === "seo-consultant-vs-agency"
+    ? (["technical-seo-audit", "seo-retainer"] as const).map((key) => getGlossaryGuide(locale, key))
+    : [];
   const noteLinks = slug ? [
-    ...(glossaryGuide ? [{ href: glossaryGuide.path, title: glossaryGuide.title, description: glossaryGuide.lead }] : []),
+    ...(buyingGuides.length ? buyingGuides.map((guide) => ({ href: guide.path, title: guide.title, description: guide.lead })) : glossaryGuide ? [{ href: glossaryGuide.path, title: glossaryGuide.title, description: glossaryGuide.lead }] : []),
     ...(migrationCaseStudy ? [migrationCaseStudy] : []),
     ...implementationLinks,
     ...editorialNotes[locale].filter((entry) => entry.slug !== slug).slice(0, implementationLinks.length ? 0 : 1).map((entry) => ({ href: localizedPath(locale, `/post/${entry.slug}/`), title: entry.title, description: entry.excerpt })),

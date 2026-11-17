@@ -27,6 +27,10 @@ const refreshedLinks = new Map([
   ["/hr/usluge/seo-optimizacija/", "/hr/post/website-migration-seo/"],
 ]);
 const downloads = [
+  "/downloads/technical-seo-audit-brief.md",
+  "/downloads/tehnicka-seo-analiza-opseg-i-zadatak.md",
+  "/downloads/seo-retainer-delivery-record.md",
+  "/downloads/zapis-kontinuirane-seo-suradnje.md",
   "/downloads/koupoli-route-qa-record.md",
   "/downloads/koupoli-zapis-provjere-url-a.md",
   "/downloads/koupoli-geo-working-example.md",
@@ -41,6 +45,10 @@ const downloads = [
   "/downloads/scorecard-vidljivosti-u-ai-pretrazi.md",
 ];
 const pages = [
+  ["/glossary/technical-seo-audit/", "DefinedTerm", "/hr/pojmovnik/tehnicka-seo-analiza/"],
+  ["/hr/pojmovnik/tehnicka-seo-analiza/", "DefinedTerm", "/glossary/technical-seo-audit/"],
+  ["/glossary/seo-retainer/", "DefinedTerm", "/hr/pojmovnik/kontinuirana-seo-suradnja/"],
+  ["/hr/pojmovnik/kontinuirana-seo-suradnja/", "DefinedTerm", "/glossary/seo-retainer/"],
   ["/post/seo-consultant-vs-agency/", "BlogPosting", "/hr/post/seo-consultant-vs-agency/"],
   ["/hr/post/seo-consultant-vs-agency/", "BlogPosting", "/post/seo-consultant-vs-agency/"],
   ["/post/seo-audit-vs-ongoing-technical-seo/", "BlogPosting", "/hr/post/seo-audit-vs-ongoing-technical-seo/"],
@@ -158,7 +166,7 @@ for (const [route, expectedType, alternateRoute] of pages) {
   }
   if (route === "/glossary/" || route === "/hr/pojmovnik/") {
     const termSet = schema["@graph"].find((node) => node["@type"] === "DefinedTermSet");
-    const expectedCount = route === "/glossary/" ? 34 : 24;
+    const expectedCount = route === "/glossary/" ? 36 : 26;
     if (!termSet || !Array.isArray(termSet.hasDefinedTerm) || termSet.hasDefinedTerm.length !== expectedCount) throw new Error(`Incomplete glossary schema for ${route}`);
   }
 }

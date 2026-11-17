@@ -48,6 +48,10 @@ export default function GrowthLayout({ locale, children }: LayoutProps) {
   const home = locale === "hr" ? "/hr/" : "/";
   const normalizedLocation = location.length > 1 ? location.replace(/\/$/, "") : location;
   const guideAlternates: Record<string, string> = {
+    "/glossary/technical-seo-audit": "/hr/pojmovnik/tehnicka-seo-analiza/",
+    "/hr/pojmovnik/tehnicka-seo-analiza": "/glossary/technical-seo-audit/",
+    "/glossary/seo-retainer": "/hr/pojmovnik/kontinuirana-seo-suradnja/",
+    "/hr/pojmovnik/kontinuirana-seo-suradnja": "/glossary/seo-retainer/",
     "/glossary/search-visibility": "/hr/pojmovnik/vidljivost-u-pretrazi/",
     "/hr/pojmovnik/vidljivost-u-pretrazi": "/glossary/search-visibility/",
     "/glossary/structured-data": "/hr/pojmovnik/strukturirani-podaci/",

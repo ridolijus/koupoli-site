@@ -1,5 +1,5 @@
 export type GlossaryGuideLocale = "en" | "hr";
-export type GlossaryGuideKey = "search-visibility" | "structured-data" | "technical-seo" | "entity-seo" | "semantic-seo" | "knowledge-graph" | "entity-mapping" | "ai-search-visibility" | "generative-engine-optimization";
+export type GlossaryGuideKey = "technical-seo-audit" | "seo-retainer" | "search-visibility" | "structured-data" | "technical-seo" | "entity-seo" | "semantic-seo" | "knowledge-graph" | "entity-mapping" | "ai-search-visibility" | "generative-engine-optimization";
 
 type GuideSection = {
   heading: string;
@@ -38,6 +38,309 @@ type GlossaryGuide = {
 
 export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey, GlossaryGuide>> = {
   en: {
+    "technical-seo-audit": {
+      "key": "technical-seo-audit",
+      "slug": "technical-seo-audit",
+      "path": "/glossary/technical-seo-audit/",
+      "title": "Technical SEO Audit: Scope, Checks and Deliverables",
+      "updated": {
+        "date": "17 November 2026",
+        "iso": "2026-11-17"
+      },
+      "metaTitle": "Technical SEO Audit: Checks and Deliverables | Koupoli",
+      "metaDescription": "Understand technical SEO audit scope, access, crawling, rendering and performance checks, plus developer-ready findings and how to validate fixes.",
+      "kicker": "Glossary guide",
+      "lead": "A technical SEO audit identifies website issues that affect discovery, crawling, rendering and indexing, then turns verified findings into prioritised fixes. Its value is a clear implementation brief, not a large collection of tool warnings.",
+      "image": "/assets/koupoli-guide-technical-seo-audit.webp",
+      "imageAlt": "Technical SEO audit diagram connecting priority URLs, crawl and rendering evidence, and implementation tickets",
+      "definitionLabel": "Working definition",
+      "definition": "A technical SEO audit is a scoped investigation of a website's technical search foundations. It combines representative page checks with available search and analytics evidence to explain what is wrong, why it matters and how a fix should be tested.",
+      "signalsLabel": "What to check first",
+      "signals": [
+        "Choose priority pages and check their response, crawl access, indexing directives and canonical destination.",
+        "Compare initial and rendered HTML for core content and href links without user interaction.",
+        "Require evidence, affected URLs, an owner and an acceptance test for each priority finding."
+      ],
+      "sections": [
+        {
+          "heading": "What a technical audit covers",
+          "paragraphs": [
+            "A general SEO audit may examine demand, content, competitors and backlinks. A technical audit focuses on delivery and structure: can important pages be reached, understood and considered for indexing? Template checks may include titles or structured data, but do not replace content strategy.",
+            "Agree the question before commissioning the work. A launch review, unexplained indexing problem and migration assessment need different evidence and boundaries."
+          ],
+          "link": {
+            "before": "For the engagement decision, read ",
+            "href": "/post/seo-audit-vs-ongoing-technical-seo/",
+            "label": "SEO audit vs ongoing technical SEO support",
+            "after": "."
+          }
+        },
+        {
+          "heading": "Choose a useful sample and agree access",
+          "paragraphs": [
+            "Start with pages that support enquiries, sales or a release. For a shop, sample categories, products, filters and pagination; for a service business, sample service and location templates. Include exceptions and record sampling limits.",
+            "Request Google Search Console and GA4 access if available. Search data helps investigate indexing; analytics helps establish priorities. Compare initial HTML crawls with rendered checks. Use server logs where provided to examine actual crawler requests. Record missing access rather than assuming findings. Agree safe crawl limits and staging access where needed."
+          ],
+          "link": {
+            "before": "Discuss this scope through Koupoli's ",
+            "href": "/services/technical-seo-ai-search/",
+            "label": "technical SEO and AI search service",
+            "after": "."
+          }
+        },
+        {
+          "heading": "Separate crawling, noindex and canonical signals",
+          "paragraphs": [
+            "Robots.txt restricts crawling, not reliably indexing. A noindex directive asks Google to exclude a page, but Google must crawl it to read that directive. Check HTML robots tags and HTTP headers; a tool's indexable label does not prove index inclusion.",
+            "A canonical annotation suggests the preferred version of duplicate or very similar content. It is a signal, not a guaranteed selection or an access restriction. Compare declared canonicals with Google's selection where evidence exists. Resolve conflicting destinations and accidental noindex on priority pages before treating every excluded URL as a fault. Some exclusions are intentional."
+          ]
+        },
+        {
+          "heading": "Check URL paths and language versions together",
+          "paragraphs": [
+            "Review redirects, broken links and orphan pages alongside the internal architecture. Important pages should have relevant links from elsewhere on the site. Update links to their final destinations rather than relying on redirect chains. Check that removed pages return appropriate responses instead of a successful empty page.",
+            "XML sitemaps should list intended canonical, indexable URLs, not replace navigation. Check hreflang destinations and return references alongside canonicals and language content. These signals should agree on the intended language versions."
+          ],
+          "link": {
+            "before": "For related migration context, see the ",
+            "href": "/case-studies/multi-market-website-migration/",
+            "label": "multi-market website migration case study",
+            "after": "."
+          }
+        },
+        {
+          "heading": "Inspect content and links before and after rendering",
+          "paragraphs": [
+            "Compare the server's initial HTML response with the HTML produced after JavaScript runs. Check headings, product or service information, canonical annotations and navigation. A screenshot alone cannot establish what content or links a crawler can process.",
+            "Google can render JavaScript and discover injected links; client-side rendering is not automatically an indexing failure. Check content without user interaction, anchor elements with href destinations, accessible scripts and representative URL Inspection evidence. Initial HTML content reduces rendering dependence; record it as a project requirement where appropriate."
+          ]
+        },
+        {
+          "heading": "Use field performance data and lab diagnostics differently",
+          "paragraphs": [
+            "Core Web Vitals describe loading, responsiveness and visual stability through LCP, INP and CLS. Where available, begin with real-user field data in Search Console or PageSpeed Insights. Check whether the data describes a specific URL or the wider origin before attributing it to one template.",
+            "Lab tests reproduce controlled conditions and help diagnose causes such as delayed resources or layout shifts. They do not replace field evidence, and a single Lighthouse score is not a search forecast. If field data is unavailable, say so. After a fix, use repeatable lab checks for immediate comparison and allow field measurements time to reflect real visits."
+          ]
+        },
+        {
+          "heading": "Turn findings into developer-ready tickets",
+          "paragraphs": [
+            "Each ticket should identify affected URLs or templates, reproducible evidence, expected behaviour and an acceptance test. Add an owner, likely business impact, effort estimate and dependencies. Separate confirmed faults from investigation questions. Group shared causes rather than supplying duplicate warnings.",
+            "Hypothetical example, not a Koupoli client result: a shop's /shop/ navigation contains no category href links in either raw HTML or rendered HTML before interaction. The category destinations appear only after a menu click. The sample includes /shop/shoes/ and /shop/bags/."
+          ],
+          "list": [
+            "Evidence and expected behaviour: attach HTML extracts; require the category links in the initial HTML as the agreed template behaviour, while preserving the menu interaction.",
+            "Owner and priority: assign the frontend developer; the impact is a missing discovery path to commercial categories, not a predicted traffic increase. Effort awaits developer estimation; the shared navigation component is a dependency.",
+            "Acceptance test: fetch /shop/ without JavaScript and find valid category anchors; confirm their destinations return 200, then repeat the rendered check and menu test."
+          ]
+        },
+        {
+          "heading": "Scope delivery and validate the work",
+          "paragraphs": [
+            "Choose a targeted audit for a bounded question when someone can implement the findings. Recurring support suits frequent releases, changing templates or a backlog that needs ongoing prioritisation and retesting. Neither arrangement removes the need for developer capacity.",
+            "Timeline and cost depend on template variety, markets, rendering, access and investigation depth, not URL count alone. Agree scope, exclusions, handover and validation before requesting a quote. Report delivery, implementation and post-release checks are separate commitments. Koupoli is Karlo Riđan's independent practice; no fixed price or deadline is implied.",
+            "Close tickets by repeating their acceptance tests on the released site. Check related templates for regressions and monitor available Search Console evidence after recrawling. A technically valid fix does not guarantee indexing, rankings or AI citations."
+          ],
+          "link": {
+            "before": "For recurring work, see the ",
+            "href": "/glossary/seo-retainer/",
+            "label": "SEO retainer guide",
+            "after": "."
+          }
+        }
+      ],
+      "note": {
+        "slug": "seo-audit-vs-ongoing-technical-seo",
+        "label": "SEO audit vs ongoing technical SEO support",
+        "description": "Compare audit scope, implementation ownership and recurring support."
+      },
+      "related": [
+        "technical-seo",
+        "seo-retainer",
+        "structured-data"
+      ],
+      "sourcesLabel": "Sources",
+      "sources": [
+        {
+          "label": "Google Search Central: Maintaining your website's SEO",
+          "href": "https://developers.google.com/search/docs/fundamentals/get-started"
+        },
+        {
+          "label": "Google Search Central: JavaScript SEO basics",
+          "href": "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics"
+        },
+        {
+          "label": "Google Search Central: Canonical URLs",
+          "href": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls"
+        },
+        {
+          "label": "Google Search Central: Understanding Core Web Vitals",
+          "href": "https://developers.google.com/search/docs/appearance/core-web-vitals"
+        },
+        {
+          "label": "Google web.dev: Tools for measuring Core Web Vitals",
+          "href": "https://web.dev/articles/vitals-tools"
+        }
+      ],
+      "glossaryLabel": "Explore the glossary",
+      "glossaryDescription": "Find explanations of technical SEO audit terms.",
+      "contactLabel": "Discuss your audit scope",
+      "contactDescription": "Bring Karlo your priority pages and technical question.",
+      "resource": {
+        "label": "Download the audit brief and developer handoff template",
+        "href": "/downloads/technical-seo-audit-brief.md"
+      }
+    },
+    "seo-retainer": {
+      "key": "seo-retainer",
+      "slug": "seo-retainer",
+      "path": "/glossary/seo-retainer/",
+      "title": "SEO Retainer: Scope, Delivery and Accountability",
+      "updated": {
+        "date": "17 November 2026",
+        "iso": "2026-11-17"
+      },
+      "metaTitle": "SEO Retainer: Scope and Accountability | Koupoli",
+      "metaDescription": "Understand what an SEO retainer buys, how monthly priorities and validated changes are managed, and which responsibilities and contract terms to clarify.",
+      "kicker": "Glossary guide",
+      "lead": "An SEO retainer is a recurring agreement for a defined amount of ongoing SEO work. It should make priorities, delivery responsibilities and review points clear, rather than promise unlimited help or guaranteed rankings.",
+      "image": "/assets/koupoli-guide-seo-retainer.webp",
+      "imageAlt": "SEO retainer workflow showing agreed priorities, implementation, release checks and monthly review",
+      "definitionLabel": "Working definition",
+      "definition": "An SEO retainer reserves agreed capacity or recurring deliverables for a recurring fee. The agreement defines how work is selected, who implements it, how completion is checked and when the scope is reviewed. A monthly payment alone does not establish those responsibilities.",
+      "signalsLabel": "What a clear agreement makes visible",
+      "signals": [
+        "An approved priority list fits the available capacity, with a named owner for each task.",
+        "Recommendations, implementation and checks on the live site are recorded as separate stages.",
+        "Reviews distinguish validated changes from search indicators and explain blocked or deferred work."
+      ],
+      "sections": [
+        {
+          "heading": "Recurring responsibility, not just prepaid hours",
+          "paragraphs": [
+            "A project has a defined endpoint, such as a migration review. Prepaid hours buy time for agreed requests. A retainer can also be hour-based, but continuing responsibility for priorities and review must be stated, not inferred.",
+            "The useful question is what happens between requests. Does someone maintain the approved backlog, review planned releases and revisit unresolved issues? That is different from waiting for the client to spend a time balance. Neither arrangement means unlimited access, unlimited fixes or automatic emergency cover."
+          ],
+          "link": {
+            "before": "For the decision about a one-off assessment or continuing work, read ",
+            "href": "/post/seo-audit-vs-ongoing-technical-seo/",
+            "label": "SEO audit vs ongoing technical SEO support",
+            "after": "."
+          }
+        },
+        {
+          "heading": "Define the work and who owns delivery",
+          "paragraphs": [
+            "A technical-focused scope might cover category templates, redirects, canonical URLs, internal links and checks around releases. Name the systems and page types involved. A ticket explaining a fix is not the same deliverable as an implemented change, and neither is the same as a change verified on the live site.",
+            "Writing or outreach needs explicit scope and owners. Google's helpful-content guidance favours usefulness to readers, not publishing for a quota. Articles, link acquisition and special structured data are not automatically included. Agree who owns research, tickets, code and accounts after the engagement ends."
+          ],
+          "link": {
+            "before": "For how initial findings are established, see the ",
+            "href": "/glossary/technical-seo-audit/",
+            "label": "technical SEO audit guide",
+            "after": "."
+          }
+        },
+        {
+          "heading": "How an agreed month unfolds",
+          "paragraphs": [
+            "At the planning review, compare the backlog with business priorities, current evidence and upcoming releases. Approve a manageable set of tasks, their owners and acceptance criteria. Keep investigation time visible: reproducing an intermittent problem may be the agreed output before a fix can be specified. New urgent work should displace something explicitly or require additional approval.",
+            "Before release, check the proposed change against its acceptance criteria in the available test environment. After deployment, verify the relevant behaviour on live pages and record the release date. Close the month with completed, blocked and deferred work, supporting evidence and the next decisions. The checks should match the risk; a full-site crawl every month is not a universal requirement."
+          ]
+        },
+        {
+          "heading": "A hypothetical ecommerce month",
+          "paragraphs": [
+            "Imagine an online shop preparing a navigation release. A category template incorrectly points its canonical URL to another category. The approved work for this hypothetical month is to reproduce the bug, identify affected templates and specify the intended canonical behaviour. Unrelated copy requests remain outside that month's priorities.",
+            "The developer implements the correction. The SEO consultant checks representative categories before release, then verifies their live canonical URLs and navigation links after deployment. The remaining agreed capacity is used for release monitoring and investigation of any recurrence. The monthly record can show the bug, approved fix, deployment and checks. It cannot claim extra sales or recovered rankings without evidence. This example describes a workflow, not a Koupoli client result."
+          ]
+        },
+        {
+          "heading": "Measure delivery separately from search outcomes",
+          "paragraphs": [
+            "Start with what was completed and validated: the affected URLs, expected behaviour, release date and test evidence. Report a recommendation awaiting development as pending, not shipped. A completed investigation can still be useful if it establishes that a proposed fix is unnecessary or identifies the dependency preventing progress.",
+            "Then review relevant query and page indicators. Search Console reports clicks, impressions, click-through rate and average position. Compare suitable periods and segments rather than treating a sitewide average as the whole story. Use separately configured analytics or business records for enquiries, orders and other conversions. Consider seasonality, stock availability and simultaneous campaigns. Movement after a release does not by itself prove causality. Google warns against ranking guarantees; AI citations are not guaranteed either."
+          ]
+        },
+        {
+          "heading": "Developer and client dependencies shape capacity",
+          "paragraphs": [
+            "The client needs to name an approver, provide appropriate access and make development time available where implementation remains with its developers. Approval delays, inaccessible test environments or a frozen release schedule can stop work reaching production. Record those constraints and agree whether to investigate another priority, reschedule or reduce reserved capacity.",
+            "At Koupoli, you work directly with me, Karlo Riđan. Clarify which tasks I handle and which require your developer or another specialist. Google's hiring guidance encourages clear explanations of changes and their reasoning. Access for diagnosis and permission to change a site should be agreed separately; neither implies permission for every possible action."
+          ],
+          "link": {
+            "before": "Discuss the relevant systems and execution boundaries through ",
+            "href": "/services/technical-seo-ai-search/",
+            "label": "Koupoli's technical SEO and AI search service",
+            "after": "."
+          }
+        },
+        {
+          "heading": "Check the agreement and compare cost by scope",
+          "paragraphs": [
+            "Use the proposal to resolve practical questions before committing. This is an operational buying checklist, not legal advice. Seek qualified advice where contractual wording needs interpretation."
+          ],
+          "list": [
+            "What term, renewal process, cancellation notice and exit handover apply?",
+            "What capacity or outputs are reserved, and what happens to unused capacity or overruns?",
+            "Who approves priorities and changes, and how often are decisions reviewed?",
+            "Does the scope cover advice, implementation, release checks or a specified combination?",
+            "Who owns deliverables and accounts, and are tool licences or exports included?",
+            "Which systems, tasks, response arrangements and exclusions are explicitly named?"
+          ],
+          "link": {
+            "before": "Cost follows reserved capacity, system complexity and execution scope. Compare those responsibilities, not just a monthly number. There is no universal fee or minimum term, and a price does not establish a response-time commitment. For provider responsibilities, read ",
+            "href": "/post/seo-consultant-vs-agency/",
+            "label": "SEO consultant vs agency",
+            "after": "."
+          }
+        },
+        {
+          "heading": "When to stop, reduce or change the retainer",
+          "paragraphs": [
+            "Revisit the arrangement when priority work is finished, releases become infrequent or an internal owner can take over. A smaller review allocation or project may fit better. If development is unavailable, repeatedly reserving unused capacity may not solve that constraint.",
+            "Change scope when the system, risks or implementation owner changes. Stop when recurring work no longer supports an agreed need, or explanations and validated delivery remain missing after a clear review. Follow the agreed cancellation process and retain the backlog, evidence and access handover. One quiet search month alone is not a reason to declare success or failure."
+          ]
+        }
+      ],
+      "note": {
+        "slug": "seo-consultant-vs-agency",
+        "label": "SEO consultant vs agency",
+        "description": "Compare direct specialist responsibility with an agency arrangement, including who actually plans, implements and reviews the work."
+      },
+      "related": [
+        "technical-seo-audit",
+        "technical-seo",
+        "search-visibility"
+      ],
+      "sourcesLabel": "Sources and further reading",
+      "sources": [
+        {
+          "label": "Google Search Central: Do you need an SEO?",
+          "href": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo"
+        },
+        {
+          "label": "Google Search Console: Performance report overview and basic setup",
+          "href": "https://support.google.com/webmasters/answer/7576553?hl=en"
+        },
+        {
+          "label": "Google Search Central: Creating helpful, reliable, people-first content",
+          "href": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+        },
+        {
+          "label": "ClearBrand: SEO retainer definition and agreement questions",
+          "href": "https://clearbrand.com/blog/seo-retainer"
+        }
+      ],
+      "resource": {
+        "label": "Download the retainer scope and monthly delivery record",
+        "href": "/downloads/seo-retainer-delivery-record.md"
+      },
+      "glossaryLabel": "Explore the glossary",
+      "glossaryDescription": "Find practical definitions of technical SEO and search visibility terms.",
+      "contactLabel": "Discuss a defined scope",
+      "contactDescription": "Bring your priority tasks, release schedule and implementation constraints to a conversation with Karlo Riđan."
+    },
     "search-visibility": {
       key: "search-visibility",
       slug: "search-visibility",
@@ -725,6 +1028,309 @@ export const glossaryGuides: Record<GlossaryGuideLocale, Record<GlossaryGuideKey
     },
   },
   hr: {
+    "technical-seo-audit": {
+      "key": "technical-seo-audit",
+      "slug": "tehnicka-seo-analiza",
+      "path": "/hr/pojmovnik/tehnicka-seo-analiza/",
+      "title": "Tehnička SEO analiza: opseg, provjere i rezultati rada",
+      "updated": {
+        "date": "17. studenoga 2026.",
+        "iso": "2026-11-17"
+      },
+      "metaTitle": "Tehnička SEO analiza: provjere i rezultati rada | Koupoli",
+      "metaDescription": "Saznajte što obuhvaća tehnička SEO analiza, koji su pristupi potrebni te kako nalaze pretvoriti u razvojne zadatke i provjeriti provedene ispravke.",
+      "kicker": "Vodič iz pojmovnika",
+      "lead": "Tehnička SEO analiza otkriva probleme koji utječu na pronalaženje, dohvaćanje, renderiranje i indeksiranje web-stranica te potvrđene nalaze pretvara u prioritizirane zadatke. Njezina je vrijednost jasna uputa za provedbu, a ne velika zbirka upozorenja iz alata.",
+      "image": "/assets/koupoli-guide-technical-seo-audit.webp",
+      "imageAlt": "Dijagram tehničke SEO analize koji povezuje prioritetne URL-ove, dokaze iz dohvaćanja i renderiranja te razvojne zadatke",
+      "definitionLabel": "Radna definicija",
+      "definition": "Tehnička SEO analiza, odnosno technical SEO audit, istražuje tehničke temelje web-stranice unutar dogovorenog opsega. Provjere uzorka stranica povezuje s dostupnim podacima kako bi objasnila problem, njegovu važnost i način provjere ispravka.",
+      "signalsLabel": "Što prvo provjeriti",
+      "signals": [
+        "Odaberite važne stranice i provjerite odgovor poslužitelja, pristup robotima, upute za indeksiranje i kanonski URL.",
+        "Usporedite izvorni i renderirani HTML te provjerite dostupnost glavnog sadržaja i poveznica s atributom href bez korisničke interakcije.",
+        "Za svaki prioritetni nalaz tražite dokaz, zahvaćene URL-ove, odgovornu osobu i test prihvaćanja."
+      ],
+      "sections": [
+        {
+          "heading": "Što obuhvaća tehnička SEO analiza",
+          "paragraphs": [
+            "Opća SEO analiza može obuhvatiti potražnju, sadržaj, konkurenciju i vanjske poveznice. Tehnička analiza provjerava strukturu i isporuku: mogu li tražilice dosegnuti važne stranice, razumjeti ih i razmotriti za indeksiranje? Provjere predložaka mogu uključiti naslove i strukturirane podatke, ali ne zamjenjuju strategiju sadržaja.",
+            "Prije naručivanja odredite pitanje na koje analiza treba odgovoriti. Provjera prije objave, neobjašnjeni problem s indeksiranjem i procjena migracije traže različite dokaze i granice opsega."
+          ],
+          "link": {
+            "before": "Za odabir načina suradnje pročitajte ",
+            "href": "/hr/post/seo-audit-vs-ongoing-technical-seo/",
+            "label": "SEO analiza ili kontinuirana tehnička SEO podrška",
+            "after": "."
+          }
+        },
+        {
+          "heading": "Odaberite koristan uzorak i dogovorite pristupe",
+          "paragraphs": [
+            "Počnite od stranica koje podržavaju upite, prodaju ili planiranu objavu. U trgovini uzorkujte kategorije, proizvode, filtre i paginaciju. Kod uslužne djelatnosti uključite predloške usluga i lokacija. Dodajte iznimke i zabilježite granice uzorka.",
+            "Zatražite pristup Google Search Consoleu i GA4 analitici ako je dostupna. Podaci iz pretraživanja pomažu istražiti indeksiranje, a analitika odrediti poslovne prioritete. Usporedite dohvaćanje izvornog HTML-a s renderiranim provjerama. Ako su dostavljeni poslužiteljski zapisnici, istražite stvarne zahtjeve robota. Nedostupne podatke zabilježite umjesto nagađanja. Dogovorite sigurno opterećenje pri dohvaćanju i pristup testnom okruženju ako je potreban."
+          ],
+          "link": {
+            "before": "O tom opsegu možete razgovarati kroz Koupolijevu ",
+            "href": "/hr/usluge/seo-optimizacija/",
+            "label": "uslugu SEO optimizacije",
+            "after": "."
+          }
+        },
+        {
+          "heading": "Razlikujte dohvaćanje, noindex i kanonske signale",
+          "paragraphs": [
+            "Robots.txt ograničava dohvaćanje. Ne uklanja pouzdano URL iz rezultata pretraživanja. Uputa noindex traži isključivanje stranice iz Googleova indeksa, ali Google mora moći dohvatiti stranicu da bi pročitao uputu. Provjerite robots oznake u HTML-u i HTTP zaglavlja. Oznaka alata da je stranica prikladna za indeksiranje nije dokaz da je u indeksu.",
+            "Kanonska oznaka predlaže poželjnu verziju dupliciranog ili vrlo sličnog sadržaja. Ona je signal, a ne zajamčeni odabir ni ograničenje pristupa. Usporedite deklarirani URL s Googleovim odabirom gdje postoje podaci. Riješite proturječna odredišta i nenamjerni noindex na važnim stranicama. Nisu svi isključeni URL-ovi pogreška; neka su isključivanja namjerna."
+          ]
+        },
+        {
+          "heading": "Provjerite putove do URL-ova i jezične verzije",
+          "paragraphs": [
+            "Preusmjeravanja, neispravne poveznice i stranice bez internih poveznica pregledajte zajedno s arhitekturom web-stranice. Važne stranice trebaju relevantne poveznice s drugih stranica. Poveznice ažurirajte na konačno odredište umjesto oslanjanja na lance preusmjeravanja. Uklonjene stranice trebaju vratiti odgovarajući odgovor, a ne uspješan status uz prazan sadržaj.",
+            "XML karte web-stranice trebaju sadržavati željene kanonske URL-ove namijenjene indeksiranju, ali ne zamjenjuju navigaciju. Na višejezičnim stranicama provjerite hreflang odredišta i uzajamne reference zajedno s kanonskim oznakama i jezikom sadržaja. Jezične alternative ne smiju proturječiti željenim verzijama za indeksiranje."
+          ],
+          "link": {
+            "before": "Za kontekst migracije pogledajte ",
+            "href": "/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/",
+            "label": "primjer migracije web-stranice za više tržišta",
+            "after": "."
+          }
+        },
+        {
+          "heading": "Pregledajte sadržaj i poveznice prije i nakon renderiranja",
+          "paragraphs": [
+            "Usporedite izvorni HTML koji šalje poslužitelj s HTML-om nastalim nakon izvršavanja JavaScripta. Provjerite naslove, informacije o proizvodima ili uslugama, kanonske oznake i navigaciju. Sama snimka zaslona ne pokazuje koji sadržaj i poveznice robot može obraditi.",
+            "Google može renderirati JavaScript i otkrivati dodane poveznice; prikaz na klijentskoj strani nije automatski prepreka indeksiranju. Provjerite sadržaj bez korisničke interakcije, elemente a s valjanim href odredištima, dostupnost skripti i reprezentativne podatke iz pregleda URL-a. Sadržaj u izvornom odgovoru smanjuje ovisnost o renderiranju; gdje je primjereno, navedite to kao dogovoreni zahtjev projekta."
+          ]
+        },
+        {
+          "heading": "Razlikujte podatke stvarnih korisnika i laboratorijske testove",
+          "paragraphs": [
+            "Core Web Vitals prate učitavanje, odziv na interakcije i vizualnu stabilnost kroz LCP, INP i CLS. Ako postoje, počnite s podacima stvarnih korisnika u Search Consoleu ili PageSpeed Insightsu. Prije zaključka o predlošku provjerite odnose li se podaci na konkretan URL ili šire na web-mjesto.",
+            "Laboratorijski testovi koriste kontrolirane uvjete i pomažu pronaći uzroke poput kasnog učitavanja resursa ili pomicanja elemenata. Ne zamjenjuju podatke stvarnih korisnika, a jedna Lighthouse ocjena ne predviđa uspjeh u pretraživanju. Ako stvarnih podataka nema, to navedite. Nakon ispravka ponovljivi test daje neposrednu usporedbu, dok podacima stvarnih posjeta treba vrijeme da pokažu promjenu."
+          ]
+        },
+        {
+          "heading": "Pretvorite nalaze u zadatke spremne za razvoj",
+          "paragraphs": [
+            "Svaki zadatak treba navesti zahvaćene URL-ove ili predložak, ponovljiv dokaz, očekivano ponašanje i test prihvaćanja. Dodajte odgovornu osobu, očekivani poslovni utjecaj, procjenu napora i ovisnosti. Potvrđene pogreške odvojite od pitanja za daljnje istraživanje. Zajedničke uzroke objedinite kako razvojni programer ne bi dobio stotine istih upozorenja.",
+            "Hipotetski primjer, ne rezultat Koupolijeva klijenta: navigacija na /shop/ nema href poveznice prema kategorijama ni u izvornom ni u renderiranom HTML-u prije interakcije. Odredišta se pojavljuju tek nakon klika na izbornik. Uzorak uključuje /shop/shoes/ i /shop/bags/."
+          ],
+          "list": [
+            "Dokaz i očekivanje: priložite HTML isječke; kao dogovoreno ponašanje predloška tražite poveznice kategorija u izvornom HTML-u uz očuvanu interakciju izbornika.",
+            "Odgovornost i prioritet: zadatak dodijelite frontend programeru. Utjecaj je nedostajući put otkrivanja komercijalnih kategorija, ne prognoza rasta prometa. Procjenu napora daje programer; zajednička navigacijska komponenta je ovisnost.",
+            "Test prihvaćanja: dohvatite /shop/ bez JavaScripta i pronađite valjane poveznice kategorija; potvrdite status 200 na odredištima, zatim ponovite renderiranu provjeru i test izbornika."
+          ]
+        },
+        {
+          "heading": "Dogovorite isporuku i provjerite provedbu",
+          "paragraphs": [
+            "Ciljana analiza odgovara jasno omeđenom problemu kada postoji osoba koja može provesti nalaze. Kontinuirana podrška ima smisla uz česte objave, promjene predložaka ili popis zadataka koji traži stalno određivanje prioriteta i ponovno testiranje. Oba pristupa zahtijevaju razvojne kapacitete.",
+            "Rok i cijena ovise o predlošcima, tržištima, renderiranju, pristupima i dubini istraživanja, ne samo o broju URL-ova. Prije ponude dogovorite opseg, izuzeća, predaju i provjeru nalaza. Izvještaj, provedba i provjere nakon objave zasebne su obveze. Koupoli je samostalna praksa Karla Riđana; ovdje nema fiksne cijene ni zajamčenog roka.",
+            "Zadatke zatvorite ponavljanjem testova prihvaćanja na objavljenoj web-stranici. Provjerite povezane predloške zbog novih pogrešaka i pratite dostupne podatke Search Consolea nakon ponovnog dohvaćanja. Tehnički ispravan zahvat ne jamči indeksiranje, pozicije ni citiranje u AI odgovorima."
+          ],
+          "link": {
+            "before": "Za trajni angažman pogledajte vodič ",
+            "href": "/hr/pojmovnik/kontinuirana-seo-suradnja/",
+            "label": "Kontinuirana SEO suradnja",
+            "after": "."
+          }
+        }
+      ],
+      "note": {
+        "slug": "seo-audit-vs-ongoing-technical-seo",
+        "label": "SEO analiza ili kontinuirana tehnička SEO podrška",
+        "description": "Usporedite ciljanu analizu s kontinuiranom podrškom pri provedbi, uz opseg, odgovornosti i naknadne provjere."
+      },
+      "related": [
+        "technical-seo",
+        "seo-retainer",
+        "structured-data"
+      ],
+      "sourcesLabel": "Izvori",
+      "sources": [
+        {
+          "label": "Google Search Central: Održavanje SEO temelja web-stranice",
+          "href": "https://developers.google.com/search/docs/fundamentals/get-started"
+        },
+        {
+          "label": "Google Search Central: Osnove JavaScript SEO-a",
+          "href": "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics"
+        },
+        {
+          "label": "Google Search Central: Kanonski URL-ovi",
+          "href": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls"
+        },
+        {
+          "label": "Google Search Central: Razumijevanje Core Web Vitals pokazatelja",
+          "href": "https://developers.google.com/search/docs/appearance/core-web-vitals"
+        },
+        {
+          "label": "Google web.dev: Alati za mjerenje Core Web Vitals pokazatelja",
+          "href": "https://web.dev/articles/vitals-tools"
+        }
+      ],
+      "glossaryLabel": "Istražite pojmovnik",
+      "glossaryDescription": "Pronađite objašnjenja tehničkih SEO pojmova koji se koriste u analizi.",
+      "contactLabel": "Razgovarajmo o opsegu analize",
+      "contactDescription": "Pošaljite Karlu web-stranicu, prioritetne stranice i tehničko pitanje za dogovor početnog opsega.",
+      "resource": {
+        "label": "Preuzmite predložak opsega analize i zadatka za provedbu",
+        "href": "/downloads/tehnicka-seo-analiza-opseg-i-zadatak.md"
+      }
+    },
+    "seo-retainer": {
+      "key": "seo-retainer",
+      "slug": "kontinuirana-seo-suradnja",
+      "path": "/hr/pojmovnik/kontinuirana-seo-suradnja/",
+      "title": "Kontinuirana SEO suradnja: Opseg i odgovornosti",
+      "updated": {
+        "date": "17. studenoga 2026.",
+        "iso": "2026-11-17"
+      },
+      "metaTitle": "Kontinuirana SEO suradnja: Opseg i odgovornosti | Koupoli",
+      "metaDescription": "Saznajte što obuhvaća kontinuirana SEO suradnja, kako se dogovaraju mjesečni prioriteti i provjeravaju izmjene te koje uvjete i odgovornosti treba razjasniti.",
+      "kicker": "Vodič kroz pojmovnik",
+      "lead": "Kontinuirana SEO suradnja dogovor je o redovitom SEO radu u unaprijed određenom opsegu. Treba jasno odrediti prioritete, odgovornosti za provedbu i način provjere, a ne obećavati neograničenu podršku ili zajamčene pozicije u pretraživanju.",
+      "image": "/assets/koupoli-guide-seo-retainer.webp",
+      "imageAlt": "Tijek kontinuirane SEO suradnje od dogovorenih prioriteta i provedbe do provjera objave i mjesečnog pregleda",
+      "definitionLabel": "Što pojam znači u praksi",
+      "definition": "Kontinuirana SEO suradnja, poznata i pod engleskim nazivom SEO retainer, rezervira dogovoreni kapacitet ili redovite isporuke uz ponavljajuću naknadu. Dogovor određuje kako se biraju zadaci, tko ih provodi, kako se provjerava dovršeni rad i kada se preispituje opseg. Sama mjesečna uplata ne određuje te odgovornosti.",
+      "signalsLabel": "Što jasan dogovor treba pokazati",
+      "signals": [
+        "Odobreni prioriteti stanu u raspoloživi kapacitet, a svaki zadatak ima imenovanu odgovornu osobu.",
+        "Preporuka, provedba i provjera na objavljenom webu bilježe se kao odvojene faze.",
+        "Pregled rada odvaja provjerene izmjene od pokazatelja pretraživanja i objašnjava zastoje ili odgode."
+      ],
+      "sections": [
+        {
+          "heading": "Redovita odgovornost, a ne samo unaprijed plaćeni sati",
+          "paragraphs": [
+            "Projekt ima određen završetak, primjerice provjeru migracije. Unaprijed plaćeni sati služe za dogovorene zahtjeve dok se ne potroše. I kontinuirana suradnja može se obračunavati prema satima, ali odgovornost za prioritete i redovite provjere mora biti izričito dogovorena. Naziv usluge nije dovoljan da se ona podrazumijeva.",
+            "Važno je što se događa između pojedinačnih zahtjeva. Održava li netko odobreni popis zadataka, pregledava planirane objave i vraća se neriješenim problemima? To nije isto što i čekanje da klijent iskoristi kupljene sate. Nijedan model sam po sebi ne uključuje neograničenu dostupnost, neograničen broj popravaka ili dežurstvo za hitne slučajeve."
+          ],
+          "link": {
+            "before": "Za odluku između jednokratne procjene i redovitog rada pročitajte ",
+            "href": "/hr/post/seo-audit-vs-ongoing-technical-seo/",
+            "label": "SEO analiza ili kontinuirana tehnička SEO podrška",
+            "after": "."
+          }
+        },
+        {
+          "heading": "Odredite posao i odgovornost za isporuku",
+          "paragraphs": [
+            "Tehnički usmjerena suradnja može obuhvatiti predloške kategorija, preusmjeravanja, kanonske URL-ove, interne poveznice i provjere pri objavi izmjena. Navedite sustave i vrste stranica na koje se dogovor odnosi. Zadatak s uputom za popravak nije isto što i provedena izmjena, a provedena izmjena nije isto što i provjereno ponašanje na objavljenom webu.",
+            "Širi dogovori mogu uključivati pisanje sadržaja ili kontaktiranje drugih izdavača radi suradnje i poveznica. Za to treba posebno odrediti opseg i odgovorne osobe. Googleove smjernice prednost daju sadržaju korisnom čitateljima, a ne objavljivanju radi kvote. Članci, pribavljanje poveznica i posebni strukturirani podaci nisu automatski uključeni. Dogovorite i kome ostaju istraživanja, zadaci, kod i računi nakon završetka suradnje."
+          ],
+          "link": {
+            "before": "Kako se utvrđuju početni nalazi objašnjava vodič ",
+            "href": "/hr/pojmovnik/tehnicka-seo-analiza/",
+            "label": "Tehnička SEO analiza",
+            "after": "."
+          }
+        },
+        {
+          "heading": "Kako izgleda dogovoreni mjesec rada",
+          "paragraphs": [
+            "Na početku razdoblja usporedite otvorene zadatke s poslovnim prioritetima, dostupnim podacima i planiranim objavama. Odobrite izvediv skup zadataka, odgovorne osobe i kriterije prihvaćanja. Predvidite i vrijeme za istraživanje: reproduciranje povremene pogreške može biti dogovorena isporuka prije nego što se može opisati popravak. Novi hitan zahtjev treba izričito zamijeniti neki prioritet ili dobiti dodatno odobrenje.",
+            "Prije objave provjerite predloženu izmjenu prema dogovorenim kriterijima u dostupnom testnom okruženju. Nakon objave provjerite relevantno ponašanje na stvarnim stranicama i zabilježite datum. Mjesečni pregled treba pokazati dovršene, blokirane i odgođene zadatke, dokaze provjere i sljedeće odluke. Provjere prilagodite riziku izmjene. Potpuni pregled svih URL-ova svakog mjeseca nije univerzalna obveza."
+          ]
+        },
+        {
+          "heading": "Hipotetski primjer mjeseca za internetsku trgovinu",
+          "paragraphs": [
+            "Zamislimo trgovinu koja priprema izmjenu navigacije. Predložak kategorije pogrešno postavlja kanonski URL na drugu kategoriju. U ovom hipotetskom mjesecu odobreni su reproduciranje pogreške, utvrđivanje zahvaćenih predložaka i opis ispravnog ponašanja kanonskih URL-ova. Nepovezani zahtjevi za izmjene tekstova ostaju izvan mjesečnih prioriteta.",
+            "Razvojni programer provodi popravak. SEO konzultant provjerava reprezentativne kategorije prije objave, a nakon nje njihove kanonske URL-ove i poveznice u navigaciji. Preostali dogovoreni kapacitet koristi se za praćenje objave i istraživanje mogućeg ponavljanja pogreške. Mjesečna evidencija može dokumentirati problem, odobreni popravak, objavu i provjere. Bez dokaza ne može tvrditi da su prodaja ili pozicije porasle. Primjer prikazuje način rada, a ne rezultat Koupolijeva klijenta."
+          ]
+        },
+        {
+          "heading": "Odvojite provedeni rad od rezultata pretraživanja",
+          "paragraphs": [
+            "Najprije prikažite što je dovršeno i provjereno: zahvaćene URL-ove, očekivano ponašanje, datum objave i dokaze provjere. Preporuku koja čeka razvoj nemojte prikazati kao objavljenu izmjenu. I dovršeno istraživanje može biti vrijedno ako pokaže da predloženi popravak nije potreban ili utvrdi što sprječava napredak.",
+            "Zatim pratite relevantne upite i stranice. Search Console prikazuje klikove, pojavljivanja u rezultatima, stopu klikanja i prosječnu poziciju. Usporedite prikladna razdoblja i skupine, umjesto da prosjek cijelog weba predstavlja sve rezultate. Upite potencijalnih klijenata, narudžbe i druge konverzije pratite kroz zasebno postavljenu analitiku ili poslovnu evidenciju. Uzmite u obzir sezonalnost, dostupnost proizvoda i istodobne kampanje. Promjena nakon objave sama ne dokazuje uzrok. Google upozorava na jamstva pozicija; ni citiranje u odgovorima umjetne inteligencije nije zajamčeno."
+          ]
+        },
+        {
+          "heading": "Provedba ovisi i o klijentu i razvoju",
+          "paragraphs": [
+            "Klijent treba odrediti osobu koja odobrava rad, omogućiti odgovarajuće pristupe i osigurati vrijeme svojih razvojnih programera kada oni provode izmjene. Sporo odobravanje, nedostupno testno okruženje ili zaustavljene objave mogu spriječiti provedbu. Zabilježite ograničenje pa dogovorite drugi prioritet, odgodu ili smanjenje rezerviranog kapaciteta.",
+            "U Koupoliju radite izravno sa mnom, Karlom Riđanom. Razjasnite koje zadatke obavljam osobno, a za koje trebate svojeg programera ili drugog stručnjaka. Googleove smjernice za odabir SEO stručnjaka potiču jasna objašnjenja izmjena i njihovih razloga. Pristup za dijagnostiku i ovlast za mijenjanje weba dogovaraju se zasebno. Nijedno ne znači dopuštenje za sve moguće zahvate."
+          ],
+          "link": {
+            "before": "Opseg sustava i granice provedbe možete razjasniti kroz ",
+            "href": "/hr/usluge/seo-optimizacija/",
+            "label": "Koupolijevu uslugu SEO optimizacije",
+            "after": "."
+          }
+        },
+        {
+          "heading": "Provjerite dogovor i usporedite cijenu prema opsegu",
+          "paragraphs": [
+            "Prije prihvaćanja ponude razjasnite praktične uvjete. Ovo je popis pitanja za kupnju usluge, a ne pravni savjet. Za tumačenje ugovornih odredbi po potrebi zatražite stručnu pravnu pomoć."
+          ],
+          "list": [
+            "Koliko suradnja traje, kako se obnavlja i koji su rok otkazivanja i način predaje rada?",
+            "Koji kapacitet ili isporuke rezervirate te što vrijedi za neiskorišteni kapacitet i prekoračenja?",
+            "Tko odobrava prioritete i izmjene te koliko se često pregledavaju odluke?",
+            "Obuhvaća li dogovor savjetovanje, provedbu, provjere objave ili određenu kombinaciju?",
+            "Kome pripadaju isporuke i računi te jesu li uključene licence alata ili izvoz podataka?",
+            "Koji su sustavi, zadaci, uvjeti dostupnosti i isključenja izričito navedeni?"
+          ],
+          "link": {
+            "before": "Cijenu određuju rezervirani kapacitet, složenost sustava i opseg provedbe. Usporedite odgovornosti, a ne samo mjesečni iznos. Ne postoji univerzalna naknada ni minimalno trajanje, a sama cijena ne određuje rok odgovora. Za podjelu odgovornosti pročitajte ",
+            "href": "/hr/post/seo-consultant-vs-agency/",
+            "label": "SEO konzultant ili agencija",
+            "after": "."
+          }
+        },
+        {
+          "heading": "Kada smanjiti, promijeniti ili završiti suradnju",
+          "paragraphs": [
+            "Preispitajte dogovor kada su prioritetni zadaci dovršeni, objave postanu rijetke ili odgovornost može preuzeti netko unutar tvrtke. Manji opseg periodičnih provjera ili zaseban projekt tada može bolje odgovarati potrebi. Ako kapacitet redovito ostaje neiskorišten jer razvoj nije dostupan, nastavak iste rezervacije ne mora riješiti stvarni problem.",
+            "Promijenite opseg kada se promijene sustav, rizici ili odgovornost za provedbu. Završite suradnju kada redoviti rad više ne služi dogovorenoj potrebi ili nakon jasnog pregleda i dalje nedostaju objašnjenja i provjerene isporuke. Slijedite dogovoreni postupak otkazivanja i preuzmite zadatke, dokaze te pristupe. Jedan mjesec bez većih promjena u pretraživanju sam po sebi nije dokaz uspjeha ni neuspjeha."
+          ]
+        }
+      ],
+      "note": {
+        "slug": "seo-consultant-vs-agency",
+        "label": "SEO konzultant ili agencija",
+        "description": "Usporedite izravnu odgovornost samostalnog stručnjaka s agencijskim modelom i razjasnite tko planira, provodi i provjerava rad."
+      },
+      "related": [
+        "technical-seo-audit",
+        "technical-seo",
+        "search-visibility"
+      ],
+      "sourcesLabel": "Izvori i dodatno čitanje",
+      "sources": [
+        {
+          "label": "Google Search Central: Trebate li SEO stručnjaka?",
+          "href": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo"
+        },
+        {
+          "label": "Google Search Console: Pregled izvješća o izvedbi i osnovne postavke",
+          "href": "https://support.google.com/webmasters/answer/7576553?hl=en"
+        },
+        {
+          "label": "Google Search Central: Stvaranje korisnog i pouzdanog sadržaja za ljude",
+          "href": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+        },
+        {
+          "label": "ClearBrand: Definicija kontinuirane SEO suradnje i pitanja o dogovoru",
+          "href": "https://clearbrand.com/blog/seo-retainer"
+        }
+      ],
+      "resource": {
+        "label": "Preuzmite predložak opsega suradnje i mjesečne isporuke",
+        "href": "/downloads/zapis-kontinuirane-seo-suradnje.md"
+      },
+      "glossaryLabel": "Istražite pojmovnik",
+      "glossaryDescription": "Pronađite praktična objašnjenja pojmova tehničkog SEO-a i vidljivosti u pretraživanju.",
+      "contactLabel": "Razgovarajmo o jasnom opsegu rada",
+      "contactDescription": "Pripremite prioritetne zadatke, raspored objava i ograničenja provedbe za razgovor s Karlom Riđanom."
+    },
     "search-visibility": {
       key: "search-visibility",
       slug: "vidljivost-u-pretrazi",

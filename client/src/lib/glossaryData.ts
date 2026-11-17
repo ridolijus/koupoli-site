@@ -51,7 +51,7 @@ export const glossaryContent: Record<GlossaryLocale, GlossaryContent> = {
       ai: { label: "AI search", summary: "The language used to discuss visibility in generative and answer-driven search." },
     },
     figures: [
-      { value: "34", label: "English terms" },
+      { value: "36", label: "English terms" },
       { value: "3", label: "Connected disciplines" },
       { value: "1", label: "Practical vocabulary" },
     ],
@@ -65,6 +65,8 @@ export const glossaryContent: Record<GlossaryLocale, GlossaryContent> = {
       { href: "/contact/", title: "Plan an organic launch", description: "Bring a launch, growth question, or technical constraint to a focused first conversation." },
     ],
     terms: [
+      { term: "Technical SEO Audit", definition: "A scoped investigation of how a website is crawled, indexed and rendered, resulting in evidenced priorities, implementation tasks and verification steps.", category: "technical", guidePath: "/glossary/technical-seo-audit/" },
+      { term: "SEO Retainer", definition: "A recurring agreement for defined SEO work and capacity, with agreed priorities, implementation ownership and a record of completed and verified changes.", category: "technical", guidePath: "/glossary/seo-retainer/" },
       { term: "AI Citations", definition: "References or source links used in an AI-generated answer. Their presence can show that a source informed the answer, but it does not replace a complete measurement of commercial visibility.", category: "ai" },
       { term: "AI Mode", definition: "Google's conversational search experience that can combine a query with follow-up questions, web results, and generated responses. It still depends on useful, crawlable source material.", category: "ai" },
       { term: "AI Overviews", definition: "Generated summaries that can appear in Google Search for some queries. They are built from Google's search systems and do not require a special AI-only content format.", category: "ai" },
@@ -120,7 +122,7 @@ export const glossaryContent: Record<GlossaryLocale, GlossaryContent> = {
       ai: { label: "AI pretraga", summary: "Pojmovi koji objašnjavaju vidljivost u generativnoj pretrazi i odgovorima." },
     },
     figures: [
-      { value: "24", label: "hrvatska pojma" },
+      { value: "26", label: "hrvatskih pojmova" },
       { value: "3", label: "povezana područja" },
       { value: "1", label: "praktičan rječnik" },
     ],
@@ -134,6 +136,8 @@ export const glossaryContent: Record<GlossaryLocale, GlossaryContent> = {
       { href: "/contact/", title: "Isplanirajte organsko lansiranje", description: "Donesite lansiranje, pitanje rasta ili tehničku prepreku u prvi usmjereni razgovor." },
     ],
     terms: [
+      { term: "Tehnička SEO analiza", definition: "Analiza dogovorenog opsega koja provjerava kako se web-stranica crawla, indeksira i prikazuje te pretvara nalaze u potkrijepljene prioritete, zadatke za provedbu i provjere.", category: "technical", guidePath: "/hr/pojmovnik/tehnicka-seo-analiza/" },
+      { term: "Kontinuirana SEO suradnja", definition: "Redoviti angažman za dogovoreni SEO rad i kapacitet, uz jasne prioritete, odgovornosti za provedbu i zapis dovršenih i provjerenih izmjena.", category: "technical", guidePath: "/hr/pojmovnik/kontinuirana-seo-suradnja/" },
       { term: "AI citati", definition: "Reference ili poveznice na izvore koje se pojavljuju u odgovoru generiranom umjetnom inteligencijom. Mogu pokazati da je izvor utjecao na odgovor, ali nisu potpuna mjera poslovne vidljivosti.", category: "ai" },
       { term: "AI Overviews", definition: "Generativni sažeci koji se mogu pojaviti u Google Pretraživanju za određene upite. Temelje se na Googleovim sustavima pretraživanja i ne traže poseban AI format sadržaja.", category: "ai" },
       { term: "AI SEO", definition: "Korisna skraćenica za SEO rad koji uzima u obzir vidljivost u odgovorima generiranim umjetnom inteligencijom. Nije odvojen od tehničke kvalitete, originalnih informacija i dobrih SEO temelja.", category: "ai" },

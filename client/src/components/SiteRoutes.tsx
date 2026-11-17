@@ -120,6 +120,14 @@ export function SiteRoutes({ pages }: { pages: SitePages }) {
       <Route path="/post/seo-consultant-vs-agency/"><BlogPost slug="seo-consultant-vs-agency" /></Route>
       <Route path="/hr/post/seo-consultant-vs-agency"><BlogPost locale="hr" slug="seo-consultant-vs-agency" /></Route>
       <Route path="/hr/post/seo-consultant-vs-agency/"><BlogPost locale="hr" slug="seo-consultant-vs-agency" /></Route>
+      <Route path="/glossary/technical-seo-audit"><GlossaryGuide guideKey="technical-seo-audit" /></Route>
+      <Route path="/glossary/technical-seo-audit/"><GlossaryGuide guideKey="technical-seo-audit" /></Route>
+      <Route path="/hr/pojmovnik/tehnicka-seo-analiza"><GlossaryGuide locale="hr" guideKey="technical-seo-audit" /></Route>
+      <Route path="/hr/pojmovnik/tehnicka-seo-analiza/"><GlossaryGuide locale="hr" guideKey="technical-seo-audit" /></Route>
+      <Route path="/glossary/seo-retainer"><GlossaryGuide guideKey="seo-retainer" /></Route>
+      <Route path="/glossary/seo-retainer/"><GlossaryGuide guideKey="seo-retainer" /></Route>
+      <Route path="/hr/pojmovnik/kontinuirana-seo-suradnja"><GlossaryGuide locale="hr" guideKey="seo-retainer" /></Route>
+      <Route path="/hr/pojmovnik/kontinuirana-seo-suradnja/"><GlossaryGuide locale="hr" guideKey="seo-retainer" /></Route>
       <Route><Home /></Route>
     </Switch>
   );

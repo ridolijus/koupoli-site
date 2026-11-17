@@ -7,6 +7,10 @@ import AppStatic from "../client/src/AppStatic";
 const output = path.resolve("dist/public");
 const template = fs.readFileSync(path.join(output, "index.html"), "utf8");
 const routes = [
+  "/glossary/technical-seo-audit/",
+  "/hr/pojmovnik/tehnicka-seo-analiza/",
+  "/glossary/seo-retainer/",
+  "/hr/pojmovnik/kontinuirana-seo-suradnja/",
   "/glossary/search-visibility/",
   "/hr/pojmovnik/vidljivost-u-pretrazi/",
   "/glossary/structured-data/",
