@@ -41,6 +41,8 @@ const downloads = [
   "/downloads/scorecard-vidljivosti-u-ai-pretrazi.md",
 ];
 const pages = [
+  ["/post/seo-consultant-vs-agency/", "BlogPosting", "/hr/post/seo-consultant-vs-agency/"],
+  ["/hr/post/seo-consultant-vs-agency/", "BlogPosting", "/post/seo-consultant-vs-agency/"],
   ["/post/seo-audit-vs-ongoing-technical-seo/", "BlogPosting", "/hr/post/seo-audit-vs-ongoing-technical-seo/"],
   ["/hr/post/seo-audit-vs-ongoing-technical-seo/", "BlogPosting", "/post/seo-audit-vs-ongoing-technical-seo/"],
   ["/glossary/search-visibility/", "DefinedTerm", "/hr/pojmovnik/vidljivost-u-pretrazi/"],

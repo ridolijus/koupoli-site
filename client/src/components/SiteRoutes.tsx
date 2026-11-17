@@ -116,6 +116,10 @@ export function SiteRoutes({ pages }: { pages: SitePages }) {
       <Route path="/post/seo-audit-vs-ongoing-technical-seo/"><BlogPost slug="seo-audit-vs-ongoing-technical-seo" /></Route>
       <Route path="/hr/post/seo-audit-vs-ongoing-technical-seo"><BlogPost locale="hr" slug="seo-audit-vs-ongoing-technical-seo" /></Route>
       <Route path="/hr/post/seo-audit-vs-ongoing-technical-seo/"><BlogPost locale="hr" slug="seo-audit-vs-ongoing-technical-seo" /></Route>
+      <Route path="/post/seo-consultant-vs-agency"><BlogPost slug="seo-consultant-vs-agency" /></Route>
+      <Route path="/post/seo-consultant-vs-agency/"><BlogPost slug="seo-consultant-vs-agency" /></Route>
+      <Route path="/hr/post/seo-consultant-vs-agency"><BlogPost locale="hr" slug="seo-consultant-vs-agency" /></Route>
+      <Route path="/hr/post/seo-consultant-vs-agency/"><BlogPost locale="hr" slug="seo-consultant-vs-agency" /></Route>
       <Route><Home /></Route>
     </Switch>
   );

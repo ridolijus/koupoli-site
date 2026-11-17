@@ -18,6 +18,8 @@ const glossaryTerms = {
 };
 
 const routes = [
+  {route: "/post/seo-consultant-vs-agency/", alternate: "/hr/post/seo-consultant-vs-agency/", title: "SEO Consultant vs Agency: Compare Delivery Fit | Koupoli", description: "Compare an SEO consultant vs agency by technical scope, contact, implementation and team capacity. See where Koupoli fits before requesting a scoped proposal.", lang: "en", type: "article", articleTitle: "SEO Consultant vs Agency: Where Koupoli Fits", articleImage: "/assets/koupoli-consultant-vs-agency-hero.webp", published: "2026-11-17T00:00:00+01:00", modified: "2026-11-17"},
+  {route: "/hr/post/seo-consultant-vs-agency/", alternate: "/post/seo-consultant-vs-agency/", title: "SEO stručnjak ili agencija: Usporedba za vaš tim | Koupoli", description: "Usporedite SEO stručnjaka i agenciju prema tehničkom opsegu, kontaktu, provedbi i kapacitetu tima. Provjerite kada Koupoli odgovara vašem poslu prije ponude.", lang: "hr", type: "article", articleTitle: "SEO stručnjak ili agencija: Kada odabrati Koupoli?", articleImage: "/assets/koupoli-consultant-vs-agency-hero.webp", published: "2026-11-17T00:00:00+01:00", modified: "2026-11-17"},
   {route: "/post/seo-audit-vs-ongoing-technical-seo/", alternate: "/hr/post/seo-audit-vs-ongoing-technical-seo/", title: "SEO Audit vs Ongoing Technical SEO Support | Koupoli", description: "Compare an SEO audit with ongoing technical SEO support by scope, ownership, deliverables and fees. Choose diagnosis, a focused fix or justified recurring work.", lang: "en", type: "article", articleTitle: "SEO Audit vs Ongoing Technical SEO Support", articleImage: "/assets/koupoli-seo-audit-vs-support-hero.webp", published: "2026-11-17T00:00:00+01:00", modified: "2026-11-17"},
   {route: "/hr/post/seo-audit-vs-ongoing-technical-seo/", alternate: "/post/seo-audit-vs-ongoing-technical-seo/", title: "SEO analiza ili kontinuirana tehnička SEO podrška | Koupoli", description: "Usporedite SEO analizu i kontinuiranu tehničku SEO podršku prema opsegu, provedbi i naplati. Odaberite dijagnozu, ciljanu ispravku ili opravdan redoviti rad.", lang: "hr", type: "article", articleTitle: "SEO analiza ili kontinuirana tehnička SEO podrška", articleImage: "/assets/koupoli-seo-audit-vs-support-hero.webp", published: "2026-11-17T00:00:00+01:00", modified: "2026-11-17"},
   {route: "/glossary/search-visibility/", alternate: "/hr/pojmovnik/vidljivost-u-pretrazi/", title: "Search Visibility: Meaning, Metrics and Checks | Koupoli", description: "Understand organic search visibility using Search Console impressions, clicks, CTR and position. Compare visibility indexes and diagnose changes with context.", lang: "en", type: "guide", guideTerm: "Search Visibility", articleImage: "/assets/koupoli-guide-search-visibility-system.webp"},
@@ -70,6 +72,7 @@ const routes = [
 
 const blogArticles = {
   en: [
+    ["SEO Consultant vs Agency: Where Koupoli Fits", "/post/seo-consultant-vs-agency/", "2026-11-17T00:00:00+01:00"],
     ["SEO Audit vs Ongoing Technical SEO Support", "/post/seo-audit-vs-ongoing-technical-seo/", "2026-11-17T00:00:00+01:00"],
     ["How to Implement Generative Engine Optimization: A Practical Plan", "/post/generative-engine-optimization-process/", "2026-11-02T00:00:00+01:00"],
     ["AI Search Visibility: What to Measure Before You Optimise", "/post/ai-search-visibility/", "2026-10-02T00:00:00+02:00"],
@@ -78,6 +81,7 @@ const blogArticles = {
     ["The Illusion of AI Productivity: Fast Fixes, But Real Projects Leave Most People Stuck", "/post/the-illusion-of-ai-productivity/", "2025-06-20T00:00:00+02:00"],
   ],
   hr: [
+    ["SEO stručnjak ili agencija: Kada odabrati Koupoli?", "/hr/post/seo-consultant-vs-agency/", "2026-11-17T00:00:00+01:00"],
     ["SEO analiza ili kontinuirana tehnička SEO podrška", "/hr/post/seo-audit-vs-ongoing-technical-seo/", "2026-11-17T00:00:00+01:00"],
     ["Kako provesti generativnu optimizaciju: Praktičan plan", "/hr/post/generative-engine-optimization-process/", "2026-11-02T00:00:00+01:00"],
     ["Vidljivost u AI pretrazi: Što mjeriti prije optimizacije", "/hr/post/ai-search-visibility/", "2026-10-02T00:00:00+02:00"],

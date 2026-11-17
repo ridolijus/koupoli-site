@@ -17,6 +17,264 @@ export type EditorialNote = {
 export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
   en: [
     {
+      slug: "seo-consultant-vs-agency",
+      date: "November 17, 2026",
+      updated: {
+        date: "November 17, 2026",
+        iso: "2026-11-17"
+      },
+      title: "SEO Consultant vs Agency: Where Koupoli Fits",
+      metaTitle: "SEO Consultant vs Agency: Compare Delivery Fit | Koupoli",
+      metaDescription: "Compare an SEO consultant vs agency by technical scope, contact, implementation and team capacity. See where Koupoli fits before requesting a scoped proposal.",
+      excerpt: "Choose Koupoli for an agreed technical scope with direct continuity. Choose an agency when confirmed wider team coverage and parallel work are needed. Compare the actual specialist, implementation responsibilities and capacity, not assumptions about which model is better.",
+      image: "/assets/koupoli-consultant-vs-agency-hero.webp",
+      imageAlt: "Two contrasting work arrangements illustrating an independent SEO specialist and a team-based agency",
+      imageCaption: "A specialist and an agency are different delivery models. Fit depends on the agreed work and available capacity.",
+      sections: [
+        {
+          heading: "The short answer: choose the delivery model your team needs",
+          paragraphs: [
+            "For founders, marketing leaders and developers comparing an SEO consultant vs agency, the useful question is who will deliver your next priorities, with what capacity and accountability. One specialist can follow a defined technical workstream closely; a wider team can cover several coordinated workstreams when that capacity is actually included.",
+            "Disclosure: I sell the specialist option. I am Karlo Riđan, owner and sole practitioner of Koupoli. This comparison is about fit, not a claim that my model is universally superior. Agency descriptions below use their public service pages reviewed on 17 November 2026, not my experience of hiring them.",
+            "This page answers who delivers the work. The earlier comparison answers whether to buy an audit or recurring technical support. Either engagement can be delivered by a specialist or an agency; choosing the provider does not settle the engagement scope."
+          ],
+          link: {
+            before: "For that separate buying decision, read ",
+            href: "/post/seo-audit-vs-ongoing-technical-seo/",
+            label: "SEO Audit vs Ongoing Technical SEO Support",
+            after: "."
+          }
+        },
+        {
+          heading: "SEO consultant vs agency: seven delivery criteria",
+          paragraphs: [
+            "The agency column describes possibilities to confirm, not standard inclusions. WebFX, Victorious and Delante have distinct published arrangements, described below."
+          ],
+          comparison: {
+            caption: "Compare the actual proposal and people assigned to it. An agency label alone does not establish scope, access or backup coverage.",
+            leftLabel: "Koupoli",
+            rightLabel: "Agency model",
+            rows: [
+              {
+                criterion: "Accountable person",
+                left: "I am your direct contact and the specialist responsible for my agreed work.",
+                right: "Confirm the delivery lead and contact. WebFX offers an account manager; Delante offers direct specialist contact."
+              },
+              {
+                criterion: "Technical focus",
+                left: "Crawl, indexation, rendering, migrations, performance and structured data within the agreed scope.",
+                right: "Verify the relevant technical skills. Broader SEO services vary by provider and proposal."
+              },
+              {
+                criterion: "Implementation owner",
+                left: "Agree what I handle and what your developer implements, approves and deploys.",
+                right: "Confirm whether the agency implements, prepares tasks or supports your developers; never infer this from the label."
+              },
+              {
+                criterion: "Broader-team capacity",
+                left: "One practitioner, not bundled content production, link acquisition or a multi-role delivery team.",
+                right: "Can support parallel work where the relevant specialists and their allocated capacity are confirmed."
+              },
+              {
+                criterion: "Continuity and coverage",
+                left: "Continuity with me; finite availability and key-person risk. Agree limits and handoff arrangements.",
+                right: "Ask about staffing changes, leave cover and escalation. A team does not automatically guarantee backup or speed."
+              },
+              {
+                criterion: "Fee and contract",
+                left: "Custom proposal. Confirm scope, availability, billing, additional work and exit terms.",
+                right: "Provider pricing indications or a custom proposal. Confirm the matched scope, commitment and contract terms."
+              },
+              {
+                criterion: "Best fit",
+                left: "An agreed technical scope needing direct specialist continuity and a clear implementation path.",
+                right: "Confirmed wider team coverage and simultaneous work that needs more than one person's capacity."
+              }
+            ]
+          },
+          image: {
+            src: "/assets/koupoli-consultant-agency-decision-en.webp",
+            alt: "Decision guide comparing Koupoli's specialist continuity and focused scope with an agency's confirmed team coverage and parallel work",
+            caption: "Choose the delivery arrangement, not the label. Direct specialist contact can also be available from an agency.",
+            width: 1100,
+            height: 711
+          }
+        },
+        {
+          heading: "Where my specialist scope fits",
+          paragraphs: [
+            "My main expertise is crawl access, indexation, JavaScript rendering, migrations, performance, structured data and developer handoff. I also work on organic planning and AI-search fundamentals where relevant to the brief. That is not a promise of AI citations or an automatically included full marketing programme.",
+            "I connect diagnosis, priorities, implementation tasks and agreed verification personally. That suits a team needing one person to follow a technical issue across releases without repeatedly rebuilding the context. It does not remove development dependencies or guarantee faster delivery.",
+            "A large website is not automatically too large for a specialist. A bounded migration workstream or template investigation may fit; several simultaneous workstreams may not. I need to assess platform fit, scope and availability before offering the work."
+          ],
+          link: {
+            before: "See the ",
+            href: "/services/technical-seo-ai-search/",
+            label: "Koupoli technical SEO and AI-search service",
+            after: " for my focus and agreed implementation support."
+          }
+        },
+        {
+          heading: "When confirmed agency coverage is the stronger fit",
+          paragraphs: [
+            "An agency can be the better purchase when technical changes, editorial production and other search work must progress together. WebFX and Victorious publish broader SEO scopes; Delante's reviewed technical page establishes technical-team delivery, not every possible marketing capability.",
+            "Ask which specialists are allocated to your work, what they own and which tasks can genuinely run in parallel. More people do not remove approvals, shared dependencies or release constraints. A proposal should establish usable capacity, not merely describe the agency's overall services."
+          ]
+        },
+        {
+          heading: "WebFX: broader SEO with a dedicated account manager",
+          paragraphs: [
+            "WebFX publicly describes SEO audits, ongoing action plans, technical maintenance, on-page optimisation, content creation, off-page authority work, competitor monitoring and reporting. Its technical page covers areas including speed, crawl and indexing issues, redirects, canonicalisation and structured data.",
+            "Its published contact model includes a dedicated account manager supported by SEO specialists and other team roles. This can suit a broader coordinated brief. Confirm who handles your technical questions and implementation, rather than assuming either inaccessible specialists or unlimited delivery capacity. WebFX publishes packages and custom-quote routes; review its pricing page against your scoped proposal."
+          ]
+        },
+        {
+          heading: "Victorious: enterprise SEO and cross-functional work",
+          paragraphs: [
+            "Victorious' enterprise page lists technical SEO, migrations, AEO, keyword research, on-page work, content creation and link building. It describes continuous technical work on complex sites, including architecture, navigation, internal linking and subdomains, alongside collaboration with marketing, product and engineering stakeholders.",
+            "That published breadth may fit a multi-workstream enterprise brief. The reviewed pages do not explicitly promise a named individual client contact; this does not establish that direct access is unavailable. Ask about your delivery lead and technical escalation route. Its starting-budget and enterprise pricing guidance concern different contexts, with a customised scope and quote."
+          ]
+        },
+        {
+          heading: "Delante: a technical team with direct specialist contact",
+          paragraphs: [
+            "Delante's technical SEO page describes audits with recommendations, necessary technical fixes, speed and image optimisation, migrations, structured data and monthly reporting. It also discusses JavaScript and indexation within an individual, KPI-oriented strategy.",
+            "Crucially, Delante explicitly offers contact with the technical SEO specialist working on the website, without account managers, alongside a broader technical team. Direct specialist contact is therefore not unique to Koupoli. Confirm implementation boundaries and allocated coverage. Its public pricing indications mix scopes, currencies and unclear periods, so use a custom quote rather than treating them as a comparable fixed fee."
+          ]
+        },
+        {
+          heading: "Continuity includes key-person risk",
+          paragraphs: [
+            "With Koupoli, you work with me throughout the agreed work. As a sole practitioner, I need to account for illness, leave and other commitments when agreeing availability. We should establish the coverage you need before starting, rather than assuming round-the-clock support or unlimited parallel capacity.",
+            "Before starting, agree the working cadence, response expectations and what happens if a release or my availability changes. Keep findings, decisions and open tasks accessible to your team. When dependencies block useful work or a request exceeds capacity, discuss re-scoping, pausing or handing it over rather than assuming automatic continuation. Any handoff needs an agreed recipient and access.",
+            "Ask an agency the equivalent questions: who covers absences, retains the context and handles escalation? A larger organisation can provide cover, but your proposal must confirm it."
+          ],
+          link: {
+            before: "Read ",
+            href: "/about/",
+            label: "about me and Koupoli",
+            after: " before deciding whether a sole-practitioner arrangement fits your team."
+          }
+        },
+        {
+          heading: "Name the developer, protect access and agree acceptance",
+          paragraphs: [
+            "A consultant is not automatically advice-only, and an agency is not automatically your development team. For my work, agree what I can handle on your platform and what your developer implements. Name who approves and deploys changes and who checks the live result. Delante publishes necessary fixes, but even that needs project-specific boundaries.",
+            "Keep business accounts under your ownership. Grant appropriate access to Search Console, analytics, the CMS or repository rather than transferring ownership or sending passwords with the initial enquiry. Agree where tasks, change records and exports remain available when the engagement ends.",
+            "Acceptance should name the affected URLs or templates, intended behaviour and verification evidence. Report completed, verified and blocked work separately. Technical checks show whether an agreed change works; rankings, qualified enquiries and other business measures need their own reliable data and context."
+          ]
+        },
+        {
+          heading: "Evidence of my working method, not a ranking claim",
+          paragraphs: [
+            "This is an owned-site Koupoli QA example observed on 7 November 2026. The old /usluge/seo-optimizacija/ route redirected with HTTP 301 to /hr/usluge/seo-optimizacija/, which returned HTTP 200. The full record also checked that the canonical and sitemap used the final Croatian route.",
+            "The buying value is a concrete acceptance record, not a promise about search performance. It is my own website, not a client outcome, testimonial or proof of ranking improvement. It does not show how any of the agencies work."
+          ],
+          image: {
+            src: "/assets/koupoli-qa-support-example-en.webp",
+            alt: "Owned-site Koupoli QA screenshot showing the old route, final Croatian service URL and observed HTTP 301 to HTTP 200 responses",
+            caption: "Owned-site QA example observed 7 November 2026. This Koupoli record is not a client outcome or proof of ranking improvement.",
+            width: 692,
+            height: 206
+          },
+          link: {
+            before: "For a separate example of migration coordination, see the ",
+            href: "/case-studies/multi-market-website-migration/",
+            label: "multi-market website migration case",
+            after: "; it is not the owned-site screenshot above."
+          }
+        },
+        {
+          heading: "Compare scoped proposals, not unmatched prices",
+          paragraphs: [
+            "My pricing and availability are quote-based. There is no published Koupoli rate or assumed saving over an agency. I have omitted numeric agency prices because package, enterprise and technical-only indications are not equivalent purchases. Review each provider's official pricing information, then compare its scoped proposal.",
+            "Match deliverables, implementation ownership, allocated capacity and verification first. Confirm billing, any minimum commitment, cancellation, exclusions and how additional work is approved. Distinguish a reporting cadence from time allocated to delivery. The cheapest headline fee tells you little if required development or follow-up is outside scope."
+          ]
+        },
+        {
+          heading: "A limited project can test the fit",
+          paragraphs: [
+            "If you are unsure about the working arrangement, ask whether a bounded pilot or limited project makes sense. It might cover a defined template issue or a migration checkpoint, with access, deliverables and acceptance agreed first. This is a possible scoped proposal, not a standard package or guaranteed availability.",
+            "Use it to assess task clarity, collaboration and verification, not short-term ranking movement. Continue only when there is worthwhile next work. If the pilot reveals a need for sustained parallel teams, consider an agency or a coordinated specialist-plus-team arrangement."
+          ]
+        },
+        {
+          heading: "Is an SEO consultant the same as advice-only?",
+          paragraphs: [
+            "No. The proposal determines whether you receive recommendations, developer-ready tasks, implementation support or agreed changes. I can collaborate on delivery within a confirmed scope, but I do not automatically implement everything on every platform. Name the implementation owner before signing."
+          ]
+        },
+        {
+          heading: "Is a solo specialist always cheaper or faster?",
+          paragraphs: [
+            "No. Fees depend on scope and responsibility; timing depends on availability, access, complexity and release capacity. Direct continuity can simplify collaboration, but it is not a speed guarantee. Compare matched proposals and confirmed capacity, not claims about solo or agency overhead."
+          ]
+        },
+        {
+          heading: "Can Koupoli work with an in-house team or agency?",
+          paragraphs: [
+            "Yes, where roles, scope and availability fit. I can provide a defined technical workstream alongside your developers, marketing team or agency. Agree who prioritises, implements, approves and verifies the work so that specialist input complements the existing team rather than creating competing instructions."
+          ]
+        },
+        {
+          heading: "What should I send before a proposal?",
+          paragraphs: [
+            "Send your website, platform, priority problem or decision, relevant markets, planned releases and who can implement changes. Existing findings and a budget context help if available. Describe the coverage you need; do not send passwords or sensitive account exports before we agree a suitable access route."
+          ]
+        },
+        {
+          heading: "Choose the people and scope that fit the work",
+          paragraphs: [
+            "Choose Koupoli for an agreed technical scope with direct continuity. Choose an agency when confirmed wider team coverage and parallel work are needed. Neither model replaces clear ownership, realistic availability or acceptance criteria. If my specialist scope looks relevant, we can discuss it without assuming a recurring engagement."
+          ],
+          link: {
+            before: "Share your situation and ",
+            href: "/contact/",
+            label: "discuss a scoped proposal with me",
+            after: ". If the brief needs wider coverage, that should guide the choice."
+          }
+        }
+      ],
+      sources: [
+        {
+          label: "Koupoli: specialist scope and agreed implementation support",
+          href: "/services/technical-seo-ai-search/"
+        },
+        {
+          label: "WebFX: SEO services and dedicated team",
+          href: "https://www.webfx.com/seo/services/"
+        },
+        {
+          label: "WebFX: technical SEO scope and account manager",
+          href: "https://www.webfx.com/seo/agency/technical-seo/"
+        },
+        {
+          label: "WebFX: package pricing and custom proposals",
+          href: "https://www.webfx.com/seo/pricing/"
+        },
+        {
+          label: "Victorious: service overview and starting-budget guidance",
+          href: "https://victorious.com/"
+        },
+        {
+          label: "Victorious: enterprise scope, collaboration and pricing context",
+          href: "https://victorious.com/markets/enterprise-seo/"
+        },
+        {
+          label: "Victorious: published contact routes",
+          href: "https://victorious.com/contact/"
+        },
+        {
+          label: "Delante: technical scope, direct specialist contact and individual budgets",
+          href: "https://delante.co/technical-seo-services/"
+        },
+        {
+          label: "Delante: quote process and customised plans",
+          href: "https://delante.co/contact/"
+        }
+      ]
+    },
+    {
       slug: "seo-audit-vs-ongoing-technical-seo",
       date: "November 17, 2026",
       updated: {
@@ -629,6 +887,264 @@ export const editorialNotes: Record<"en" | "hr", EditorialNote[]> = {
     },
   ],
   hr: [
+    {
+      slug: "seo-consultant-vs-agency",
+      date: "17. studenoga 2026.",
+      updated: {
+        date: "17. studenoga 2026.",
+        iso: "2026-11-17"
+      },
+      title: "SEO stručnjak ili agencija: Kada odabrati Koupoli?",
+      metaTitle: "SEO stručnjak ili agencija: Usporedba za vaš tim | Koupoli",
+      metaDescription: "Usporedite SEO stručnjaka i agenciju prema tehničkom opsegu, kontaktu, provedbi i kapacitetu tima. Provjerite kada Koupoli odgovara vašem poslu prije ponude.",
+      excerpt: "Odaberite Koupoli za dogovoreni tehnički opseg uz izravnu suradnju s istim stručnjakom. Agenciju odaberite kada trebate potvrđenu pokrivenost šireg tima i paralelan rad. Usporedite odgovorne osobe, provedbu i stvarni kapacitet, ne pretpostavke o tome koji je model bolji za vaš posao.",
+      image: "/assets/koupoli-consultant-vs-agency-hero.webp",
+      imageAlt: "Dva različita načina rada koji predstavljaju samostalnog SEO stručnjaka i agencijski tim",
+      imageCaption: "Samostalni stručnjak i agencija različiti su modeli izvedbe. Izbor ovisi o dogovorenom poslu i raspoloživom kapacitetu.",
+      sections: [
+        {
+          heading: "Kratak odgovor: odaberite način izvedbe koji vaš tim treba",
+          paragraphs: [
+            "Osnivačima tvrtki, voditeljima marketinga i programerima koji biraju SEO stručnjaka ili agenciju važnije je tko će provesti sljedeće prioritete, uz koji kapacitet i odgovornost. Jedan stručnjak može temeljito pratiti određeno tehničko područje; širi tim može pokriti više usklađenih područja kada ponuda doista uključuje taj kapacitet.",
+            "Napomena o mojoj ulozi: prodajem stručnu uslugu samostalnog stručnjaka. Ja sam Karlo Riđan, vlasnik Koupolija i jedina osoba koja kroz njega pruža usluge. Ova usporedba govori o prikladnosti, ne o univerzalnoj prednosti mojeg modela. Opisi agencija temelje se na njihovim javnim stranicama pregledanima 17. studenoga 2026., ne na mojem iskustvu kupnje njihovih usluga.",
+            "Ovaj članak odgovara na pitanje tko izvodi posao. Prethodna usporedba pomaže odabrati SEO analizu ili kontinuiranu tehničku podršku. Obje vrste angažmana može pružiti stručnjak ili agencija; odabirom pružatelja još niste odredili opseg suradnje."
+          ],
+          link: {
+            before: "Za tu zasebnu odluku pročitajte članak ",
+            href: "/hr/post/seo-audit-vs-ongoing-technical-seo/",
+            label: "SEO analiza ili kontinuirana tehnička SEO podrška",
+            after: "."
+          }
+        },
+        {
+          heading: "SEO stručnjak ili agencija: sedam kriterija izvedbe",
+          paragraphs: [
+            "Agencijski stupac prikazuje mogućnosti koje treba potvrditi, ne standardno uključene usluge. WebFX, Victorious i Delante imaju različite javno opisane modele, objašnjene u nastavku."
+          ],
+          comparison: {
+            caption: "Usporedite konkretnu ponudu i osobe dodijeljene poslu. Naziv agencija sam ne potvrđuje opseg, pristup stručnjaku ni zamjensku pokrivenost.",
+            leftLabel: "Koupoli",
+            rightLabel: "Agencijski model",
+            rows: [
+              {
+                criterion: "Odgovorna osoba",
+                left: "Izravno kontaktirate mene, stručnjaka odgovornog za svoj dogovoreni rad.",
+                right: "Potvrdite voditelja izvedbe i kontakt. WebFX nudi voditelja suradnje s klijentom, Delante izravan stručni kontakt."
+              },
+              {
+                criterion: "Tehnički fokus",
+                left: "Pristup tražilica, indeksiranje, prikaz sadržaja, migracije, performanse i strukturirani podaci u dogovorenom opsegu.",
+                right: "Provjerite potrebne tehničke vještine. Šire SEO usluge ovise o pružatelju i konkretnoj ponudi."
+              },
+              {
+                criterion: "Odgovornost za provedbu",
+                left: "Dogovorite što preuzimam ja, a što vaš programer provodi, odobrava i objavljuje.",
+                right: "Potvrdite provodi li agencija promjene, priprema zadatke ili podržava vaš razvojni tim; naziv to ne određuje."
+              },
+              {
+                criterion: "Kapacitet šireg tima",
+                left: "Jedan stručnjak, bez automatski uključene proizvodnje sadržaja, stjecanja poveznica ili tima različitih uloga.",
+                right: "Moguć paralelan rad ako su potvrđeni relevantni stručnjaci i kapacitet koji je dodijeljen vašem poslu."
+              },
+              {
+                criterion: "Kontinuitet i pokrivenost",
+                left: "Kontinuitet sa mnom; ograničena dostupnost i ovisnost o jednoj osobi. Dogovorite granice i predaju posla.",
+                right: "Pitajte o promjenama tima, zamjenama i eskalaciji. Tim sam ne jamči zamjensku pokrivenost ni brzinu."
+              },
+              {
+                criterion: "Naknada i ugovor",
+                left: "Prilagođena ponuda. Potvrdite opseg, dostupnost, naplatu, dodatni rad i uvjete završetka suradnje.",
+                right: "Javne smjernice za cijene ili prilagođena ponuda. Potvrdite usporediv opseg, obvezu trajanja i ugovorne uvjete."
+              },
+              {
+                criterion: "Kada je prikladno",
+                left: "Dogovoreni tehnički opseg koji traži izravan kontinuitet stručnjaka i jasan put do provedbe.",
+                right: "Potvrđena pokrivenost šireg tima i istodobni poslovi koji traže više od kapaciteta jedne osobe."
+              }
+            ]
+          },
+          image: {
+            src: "/assets/koupoli-consultant-agency-decision-hr.webp",
+            alt: "Vodič za odabir Koupolijeva kontinuiteta i usmjerenog opsega ili potvrđene pokrivenosti agencijskog tima za paralelan rad",
+            caption: "Odaberite način izvedbe, ne samo naziv. Izravan kontakt sa stručnjakom moguć je i u agenciji.",
+            width: 1100,
+            height: 711
+          }
+        },
+        {
+          heading: "Kada odgovara moj stručni opseg",
+          paragraphs: [
+            "Moja glavna stručna područja su pristup tražilica, indeksiranje, JavaScript prikaz sadržaja, migracije, performanse, strukturirani podaci i predaja zadataka razvojnom timu. Radim i na planiranju organske vidljivosti te osnovama AI pretrage kada odgovaraju zadatku. To nije obećanje AI citiranja ni automatski uključen cjelovit marketinški program.",
+            "Osobno povezujem dijagnozu, prioritete, zadatke za provedbu i dogovorene provjere. To odgovara timu kojem treba ista osoba za praćenje tehničkog problema kroz više objava, bez stalnog ponovnog objašnjavanja konteksta. Ne uklanja ovisnosti o razvoju i ne jamči bržu isporuku.",
+            "Velik web nije automatski prevelik za stručnjaka. Ograničen dio migracije ili provjera predloška mogu odgovarati; više istodobnih područja rada možda neće. Prije ponude trebam procijeniti platformu, opseg i dostupnost."
+          ],
+          link: {
+            before: "Pogledajte ",
+            href: "/hr/usluge/seo-optimizacija/",
+            label: "Koupolijevu uslugu tehničkog SEO-a i AI pretrage",
+            after: " za moj fokus i dogovorenu podršku provedbi."
+          }
+        },
+        {
+          heading: "Kada je potvrđena agencijska pokrivenost bolji izbor",
+          paragraphs: [
+            "Agencija može biti prikladnija kada tehničke promjene, proizvodnja sadržaja i drugi poslovi vezani uz pretragu trebaju napredovati istodobno. WebFX i Victorious objavljuju šire SEO opsege; pregledana Delanteova tehnička stranica potvrđuje izvedbu tehničkog tima, ne svaku moguću marketinšku uslugu.",
+            "Pitajte koji su stručnjaci dodijeljeni vašem poslu, za što odgovaraju i što doista može teći paralelno. Više ljudi ne uklanja odobrenja, zajedničke ovisnosti ni ograničenja objava. Ponuda treba potvrditi uporabljiv kapacitet, ne samo opisati ukupne usluge agencije."
+          ]
+        },
+        {
+          heading: "WebFX: širi SEO i dodijeljena kontaktna osoba",
+          paragraphs: [
+            "WebFX javno opisuje SEO analize, kontinuirane planove rada, tehničko održavanje, optimizaciju stranica, izradu sadržaja, rad na autoritetu izvan weba, praćenje konkurenata i izvještavanje. Tehnička stranica uključuje brzinu, probleme pristupa i indeksiranja, preusmjeravanja, kanonske oznake i strukturirane podatke.",
+            "Objavljeni model kontakta uključuje voditelja suradnje s klijentom uz podršku SEO stručnjaka i drugih članova tima. To može odgovarati širem poslu koji traži koordinaciju. Potvrdite tko rješava vaša tehnička pitanja i provedbu, bez pretpostavke da su stručnjaci nedostupni ili kapacitet neograničen. WebFX objavljuje pakete i omogućuje prilagođene ponude; stranicu s cijenama usporedite s ponuđenim opsegom."
+          ]
+        },
+        {
+          heading: "Victorious: SEO za velike sustave i suradnja više funkcija",
+          paragraphs: [
+            "Victoriousova stranica za velike sustave navodi tehnički SEO, migracije, AEO, istraživanje ključnih riječi, optimizaciju stranica, izradu sadržaja i izgradnju poveznica. Opisuje kontinuirani tehnički rad na složenim webovima, uključujući arhitekturu, navigaciju, interne poveznice i poddomene, uz suradnju s marketingom te proizvodnim i razvojnim timovima.",
+            "Taj javno opisani opseg može odgovarati velikom sustavu s više područja rada. Pregledane stranice ne obećavaju izričito imenovanu pojedinačnu kontaktnu osobu; to ne dokazuje da izravan pristup nije dostupan. Pitajte o voditelju izvedbe i načinu eskalacije tehničkih pitanja. Smjernice za početni proračun i cijene za velike sustave odnose se na različite situacije, uz prilagođen opseg i ponudu."
+          ]
+        },
+        {
+          heading: "Delante: tehnički tim uz izravan kontakt sa stručnjakom",
+          paragraphs: [
+            "Delanteova stranica tehničkog SEO-a opisuje analize s preporukama, potrebne tehničke ispravke, optimizaciju brzine i slika, migracije, strukturirane podatke i mjesečno izvještavanje. Navodi i JavaScript te indeksiranje u sklopu pojedinačne strategije usmjerene na pokazatelje uspješnosti.",
+            "Važno je da Delante izričito nudi kontakt s tehničkim SEO stručnjakom koji radi na webu, bez voditelja suradnje s klijentima, uz širi tehnički tim. Izravan stručni kontakt stoga nije isključiva Koupolijeva prednost. Potvrdite granice provedbe i dodijeljenu pokrivenost. Javni cjenovni pokazatelji miješaju opsege, valute i nejasna razdoblja, pa tražite prilagođenu ponudu umjesto da ih smatrate usporedivom fiksnom cijenom."
+          ]
+        },
+        {
+          heading: "Kontinuitet uključuje rizik ovisnosti o jednoj osobi",
+          paragraphs: [
+            "U Koupoliju surađujete sa mnom tijekom cijelog dogovorenog posla. Kao samostalni stručnjak pri dogovoru o dostupnosti trebam uzeti u obzir bolest, dopust i druge obveze. Prije početka treba dogovoriti potrebnu pokrivenost, umjesto pretpostavke o podršci u svako doba ili neograničenom paralelnom kapacitetu.",
+            "Prije početka dogovorite ritam rada, očekivano vrijeme odgovora i postupak ako se objava ili moja dostupnost promijene. Nalazi, odluke i otvoreni zadaci trebaju biti dostupni vašem timu. Kada ovisnosti blokiraju koristan rad ili zahtjev premašuje kapacitet, razgovarajte o promjeni opsega, stanci ili predaji posla umjesto automatskog nastavka. Za predaju treba dogovoriti primatelja i pristup.",
+            "Agenciji postavite ista pitanja: tko pokriva odsutnost, zadržava kontekst i rješava eskalaciju? Veća organizacija može osigurati zamjenu, ali konkretna ponuda to treba potvrditi."
+          ],
+          link: {
+            before: "Pročitajte ",
+            href: "/hr/about/",
+            label: "više o meni i Koupoliju",
+            after: " prije odluke odgovara li vašem timu suradnja s jednom osobom."
+          }
+        },
+        {
+          heading: "Imenujte programera, zadržite pristup i dogovorite prihvaćanje",
+          paragraphs: [
+            "Stručnjak ne pruža automatski samo savjete, a agencija nije automatski vaš razvojni tim. Za moj rad dogovorite što mogu preuzeti na vašoj platformi, a što provodi vaš programer. Imenujte tko odobrava i objavljuje promjene te tko provjerava javnu stranicu. Delante navodi potrebne ispravke, ali i za njih trebaju granice konkretnog projekta.",
+            "Poslovni računi trebaju ostati u vašem vlasništvu. Dodijelite primjeren pristup Search Consoleu, analitici, CMS-u ili repozitoriju umjesto prijenosa vlasništva ili slanja lozinki u prvom upitu. Dogovorite gdje zadaci, evidencija promjena i izvozi podataka ostaju dostupni nakon završetka suradnje.",
+            "Prihvaćanje treba navesti pogođene URL-ove ili predloške, očekivano ponašanje i dokaz provjere. Odvojeno pratite dovršen, provjeren i blokiran posao. Tehničke provjere pokazuju radi li dogovorena promjena; pozicije, kvalificirani upiti i drugi poslovni pokazatelji trebaju zasebne pouzdane podatke i kontekst."
+          ]
+        },
+        {
+          heading: "Dokaz načina rada, ne tvrdnja o rastu pozicija",
+          paragraphs: [
+            "Ovo je primjer provjere kvalitete na vlastitom Koupolijevu webu, opažen 7. studenoga 2026. Stara putanja /usluge/seo-optimizacija/ preusmjeravala je statusom HTTP 301 na /hr/usluge/seo-optimizacija/, koja je vraćala HTTP 200. Cjelovit zapis provjerio je i da kanonska oznaka i karta weba koriste konačnu hrvatsku putanju.",
+            "Vrijednost za odabir suradnje je konkretan zapis prihvaćanja, ne obećanje rezultata u pretrazi. To je moj web, ne rezultat klijenta, njegova preporuka ili dokaz rasta pozicija. Primjer ne pokazuje kako radi bilo koja od agencija."
+          ],
+          image: {
+            src: "/assets/koupoli-qa-support-example-hr.webp",
+            alt: "Snimka provjere Koupolijeva vlastitog weba sa starom putanjom, konačnim hrvatskim URL-om i opaženim odgovorima HTTP 301 na HTTP 200",
+            caption: "Primjer provjere vlastitog weba opažen 7. studenoga 2026. Koupolijev zapis nije rezultat klijenta ni dokaz rasta pozicija.",
+            width: 692,
+            height: 230
+          },
+          link: {
+            before: "Zaseban primjer koordinacije opisuje ",
+            href: "/hr/studije-slucaja/migracija-web-stranice-za-vise-trzista/",
+            label: "studija slučaja migracije weba za više tržišta",
+            after: "; nije riječ o gornjoj snimci vlastitog weba."
+          }
+        },
+        {
+          heading: "Usporedite opseg ponuda, ne neusporedive cijene",
+          paragraphs: [
+            "Moja cijena i dostupnost određuju se ponudom. Nema objavljene Koupolijeve tarife ni podrazumijevane uštede u odnosu na agenciju. Ne navodim brojčane agencijske cijene jer paketi, opsezi za velike sustave i tehničke usluge nisu ista kupnja. Pregledajte službene cjenovne informacije svakog pružatelja, pa usporedite konkretnu ponudu.",
+            "Najprije uskladite isporuke, odgovornost za provedbu, dodijeljeni kapacitet i provjere. Potvrdite naplatu, moguće minimalno trajanje, otkazivanje, isključenja i odobravanje dodatnog rada. Odvojite ritam izvještavanja od vremena za izvedbu. Najniža istaknuta cijena malo govori ako potreban razvoj ili naknadne provjere nisu uključeni."
+          ]
+        },
+        {
+          heading: "Ograničen projekt može pokazati odgovara li suradnja",
+          paragraphs: [
+            "Ako niste sigurni u način rada, pitajte ima li smisla ograničen pilot ili zaseban projekt. Može obuhvatiti određen problem predloška ili kontrolnu točku migracije, uz unaprijed dogovoren pristup, isporuke i prihvaćanje. To je moguća prilagođena ponuda, ne standardni paket ni zajamčena dostupnost.",
+            "Procijenite jasnoću zadataka, suradnju i provjere, ne kratkoročne pomake pozicija. Nastavite samo kada postoji opravdan sljedeći posao. Ako projekt pokaže potrebu za trajnim paralelnim timovima, razmotrite agenciju ili usklađenu suradnju stručnjaka i postojećeg tima."
+          ]
+        },
+        {
+          heading: "Znači li SEO stručnjak samo davanje savjeta?",
+          paragraphs: [
+            "Ne. Ponuda određuje dobivate li preporuke, zadatke spremne za razvoj, podršku provedbi ili dogovorene promjene. Mogu surađivati na izvedbi unutar potvrđenog opsega, ali ne provodim automatski sve na svakoj platformi. Prije potpisa imenujte odgovornu osobu za provedbu."
+          ]
+        },
+        {
+          heading: "Je li samostalni stručnjak uvijek jeftiniji ili brži?",
+          paragraphs: [
+            "Nije. Naknada ovisi o opsegu i odgovornosti; rokovi o dostupnosti, pristupu, složenosti i kapacitetu za objave. Izravan kontinuitet može olakšati suradnju, ali ne jamči brzinu. Usporedite jednak opseg i potvrđen kapacitet, ne tvrdnje o troškovima samostalnog ili agencijskog rada."
+          ]
+        },
+        {
+          heading: "Može li Koupoli raditi s internim timom ili agencijom?",
+          paragraphs: [
+            "Da, kada odgovaraju uloge, opseg i dostupnost. Mogu preuzeti određeno tehničko područje uz vaše programere, marketing ili agenciju. Dogovorite tko određuje prioritete, provodi, odobrava i provjerava posao kako bi stručni doprinos nadopunio postojeći tim, umjesto stvaranja proturječnih uputa."
+          ]
+        },
+        {
+          heading: "Što trebam poslati prije ponude?",
+          paragraphs: [
+            "Pošaljite web, platformu, prioritetni problem ili odluku, relevantna tržišta, planirane objave i podatak o tome tko može provesti promjene. Postojeći nalazi i okvir proračuna pomažu ako ih imate. Opišite potrebnu pokrivenost; ne šaljite lozinke ni osjetljive izvoze računa prije dogovora o primjerenom pristupu."
+          ]
+        },
+        {
+          heading: "Odaberite ljude i opseg koji odgovaraju poslu",
+          paragraphs: [
+            "Odaberite Koupoli za dogovoreni tehnički opseg uz izravnu suradnju s istim stručnjakom. Agenciju odaberite kada trebate potvrđenu pokrivenost šireg tima i paralelan rad. Nijedan model ne zamjenjuje jasnu odgovornost, realnu dostupnost ni kriterije prihvaćanja. Ako moj stručni opseg odgovara, možemo razgovarati bez pretpostavke da trebate kontinuirani angažman."
+          ],
+          link: {
+            before: "Opišite svoju situaciju i ",
+            href: "/hr/contact/",
+            label: "razgovarajte sa mnom o ponudi za konkretan opseg",
+            after: ". Ako posao traži širu pokrivenost, to treba usmjeriti odabir."
+          }
+        }
+      ],
+      sources: [
+        {
+          label: "Koupoli: stručni opseg i dogovorena podrška provedbi",
+          href: "/hr/usluge/seo-optimizacija/"
+        },
+        {
+          label: "WebFX: SEO usluge i tim zadužen za klijenta",
+          href: "https://www.webfx.com/seo/services/"
+        },
+        {
+          label: "WebFX: tehnički opseg i voditelj suradnje s klijentom",
+          href: "https://www.webfx.com/seo/agency/technical-seo/"
+        },
+        {
+          label: "WebFX: cijene paketa i prilagođene ponude",
+          href: "https://www.webfx.com/seo/pricing/"
+        },
+        {
+          label: "Victorious: pregled usluga i smjernice za početni proračun",
+          href: "https://victorious.com/"
+        },
+        {
+          label: "Victorious: opseg za velike sustave, suradnja i cjenovni kontekst",
+          href: "https://victorious.com/markets/enterprise-seo/"
+        },
+        {
+          label: "Victorious: objavljeni načini kontakta",
+          href: "https://victorious.com/contact/"
+        },
+        {
+          label: "Delante: tehnički opseg, izravan stručni kontakt i pojedinačni proračuni",
+          href: "https://delante.co/technical-seo-services/"
+        },
+        {
+          label: "Delante: postupak upita i prilagođeni planovi",
+          href: "https://delante.co/contact/"
+        }
+      ]
+    },
     {
       slug: "seo-audit-vs-ongoing-technical-seo",
       date: "17. studenoga 2026.",

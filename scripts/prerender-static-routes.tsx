@@ -11,6 +11,8 @@ const routes = [
   "/hr/pojmovnik/vidljivost-u-pretrazi/",
   "/glossary/structured-data/",
   "/hr/pojmovnik/strukturirani-podaci/",
+  "/post/seo-consultant-vs-agency/",
+  "/hr/post/seo-consultant-vs-agency/",
   "/post/seo-audit-vs-ongoing-technical-seo/",
   "/hr/post/seo-audit-vs-ongoing-technical-seo/",
   "/post/generative-engine-optimization-process/",
